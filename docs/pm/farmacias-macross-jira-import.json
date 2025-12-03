@@ -1,0 +1,1120 @@
+{
+  "project": {
+    "key": "FM",
+    "name": "Farmacias Macross - Sinergia Digital"
+  },
+  "epics": [
+    {
+      "key": "FM-1",
+      "summary": "FASE 1 - WordPress Fachada para Compliance",
+      "description": "Sitio WordPress rediseñado, catálogo OTC fachada, SEO técnico y compliance legal\n\nTimeline: Semanas 1-5 (Dic 2025 - Primera mitad Ene 2026)\nInvestment: $80,000 MXN",
+      "priority": "Highest",
+      "labels": ["fase-1", "wordpress", "compliance", "seo"]
+    },
+    {
+      "key": "FM-2",
+      "summary": "FASE 2 - Contenido Educativo Estratégico",
+      "description": "15 artículos especializados, 2 lead magnets, optimización de conversión\n\nTimeline: Semanas 4-10 (Finales Dic 2025 - Principios Feb 2026)\nInvestment: $102,000 MXN",
+      "priority": "High",
+      "labels": ["fase-2", "contenido", "blog", "lead-magnets"]
+    },
+    {
+      "key": "FM-3",
+      "summary": "FASE 3 - Sistema de Filtrado Automatizado",
+      "description": "WhatsApp Business API, chatbot inteligente, CRM automatizado, integraciones\n\nTimeline: Semanas 10-15 (Feb-Mar 2026)\nInvestment: $120,000 MXN",
+      "priority": "Highest",
+      "labels": ["fase-3", "whatsapp", "bot", "crm", "automatizacion"]
+    },
+    {
+      "key": "FM-4",
+      "summary": "FASE 4 - Setup Google Ads + Dashboards",
+      "description": "Configuración Google Ads, Analytics, Tag Manager, Dashboard Looker Studio\n\nTimeline: Semanas 15-20 (Mar-May 2026) + Subfase 4.A adelantada (Semanas 4-10)\nInvestment: $62,000 MXN",
+      "priority": "High",
+      "labels": ["fase-4", "google-ads", "analytics", "dashboard"]
+    }
+  ],
+  "stories": [
+    {
+      "epic": "FM-1",
+      "key": "FM-1-1",
+      "summary": "Auditoría y Arquitectura de Información",
+      "description": "Análisis técnico del sitio actual y propuesta de arquitectura de información\n\nInvestment: $7,000 MXN\nEstimate: 1 semana\nPriority: Highest",
+      "storyPoints": 5,
+      "priority": "Highest",
+      "labels": ["auditoria", "arquitectura", "analisis"]
+    },
+    {
+      "epic": "FM-1",
+      "key": "FM-1-2",
+      "summary": "Sitio WordPress Rediseñado",
+      "description": "Rediseño completo del sitio WordPress con 8 tipos de páginas principales\n\nInvestment: $20,000 - $42,000 MXN (variable según reuso de componentes)\nEstimate: 3 semanas\nPriority: Highest",
+      "storyPoints": 13,
+      "priority": "Highest",
+      "labels": ["wordpress", "diseno", "desarrollo"]
+    },
+    {
+      "epic": "FM-1",
+      "key": "FM-1-3",
+      "summary": "Catálogo Fachada OTC - 20 Productos",
+      "description": "20 páginas de productos OTC con SEO optimizado y CTAs estratégicos\n\nInvestment: $16,000 MXN\nEstimate: 2 semanas\nPriority: High",
+      "storyPoints": 8,
+      "priority": "High",
+      "labels": ["catalogo", "productos", "otc", "seo"]
+    },
+    {
+      "epic": "FM-1",
+      "key": "FM-1-4",
+      "summary": "SEO Técnico + Compliance Legal",
+      "description": "SEO on-page completo, schema markup especializado, documentos legales health-compliant\n\nInvestment: $18,000 MXN\nEstimate: 2 semanas\nPriority: High",
+      "storyPoints": 8,
+      "priority": "High",
+      "labels": ["seo", "compliance", "legal", "schema"]
+    },
+    {
+      "epic": "FM-2",
+      "key": "FM-2-1",
+      "summary": "Research y Estrategia de Contenido",
+      "description": "Keyword research, content calendar, matriz de intención, briefs detallados\n\nInvestment: $13,000 MXN\nEstimate: 1.5 semanas\nPriority: Highest",
+      "storyPoints": 5,
+      "priority": "Highest",
+      "labels": ["research", "estrategia", "keywords", "content-calendar"]
+    },
+    {
+      "epic": "FM-2",
+      "key": "FM-2-2",
+      "summary": "15 Artículos de Blog Especializados",
+      "description": "15 artículos publicados y optimizados con CTAs directos a farmaciasmacross.com.mx\n\nInvestment: $68,000 MXN\nEstimate: 4 semanas\nPriority: High",
+      "storyPoints": 21,
+      "priority": "High",
+      "labels": ["blog", "articulos", "contenido", "seo"]
+    },
+    {
+      "epic": "FM-2",
+      "key": "FM-2-3",
+      "summary": "2 Lead Magnets Enfocados",
+      "description": "2 guías descargables en PDF con landing pages dedicadas e integración CRM\n\nInvestment: $14,000 MXN\nEstimate: 2 semanas\nPriority: Medium",
+      "storyPoints": 8,
+      "priority": "Medium",
+      "labels": ["lead-magnets", "pdf", "landing-pages", "crm"]
+    },
+    {
+      "epic": "FM-2",
+      "key": "FM-2-4",
+      "summary": "Optimización de Conversión",
+      "description": "Pop-ups estratégicos, banners, sticky bar, botón WhatsApp, A/B testing\n\nInvestment: $6,000 MXN\nEstimate: 1 semana\nPriority: Medium",
+      "storyPoints": 5,
+      "priority": "Medium",
+      "labels": ["conversion", "popups", "cta", "ab-testing"]
+    },
+    {
+      "epic": "FM-3",
+      "key": "FM-3-1",
+      "summary": "WhatsApp Business API - Implementación",
+      "description": "Configuración completa de WhatsApp Business API con proveedor\n\nInvestment: $22,000 MXN\nEstimate: 1.5 semanas\nPriority: Highest",
+      "storyPoints": 5,
+      "priority": "Highest",
+      "labels": ["whatsapp", "api", "configuracion"]
+    },
+    {
+      "epic": "FM-3",
+      "key": "FM-3-2",
+      "summary": "Chatbot Inteligente con Lógica de Filtrado",
+      "description": "Bot conversacional programado con lógica de filtrado automatizada\n\nInvestment: $55,000 MXN\nEstimate: 3 semanas\nPriority: Highest",
+      "storyPoints": 13,
+      "priority": "Highest",
+      "labels": ["chatbot", "bot", "filtrado", "automatizacion"]
+    },
+    {
+      "epic": "FM-3",
+      "key": "FM-3-3",
+      "summary": "CRM y Pipeline Automatizado",
+      "description": "CRM configurado con pipeline personalizado y automatizaciones\n\nInvestment: $30,000 MXN\nEstimate: 2 semanas\nPriority: High",
+      "storyPoints": 8,
+      "priority": "High",
+      "labels": ["crm", "pipeline", "automatizacion", "hubspot"]
+    },
+    {
+      "epic": "FM-3",
+      "key": "FM-3-4",
+      "summary": "Integración WordPress ↔ WhatsApp",
+      "description": "Todos los CTAs del sitio conectados a WhatsApp con tracking\n\nInvestment: $12,000 MXN\nEstimate: 1 semana\nPriority: Medium",
+      "storyPoints": 5,
+      "priority": "Medium",
+      "labels": ["integracion", "wordpress", "whatsapp", "tracking"]
+    },
+    {
+      "epic": "FM-3",
+      "key": "FM-3-5",
+      "summary": "Capacitación Operativa Completa",
+      "description": "Documentación y sesiones de capacitación para el equipo\n\nInvestment: $13,000 MXN\nEstimate: 1 semana\nPriority: Medium",
+      "storyPoints": 5,
+      "priority": "Medium",
+      "labels": ["capacitacion", "documentacion", "training"]
+    },
+    {
+      "epic": "FM-4",
+      "key": "FM-4-1",
+      "summary": "Google Ads y Analytics - Configuración Completa",
+      "description": "Cuenta Google Ads estructurada, GA4, GTM, 3 campañas base\n\nInvestment: $45,000 MXN\nEstimate: 3 semanas\nPriority: High",
+      "storyPoints": 13,
+      "priority": "High",
+      "labels": ["google-ads", "ga4", "gtm", "campanas"]
+    },
+    {
+      "epic": "FM-4",
+      "key": "FM-4-2",
+      "summary": "Dashboard Unificado de Marketing",
+      "description": "Dashboard Looker Studio completo con todas las métricas del ecosistema\n\nInvestment: $17,000 MXN\nEstimate: 2 semanas\nPriority: Medium",
+      "storyPoints": 8,
+      "priority": "Medium",
+      "labels": ["dashboard", "looker-studio", "metricas", "reportes"]
+    },
+    {
+      "epic": "FM-4",
+      "key": "FM-4-3",
+      "summary": "Subfase 4.A - Ads Adelantado + Conversión Básica",
+      "description": "Estructura de campañas, keywords, conversiones básicas adelantadas para Hito 3\n\nInvestment: $20,000 MXN\nEstimate: 2 semanas (Semanas 4-10, en paralelo con Fase 2)\nPriority: High",
+      "storyPoints": 8,
+      "priority": "High",
+      "labels": ["google-ads", "conversiones", "adelantado"]
+    },
+    {
+      "epic": "FM-4",
+      "key": "FM-4-4",
+      "summary": "Subfase 4.B - Optimización Ads + Shopping + Dashboards",
+      "description": "Afinación de campañas con datos reales, Shopping, Dashboard final\n\nInvestment: $42,000 MXN\nEstimate: 3 semanas (Semanas 15-20, Hito 5)\nPriority: High",
+      "storyPoints": 13,
+      "priority": "High",
+      "labels": ["optimizacion", "shopping", "dashboard", "afinacion"]
+    }
+  ],
+  "tasks": [
+    {
+      "story": "FM-1-1",
+      "key": "FM-1-1-1",
+      "summary": "Auditoría técnica del sitio medicamentosespeciales.mx actual",
+      "description": "Análisis de estructura actual, identificación de problemas técnicos, evaluación de performance, revisión de SEO on-page existente, análisis de compliance legal actual",
+      "storyPoints": 3,
+      "priority": "Highest"
+    },
+    {
+      "story": "FM-1-1",
+      "key": "FM-1-1-2",
+      "summary": "Documento de análisis técnico",
+      "description": "Redacción de documento completo con hallazgos y recomendaciones, priorización de mejoras",
+      "storyPoints": 1,
+      "priority": "High"
+    },
+    {
+      "story": "FM-1-1",
+      "key": "FM-1-1-3",
+      "summary": "Arquitectura de información propuesta",
+      "description": "Mapa de sitio (sitemap conceptual), estructura de navegación, taxonomía de contenido, flujos de usuario principales, wireframes de alto nivel",
+      "storyPoints": 1,
+      "priority": "High"
+    },
+    {
+      "story": "FM-1-2",
+      "key": "FM-1-2-1",
+      "summary": "Setup y configuración inicial WordPress",
+      "description": "Configuración de hosting Hostinger, instalación/actualización de WordPress, configuración de plugins esenciales, setup de tema base",
+      "storyPoints": 2,
+      "priority": "Highest"
+    },
+    {
+      "story": "FM-1-2",
+      "key": "FM-1-2-2",
+      "summary": "Diseño responsivo base",
+      "description": "Sistema de diseño (colores, tipografía, espaciado), componentes reutilizables, breakpoints (desktop, tablet, móvil), testing de responsividad",
+      "storyPoints": 3,
+      "priority": "Highest"
+    },
+    {
+      "story": "FM-1-2",
+      "key": "FM-1-2-3",
+      "summary": "Homepage con hero y secciones estratégicas",
+      "description": "Diseño de hero section, secciones de valor, CTAs principales, integración con WhatsApp",
+      "storyPoints": 2,
+      "priority": "High"
+    },
+    {
+      "story": "FM-1-2",
+      "key": "FM-1-2-4",
+      "summary": "Página Sobre Nosotros / Centros de Distribución",
+      "description": "Contenido sobre la empresa, información de centros (CDMX, Puebla), mapa de ubicaciones, formulario de contacto",
+      "storyPoints": 2,
+      "priority": "Medium"
+    },
+    {
+      "story": "FM-1-2",
+      "key": "FM-1-2-5",
+      "summary": "Template de Blog dinámico",
+      "description": "Estructura de blog posts, categorías y tags, sidebar con widgets, paginación",
+      "storyPoints": 2,
+      "priority": "High"
+    },
+    {
+      "story": "FM-1-2",
+      "key": "FM-1-2-6",
+      "summary": "Página Catálogo Productos OTC (fachada)",
+      "description": "Listado de productos, filtros y búsqueda, grid de productos, enlaces externos a Farmalisto/Similares",
+      "storyPoints": 2,
+      "priority": "High"
+    },
+    {
+      "story": "FM-1-2",
+      "key": "FM-1-2-7",
+      "summary": "Landing Consulta Especializada",
+      "description": "Diseño optimizado para conversión, formulario de contacto, CTAs a WhatsApp, información sobre proceso",
+      "storyPoints": 2,
+      "priority": "High"
+    },
+    {
+      "story": "FM-1-2",
+      "key": "FM-1-2-8",
+      "summary": "Página Preguntas Frecuentes",
+      "description": "Estructura de FAQ, accordion interactivo, schema markup FAQ, optimización SEO",
+      "storyPoints": 1,
+      "priority": "Medium"
+    },
+    {
+      "story": "FM-1-2",
+      "key": "FM-1-2-9",
+      "summary": "Páginas legales (Aviso de Privacidad / Términos)",
+      "description": "Aviso de Privacidad COFEPRIS compliant, Términos y Condiciones sector salud, Política de cookies, Disclaimers médicos",
+      "storyPoints": 2,
+      "priority": "High"
+    },
+    {
+      "story": "FM-1-2",
+      "key": "FM-1-2-10",
+      "summary": "Página Contacto",
+      "description": "Formulario de contacto, información de contacto, mapa interactivo, horarios de atención",
+      "storyPoints": 1,
+      "priority": "Medium"
+    },
+    {
+      "story": "FM-1-2",
+      "key": "FM-1-2-11",
+      "summary": "Optimización de velocidad",
+      "description": "Optimización de imágenes (WebP), caching configurado, minificación CSS/JS, CDN si aplica, testing de performance (PageSpeed)",
+      "storyPoints": 2,
+      "priority": "High"
+    },
+    {
+      "story": "FM-1-3",
+      "key": "FM-1-3-1",
+      "summary": "Template de página de producto OTC",
+      "description": "Diseño de template reutilizable, estructura de contenido, campos personalizados",
+      "storyPoints": 2,
+      "priority": "High"
+    },
+    {
+      "story": "FM-1-3",
+      "key": "FM-1-3-2",
+      "summary": "Creación de 20 páginas de productos",
+      "description": "Descripción del producto (250-300 palabras), usos y beneficios principales, advertencias básicas, CTAs estratégicos",
+      "storyPoints": 5,
+      "priority": "High"
+    },
+    {
+      "story": "FM-1-3",
+      "key": "FM-1-3-3",
+      "summary": "Schema markup de producto",
+      "description": "Implementación de Product schema, datos estructurados validados, testing con Google Rich Results",
+      "storyPoints": 1,
+      "priority": "High"
+    },
+    {
+      "story": "FM-1-3",
+      "key": "FM-1-3-4",
+      "summary": "SEO optimizado por producto",
+      "description": "Meta titles y descriptions, headings H1-H6 correctos, alt text en imágenes, URLs amigables, internal linking",
+      "storyPoints": 2,
+      "priority": "High"
+    },
+    {
+      "story": "FM-1-3",
+      "key": "FM-1-3-5",
+      "summary": "Integración con enlaces externos",
+      "description": "Links a Farmalisto/SimilaresOnline, tracking de clics (UTM parameters), apertura en nueva pestaña",
+      "storyPoints": 1,
+      "priority": "Medium"
+    },
+    {
+      "story": "FM-1-4",
+      "key": "FM-1-4-1",
+      "summary": "SEO on-page completo (todas las páginas)",
+      "description": "Optimización de meta tags, headings structure, internal linking strategy, image optimization, URL structure",
+      "storyPoints": 3,
+      "priority": "High"
+    },
+    {
+      "story": "FM-1-4",
+      "key": "FM-1-4-2",
+      "summary": "Schema markup especializado",
+      "description": "Organization schema, LocalBusiness schema (cada centro), MedicalBusiness schema, Product schema (OTC), BreadcrumbList schema, validación con Google",
+      "storyPoints": 2,
+      "priority": "High"
+    },
+    {
+      "story": "FM-1-4",
+      "key": "FM-1-4-3",
+      "summary": "Sitemap XML multinivel",
+      "description": "Generación de sitemap, prioridades y frecuencias, submit a Google Search Console",
+      "storyPoints": 1,
+      "priority": "Medium"
+    },
+    {
+      "story": "FM-1-4",
+      "key": "FM-1-4-4",
+      "summary": "Robots.txt optimizado",
+      "description": "Configuración de crawlers, exclusiones necesarias, sitemap reference",
+      "storyPoints": 1,
+      "priority": "Low"
+    },
+    {
+      "story": "FM-1-4",
+      "key": "FM-1-4-5",
+      "summary": "Documentos legales health-compliant",
+      "description": "Aviso de Privacidad COFEPRIS, Términos y Condiciones sector salud, Disclaimers en cada página producto, Política de cookies, Revisión legal",
+      "storyPoints": 2,
+      "priority": "High"
+    },
+    {
+      "story": "FM-1-4",
+      "key": "FM-1-4-6",
+      "summary": "Configuración Google Search Console",
+      "description": "Verificación de propiedad, submit sitemap, configuración de parámetros URL, monitoreo inicial",
+      "storyPoints": 1,
+      "priority": "Medium"
+    },
+    {
+      "story": "FM-2-1",
+      "key": "FM-2-1-1",
+      "summary": "Keyword research especializado",
+      "description": "100+ términos realistas identificados, análisis de competencia, volumen de búsqueda, dificultad SEO, intención de búsqueda",
+      "storyPoints": 2,
+      "priority": "Highest"
+    },
+    {
+      "story": "FM-2-1",
+      "key": "FM-2-1-2",
+      "summary": "Content calendar 6 meses sugeridos",
+      "description": "Calendario editorial, frecuencia de publicación, temas por mes, alineación con campañas",
+      "storyPoints": 1,
+      "priority": "High"
+    },
+    {
+      "story": "FM-2-1",
+      "key": "FM-2-1-3",
+      "summary": "Matriz de intención de búsqueda por keyword",
+      "description": "Clasificación: Awareness, Consideration, Decision, mapeo de keywords a artículos, priorización",
+      "storyPoints": 1,
+      "priority": "High"
+    },
+    {
+      "story": "FM-2-1",
+      "key": "FM-2-1-4",
+      "summary": "Estrategia de CTAs por categoría de contenido",
+      "description": "CTAs para Awareness (→ WhatsApp), Consideration (→ WhatsApp + farmaciasmacross.com.mx), Decision (→ farmaciasmacross.com.mx directo)",
+      "storyPoints": 1,
+      "priority": "High"
+    },
+    {
+      "story": "FM-2-1",
+      "key": "FM-2-1-5",
+      "summary": "Brief detallado para cada artículo",
+      "description": "Título propuesto, keywords primarias y secundarias, estructura sugerida, CTAs específicos, enlaces internos sugeridos",
+      "storyPoints": 1,
+      "priority": "High"
+    },
+    {
+      "story": "FM-2-2",
+      "key": "FM-2-2-1",
+      "summary": "4 artículos Awareness (1,200 palabras c/u)",
+      "description": "Condiciones médicas relacionadas a sus SKUs, tratamientos disponibles en México, navegación del sistema de salud, CTA: Más información → WhatsApp, SEO optimizado, imágenes optimizadas, estructura H1-H6, enlaces internos, schema markup, tabla de contenido, FAQ, disclaimers",
+      "storyPoints": 8,
+      "priority": "High"
+    },
+    {
+      "story": "FM-2-2",
+      "key": "FM-2-2-2",
+      "summary": "8 artículos Consideration (1,600 palabras c/u)",
+      "description": "Medicamentos especializados específicos, comparativas de tratamientos, acceso y disponibilidad en México, casos de uso reales, CTA: Consulta disponibilidad → WhatsApp + botón a farmaciasmacross.com.mx, SEO optimizado, imágenes optimizadas, estructura H1-H6, enlaces internos, schema markup, tabla de contenido, FAQ, disclaimers",
+      "storyPoints": 10,
+      "priority": "High"
+    },
+    {
+      "story": "FM-2-2",
+      "key": "FM-2-2-3",
+      "summary": "3 artículos Decision (2,000 palabras c/u)",
+      "description": "Guías completas de medicamentos específicos (top 3 SKUs), costos y opciones realistas, proceso de compra paso a paso, CTA: Ver precio en farmacia → DIRECTO a farmaciasmacross.com.mx, SEO optimizado, imágenes optimizadas, estructura H1-H6, enlaces internos, schema markup, tabla de contenido, FAQ, disclaimers",
+      "storyPoints": 5,
+      "priority": "High"
+    },
+    {
+      "story": "FM-2-2",
+      "key": "FM-2-2-4",
+      "summary": "Publicación y optimización final",
+      "description": "Publicación en WordPress, revisión de formato, testing de CTAs, validación de schema, aprobación de cliente (3 artículos piloto primero)",
+      "storyPoints": 2,
+      "priority": "High"
+    },
+    {
+      "story": "FM-2-3",
+      "key": "FM-2-3-1",
+      "summary": "Guía 1 - Guía del Paciente: Acceso a Medicamentos Especializados en México",
+      "description": "Contenido (10-15 páginas), diseño branded profesional, PDF optimizado, revisión médica",
+      "storyPoints": 3,
+      "priority": "Medium"
+    },
+    {
+      "story": "FM-2-3",
+      "key": "FM-2-3-2",
+      "summary": "Guía 2 - Tratamientos de Alta Especialidad: Opciones y Procesos",
+      "description": "Contenido (10-15 páginas), diseño branded profesional, PDF optimizado, revisión médica",
+      "storyPoints": 3,
+      "priority": "Medium"
+    },
+    {
+      "story": "FM-2-3",
+      "key": "FM-2-3-3",
+      "summary": "Landing page para Guía 1",
+      "description": "Diseño optimizado para conversión, formulario de captura, preview de contenido, SEO optimizado",
+      "storyPoints": 1,
+      "priority": "Medium"
+    },
+    {
+      "story": "FM-2-3",
+      "key": "FM-2-3-4",
+      "summary": "Landing page para Guía 2",
+      "description": "Diseño optimizado para conversión, formulario de captura, preview de contenido, SEO optimizado",
+      "storyPoints": 1,
+      "priority": "Medium"
+    },
+    {
+      "story": "FM-2-3",
+      "key": "FM-2-3-5",
+      "summary": "Integración con CRM",
+      "description": "Formularios conectados a CRM, campos personalizados, automatización de entrega",
+      "storyPoints": 1,
+      "priority": "Medium"
+    },
+    {
+      "story": "FM-2-3",
+      "key": "FM-2-3-6",
+      "summary": "Emails de entrega automatizados",
+      "description": "Email de bienvenida, email con descarga, seguimiento (opcional)",
+      "storyPoints": 1,
+      "priority": "Low"
+    },
+    {
+      "story": "FM-2-4",
+      "key": "FM-2-4-1",
+      "summary": "Pop-ups estratégicos",
+      "description": "Pop-up de salida, pop-up de tiempo en página, pop-up de scroll, diseño y copy optimizados",
+      "storyPoints": 2,
+      "priority": "Medium"
+    },
+    {
+      "story": "FM-2-4",
+      "key": "FM-2-4-2",
+      "summary": "Banners de anuncio interno",
+      "description": "Banners contextuales, rotación de mensajes, CTAs claros",
+      "storyPoints": 1,
+      "priority": "Medium"
+    },
+    {
+      "story": "FM-2-4",
+      "key": "FM-2-4-3",
+      "summary": "Sticky bar con CTA",
+      "description": "Barra fija superior/inferior, mensaje contextual, CTA destacado",
+      "storyPoints": 1,
+      "priority": "Medium"
+    },
+    {
+      "story": "FM-2-4",
+      "key": "FM-2-4-4",
+      "summary": "Botón flotante WhatsApp personalizado",
+      "description": "Diseño branded, animación sutil, mensaje pre-escrito, tracking de clics",
+      "storyPoints": 1,
+      "priority": "Medium"
+    },
+    {
+      "story": "FM-2-4",
+      "key": "FM-2-4-5",
+      "summary": "A/B testing configurado",
+      "description": "Setup de herramienta de testing, variantes definidas, métricas de conversión, documentación de resultados",
+      "storyPoints": 1,
+      "priority": "Low"
+    },
+    {
+      "story": "FM-3-1",
+      "key": "FM-3-1-1",
+      "summary": "Selección y setup de proveedor (360 diálogo/Twilio)",
+      "description": "Evaluación de proveedores, selección final, creación de cuenta",
+      "storyPoints": 1,
+      "priority": "Highest"
+    },
+    {
+      "story": "FM-3-1",
+      "key": "FM-3-1-2",
+      "summary": "Número telefónico dedicado registrado",
+      "description": "Obtención de número, verificación de número, configuración inicial",
+      "storyPoints": 1,
+      "priority": "Highest"
+    },
+    {
+      "story": "FM-3-1",
+      "key": "FM-3-1-3",
+      "summary": "Verificación de negocio completada",
+      "description": "Documentos legales de empresa, proceso de verificación WhatsApp, aprobación de negocio",
+      "storyPoints": 2,
+      "priority": "Highest"
+    },
+    {
+      "story": "FM-3-1",
+      "key": "FM-3-1-4",
+      "summary": "Templates de mensajes aprobados por WhatsApp",
+      "description": "Creación de 6 templates esenciales, revisión de políticas WhatsApp, envío para aprobación, ajustes según feedback",
+      "storyPoints": 2,
+      "priority": "High"
+    },
+    {
+      "story": "FM-3-2",
+      "key": "FM-3-2-1",
+      "summary": "Flujo principal del bot",
+      "description": "Saludo inicial personalizado, menú de opciones claro, identificación de intención, ruteo inteligente",
+      "storyPoints": 2,
+      "priority": "Highest"
+    },
+    {
+      "story": "FM-3-2",
+      "key": "FM-3-2-2",
+      "summary": "Lógica de filtrado automatizada - Rama A (OTC/Genérico)",
+      "description": "Detección de intención OTC/Genérico, respuesta: Este medicamento lo encuentras en farmacias tradicionales, envío de link a Farmalisto/Similares, ofrece ayuda adicional, cierre de conversación (NO pasa a humano)",
+      "storyPoints": 3,
+      "priority": "Highest"
+    },
+    {
+      "story": "FM-3-2",
+      "key": "FM-3-2-3",
+      "summary": "Lógica de filtrado automatizada - Rama B (SKUs especializados)",
+      "description": "Detección de uno de los 20 SKUs especializados, respuesta: Este medicamento lo manejamos, captura de datos esenciales (nombre, medicamento, ciudad, receta, email), creación de registro en CRM automático, asignación a centro más cercano, notificación a agente humano, mensaje: Un especialista te atenderá en 15 minutos",
+      "storyPoints": 5,
+      "priority": "Highest"
+    },
+    {
+      "story": "FM-3-2",
+      "key": "FM-3-2-4",
+      "summary": "Inteligencia adicional",
+      "description": "Reconocimiento de nombres comerciales de 20 SKUs principales, detección de urgencia (palabras clave), horarios de atención (fuera de horario = aviso automático), follow-up automático si no hay respuesta en 24h",
+      "storyPoints": 2,
+      "priority": "High"
+    },
+    {
+      "story": "FM-3-2",
+      "key": "FM-3-2-5",
+      "summary": "Testing del bot",
+      "description": "30+ escenarios de prueba realistas, manejo de errores, fallback a humano si bot no entiende, testing de integraciones",
+      "storyPoints": 2,
+      "priority": "High"
+    },
+    {
+      "story": "FM-3-2",
+      "key": "FM-3-2-6",
+      "summary": "Desarrollo técnico",
+      "description": "Node.js + WhatsApp API, setup n8n o custom, integración con CRM, logging y monitoreo",
+      "storyPoints": 3,
+      "priority": "High"
+    },
+    {
+      "story": "FM-3-3",
+      "key": "FM-3-3-1",
+      "summary": "Setup de CRM (HubSpot CRM gratuito o Pipedrive)",
+      "description": "Creación de cuenta, configuración inicial, permisos y usuarios",
+      "storyPoints": 1,
+      "priority": "High"
+    },
+    {
+      "story": "FM-3-3",
+      "key": "FM-3-3-2",
+      "summary": "Pipeline de ventas personalizado",
+      "description": "Stage 1: Lead Bot (automático), Stage 2: Calificado, Stage 3: Link Shopify compartido, Stage 4: Esperando pago, Stage 5: Won/Lost + motivo",
+      "storyPoints": 1,
+      "priority": "High"
+    },
+    {
+      "story": "FM-3-3",
+      "key": "FM-3-3-3",
+      "summary": "Custom fields",
+      "description": "Medicamento solicitado, Ciudad, Tiene receta (Sí/No), Urgencia (Alta/Media/Baja), Centro asignado, Precio cotizado, Link Shopify enviado",
+      "storyPoints": 1,
+      "priority": "High"
+    },
+    {
+      "story": "FM-3-3",
+      "key": "FM-3-3-4",
+      "summary": "Automatizaciones configuradas",
+      "description": "Lead del bot → Crea deal automático, asignación geográfica inteligente (CDMX → Agente CDMX, Puebla → Agente Puebla, Otros → Round-robin), notificaciones multicanal (email, Slack, WhatsApp), escalación si no hay respuesta en 15 min, follow-ups programados (1 día, 3 días, 7 días), recordatorios de tareas",
+      "storyPoints": 3,
+      "priority": "High"
+    },
+    {
+      "story": "FM-3-3",
+      "key": "FM-3-3-5",
+      "summary": "Integración bidireccional: WhatsApp ↔ CRM",
+      "description": "Sincronización de conversaciones, actualización de registros, historial completo",
+      "storyPoints": 2,
+      "priority": "High"
+    },
+    {
+      "story": "FM-3-4",
+      "key": "FM-3-4-1",
+      "summary": "Conexión de CTAs a WhatsApp",
+      "description": "Todos los botones Consultar vía WhatsApp, botón flotante, CTAs en artículos, CTAs en páginas de productos",
+      "storyPoints": 2,
+      "priority": "Medium"
+    },
+    {
+      "story": "FM-3-4",
+      "key": "FM-3-4-2",
+      "summary": "Parámetros UTM para trackear origen",
+      "description": "UTM source (página específica), UTM medium (WhatsApp), UTM campaign (tipo de contenido), UTM content (botón específico)",
+      "storyPoints": 1,
+      "priority": "Medium"
+    },
+    {
+      "story": "FM-3-4",
+      "key": "FM-3-4-3",
+      "summary": "Pre-fill de información cuando sea posible",
+      "description": "Mensaje pre-escrito contextual, ejemplo: Hola, [Medicamento]. Quisiera consultar disponibilidad., adaptación según página de origen",
+      "storyPoints": 1,
+      "priority": "Medium"
+    },
+    {
+      "story": "FM-3-4",
+      "key": "FM-3-4-4",
+      "summary": "Tracking de clics en Analytics",
+      "description": "Eventos en GA4, eventos en GTM, métricas de conversión, reportes",
+      "storyPoints": 1,
+      "priority": "Medium"
+    },
+    {
+      "story": "FM-3-5",
+      "key": "FM-3-5-1",
+      "summary": "Documentación",
+      "description": "Manual de operación (20+ páginas), scripts de conversación para agentes, guía de troubleshooting, FAQs operativas",
+      "storyPoints": 2,
+      "priority": "Medium"
+    },
+    {
+      "story": "FM-3-5",
+      "key": "FM-3-5-2",
+      "summary": "Sesión 1 - Overview del sistema (2 horas)",
+      "description": "Arquitectura completa, flujos principales, roles y responsabilidades",
+      "storyPoints": 1,
+      "priority": "Medium"
+    },
+    {
+      "story": "FM-3-5",
+      "key": "FM-3-5-3",
+      "summary": "Sesión 2 - Operación del CRM (2 horas)",
+      "description": "Navegación del CRM, gestión de leads, pipeline y etapas, automatizaciones",
+      "storyPoints": 1,
+      "priority": "Medium"
+    },
+    {
+      "story": "FM-3-5",
+      "key": "FM-3-5-4",
+      "summary": "Sesión 3 - WhatsApp y bot (1.5 horas)",
+      "description": "Funcionamiento del bot, cuándo intervenir, escalación a humano, mejores prácticas",
+      "storyPoints": 1,
+      "priority": "Medium"
+    },
+    {
+      "story": "FM-3-5",
+      "key": "FM-3-5-5",
+      "summary": "Sesión 4 - Role-playing y casos (1.5 horas)",
+      "description": "Simulación de conversaciones, casos reales, resolución de problemas, Q&A",
+      "storyPoints": 1,
+      "priority": "Medium"
+    },
+    {
+      "story": "FM-4-1",
+      "key": "FM-4-1-1",
+      "summary": "Estructura de cuenta Google Ads",
+      "description": "Organización de campañas, convenciones de nombres, configuración de cuenta",
+      "storyPoints": 1,
+      "priority": "High"
+    },
+    {
+      "story": "FM-4-1",
+      "key": "FM-4-1-2",
+      "summary": "Conversiones configuradas (5 tipos)",
+      "description": "Form submit, WhatsApp click, Lead magnet download, Shopify redirect, Custom conversions",
+      "storyPoints": 2,
+      "priority": "High"
+    },
+    {
+      "story": "FM-4-1",
+      "key": "FM-4-1-3",
+      "summary": "Audiencias personalizadas",
+      "description": "Listas de remarketing (múltiples segmentos), audiencias similares, exclusiones (negativas estratégicas)",
+      "storyPoints": 1,
+      "priority": "High"
+    },
+    {
+      "story": "FM-4-1",
+      "key": "FM-4-1-4",
+      "summary": "Campaña 1 - Search Brand Protection",
+      "description": "Targeting: Keywords de marca, 2 ad groups, 8 keywords, 4 anuncios, presupuesto sugerido: $80-120/día, extensiones de anuncios, negative keywords",
+      "storyPoints": 2,
+      "priority": "High"
+    },
+    {
+      "story": "FM-4-1",
+      "key": "FM-4-1-5",
+      "summary": "Campaña 2 - Search Medicamentos Especializados",
+      "description": "Targeting: 5-10 SKUs principales + variaciones, 3 ad groups por categoría, 30 keywords enfocadas, 8 anuncios variados, presupuesto sugerido: $300-500/día, extensiones de anuncios, negative keywords",
+      "storyPoints": 3,
+      "priority": "High"
+    },
+    {
+      "story": "FM-4-1",
+      "key": "FM-4-1-6",
+      "summary": "Campaña 3 - Search Informacional + Display Remarketing",
+      "description": "Search: Términos educativos relacionados, Display: Audiencias de visitantes del sitio, 3 ad groups Search + 2 ad sets Display, 15 keywords + 10 banners (5 tamaños), presupuesto sugerido: $150-250/día combinado",
+      "storyPoints": 2,
+      "priority": "High"
+    },
+    {
+      "story": "FM-4-1",
+      "key": "FM-4-1-7",
+      "summary": "Extensiones de anuncios configuradas",
+      "description": "Sitelinks (mínimo 8), Callouts (mínimo 6), Call extensions, Location extensions (CDMX, Puebla)",
+      "storyPoints": 1,
+      "priority": "Medium"
+    },
+    {
+      "story": "FM-4-1",
+      "key": "FM-4-1-8",
+      "summary": "Negative keywords - Lista inicial de 100+ términos",
+      "description": "Genéricos de bajo valor, términos de OTC, búsquedas irrelevantes, competencia",
+      "storyPoints": 1,
+      "priority": "Medium"
+    },
+    {
+      "story": "FM-4-1",
+      "key": "FM-4-1-9",
+      "summary": "Configuración avanzada",
+      "description": "Bid strategies recomendadas por campaña, ad scheduling (horarios óptimos), geo-targeting preciso (CDMX, Puebla, zonas de interés), device bid adjustments, audience targeting por campaña",
+      "storyPoints": 2,
+      "priority": "High"
+    },
+    {
+      "story": "FM-4-1",
+      "key": "FM-4-1-10",
+      "summary": "Scripts de automatización básicos",
+      "description": "Pausa de keywords con mal performance, alertas de presupuesto, reportes automáticos por email",
+      "storyPoints": 1,
+      "priority": "Medium"
+    },
+    {
+      "story": "FM-4-1",
+      "key": "FM-4-1-11",
+      "summary": "Google Analytics 4",
+      "description": "Instalación completa, eventos custom configurados (10+ eventos), embudos de conversión mapeados, integración con CRM, reportes personalizados",
+      "storyPoints": 3,
+      "priority": "High"
+    },
+    {
+      "story": "FM-4-1",
+      "key": "FM-4-1-12",
+      "summary": "Google Tag Manager",
+      "description": "Instalado y configurado, tags de eventos importantes, triggers optimizados, variables personalizadas, testing y debugging completado",
+      "storyPoints": 2,
+      "priority": "High"
+    },
+    {
+      "story": "FM-4-1",
+      "key": "FM-4-1-13",
+      "summary": "Documento de mejores prácticas (20 páginas)",
+      "description": "Cómo interpretar métricas, cuándo optimizar, estrategias de puja, testing de anuncios, calendario de optimización sugerido",
+      "storyPoints": 2,
+      "priority": "Medium"
+    },
+    {
+      "story": "FM-4-2",
+      "key": "FM-4-2-1",
+      "summary": "Sección 1 - Resumen Ejecutivo",
+      "description": "Inversión total del mes, leads totales generados, CPL (Costo Por Lead), leads calificados por bot, tasa de conversión bot, clicks a farmaciasmacross.com.mx",
+      "storyPoints": 1,
+      "priority": "Medium"
+    },
+    {
+      "story": "FM-4-2",
+      "key": "FM-4-2-2",
+      "summary": "Sección 2 - Tráfico del Sitio",
+      "description": "Visitas totales, usuarios nuevos vs recurrentes, tráfico por fuente (Orgánico, Google Ads, Directo, Referral), páginas más visitadas, tiempo promedio en sitio, tasa de rebote por fuente, dispositivos (desktop, móvil, tablet)",
+      "storyPoints": 1,
+      "priority": "Medium"
+    },
+    {
+      "story": "FM-4-2",
+      "key": "FM-4-2-3",
+      "summary": "Sección 3 - Performance Google Ads",
+      "description": "Inversión por campaña, impresiones, clicks, CTR, CPC promedio, conversiones por tipo, costo por conversión, Quality Score promedio, posición promedio, Search impression share, mejores keywords (por conversiones), peores keywords (por costo sin conversión)",
+      "storyPoints": 2,
+      "priority": "Medium"
+    },
+    {
+      "story": "FM-4-2",
+      "key": "FM-4-2-4",
+      "summary": "Sección 4 - Leads y WhatsApp",
+      "description": "Leads capturados por fuente, conversaciones WhatsApp iniciadas, leads calificados por el bot (por medicamento), leads descartados (por razón), tiempo promedio de respuesta del equipo, conversión bot → humano (%), leads por centro (CDMX vs Puebla)",
+      "storyPoints": 2,
+      "priority": "Medium"
+    },
+    {
+      "story": "FM-4-2",
+      "key": "FM-4-2-5",
+      "summary": "Sección 5 - SEO Orgánico",
+      "description": "Posiciones en Google Search Console, clicks orgánicos, impresiones orgánicas, CTR orgánico, top queries, top landing pages",
+      "storyPoints": 1,
+      "priority": "Medium"
+    },
+    {
+      "story": "FM-4-2",
+      "key": "FM-4-2-6",
+      "summary": "Sección 6 - Conversión y Revenue (si integran)",
+      "description": "Clicks a Shopify, conversión final (si proporcionan datos), revenue (si proporcionan datos), ROAS estimado",
+      "storyPoints": 1,
+      "priority": "Low"
+    },
+    {
+      "story": "FM-4-2",
+      "key": "FM-4-2-7",
+      "summary": "Filtros interactivos",
+      "description": "Por fecha (hoy, ayer, últimos 7/30/90 días, mes actual/anterior), por campaña, por centro de distribución, por medicamento/SKU, por fuente de tráfico",
+      "storyPoints": 1,
+      "priority": "Medium"
+    },
+    {
+      "story": "FM-4-2",
+      "key": "FM-4-2-8",
+      "summary": "Configuración técnica",
+      "description": "Actualizaciones automáticas cada hora, conexiones de datos (GA4, Google Ads, CRM), formato y diseño profesional",
+      "storyPoints": 1,
+      "priority": "Medium"
+    },
+    {
+      "story": "FM-4-2",
+      "key": "FM-4-2-9",
+      "summary": "PDF guía de métricas",
+      "description": "Explicación de cada KPI, cómo interpretar los datos, acciones recomendadas",
+      "storyPoints": 1,
+      "priority": "Low"
+    },
+    {
+      "story": "FM-4-3",
+      "key": "FM-4-3-1",
+      "summary": "Estructura de cuenta y campañas (borrador)",
+      "description": "Organización preliminar, convenciones de nombres, estructura de carpetas",
+      "storyPoints": 1,
+      "priority": "High"
+    },
+    {
+      "story": "FM-4-3",
+      "key": "FM-4-3-2",
+      "summary": "Keyword research",
+      "description": "Lista inicial de keywords, agrupación por intención, priorización",
+      "storyPoints": 2,
+      "priority": "High"
+    },
+    {
+      "story": "FM-4-3",
+      "key": "FM-4-3-3",
+      "summary": "Listas de negativas iniciales",
+      "description": "Términos a excluir, genéricos de bajo valor, competencia",
+      "storyPoints": 1,
+      "priority": "High"
+    },
+    {
+      "story": "FM-4-3",
+      "key": "FM-4-3-4",
+      "summary": "Configuración de conversiones clave en GA4/GTM para Ads",
+      "description": "WhatsApp click, Form submit, Lead magnet download, Clicks a tienda/productos, Testing de eventos",
+      "storyPoints": 2,
+      "priority": "High"
+    },
+    {
+      "story": "FM-4-4",
+      "key": "FM-4-4-1",
+      "summary": "Afinación de campañas con datos reales",
+      "description": "Análisis de performance inicial, optimización de pujas, ajuste de keywords, pausa de keywords no rentables, expansión de keywords ganadoras",
+      "storyPoints": 3,
+      "priority": "High"
+    },
+    {
+      "story": "FM-4-4",
+      "key": "FM-4-4-2",
+      "summary": "Configuración Shopping con SKUs aprobados",
+      "description": "Setup de Merchant Center, feed de productos, configuración de campaña Shopping, solo productos aprobados, testing y validación",
+      "storyPoints": 3,
+      "priority": "High"
+    },
+    {
+      "story": "FM-4-4",
+      "key": "FM-4-4-3",
+      "summary": "Dashboard Looker Studio final",
+      "description": "Integración completa de todas las fuentes, métricas consolidadas, visualizaciones optimizadas, filtros avanzados",
+      "storyPoints": 2,
+      "priority": "High"
+    },
+    {
+      "story": "FM-4-4",
+      "key": "FM-4-4-4",
+      "summary": "Guía para lectura de métricas",
+      "description": "Documentación completa, interpretación de KPIs, acciones recomendadas, sesión de walkthrough con cliente",
+      "storyPoints": 1,
+      "priority": "Medium"
+    }
+  ],
+  "dependencies": [
+    {
+      "from": "FM-1-1",
+      "to": "FM-1-2",
+      "type": "blocks"
+    },
+    {
+      "from": "FM-1-2",
+      "to": "FM-1-3",
+      "type": "blocks"
+    },
+    {
+      "from": "FM-1-2",
+      "to": "FM-1-4",
+      "type": "blocks"
+    },
+    {
+      "from": "FM-1-1",
+      "to": "FM-2-1",
+      "type": "blocks"
+    },
+    {
+      "from": "FM-1-2",
+      "to": "FM-2-2",
+      "type": "blocks"
+    },
+    {
+      "from": "FM-2-1",
+      "to": "FM-2-2",
+      "type": "blocks"
+    },
+    {
+      "from": "FM-1-2",
+      "to": "FM-2-4",
+      "type": "blocks"
+    },
+    {
+      "from": "FM-2-2",
+      "to": "FM-2-4",
+      "type": "blocks"
+    },
+    {
+      "from": "FM-3-1",
+      "to": "FM-3-2",
+      "type": "blocks"
+    },
+    {
+      "from": "FM-3-3",
+      "to": "FM-3-2",
+      "type": "relates"
+    },
+    {
+      "from": "FM-1-2",
+      "to": "FM-3-4",
+      "type": "blocks"
+    },
+    {
+      "from": "FM-3-1",
+      "to": "FM-3-4",
+      "type": "blocks"
+    },
+    {
+      "from": "FM-3-2",
+      "to": "FM-3-5",
+      "type": "blocks"
+    },
+    {
+      "from": "FM-3-3",
+      "to": "FM-3-5",
+      "type": "blocks"
+    },
+    {
+      "from": "FM-1-2",
+      "to": "FM-4-1",
+      "type": "blocks"
+    },
+    {
+      "from": "FM-2-2",
+      "to": "FM-4-1",
+      "type": "blocks"
+    },
+    {
+      "from": "FM-4-1",
+      "to": "FM-4-2",
+      "type": "blocks"
+    },
+    {
+      "from": "FM-3-3",
+      "to": "FM-4-2",
+      "type": "blocks"
+    },
+    {
+      "from": "FM-1-2",
+      "to": "FM-4-3",
+      "type": "blocks"
+    },
+    {
+      "from": "FM-4-1",
+      "to": "FM-4-4",
+      "type": "blocks"
+    },
+    {
+      "from": "FM-4-2",
+      "to": "FM-4-4",
+      "type": "blocks"
+    }
+  ],
+  "milestones": [
+    {
+      "name": "Hito 1 - Arranque",
+      "week": 0,
+      "description": "Setup operativo: Jira, Slack, accesos, backlog"
+    },
+    {
+      "name": "Hito 2 - Sitio Anunciable",
+      "week": 5,
+      "description": "medicamentosespeciales.mx funcional, Catálogo OTC completo, SEO técnico implementado"
+    },
+    {
+      "name": "Hito 3 - Contenido + Ads Estructura",
+      "week": 10,
+      "description": "15 artículos publicados, 2 lead magnets + landings, GA4 + GTM configurado, Google Ads estructura lista"
+    },
+    {
+      "name": "Hito 4 - Automatización",
+      "week": 15,
+      "description": "Bot WhatsApp funcional, CRM configurado, Integraciones completas, Manual de usuario entregado"
+    },
+    {
+      "name": "Hito 5 - Optimización Final",
+      "week": 20,
+      "description": "Campañas optimizadas con datos reales, Shopping configurado, Dashboard Looker Studio completo"
+    }
+  ]
+}
+

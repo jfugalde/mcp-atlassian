@@ -67,8 +67,13 @@ class JiraConfig:
         return self.ssl_verify
 
     @classmethod
-    def from_env(cls) -> "JiraConfig":
+    def from_env(cls, prefix: str | None = None) -> "JiraConfig":
         """Create configuration from environment variables.
+
+        Args:
+            prefix: Optional prefix for environment variables (e.g., "suppathletik" for
+                JIRA_URL_suppathletik, JIRA_USERNAME_suppathletik, etc.).
+                If None, uses default JIRA_* variables.
 
         Returns:
             JiraConfig with values from environment variables
@@ -76,31 +81,49 @@ class JiraConfig:
         Raises:
             ValueError: If required environment variables are missing or invalid
         """
-        url = os.getenv("JIRA_URL")
-        if not url and not os.getenv("ATLASSIAN_OAUTH_ENABLE"):
-            error_msg = "Missing required JIRA_URL environment variable"
+
+        # Build environment variable names with optional prefix
+        def env_name(base: str) -> str:
+            return f"{base}_{prefix}" if prefix else base
+
+        url = os.getenv(env_name("JIRA_URL"))
+        oauth_enable = os.getenv(env_name("ATLASSIAN_OAUTH_ENABLE"))
+        if not url and not oauth_enable:
+            var_name = env_name("JIRA_URL")
+            error_msg = f"Missing required {var_name} environment variable"
             raise ValueError(error_msg)
 
-        # Determine authentication type based on available environment variables
-        username = os.getenv("JIRA_USERNAME")
-        api_token = os.getenv("JIRA_API_TOKEN")
-        personal_token = os.getenv("JIRA_PERSONAL_TOKEN")
+        # url is required for non-OAuth configs
+        if not url:
+            url = ""  # Will be handled by OAuth flow
 
-        # Check for OAuth configuration
-        oauth_config = get_oauth_config_from_env()
-        auth_type = None
+        # Determine authentication type based on available environment variables
+        username = os.getenv(env_name("JIRA_USERNAME"))
+        api_token = os.getenv(env_name("JIRA_API_TOKEN"))
+        personal_token = os.getenv(env_name("JIRA_PERSONAL_TOKEN"))
+
+        # Check for OAuth configuration (OAuth doesn't support prefixes yet)
+        # For now, OAuth uses default env vars regardless of prefix
+        oauth_config = get_oauth_config_from_env() if not prefix else None
+        auth_type: Literal["basic", "pat", "oauth"] | None = None
 
         # Use the shared utility function directly
-        is_cloud = is_atlassian_cloud_url(url)
+        is_cloud = is_atlassian_cloud_url(url) if url else False
 
         if oauth_config:
-            # OAuth is available - could be full config or minimal config for user-provided tokens
+            # OAuth is available - could be full config or minimal config
             auth_type = "oauth"
         elif is_cloud:
             if username and api_token:
                 auth_type = "basic"
             else:
-                error_msg = "Cloud authentication requires JIRA_USERNAME and JIRA_API_TOKEN, or OAuth configuration (set ATLASSIAN_OAUTH_ENABLE=true for user-provided tokens)"
+                username_var = env_name("JIRA_USERNAME")
+                token_var = env_name("JIRA_API_TOKEN")
+                error_msg = (
+                    f"Cloud authentication requires {username_var} and "
+                    f"{token_var}, or OAuth configuration "
+                    "(set ATLASSIAN_OAUTH_ENABLE=true for user-provided tokens)"
+                )
                 raise ValueError(error_msg)
         else:  # Server/Data Center
             if personal_token:
@@ -109,26 +132,50 @@ class JiraConfig:
                 # Allow basic auth for Server/DC too
                 auth_type = "basic"
             else:
-                error_msg = "Server/Data Center authentication requires JIRA_PERSONAL_TOKEN or JIRA_USERNAME and JIRA_API_TOKEN"
+                pat_var = env_name("JIRA_PERSONAL_TOKEN")
+                username_var = env_name("JIRA_USERNAME")
+                token_var = env_name("JIRA_API_TOKEN")
+                error_msg = (
+                    f"Server/Data Center authentication requires "
+                    f"{pat_var} or {username_var} and {token_var}"
+                )
                 raise ValueError(error_msg)
 
         # SSL verification (for Server/DC)
-        ssl_verify = is_env_ssl_verify("JIRA_SSL_VERIFY")
+        ssl_verify = is_env_ssl_verify(env_name("JIRA_SSL_VERIFY"))
 
         # Get the projects filter if provided
-        projects_filter = os.getenv("JIRA_PROJECTS_FILTER")
+        projects_filter = os.getenv(env_name("JIRA_PROJECTS_FILTER"))
 
-        # Proxy settings
-        http_proxy = os.getenv("JIRA_HTTP_PROXY", os.getenv("HTTP_PROXY"))
-        https_proxy = os.getenv("JIRA_HTTPS_PROXY", os.getenv("HTTPS_PROXY"))
-        no_proxy = os.getenv("JIRA_NO_PROXY", os.getenv("NO_PROXY"))
-        socks_proxy = os.getenv("JIRA_SOCKS_PROXY", os.getenv("SOCKS_PROXY"))
+        # Proxy settings (with fallback to unprefixed)
+        http_proxy = os.getenv(
+            env_name("JIRA_HTTP_PROXY"),
+            os.getenv("JIRA_HTTP_PROXY", os.getenv("HTTP_PROXY")),
+        )
+        https_proxy = os.getenv(
+            env_name("JIRA_HTTPS_PROXY"),
+            os.getenv("JIRA_HTTPS_PROXY", os.getenv("HTTPS_PROXY")),
+        )
+        no_proxy = os.getenv(
+            env_name("JIRA_NO_PROXY"),
+            os.getenv("JIRA_NO_PROXY", os.getenv("NO_PROXY")),
+        )
+        socks_proxy = os.getenv(
+            env_name("JIRA_SOCKS_PROXY"),
+            os.getenv("JIRA_SOCKS_PROXY", os.getenv("SOCKS_PROXY")),
+        )
 
         # Custom headers - service-specific only
-        custom_headers = get_custom_headers("JIRA_CUSTOM_HEADERS")
+        custom_headers = get_custom_headers(env_name("JIRA_CUSTOM_HEADERS"))
+
+        # url is required for non-OAuth configs
+        if not url and auth_type != "oauth":
+            var_name = env_name("JIRA_URL")
+            error_msg = f"Missing required {var_name} environment variable"
+            raise ValueError(error_msg)
 
         return cls(
-            url=url,
+            url=url or "",  # Empty string for OAuth-only configs
             auth_type=auth_type,
             username=username,
             api_token=api_token,
@@ -144,7 +191,7 @@ class JiraConfig:
         )
 
     def is_auth_configured(self) -> bool:
-        """Check if the current authentication configuration is complete and valid for making API calls.
+        """Check if authentication configuration is complete and valid.
 
         Returns:
             bool: True if authentication is fully configured, False otherwise.
@@ -164,14 +211,16 @@ class JiraConfig:
                     ):
                         return True
                     # Minimal OAuth configuration (user-provided tokens mode)
-                    # This is valid if we have oauth_config but missing client credentials
-                    # In this case, we expect authentication to come from user-provided headers
+                    # This is valid if we have oauth_config but missing client
+                    # credentials. In this case, we expect authentication to come
+                    # from user-provided headers
                     elif (
                         not self.oauth_config.client_id
                         and not self.oauth_config.client_secret
                     ):
                         logger.debug(
-                            "Minimal OAuth config detected - expecting user-provided tokens via headers"
+                            "Minimal OAuth config detected - expecting "
+                            "user-provided tokens via headers"
                         )
                         return True
                 # Bring Your Own Access Token mode
@@ -186,7 +235,8 @@ class JiraConfig:
             return bool(self.personal_token)
         elif self.auth_type == "basic":
             return bool(self.username and self.api_token)
+        # Defensive fallback (unreachable in practice due to Literal type)
         logger.warning(
-            f"Unknown or unsupported auth_type: {self.auth_type} in JiraConfig"
+            f"Unknown or unsupported auth_type: " f"{self.auth_type} in JiraConfig"
         )
-        return False
+        return False  # noqa: RET503

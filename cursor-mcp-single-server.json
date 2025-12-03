@@ -1,0 +1,15 @@
+{
+    "mcpServers": {
+        "mcp-atlassian": {
+            "command": "uv",
+            "args": [
+                "run",
+                "--directory",
+                "/Users/jose.ugaldevivo/Dev/RYU/Farmacia_Macross",
+                "mcp-atlassian",
+                "--env-file",
+                "/Users/jose.ugaldevivo/Dev/RYU/Farmacia_Macross/.env"
+            ]
+        }
+    }
+}
