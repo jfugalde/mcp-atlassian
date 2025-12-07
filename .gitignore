@@ -1,30 +1,7 @@
-# Byte-compiled / optimized / DLL files
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
-
-# C extensions
-*.so
-
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
 
 # Environments
 .env
@@ -41,6 +18,15 @@ venv.bak/
 .uvx/
 .venv.uv/
 
+# Node / frontend
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+dist/
+dist-ssr/
+
 # IDEs and editors
 .idea/
 .vscode/
@@ -55,23 +41,20 @@ Thumbs.db
 # Debug and local development
 debug/
 local/
+playground/
 
-# Credentials
-.pypirc
-
-# Pytest
+# Testing
 .pytest_cache/
 .coverage/
 .coverage
 
-# Pre-commit
+# Credentials
+.pypirc
+
+# Tooling caches
+.cursor*
+.claude/
 .pre-commit-config.yaml.cache
 
-# debug
-playground/
-
-# cursor
-.cursor*
-
-# Claude
-.claude/
+# Client-specific artifacts
+docs/shopify-analysis/perf_runs/*.json

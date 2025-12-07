@@ -1,0 +1,504 @@
+{
+  "findings": [
+    {
+      "title": "Carga Simultánea de Múltiples Scripts de Tracking",
+      "description": "En el <head> se cargan Google Tag Manager, Facebook Pixel y Trekkie (script de Shopify para analítica) simultáneamente.",
+      "impact": "Incrementa tiempos de carga, uso de cookies no consentidas, afecta el Time to Interactive (TTI) y obliga a los usuarios a aceptar cookies, contradiciendo la política que afirma no usarlas.",
+      "priority": "High",
+      "recommendation": "Revisar la necesidad de cada script; consolidar analíticas; implementar carga asíncrona y consentimiento de cookies antes de cargar scripts de tracking.",
+      "effort": "6-12 hours",
+      "evidence": [
+        "Google Tag Manager",
+        "Facebook Pixel",
+        "Trekkie (Shopify)"
+      ]
+    },
+    {
+      "title": "Puntuaciones de Rendimiento Bajas en PageSpeed",
+      "description": "Múltiples páginas muestran puntuaciones bajas de rendimiento. Promedio móvil: 62.5/100, desktop: 85.7/100.",
+      "impact": "Mala experiencia de usuario, mayores tasas de rebote, impacto negativo en rankings SEO.",
+      "priority": "Medium",
+      "recommendation": "Optimizar imágenes, implementar lazy loading, minificar CSS/JS, habilitar caché, reducir recursos que bloquean el renderizado.",
+      "effort": "8-16 hours",
+      "evidence": [
+        "Puntuación promedio móvil: 62.5/100",
+        "https://farmaciasmacross.com.mx (42 en mobile)"
+      ]
+    },
+    {
+      "title": "Core Web Vitals Deficientes",
+      "description": "Varias páginas no cumplen con los umbrales de Core Web Vitals (LCP > 4s, CLS > 0.25, TTI > 10s).",
+      "impact": "Impacto negativo en rankings de búsqueda y experiencia de usuario.",
+      "priority": "High",
+      "recommendation": "Optimizar LCP mejorando tiempo de respuesta del servidor, optimizando imágenes, precargando recursos clave. Corregir CLS estableciendo dimensiones en imágenes/videos, evitando desplazamientos de diseño.",
+      "effort": "12-20 hours",
+      "evidence": [
+        "https://farmaciasmacross.com.mx: LCP=15.30s",
+        "https://farmaciasmacross.com.mx: TTI=19.90s",
+        "https://farmaciasmacross.com.mx/collections/medicamento-oncologicos-al-mejor-precio-alta-especialidad: LCP=11.22s",
+        "https://farmaciasmacross.com.mx/collections/medicamento-oncologicos-al-mejor-precio-alta-especialidad: TTI=11.24s",
+        "https://farmaciasmacross.com.mx/collections/cardiologia: LCP=6.24s"
+      ]
+    },
+    {
+      "title": "Bloqueo de Renderizado por JavaScript",
+      "description": "Se descubrió la carga de ficheros vendor.min.js, app.min.js y foxkit-app.min.js en la cabecera de forma síncrona.",
+      "impact": "Dichos scripts bloquean la renderización inicial, aumentando el First Contentful Paint (FCP) y el Time to Interactive (TTI).",
+      "priority": "Medium",
+      "recommendation": "Cargar scripts de forma asíncrona o diferida, usar defer/async attributes, o mover scripts no críticos al final del body.",
+      "effort": "4-8 hours",
+      "evidence": [
+        "vendor.min.js",
+        "app.min.js",
+        "foxkit-app.min.js"
+      ]
+    },
+    {
+      "title": "Fuentes Personalizadas Bloquean Renderizado",
+      "description": "Se cargan fuentes Jost y Roboto Condensed desde el CDN de Shopify y fonts.gstatic.com sin preloading adecuado.",
+      "impact": "Sin preloading adecuado, estas solicitudes bloquean el renderizado y aumentan el tiempo de descarga.",
+      "priority": "Medium",
+      "recommendation": "Limitar a 1–2 familias de fuentes y precargar solo los estilos necesarios usando <link rel='preload'> para fuentes críticas.",
+      "effort": "2-4 hours",
+      "evidence": [
+        "Fuentes: Jost, Roboto Condensed"
+      ]
+    },
+    {
+      "title": "Legal Compliance Review Needed",
+      "description": "Review required for privacy policy, terms of service, cookie policy, and health disclaimers.",
+      "impact": "Legal risk, potential non-compliance with health sector regulations (COFEPRIS in Mexico).",
+      "priority": "High",
+      "recommendation": "Ensure all required legal documents are present, accessible, and compliant with health sector regulations. Add disclaimers to product pages.",
+      "effort": "8-16 hours",
+      "evidence": [
+        "Review all legal pages and product disclaimers"
+      ]
+    },
+    {
+      "title": "Image Optimization Needed",
+      "description": "Images may not be optimized for web (WebP format, lazy loading, responsive sizes).",
+      "impact": "Slower page load times, poor mobile experience, higher bandwidth usage.",
+      "priority": "Medium",
+      "recommendation": "Convert images to WebP, implement lazy loading, use responsive images with srcset.",
+      "effort": "8-12 hours",
+      "evidence": []
+    },
+    {
+      "title": "Caching Strategy Review",
+      "description": "Browser and server caching may not be optimally configured.",
+      "impact": "Unnecessary server load, slower repeat visits, higher bandwidth costs.",
+      "priority": "Medium",
+      "recommendation": "Implement proper cache headers (Cache-Control, ETag), enable CDN caching if available.",
+      "effort": "4-8 hours",
+      "evidence": []
+    },
+    {
+      "title": "Mobile Responsiveness Testing",
+      "description": "Comprehensive mobile responsiveness testing across devices needed.",
+      "impact": "Poor mobile user experience, potential loss of mobile traffic.",
+      "priority": "High",
+      "recommendation": "Test on multiple devices and screen sizes, fix responsive breakpoints, optimize touch targets.",
+      "effort": "8-16 hours",
+      "evidence": []
+    },
+    {
+      "title": "Sitemap XML Missing or Incomplete",
+      "description": "Sitemap XML may not be properly configured or submitted to search engines.",
+      "impact": "Slower indexing by search engines, missed SEO opportunity.",
+      "priority": "Medium",
+      "recommendation": "Generate comprehensive sitemap.xml, submit to Google Search Console and Bing Webmaster Tools.",
+      "effort": "2-4 hours",
+      "evidence": []
+    },
+    {
+      "title": "Robots.txt Optimization",
+      "description": "Robots.txt may need optimization for better crawl efficiency.",
+      "impact": "Inefficient crawling, potential blocking of important pages.",
+      "priority": "Low",
+      "recommendation": "Review and optimize robots.txt, ensure sitemap reference is included.",
+      "effort": "1-2 hours",
+      "evidence": []
+    },
+    {
+      "title": "404 Error Pages Not Customized",
+      "description": "Custom 404 error pages may not be implemented.",
+      "impact": "Poor user experience when pages are not found, lost conversion opportunities.",
+      "priority": "Low",
+      "recommendation": "Create custom 404 page with navigation links and search functionality.",
+      "effort": "2-4 hours",
+      "evidence": []
+    },
+    {
+      "title": "Breadcrumb Navigation Missing",
+      "description": "Breadcrumb navigation may not be implemented on category and product pages.",
+      "impact": "Poor user navigation, missed SEO opportunity (BreadcrumbList schema).",
+      "priority": "Medium",
+      "recommendation": "Implement breadcrumb navigation with BreadcrumbList schema markup.",
+      "effort": "4-6 hours",
+      "evidence": []
+    },
+    {
+      "title": "Internal Linking Strategy",
+      "description": "Internal linking strategy may not be optimized for SEO and user navigation.",
+      "impact": "Reduced SEO value distribution, poor user navigation experience.",
+      "priority": "Medium",
+      "recommendation": "Implement strategic internal linking with descriptive anchor text, ensure 3+ internal links per page.",
+      "effort": "6-10 hours",
+      "evidence": []
+    },
+    {
+      "title": "Alt Text for Images Missing or Incomplete",
+      "description": "Some images may be missing descriptive alt text.",
+      "impact": "Poor accessibility, missed SEO opportunity, non-compliance with WCAG guidelines.",
+      "priority": "High",
+      "recommendation": "Add descriptive alt text to all images, especially product images and icons.",
+      "effort": "8-12 hours",
+      "evidence": []
+    },
+    {
+      "title": "URL Structure Optimization",
+      "description": "URL structure may not be optimized for SEO (length, keywords, hierarchy).",
+      "impact": "Reduced SEO value, poor user experience, harder to remember URLs.",
+      "priority": "Medium",
+      "recommendation": "Optimize URLs to be short, descriptive, and include relevant keywords. Use hyphens as separators.",
+      "effort": "4-8 hours",
+      "evidence": []
+    },
+    {
+      "title": "Page Load Speed Optimization",
+      "description": "Page load speeds may be suboptimal, affecting user experience and SEO.",
+      "impact": "Higher bounce rates, negative impact on search rankings, poor mobile experience.",
+      "priority": "High",
+      "recommendation": "Optimize server response time, minimize render-blocking resources, optimize critical rendering path.",
+      "effort": "12-20 hours",
+      "evidence": []
+    },
+    {
+      "title": "SSL Certificate and HTTPS Configuration",
+      "description": "HTTPS configuration and SSL certificate setup may need review.",
+      "impact": "Security concerns, negative SEO impact, browser warnings.",
+      "priority": "High",
+      "recommendation": "Ensure valid SSL certificate, proper HTTPS redirects, HSTS header implementation.",
+      "effort": "2-4 hours",
+      "evidence": []
+    },
+    {
+      "title": "Content Security Policy (CSP) Missing",
+      "description": "Content Security Policy header may not be implemented.",
+      "impact": "Increased vulnerability to XSS attacks, security best practice not followed.",
+      "priority": "High",
+      "recommendation": "Implement CSP header to restrict resource loading and prevent XSS attacks.",
+      "effort": "4-8 hours",
+      "evidence": []
+    },
+    {
+      "title": "Cookie Consent Banner Missing",
+      "description": "Cookie consent banner may not be properly implemented for GDPR/compliance.",
+      "impact": "Legal compliance risk, potential fines, poor user trust.",
+      "priority": "High",
+      "recommendation": "Implement cookie consent banner with proper disclosure and opt-in/opt-out options.",
+      "effort": "4-6 hours",
+      "evidence": []
+    },
+    {
+      "title": "Analytics and Tracking Implementation Review",
+      "description": "Analytics and tracking implementation may need review for accuracy and privacy compliance.",
+      "impact": "Inaccurate data, privacy compliance issues, missed insights.",
+      "priority": "Medium",
+      "recommendation": "Review Google Analytics implementation, ensure privacy-compliant tracking, verify data accuracy.",
+      "effort": "4-6 hours",
+      "evidence": []
+    },
+    {
+      "title": "Form Validation and Error Handling",
+      "description": "Form validation and error handling may not be optimal.",
+      "impact": "Poor user experience, potential security vulnerabilities, lost conversions.",
+      "priority": "Medium",
+      "recommendation": "Implement client-side and server-side validation, clear error messages, secure form handling.",
+      "effort": "6-10 hours",
+      "evidence": []
+    },
+    {
+      "title": "Search Functionality Optimization",
+      "description": "Site search functionality may not be optimized for user experience.",
+      "impact": "Poor user experience, lost sales opportunities, increased bounce rate.",
+      "priority": "Medium",
+      "recommendation": "Implement autocomplete, search suggestions, filters, and ensure search results are relevant.",
+      "effort": "8-12 hours",
+      "evidence": []
+    },
+    {
+      "title": "Product Schema Markup for E-commerce",
+      "description": "Product pages may be missing comprehensive Product schema markup.",
+      "impact": "Missed opportunity for rich snippets, reduced visibility in search results.",
+      "priority": "High",
+      "recommendation": "Implement Product schema with price, availability, reviews, ratings, and other relevant fields.",
+      "effort": "12-16 hours",
+      "evidence": []
+    },
+    {
+      "title": "Local Business Schema for Multiple Locations",
+      "description": "LocalBusiness schema may not be implemented for physical store locations.",
+      "impact": "Missed local SEO opportunity, reduced visibility in local search results.",
+      "priority": "Medium",
+      "recommendation": "Implement LocalBusiness schema for CDMX and Puebla locations with complete NAP (Name, Address, Phone) data.",
+      "effort": "4-6 hours",
+      "evidence": []
+    }
+  ],
+  "priority_matrix": {
+    "High": [
+      {
+        "title": "Carga Simultánea de Múltiples Scripts de Tracking",
+        "description": "En el <head> se cargan Google Tag Manager, Facebook Pixel y Trekkie (script de Shopify para analítica) simultáneamente.",
+        "impact": "Incrementa tiempos de carga, uso de cookies no consentidas, afecta el Time to Interactive (TTI) y obliga a los usuarios a aceptar cookies, contradiciendo la política que afirma no usarlas.",
+        "priority": "High",
+        "recommendation": "Revisar la necesidad de cada script; consolidar analíticas; implementar carga asíncrona y consentimiento de cookies antes de cargar scripts de tracking.",
+        "effort": "6-12 hours",
+        "evidence": [
+          "Google Tag Manager",
+          "Facebook Pixel",
+          "Trekkie (Shopify)"
+        ]
+      },
+      {
+        "title": "Core Web Vitals Deficientes",
+        "description": "Varias páginas no cumplen con los umbrales de Core Web Vitals (LCP > 4s, CLS > 0.25, TTI > 10s).",
+        "impact": "Impacto negativo en rankings de búsqueda y experiencia de usuario.",
+        "priority": "High",
+        "recommendation": "Optimizar LCP mejorando tiempo de respuesta del servidor, optimizando imágenes, precargando recursos clave. Corregir CLS estableciendo dimensiones en imágenes/videos, evitando desplazamientos de diseño.",
+        "effort": "12-20 hours",
+        "evidence": [
+          "https://farmaciasmacross.com.mx: LCP=15.30s",
+          "https://farmaciasmacross.com.mx: TTI=19.90s",
+          "https://farmaciasmacross.com.mx/collections/medicamento-oncologicos-al-mejor-precio-alta-especialidad: LCP=11.22s",
+          "https://farmaciasmacross.com.mx/collections/medicamento-oncologicos-al-mejor-precio-alta-especialidad: TTI=11.24s",
+          "https://farmaciasmacross.com.mx/collections/cardiologia: LCP=6.24s"
+        ]
+      },
+      {
+        "title": "Legal Compliance Review Needed",
+        "description": "Review required for privacy policy, terms of service, cookie policy, and health disclaimers.",
+        "impact": "Legal risk, potential non-compliance with health sector regulations (COFEPRIS in Mexico).",
+        "priority": "High",
+        "recommendation": "Ensure all required legal documents are present, accessible, and compliant with health sector regulations. Add disclaimers to product pages.",
+        "effort": "8-16 hours",
+        "evidence": [
+          "Review all legal pages and product disclaimers"
+        ]
+      },
+      {
+        "title": "Mobile Responsiveness Testing",
+        "description": "Comprehensive mobile responsiveness testing across devices needed.",
+        "impact": "Poor mobile user experience, potential loss of mobile traffic.",
+        "priority": "High",
+        "recommendation": "Test on multiple devices and screen sizes, fix responsive breakpoints, optimize touch targets.",
+        "effort": "8-16 hours",
+        "evidence": []
+      },
+      {
+        "title": "Alt Text for Images Missing or Incomplete",
+        "description": "Some images may be missing descriptive alt text.",
+        "impact": "Poor accessibility, missed SEO opportunity, non-compliance with WCAG guidelines.",
+        "priority": "High",
+        "recommendation": "Add descriptive alt text to all images, especially product images and icons.",
+        "effort": "8-12 hours",
+        "evidence": []
+      },
+      {
+        "title": "Page Load Speed Optimization",
+        "description": "Page load speeds may be suboptimal, affecting user experience and SEO.",
+        "impact": "Higher bounce rates, negative impact on search rankings, poor mobile experience.",
+        "priority": "High",
+        "recommendation": "Optimize server response time, minimize render-blocking resources, optimize critical rendering path.",
+        "effort": "12-20 hours",
+        "evidence": []
+      },
+      {
+        "title": "SSL Certificate and HTTPS Configuration",
+        "description": "HTTPS configuration and SSL certificate setup may need review.",
+        "impact": "Security concerns, negative SEO impact, browser warnings.",
+        "priority": "High",
+        "recommendation": "Ensure valid SSL certificate, proper HTTPS redirects, HSTS header implementation.",
+        "effort": "2-4 hours",
+        "evidence": []
+      },
+      {
+        "title": "Content Security Policy (CSP) Missing",
+        "description": "Content Security Policy header may not be implemented.",
+        "impact": "Increased vulnerability to XSS attacks, security best practice not followed.",
+        "priority": "High",
+        "recommendation": "Implement CSP header to restrict resource loading and prevent XSS attacks.",
+        "effort": "4-8 hours",
+        "evidence": []
+      },
+      {
+        "title": "Cookie Consent Banner Missing",
+        "description": "Cookie consent banner may not be properly implemented for GDPR/compliance.",
+        "impact": "Legal compliance risk, potential fines, poor user trust.",
+        "priority": "High",
+        "recommendation": "Implement cookie consent banner with proper disclosure and opt-in/opt-out options.",
+        "effort": "4-6 hours",
+        "evidence": []
+      },
+      {
+        "title": "Product Schema Markup for E-commerce",
+        "description": "Product pages may be missing comprehensive Product schema markup.",
+        "impact": "Missed opportunity for rich snippets, reduced visibility in search results.",
+        "priority": "High",
+        "recommendation": "Implement Product schema with price, availability, reviews, ratings, and other relevant fields.",
+        "effort": "12-16 hours",
+        "evidence": []
+      }
+    ],
+    "Medium": [
+      {
+        "title": "Puntuaciones de Rendimiento Bajas en PageSpeed",
+        "description": "Múltiples páginas muestran puntuaciones bajas de rendimiento. Promedio móvil: 62.5/100, desktop: 85.7/100.",
+        "impact": "Mala experiencia de usuario, mayores tasas de rebote, impacto negativo en rankings SEO.",
+        "priority": "Medium",
+        "recommendation": "Optimizar imágenes, implementar lazy loading, minificar CSS/JS, habilitar caché, reducir recursos que bloquean el renderizado.",
+        "effort": "8-16 hours",
+        "evidence": [
+          "Puntuación promedio móvil: 62.5/100",
+          "https://farmaciasmacross.com.mx (42 en mobile)"
+        ]
+      },
+      {
+        "title": "Bloqueo de Renderizado por JavaScript",
+        "description": "Se descubrió la carga de ficheros vendor.min.js, app.min.js y foxkit-app.min.js en la cabecera de forma síncrona.",
+        "impact": "Dichos scripts bloquean la renderización inicial, aumentando el First Contentful Paint (FCP) y el Time to Interactive (TTI).",
+        "priority": "Medium",
+        "recommendation": "Cargar scripts de forma asíncrona o diferida, usar defer/async attributes, o mover scripts no críticos al final del body.",
+        "effort": "4-8 hours",
+        "evidence": [
+          "vendor.min.js",
+          "app.min.js",
+          "foxkit-app.min.js"
+        ]
+      },
+      {
+        "title": "Fuentes Personalizadas Bloquean Renderizado",
+        "description": "Se cargan fuentes Jost y Roboto Condensed desde el CDN de Shopify y fonts.gstatic.com sin preloading adecuado.",
+        "impact": "Sin preloading adecuado, estas solicitudes bloquean el renderizado y aumentan el tiempo de descarga.",
+        "priority": "Medium",
+        "recommendation": "Limitar a 1–2 familias de fuentes y precargar solo los estilos necesarios usando <link rel='preload'> para fuentes críticas.",
+        "effort": "2-4 hours",
+        "evidence": [
+          "Fuentes: Jost, Roboto Condensed"
+        ]
+      },
+      {
+        "title": "Image Optimization Needed",
+        "description": "Images may not be optimized for web (WebP format, lazy loading, responsive sizes).",
+        "impact": "Slower page load times, poor mobile experience, higher bandwidth usage.",
+        "priority": "Medium",
+        "recommendation": "Convert images to WebP, implement lazy loading, use responsive images with srcset.",
+        "effort": "8-12 hours",
+        "evidence": []
+      },
+      {
+        "title": "Caching Strategy Review",
+        "description": "Browser and server caching may not be optimally configured.",
+        "impact": "Unnecessary server load, slower repeat visits, higher bandwidth costs.",
+        "priority": "Medium",
+        "recommendation": "Implement proper cache headers (Cache-Control, ETag), enable CDN caching if available.",
+        "effort": "4-8 hours",
+        "evidence": []
+      },
+      {
+        "title": "Sitemap XML Missing or Incomplete",
+        "description": "Sitemap XML may not be properly configured or submitted to search engines.",
+        "impact": "Slower indexing by search engines, missed SEO opportunity.",
+        "priority": "Medium",
+        "recommendation": "Generate comprehensive sitemap.xml, submit to Google Search Console and Bing Webmaster Tools.",
+        "effort": "2-4 hours",
+        "evidence": []
+      },
+      {
+        "title": "Breadcrumb Navigation Missing",
+        "description": "Breadcrumb navigation may not be implemented on category and product pages.",
+        "impact": "Poor user navigation, missed SEO opportunity (BreadcrumbList schema).",
+        "priority": "Medium",
+        "recommendation": "Implement breadcrumb navigation with BreadcrumbList schema markup.",
+        "effort": "4-6 hours",
+        "evidence": []
+      },
+      {
+        "title": "Internal Linking Strategy",
+        "description": "Internal linking strategy may not be optimized for SEO and user navigation.",
+        "impact": "Reduced SEO value distribution, poor user navigation experience.",
+        "priority": "Medium",
+        "recommendation": "Implement strategic internal linking with descriptive anchor text, ensure 3+ internal links per page.",
+        "effort": "6-10 hours",
+        "evidence": []
+      },
+      {
+        "title": "URL Structure Optimization",
+        "description": "URL structure may not be optimized for SEO (length, keywords, hierarchy).",
+        "impact": "Reduced SEO value, poor user experience, harder to remember URLs.",
+        "priority": "Medium",
+        "recommendation": "Optimize URLs to be short, descriptive, and include relevant keywords. Use hyphens as separators.",
+        "effort": "4-8 hours",
+        "evidence": []
+      },
+      {
+        "title": "Analytics and Tracking Implementation Review",
+        "description": "Analytics and tracking implementation may need review for accuracy and privacy compliance.",
+        "impact": "Inaccurate data, privacy compliance issues, missed insights.",
+        "priority": "Medium",
+        "recommendation": "Review Google Analytics implementation, ensure privacy-compliant tracking, verify data accuracy.",
+        "effort": "4-6 hours",
+        "evidence": []
+      },
+      {
+        "title": "Form Validation and Error Handling",
+        "description": "Form validation and error handling may not be optimal.",
+        "impact": "Poor user experience, potential security vulnerabilities, lost conversions.",
+        "priority": "Medium",
+        "recommendation": "Implement client-side and server-side validation, clear error messages, secure form handling.",
+        "effort": "6-10 hours",
+        "evidence": []
+      },
+      {
+        "title": "Search Functionality Optimization",
+        "description": "Site search functionality may not be optimized for user experience.",
+        "impact": "Poor user experience, lost sales opportunities, increased bounce rate.",
+        "priority": "Medium",
+        "recommendation": "Implement autocomplete, search suggestions, filters, and ensure search results are relevant.",
+        "effort": "8-12 hours",
+        "evidence": []
+      },
+      {
+        "title": "Local Business Schema for Multiple Locations",
+        "description": "LocalBusiness schema may not be implemented for physical store locations.",
+        "impact": "Missed local SEO opportunity, reduced visibility in local search results.",
+        "priority": "Medium",
+        "recommendation": "Implement LocalBusiness schema for CDMX and Puebla locations with complete NAP (Name, Address, Phone) data.",
+        "effort": "4-6 hours",
+        "evidence": []
+      }
+    ],
+    "Low": [
+      {
+        "title": "Robots.txt Optimization",
+        "description": "Robots.txt may need optimization for better crawl efficiency.",
+        "impact": "Inefficient crawling, potential blocking of important pages.",
+        "priority": "Low",
+        "recommendation": "Review and optimize robots.txt, ensure sitemap reference is included.",
+        "effort": "1-2 hours",
+        "evidence": []
+      },
+      {
+        "title": "404 Error Pages Not Customized",
+        "description": "Custom 404 error pages may not be implemented.",
+        "impact": "Poor user experience when pages are not found, lost conversion opportunities.",
+        "priority": "Low",
+        "recommendation": "Create custom 404 page with navigation links and search functionality.",
+        "effort": "2-4 hours",
+        "evidence": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,2097 @@
+{
+  "https://farmaciasmacross.com.mx": {
+    "url": "https://farmaciasmacross.com.mx",
+    "error": null,
+    "status_code": 200,
+    "meta_tags": {
+      "viewport": "width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0",
+      "theme-color": "#000000",
+      "google-site-verification": "ohUu9dXdcFKI-5B_sXOxprIx18UcTdqCNEqqavTN-qw",
+      "shopify-digital-wallet": "/56118149287/digital_wallets/dialog",
+      "description": "Medicamento de alta especialidad, patentes, genéricos y oncológicos, compra y recibe en tu domicilio sin costo. Descuentos especiales. Haz tu pedido en línea. Compra ahora de manera segura.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "twitter:card": "summary_large_image",
+      "og:site_name": "FARMACIAS MACROSS",
+      "og:url": "https://farmaciasmacross.com.mx/",
+      "og:locale": "es_ES",
+      "og:type": "website",
+      "og:title": "FARMACIAS MACROSS",
+      "og:description": "Medicamento de alta especialidad, patentes, genéricos y oncológicos, compra y recibe en tu domicilio sin costo. Descuentos especiales. Haz tu pedido en línea. Compra ahora de manera segura.",
+      "og:image": "https://farmaciasmacross.com.mx/cdn/shop/files/macrossshopy.jpg?v=1715106746",
+      "og:image:height": "2617",
+      "og:image:width": "5000",
+      "charset": "utf-8"
+    },
+    "headings": {
+      "h1": 1,
+      "h2": 3,
+      "h3": 17,
+      "h4": 0,
+      "h5": 0,
+      "h6": 0
+    },
+    "schema": [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "https://farmaciasmacross.com.mx/?srsltid=AfmBOopYY2DhcHDZALoeUdUfOjSFdQfMUhpotkAJr1TOOz-jI-afSzwu",
+        "logo": "https://cdn.shopify.com/s/files/1/0561/1814/9287/files/logo.Shopify.ico?v=1725638793"
+      },
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/organization/1",
+            "url": "https://farmaciasmacross.com.mx",
+            "name": "farmacias macross",
+            "alternateName": "Macross pharma sa de cv",
+            "logo": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/26913251295399"
+            },
+            "image": [
+              {
+                "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/26913251295399"
+              }
+            ],
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "merchantReturnLink": "https://farmaciasmacross.com.mx/policies/refund-policy"
+            },
+            "sameAs": []
+          },
+          {
+            "@type": "ImageObject",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/26913251295399",
+            "width": 662,
+            "height": 662,
+            "url": "https://farmaciasmacross.com.mx/cdn/shop/files/farmacia_macross_e02c5b26-6edc-4433-ad91-c3c720525955.gif?v=1669158703",
+            "contentUrl": "https://farmaciasmacross.com.mx/cdn/shop/files/farmacia_macross_e02c5b26-6edc-4433-ad91-c3c720525955.gif?v=1669158703"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/website/1",
+            "url": "https://farmaciasmacross.com.mx",
+            "name": "www.farmaciasmacross.com.mx",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://farmaciasmacross.com.mx/search?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            },
+            "publisher": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/organization/1"
+            },
+            "inLanguage": "es"
+          },
+          {
+            "@type": [
+              "WebPage",
+              "CollectionPage"
+            ],
+            "@id": "https://farmaciasmacross.com.mx/",
+            "name": "FARMACIAS MACROSS",
+            "description": "Medicamento de alta especialidad, patentes, genéricos y oncológicos, compra y recibe en tu domicilio sin costo. Descuentos especiales. Haz tu pedido en línea. Compra ahora de manera segura.",
+            "about": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/organization/1"
+            },
+            "breadcrumb": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/breadcrumb"
+            },
+            "primaryImageOfPage": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/616598470823"
+            },
+            "image": [
+              {
+                "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/616598470823"
+              }
+            ],
+            "isPartOf": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/website/1"
+            },
+            "url": "https://farmaciasmacross.com.mx/"
+          },
+          {
+            "@type": "ImageObject",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/616598470823",
+            "width": 5000,
+            "height": 2617,
+            "url": "https://farmaciasmacross.com.mx/cdn/shop/files/macrossshopy.jpg?v=1715106746",
+            "contentUrl": "https://farmaciasmacross.com.mx/cdn/shop/files/macrossshopy.jpg?v=1715106746"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "name": "Farmacias Macross, medicamento al mejor precio",
+                "position": 1
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "open_graph": {
+      "site_name": "FARMACIAS MACROSS",
+      "url": "https://farmaciasmacross.com.mx/",
+      "locale": "es_ES",
+      "type": "website",
+      "title": "FARMACIAS MACROSS",
+      "description": "Medicamento de alta especialidad, patentes, genéricos y oncológicos, compra y recibe en tu domicilio sin costo. Descuentos especiales. Haz tu pedido en línea. Compra ahora de manera segura.",
+      "image": "https://farmaciasmacross.com.mx/cdn/shop/files/macrossshopy.jpg?v=1715106746",
+      "image:height": "2617",
+      "image:width": "5000"
+    },
+    "twitter_card": {
+      "card": "summary_large_image"
+    },
+    "canonical": "https://farmaciasmacross.com.mx/",
+    "hreflang": [],
+    "security_headers": {
+      "strict-transport-security": "max-age=7889238",
+      "x-frame-options": "DENY",
+      "x-content-type-options": "nosniff",
+      "x-xss-protection": "1; mode=block",
+      "content-security-policy": "block-all-mixed-content; frame-ancestors 'none'; upgrade-insecure-requests;"
+    },
+    "mixed_content": true,
+    "https_redirect": false,
+    "sitemap_reference": null,
+    "robots_meta": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  },
+  "https://farmaciasmacross.com.mx/collections/medicamento-oncologicos-al-mejor-precio-alta-especialidad": {
+    "url": "https://farmaciasmacross.com.mx/collections/medicamento-oncologicos-al-mejor-precio-alta-especialidad",
+    "error": null,
+    "status_code": 200,
+    "meta_tags": {
+      "viewport": "width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0",
+      "theme-color": "#000000",
+      "google-site-verification": "ohUu9dXdcFKI-5B_sXOxprIx18UcTdqCNEqqavTN-qw",
+      "shopify-digital-wallet": "/56118149287/digital_wallets/dialog",
+      "description": "3 meses sin intereses con tarjetas de crédito participantes. Entrega a todas la república mexicana en 24 horas o menos.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "twitter:card": "summary_large_image",
+      "og:site_name": "FARMACIAS MACROSS",
+      "og:url": "https://farmaciasmacross.com.mx/collections/medicamento-oncologicos-al-mejor-precio-alta-especialidad",
+      "og:locale": "es_ES",
+      "og:type": "website",
+      "og:title": "Oncológicos - FARMACIAS MACROSS",
+      "og:description": "3 meses sin intereses con tarjetas de crédito participantes. Entrega a todas la república mexicana en 24 horas o menos.",
+      "og:image": "https://farmaciasmacross.com.mx/cdn/shop/files/macrossshopy.jpg?v=1715106746",
+      "og:image:height": "2617",
+      "og:image:width": "5000",
+      "charset": "utf-8"
+    },
+    "headings": {
+      "h1": 1,
+      "h2": 1,
+      "h3": 18,
+      "h4": 0,
+      "h5": 0,
+      "h6": 0
+    },
+    "schema": [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "https://farmaciasmacross.com.mx/?srsltid=AfmBOopYY2DhcHDZALoeUdUfOjSFdQfMUhpotkAJr1TOOz-jI-afSzwu",
+        "logo": "https://cdn.shopify.com/s/files/1/0561/1814/9287/files/logo.Shopify.ico?v=1725638793"
+      },
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/organization/1",
+            "url": "https://farmaciasmacross.com.mx",
+            "name": "farmacias macross",
+            "alternateName": "Macross pharma sa de cv",
+            "logo": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/26913251295399"
+            },
+            "image": [
+              {
+                "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/26913251295399"
+              }
+            ],
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "merchantReturnLink": "https://farmaciasmacross.com.mx/policies/refund-policy"
+            },
+            "sameAs": []
+          },
+          {
+            "@type": "ImageObject",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/26913251295399",
+            "width": 662,
+            "height": 662,
+            "url": "https://farmaciasmacross.com.mx/cdn/shop/files/farmacia_macross_e02c5b26-6edc-4433-ad91-c3c720525955.gif?v=1669158703",
+            "contentUrl": "https://farmaciasmacross.com.mx/cdn/shop/files/farmacia_macross_e02c5b26-6edc-4433-ad91-c3c720525955.gif?v=1669158703"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/website/1",
+            "url": "https://farmaciasmacross.com.mx",
+            "name": "www.farmaciasmacross.com.mx",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://farmaciasmacross.com.mx/search?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            },
+            "publisher": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/organization/1"
+            },
+            "inLanguage": "es"
+          },
+          {
+            "@type": "CollectionPage",
+            "@id": "https://farmaciasmacross.com.mx/collections/medicamento-oncologicos-al-mejor-precio-alta-especialidad",
+            "name": "Oncológicos - FARMACIAS MACROSS",
+            "description": "3 meses sin intereses con tarjetas de crédito participantes. Entrega a todas la república mexicana en 24 horas o menos.",
+            "datePublished": "2021-05-02T16:57:55-05:00",
+            "breadcrumb": {
+              "@id": "https://farmaciasmacross.com.mx/collections/medicamento-oncologicos-al-mejor-precio-alta-especialidad/#/schema/breadcrumb"
+            },
+            "primaryImageOfPage": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/616598470823"
+            },
+            "image": [
+              {
+                "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/616598470823"
+              }
+            ],
+            "isPartOf": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/website/1"
+            },
+            "url": "https://farmaciasmacross.com.mx/collections/medicamento-oncologicos-al-mejor-precio-alta-especialidad"
+          },
+          {
+            "@type": "ImageObject",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/616598470823",
+            "width": 5000,
+            "height": 2617,
+            "url": "https://farmaciasmacross.com.mx/cdn/shop/files/macrossshopy.jpg?v=1715106746",
+            "contentUrl": "https://farmaciasmacross.com.mx/cdn/shop/files/macrossshopy.jpg?v=1715106746"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://farmaciasmacross.com.mx/collections/medicamento-oncologicos-al-mejor-precio-alta-especialidad/#/schema/breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "name": "FARMACIAS MACROSS",
+                "item": "https://farmaciasmacross.com.mx",
+                "position": 1
+              },
+              {
+                "@type": "ListItem",
+                "name": "Collections",
+                "item": "https://farmaciasmacross.com.mx/collections",
+                "position": 2
+              },
+              {
+                "@type": "ListItem",
+                "name": "Oncológicos",
+                "position": 3
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "open_graph": {
+      "site_name": "FARMACIAS MACROSS",
+      "url": "https://farmaciasmacross.com.mx/collections/medicamento-oncologicos-al-mejor-precio-alta-especialidad",
+      "locale": "es_ES",
+      "type": "website",
+      "title": "Oncológicos - FARMACIAS MACROSS",
+      "description": "3 meses sin intereses con tarjetas de crédito participantes. Entrega a todas la república mexicana en 24 horas o menos.",
+      "image": "https://farmaciasmacross.com.mx/cdn/shop/files/macrossshopy.jpg?v=1715106746",
+      "image:height": "2617",
+      "image:width": "5000"
+    },
+    "twitter_card": {
+      "card": "summary_large_image"
+    },
+    "canonical": "https://farmaciasmacross.com.mx/collections/medicamento-oncologicos-al-mejor-precio-alta-especialidad",
+    "hreflang": [],
+    "security_headers": {
+      "strict-transport-security": "max-age=7889238",
+      "x-frame-options": "DENY",
+      "x-content-type-options": "nosniff",
+      "x-xss-protection": "1; mode=block",
+      "content-security-policy": "block-all-mixed-content; frame-ancestors 'none'; upgrade-insecure-requests;"
+    },
+    "mixed_content": true,
+    "https_redirect": false,
+    "sitemap_reference": null,
+    "robots_meta": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  },
+  "https://farmaciasmacross.com.mx/collections/cardiologia": {
+    "url": "https://farmaciasmacross.com.mx/collections/cardiologia",
+    "error": null,
+    "status_code": 200,
+    "meta_tags": {
+      "viewport": "width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0",
+      "theme-color": "#000000",
+      "google-site-verification": "ohUu9dXdcFKI-5B_sXOxprIx18UcTdqCNEqqavTN-qw",
+      "shopify-digital-wallet": "/56118149287/digital_wallets/dialog",
+      "description": "especialidades de cardiología",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "twitter:card": "summary_large_image",
+      "og:site_name": "FARMACIAS MACROSS",
+      "og:url": "https://farmaciasmacross.com.mx/collections/cardiologia",
+      "og:locale": "es_ES",
+      "og:type": "website",
+      "og:title": "Cardiología - FARMACIAS MACROSS",
+      "og:description": "especialidades de cardiología",
+      "og:image": "https://farmaciasmacross.com.mx/cdn/shop/files/macrossshopy.jpg?v=1715106746",
+      "og:image:height": "2617",
+      "og:image:width": "5000",
+      "charset": "utf-8"
+    },
+    "headings": {
+      "h1": 1,
+      "h2": 1,
+      "h3": 7,
+      "h4": 0,
+      "h5": 0,
+      "h6": 0
+    },
+    "schema": [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "https://farmaciasmacross.com.mx/?srsltid=AfmBOopYY2DhcHDZALoeUdUfOjSFdQfMUhpotkAJr1TOOz-jI-afSzwu",
+        "logo": "https://cdn.shopify.com/s/files/1/0561/1814/9287/files/logo.Shopify.ico?v=1725638793"
+      },
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/organization/1",
+            "url": "https://farmaciasmacross.com.mx",
+            "name": "farmacias macross",
+            "alternateName": "Macross pharma sa de cv",
+            "logo": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/26913251295399"
+            },
+            "image": [
+              {
+                "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/26913251295399"
+              }
+            ],
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "merchantReturnLink": "https://farmaciasmacross.com.mx/policies/refund-policy"
+            },
+            "sameAs": []
+          },
+          {
+            "@type": "ImageObject",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/26913251295399",
+            "width": 662,
+            "height": 662,
+            "url": "https://farmaciasmacross.com.mx/cdn/shop/files/farmacia_macross_e02c5b26-6edc-4433-ad91-c3c720525955.gif?v=1669158703",
+            "contentUrl": "https://farmaciasmacross.com.mx/cdn/shop/files/farmacia_macross_e02c5b26-6edc-4433-ad91-c3c720525955.gif?v=1669158703"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/website/1",
+            "url": "https://farmaciasmacross.com.mx",
+            "name": "www.farmaciasmacross.com.mx",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://farmaciasmacross.com.mx/search?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            },
+            "publisher": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/organization/1"
+            },
+            "inLanguage": "es"
+          },
+          {
+            "@type": "CollectionPage",
+            "@id": "https://farmaciasmacross.com.mx/collections/cardiologia",
+            "name": "Cardiología - FARMACIAS MACROSS",
+            "description": "especialidades de cardiología",
+            "datePublished": "2022-08-04T16:28:07-05:00",
+            "breadcrumb": {
+              "@id": "https://farmaciasmacross.com.mx/collections/cardiologia/#/schema/breadcrumb"
+            },
+            "primaryImageOfPage": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/616598470823"
+            },
+            "image": [
+              {
+                "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/616598470823"
+              }
+            ],
+            "isPartOf": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/website/1"
+            },
+            "url": "https://farmaciasmacross.com.mx/collections/cardiologia"
+          },
+          {
+            "@type": "ImageObject",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/616598470823",
+            "width": 5000,
+            "height": 2617,
+            "url": "https://farmaciasmacross.com.mx/cdn/shop/files/macrossshopy.jpg?v=1715106746",
+            "contentUrl": "https://farmaciasmacross.com.mx/cdn/shop/files/macrossshopy.jpg?v=1715106746"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://farmaciasmacross.com.mx/collections/cardiologia/#/schema/breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "name": "FARMACIAS MACROSS",
+                "item": "https://farmaciasmacross.com.mx",
+                "position": 1
+              },
+              {
+                "@type": "ListItem",
+                "name": "Collections",
+                "item": "https://farmaciasmacross.com.mx/collections",
+                "position": 2
+              },
+              {
+                "@type": "ListItem",
+                "name": "Cardiología",
+                "position": 3
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "open_graph": {
+      "site_name": "FARMACIAS MACROSS",
+      "url": "https://farmaciasmacross.com.mx/collections/cardiologia",
+      "locale": "es_ES",
+      "type": "website",
+      "title": "Cardiología - FARMACIAS MACROSS",
+      "description": "especialidades de cardiología",
+      "image": "https://farmaciasmacross.com.mx/cdn/shop/files/macrossshopy.jpg?v=1715106746",
+      "image:height": "2617",
+      "image:width": "5000"
+    },
+    "twitter_card": {
+      "card": "summary_large_image"
+    },
+    "canonical": "https://farmaciasmacross.com.mx/collections/cardiologia",
+    "hreflang": [],
+    "security_headers": {
+      "strict-transport-security": "max-age=7889238",
+      "x-frame-options": "DENY",
+      "x-content-type-options": "nosniff",
+      "x-xss-protection": "1; mode=block",
+      "content-security-policy": "block-all-mixed-content; frame-ancestors 'none'; upgrade-insecure-requests;"
+    },
+    "mixed_content": true,
+    "https_redirect": false,
+    "sitemap_reference": null,
+    "robots_meta": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  },
+  "https://farmaciasmacross.com.mx/collections/reumatologia-y-traumatologia": {
+    "url": "https://farmaciasmacross.com.mx/collections/reumatologia-y-traumatologia",
+    "error": null,
+    "status_code": 200,
+    "meta_tags": {
+      "viewport": "width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0",
+      "theme-color": "#000000",
+      "google-site-verification": "ohUu9dXdcFKI-5B_sXOxprIx18UcTdqCNEqqavTN-qw",
+      "shopify-digital-wallet": "/56118149287/digital_wallets/dialog",
+      "description": "Medicamentos para REUMATOLOGÍA Y TRAUMATOLOGÍA al mejor precio. 6 MESES SIN INTERESES con tarjetas participantes.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "twitter:card": "summary_large_image",
+      "og:site_name": "FARMACIAS MACROSS",
+      "og:url": "https://farmaciasmacross.com.mx/collections/reumatologia-y-traumatologia",
+      "og:locale": "es_ES",
+      "og:type": "website",
+      "og:title": "Reumatología y traumatología - FARMACIAS MACROSS",
+      "og:description": "Medicamentos para REUMATOLOGÍA Y TRAUMATOLOGÍA al mejor precio. 6 MESES SIN INTERESES con tarjetas participantes.",
+      "og:image": "https://farmaciasmacross.com.mx/cdn/shop/collections/Recurso-9-80-1647x1024.jpg?v=1620409972",
+      "og:image:height": "1024",
+      "og:image:width": "1647",
+      "charset": "utf-8"
+    },
+    "headings": {
+      "h1": 1,
+      "h2": 1,
+      "h3": 10,
+      "h4": 0,
+      "h5": 0,
+      "h6": 0
+    },
+    "schema": [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "https://farmaciasmacross.com.mx/?srsltid=AfmBOopYY2DhcHDZALoeUdUfOjSFdQfMUhpotkAJr1TOOz-jI-afSzwu",
+        "logo": "https://cdn.shopify.com/s/files/1/0561/1814/9287/files/logo.Shopify.ico?v=1725638793"
+      },
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/organization/1",
+            "url": "https://farmaciasmacross.com.mx",
+            "name": "farmacias macross",
+            "alternateName": "Macross pharma sa de cv",
+            "logo": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/26913251295399"
+            },
+            "image": [
+              {
+                "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/26913251295399"
+              }
+            ],
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "merchantReturnLink": "https://farmaciasmacross.com.mx/policies/refund-policy"
+            },
+            "sameAs": []
+          },
+          {
+            "@type": "ImageObject",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/26913251295399",
+            "width": 662,
+            "height": 662,
+            "url": "https://farmaciasmacross.com.mx/cdn/shop/files/farmacia_macross_e02c5b26-6edc-4433-ad91-c3c720525955.gif?v=1669158703",
+            "contentUrl": "https://farmaciasmacross.com.mx/cdn/shop/files/farmacia_macross_e02c5b26-6edc-4433-ad91-c3c720525955.gif?v=1669158703"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/website/1",
+            "url": "https://farmaciasmacross.com.mx",
+            "name": "www.farmaciasmacross.com.mx",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://farmaciasmacross.com.mx/search?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            },
+            "publisher": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/organization/1"
+            },
+            "inLanguage": "es"
+          },
+          {
+            "@type": "CollectionPage",
+            "@id": "https://farmaciasmacross.com.mx/collections/reumatologia-y-traumatologia",
+            "name": "Reumatología y traumatología - FARMACIAS MACROSS",
+            "description": "Medicamentos para REUMATOLOGÍA Y TRAUMATOLOGÍA al mejor precio. 6 MESES SIN INTERESES con tarjetas participantes.",
+            "datePublished": "2021-05-07T12:52:53-05:00",
+            "breadcrumb": {
+              "@id": "https://farmaciasmacross.com.mx/collections/reumatologia-y-traumatologia/#/schema/breadcrumb"
+            },
+            "primaryImageOfPage": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/1603498180775"
+            },
+            "image": [
+              {
+                "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/1603498180775"
+              }
+            ],
+            "isPartOf": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/website/1"
+            },
+            "url": "https://farmaciasmacross.com.mx/collections/reumatologia-y-traumatologia"
+          },
+          {
+            "@type": "ImageObject",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/1603498180775",
+            "caption": "Reumatología y traumatología",
+            "inLanguage": "es",
+            "width": 1647,
+            "height": 1024,
+            "url": "https://farmaciasmacross.com.mx/cdn/shop/collections/Recurso-9-80-1647x1024.jpg?v=1620409972",
+            "contentUrl": "https://farmaciasmacross.com.mx/cdn/shop/collections/Recurso-9-80-1647x1024.jpg?v=1620409972"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://farmaciasmacross.com.mx/collections/reumatologia-y-traumatologia/#/schema/breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "name": "FARMACIAS MACROSS",
+                "item": "https://farmaciasmacross.com.mx",
+                "position": 1
+              },
+              {
+                "@type": "ListItem",
+                "name": "Collections",
+                "item": "https://farmaciasmacross.com.mx/collections",
+                "position": 2
+              },
+              {
+                "@type": "ListItem",
+                "name": "Reumatología y traumatología",
+                "position": 3
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "open_graph": {
+      "site_name": "FARMACIAS MACROSS",
+      "url": "https://farmaciasmacross.com.mx/collections/reumatologia-y-traumatologia",
+      "locale": "es_ES",
+      "type": "website",
+      "title": "Reumatología y traumatología - FARMACIAS MACROSS",
+      "description": "Medicamentos para REUMATOLOGÍA Y TRAUMATOLOGÍA al mejor precio. 6 MESES SIN INTERESES con tarjetas participantes.",
+      "image": "https://farmaciasmacross.com.mx/cdn/shop/collections/Recurso-9-80-1647x1024.jpg?v=1620409972",
+      "image:height": "1024",
+      "image:width": "1647"
+    },
+    "twitter_card": {
+      "card": "summary_large_image"
+    },
+    "canonical": "https://farmaciasmacross.com.mx/collections/reumatologia-y-traumatologia",
+    "hreflang": [],
+    "security_headers": {
+      "strict-transport-security": "max-age=7889238",
+      "x-frame-options": "DENY",
+      "x-content-type-options": "nosniff",
+      "x-xss-protection": "1; mode=block",
+      "content-security-policy": "block-all-mixed-content; frame-ancestors 'none'; upgrade-insecure-requests;"
+    },
+    "mixed_content": true,
+    "https_redirect": false,
+    "sitemap_reference": null,
+    "robots_meta": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  },
+  "https://farmaciasmacross.com.mx/collections/medicamentos-para-el-sistema-inmunologico-1": {
+    "url": "https://farmaciasmacross.com.mx/collections/medicamentos-para-el-sistema-inmunologico-1",
+    "error": null,
+    "status_code": 200,
+    "meta_tags": {
+      "viewport": "width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0",
+      "theme-color": "#000000",
+      "google-site-verification": "ohUu9dXdcFKI-5B_sXOxprIx18UcTdqCNEqqavTN-qw",
+      "shopify-digital-wallet": "/56118149287/digital_wallets/dialog",
+      "description": "En Farmacias Macross ofrecemos un servicio especializado para pacientes que requieren medicamentos de alta especialidad, disponibles únicamente bajo receta médica.Nuestro equipo farmacéutico cuenta con licencias sanitarias COFEPRIS y brinda asesoría personalizada para garantizar el uso seguro y responsable de cada prod",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "twitter:card": "summary_large_image",
+      "og:site_name": "FARMACIAS MACROSS",
+      "og:url": "https://farmaciasmacross.com.mx/collections/medicamentos-para-el-sistema-inmunologico-1",
+      "og:locale": "es_ES",
+      "og:type": "website",
+      "og:title": "Medicamentos para el sistema inmunológico - FARMACIAS MACROSS",
+      "og:description": "En Farmacias Macross ofrecemos un servicio especializado para pacientes que requieren medicamentos de alta especialidad, disponibles únicamente bajo receta médica.Nuestro equipo farmacéutico cuenta con licencias sanitarias COFEPRIS y brinda asesoría personalizada para garantizar el uso seguro y responsable de cada prod",
+      "og:image": "https://farmaciasmacross.com.mx/cdn/shop/collections/Captura_de_pantalla_2025-10-24_a_la_s_5.38.44_p.m..png?v=1761349161",
+      "og:image:height": "844",
+      "og:image:width": "860",
+      "charset": "utf-8"
+    },
+    "headings": {
+      "h1": 1,
+      "h2": 1,
+      "h3": 8,
+      "h4": 0,
+      "h5": 0,
+      "h6": 0
+    },
+    "schema": [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "https://farmaciasmacross.com.mx/?srsltid=AfmBOopYY2DhcHDZALoeUdUfOjSFdQfMUhpotkAJr1TOOz-jI-afSzwu",
+        "logo": "https://cdn.shopify.com/s/files/1/0561/1814/9287/files/logo.Shopify.ico?v=1725638793"
+      },
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/organization/1",
+            "url": "https://farmaciasmacross.com.mx",
+            "name": "farmacias macross",
+            "alternateName": "Macross pharma sa de cv",
+            "logo": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/26913251295399"
+            },
+            "image": [
+              {
+                "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/26913251295399"
+              }
+            ],
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "merchantReturnLink": "https://farmaciasmacross.com.mx/policies/refund-policy"
+            },
+            "sameAs": []
+          },
+          {
+            "@type": "ImageObject",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/26913251295399",
+            "width": 662,
+            "height": 662,
+            "url": "https://farmaciasmacross.com.mx/cdn/shop/files/farmacia_macross_e02c5b26-6edc-4433-ad91-c3c720525955.gif?v=1669158703",
+            "contentUrl": "https://farmaciasmacross.com.mx/cdn/shop/files/farmacia_macross_e02c5b26-6edc-4433-ad91-c3c720525955.gif?v=1669158703"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/website/1",
+            "url": "https://farmaciasmacross.com.mx",
+            "name": "www.farmaciasmacross.com.mx",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://farmaciasmacross.com.mx/search?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            },
+            "publisher": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/organization/1"
+            },
+            "inLanguage": "es"
+          },
+          {
+            "@type": "CollectionPage",
+            "@id": "https://farmaciasmacross.com.mx/collections/medicamentos-para-el-sistema-inmunologico-1",
+            "name": "Medicamentos para el sistema inmunológico - FARMACIAS MACROSS",
+            "description": "En Farmacias Macross ofrecemos un servicio especializado para pacientes que requieren medicamentos de alta especialidad, disponibles únicamente bajo receta médica.Nuestro equipo farmacéutico cuenta con licencias sanitarias COFEPRIS y brinda asesoría personalizada para garantizar el uso seguro y responsable de cada prod",
+            "datePublished": "2025-10-24T17:39:22-06:00",
+            "breadcrumb": {
+              "@id": "https://farmaciasmacross.com.mx/collections/medicamentos-para-el-sistema-inmunologico-1/#/schema/breadcrumb"
+            },
+            "primaryImageOfPage": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/1628362801319"
+            },
+            "image": [
+              {
+                "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/1628362801319"
+              }
+            ],
+            "isPartOf": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/website/1"
+            },
+            "url": "https://farmaciasmacross.com.mx/collections/medicamentos-para-el-sistema-inmunologico-1"
+          },
+          {
+            "@type": "ImageObject",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/1628362801319",
+            "caption": "Medicamentos para el sistema inmunológico",
+            "inLanguage": "es",
+            "width": 860,
+            "height": 844,
+            "url": "https://farmaciasmacross.com.mx/cdn/shop/collections/Captura_de_pantalla_2025-10-24_a_la_s_5.38.44_p.m..png?v=1761349161",
+            "contentUrl": "https://farmaciasmacross.com.mx/cdn/shop/collections/Captura_de_pantalla_2025-10-24_a_la_s_5.38.44_p.m..png?v=1761349161"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://farmaciasmacross.com.mx/collections/medicamentos-para-el-sistema-inmunologico-1/#/schema/breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "name": "FARMACIAS MACROSS",
+                "item": "https://farmaciasmacross.com.mx",
+                "position": 1
+              },
+              {
+                "@type": "ListItem",
+                "name": "Collections",
+                "item": "https://farmaciasmacross.com.mx/collections",
+                "position": 2
+              },
+              {
+                "@type": "ListItem",
+                "name": "Medicamentos para el sistema inmunológico",
+                "position": 3
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "open_graph": {
+      "site_name": "FARMACIAS MACROSS",
+      "url": "https://farmaciasmacross.com.mx/collections/medicamentos-para-el-sistema-inmunologico-1",
+      "locale": "es_ES",
+      "type": "website",
+      "title": "Medicamentos para el sistema inmunológico - FARMACIAS MACROSS",
+      "description": "En Farmacias Macross ofrecemos un servicio especializado para pacientes que requieren medicamentos de alta especialidad, disponibles únicamente bajo receta médica.Nuestro equipo farmacéutico cuenta con licencias sanitarias COFEPRIS y brinda asesoría personalizada para garantizar el uso seguro y responsable de cada prod",
+      "image": "https://farmaciasmacross.com.mx/cdn/shop/collections/Captura_de_pantalla_2025-10-24_a_la_s_5.38.44_p.m..png?v=1761349161",
+      "image:height": "844",
+      "image:width": "860"
+    },
+    "twitter_card": {
+      "card": "summary_large_image"
+    },
+    "canonical": "https://farmaciasmacross.com.mx/collections/medicamentos-para-el-sistema-inmunologico-1",
+    "hreflang": [],
+    "security_headers": {
+      "strict-transport-security": "max-age=7889238",
+      "x-frame-options": "DENY",
+      "x-content-type-options": "nosniff",
+      "x-xss-protection": "1; mode=block",
+      "content-security-policy": "block-all-mixed-content; frame-ancestors 'none'; upgrade-insecure-requests;"
+    },
+    "mixed_content": true,
+    "https_redirect": false,
+    "sitemap_reference": null,
+    "robots_meta": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  },
+  "https://farmaciasmacross.com.mx/products/biktarvy-precio-en-mexico-y-para-que-sirve": {
+    "url": "https://farmaciasmacross.com.mx/products/biktarvy-precio-en-mexico-y-para-que-sirve",
+    "error": null,
+    "status_code": 200,
+    "meta_tags": {
+      "viewport": "width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0",
+      "theme-color": "#000000",
+      "google-site-verification": "ohUu9dXdcFKI-5B_sXOxprIx18UcTdqCNEqqavTN-qw",
+      "shopify-digital-wallet": "/56118149287/digital_wallets/dialog",
+      "description": "Biktarvy precio en México y para qué sirve. El medicamento para el tratamiento del VIH. Envío rápido y seguro. Compra ahora y recibe atención personalizada.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "twitter:card": "summary_large_image",
+      "og:site_name": "FARMACIAS MACROSS",
+      "og:url": "https://farmaciasmacross.com.mx/products/biktarvy-precio-en-mexico-y-para-que-sirve",
+      "og:locale": "es_ES",
+      "og:type": "product",
+      "og:title": "Biktarvy Precio y Para Qué Sirve: Tratamiento para VIH",
+      "og:description": "Descubre el precio y para qué sirve Biktarvy. Tratamiento para la infección por VIH en adultos y adolescentes. ¡Suprime el virus y controla el VIH! 🌈",
+      "og:image": "https://farmaciasmacross.com.mx/cdn/shop/files/biktarvy.jpg?v=1749501346",
+      "og:image:height": "4267",
+      "og:image:width": "4267",
+      "og:availability": "instock",
+      "product:availability": "instock",
+      "product:condition": "new",
+      "product:price:amount": "7290.0",
+      "product:price:currency": "MXN",
+      "product:retailer_item_id": "10946515",
+      "og:price:standard_amount": "10800.0",
+      "charset": "utf-8"
+    },
+    "headings": {
+      "h1": 1,
+      "h2": 0,
+      "h3": 11,
+      "h4": 0,
+      "h5": 0,
+      "h6": 0
+    },
+    "schema": [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "https://farmaciasmacross.com.mx/?srsltid=AfmBOopYY2DhcHDZALoeUdUfOjSFdQfMUhpotkAJr1TOOz-jI-afSzwu",
+        "logo": "https://cdn.shopify.com/s/files/1/0561/1814/9287/files/logo.Shopify.ico?v=1725638793"
+      },
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": [
+              "Organization",
+              "Brand"
+            ],
+            "@id": "https://farmaciasmacross.com.mx/#/schema/organization/1",
+            "url": "https://farmaciasmacross.com.mx",
+            "name": "farmacias macross",
+            "alternateName": "Macross pharma sa de cv",
+            "logo": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/26913251295399"
+            },
+            "image": [
+              {
+                "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/26913251295399"
+              }
+            ],
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "merchantReturnLink": "https://farmaciasmacross.com.mx/policies/refund-policy"
+            },
+            "sameAs": []
+          },
+          {
+            "@type": "ImageObject",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/26913251295399",
+            "width": 662,
+            "height": 662,
+            "url": "https://farmaciasmacross.com.mx/cdn/shop/files/farmacia_macross_e02c5b26-6edc-4433-ad91-c3c720525955.gif?v=1669158703",
+            "contentUrl": "https://farmaciasmacross.com.mx/cdn/shop/files/farmacia_macross_e02c5b26-6edc-4433-ad91-c3c720525955.gif?v=1669158703"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/website/1",
+            "url": "https://farmaciasmacross.com.mx",
+            "name": "www.farmaciasmacross.com.mx",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://farmaciasmacross.com.mx/search?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            },
+            "publisher": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/organization/1"
+            },
+            "inLanguage": "es"
+          },
+          {
+            "@type": "ItemPage",
+            "@id": "https://farmaciasmacross.com.mx/products/biktarvy-precio-en-mexico-y-para-que-sirve",
+            "name": "Biktarvy Precio en México y para qué Sirve - FARMACIAS MACROSS",
+            "description": "Biktarvy precio en México y para qué sirve. El medicamento para el tratamiento del VIH. Envío rápido y seguro. Compra ahora y recibe atención personalizada.",
+            "datePublished": "2022-08-24T16:56:17-05:00",
+            "breadcrumb": {
+              "@id": "https://farmaciasmacross.com.mx/products/biktarvy-precio-en-mexico-y-para-que-sirve/#/schema/breadcrumb"
+            },
+            "primaryImageOfPage": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/31320608211111"
+            },
+            "image": [
+              {
+                "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/31320608211111"
+              }
+            ],
+            "isPartOf": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/website/1"
+            },
+            "url": "https://farmaciasmacross.com.mx/products/biktarvy-precio-en-mexico-y-para-que-sirve"
+          },
+          {
+            "@type": "ImageObject",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/31320608211111",
+            "width": 4267,
+            "height": 4267,
+            "url": "https://farmaciasmacross.com.mx/cdn/shop/files/biktarvy.jpg?v=1749501346",
+            "contentUrl": "https://farmaciasmacross.com.mx/cdn/shop/files/biktarvy.jpg?v=1749501346"
+          },
+          {
+            "@type": "ProductGroup",
+            "@id": "https://farmaciasmacross.com.mx/products/biktarvy-precio-en-mexico-y-para-que-sirve/#/schema/Product",
+            "brand": [
+              {
+                "@id": "https://farmaciasmacross.com.mx/#/schema/organization/1"
+              }
+            ],
+            "mainEntityOfPage": {
+              "@id": "https://farmaciasmacross.com.mx/products/biktarvy-precio-en-mexico-y-para-que-sirve"
+            },
+            "name": "BIKTARVY 50 mg/200 mg/25 mg frasco 30 tabletas",
+            "description": "Biktarvy precio en México y para qué sirve. El medicamento para el tratamiento del VIH. Envío rápido y seguro. Compra ahora y recibe atención personalizada.",
+            "image": [
+              {
+                "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/31320608211111"
+              }
+            ],
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": 4.5,
+              "reviewCount": 8
+            },
+            "productGroupID": "7425021051047",
+            "hasVariant": [
+              {
+                "@type": "Product",
+                "@id": "https://farmaciasmacross.com.mx/#/schema/Product/42691982557351",
+                "name": "BIKTARVY 50 mg/200 mg/25 mg frasco 30 tabletas",
+                "sku": "10946515",
+                "gtin": "0361958926515",
+                "image": [
+                  {
+                    "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/31320608211111"
+                  }
+                ],
+                "offers": {
+                  "@type": "Offer",
+                  "@id": "https://farmaciasmacross.com.mx/#/schema/Offer/42691982557351",
+                  "availability": "https://schema.org/InStock",
+                  "category": "Salud y belleza > Cuidado de la salud > Medicinas y medicamentos",
+                  "priceSpecification": {
+                    "@type": "UnitPriceSpecification",
+                    "valueAddedTaxIncluded": false,
+                    "price": 7290.0,
+                    "priceCurrency": "MXN"
+                  },
+                  "seller": {
+                    "@id": "https://farmaciasmacross.com.mx/#/schema/organization/1"
+                  },
+                  "url": "https://farmaciasmacross.com.mx/products/biktarvy-precio-en-mexico-y-para-que-sirve",
+                  "checkoutPageURLTemplate": "https://farmaciasmacross.com.mx/cart/add?id=42691982557351&quantity=1"
+                }
+              }
+            ],
+            "url": "https://farmaciasmacross.com.mx/products/biktarvy-precio-en-mexico-y-para-que-sirve"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://farmaciasmacross.com.mx/products/biktarvy-precio-en-mexico-y-para-que-sirve/#/schema/breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "name": "FARMACIAS MACROSS",
+                "item": "https://farmaciasmacross.com.mx",
+                "position": 1
+              },
+              {
+                "@type": "ListItem",
+                "name": "BIKTARVY 50 mg/200 mg/25 mg frasco 30 tabletas",
+                "position": 2
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "open_graph": {
+      "site_name": "FARMACIAS MACROSS",
+      "url": "https://farmaciasmacross.com.mx/products/biktarvy-precio-en-mexico-y-para-que-sirve",
+      "locale": "es_ES",
+      "type": "product",
+      "title": "Biktarvy Precio y Para Qué Sirve: Tratamiento para VIH",
+      "description": "Descubre el precio y para qué sirve Biktarvy. Tratamiento para la infección por VIH en adultos y adolescentes. ¡Suprime el virus y controla el VIH! 🌈",
+      "image": "https://farmaciasmacross.com.mx/cdn/shop/files/biktarvy.jpg?v=1749501346",
+      "image:height": "4267",
+      "image:width": "4267",
+      "availability": "instock",
+      "price:standard_amount": "10800.0"
+    },
+    "twitter_card": {
+      "card": "summary_large_image"
+    },
+    "canonical": "https://farmaciasmacross.com.mx/products/biktarvy-precio-en-mexico-y-para-que-sirve",
+    "hreflang": [],
+    "security_headers": {
+      "strict-transport-security": "max-age=7889238",
+      "x-frame-options": "DENY",
+      "x-content-type-options": "nosniff",
+      "x-xss-protection": "1; mode=block",
+      "content-security-policy": "block-all-mixed-content; frame-ancestors 'none'; upgrade-insecure-requests;"
+    },
+    "mixed_content": true,
+    "https_redirect": false,
+    "sitemap_reference": null,
+    "robots_meta": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  },
+  "https://farmaciasmacross.com.mx/products/eligard-precio-y-disponibilidad-leuprorelina-tratamiento-de-prostata": {
+    "url": "https://farmaciasmacross.com.mx/products/eligard-precio-y-disponibilidad-leuprorelina-tratamiento-de-prostata",
+    "error": null,
+    "status_code": 200,
+    "meta_tags": {
+      "viewport": "width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0",
+      "theme-color": "#000000",
+      "google-site-verification": "ohUu9dXdcFKI-5B_sXOxprIx18UcTdqCNEqqavTN-qw",
+      "shopify-digital-wallet": "/56118149287/digital_wallets/dialog",
+      "description": "Compra Eligard 22.5 mg Leuprorelina al mejor precio y disfruta de envío seguro y gratuito en Farmacias Macross. ¡Obtén tu tratamiento hoy!",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "twitter:card": "summary_large_image",
+      "og:site_name": "FARMACIAS MACROSS",
+      "og:url": "https://farmaciasmacross.com.mx/products/eligard-precio-y-disponibilidad-leuprorelina-tratamiento-de-prostata",
+      "og:locale": "es_ES",
+      "og:type": "product",
+      "og:title": "Eligard precio y disponibilidad Leuprorelina tratamiento de próstata: ¡Adquiere el tuyo ahora!",
+      "og:description": "Mejora tu calidad de vida con Eligard, el tratamiento de leuprorelina para el cáncer de próstata avanzado. Conoce su precio y disponibilidad aquí.",
+      "og:image": "https://farmaciasmacross.com.mx/cdn/shop/files/Eligard-22.5_3.jpg?v=1731019207",
+      "og:image:height": "4267",
+      "og:image:width": "4267",
+      "og:availability": "instock",
+      "product:availability": "instock",
+      "product:condition": "new",
+      "product:price:amount": "7200.0",
+      "product:price:currency": "MXN",
+      "product:retailer_item_id": "18840469",
+      "charset": "utf-8"
+    },
+    "headings": {
+      "h1": 1,
+      "h2": 0,
+      "h3": 14,
+      "h4": 0,
+      "h5": 0,
+      "h6": 0
+    },
+    "schema": [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "https://farmaciasmacross.com.mx/?srsltid=AfmBOopYY2DhcHDZALoeUdUfOjSFdQfMUhpotkAJr1TOOz-jI-afSzwu",
+        "logo": "https://cdn.shopify.com/s/files/1/0561/1814/9287/files/logo.Shopify.ico?v=1725638793"
+      },
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": [
+              "Organization",
+              "Brand"
+            ],
+            "@id": "https://farmaciasmacross.com.mx/#/schema/organization/1",
+            "url": "https://farmaciasmacross.com.mx",
+            "name": "farmacias macross",
+            "alternateName": "Macross pharma sa de cv",
+            "logo": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/26913251295399"
+            },
+            "image": [
+              {
+                "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/26913251295399"
+              }
+            ],
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "merchantReturnLink": "https://farmaciasmacross.com.mx/policies/refund-policy"
+            },
+            "sameAs": []
+          },
+          {
+            "@type": "ImageObject",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/26913251295399",
+            "width": 662,
+            "height": 662,
+            "url": "https://farmaciasmacross.com.mx/cdn/shop/files/farmacia_macross_e02c5b26-6edc-4433-ad91-c3c720525955.gif?v=1669158703",
+            "contentUrl": "https://farmaciasmacross.com.mx/cdn/shop/files/farmacia_macross_e02c5b26-6edc-4433-ad91-c3c720525955.gif?v=1669158703"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/website/1",
+            "url": "https://farmaciasmacross.com.mx",
+            "name": "www.farmaciasmacross.com.mx",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://farmaciasmacross.com.mx/search?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            },
+            "publisher": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/organization/1"
+            },
+            "inLanguage": "es"
+          },
+          {
+            "@type": "ItemPage",
+            "@id": "https://farmaciasmacross.com.mx/products/eligard-precio-y-disponibilidad-leuprorelina-tratamiento-de-prostata",
+            "name": "Eligard 22.5 mg Leuprorelina: Tratamiento Oncológico Seguro - FARMACIAS MACROSS",
+            "description": "Compra Eligard 22.5 mg Leuprorelina al mejor precio y disfruta de envío seguro y gratuito en Farmacias Macross. ¡Obtén tu tratamiento hoy!",
+            "datePublished": "2022-05-24T11:05:59-05:00",
+            "breadcrumb": {
+              "@id": "https://farmaciasmacross.com.mx/products/eligard-precio-y-disponibilidad-leuprorelina-tratamiento-de-prostata/#/schema/breadcrumb"
+            },
+            "primaryImageOfPage": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/30153576906919"
+            },
+            "image": [
+              {
+                "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/30153576906919"
+              }
+            ],
+            "isPartOf": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/website/1"
+            },
+            "url": "https://farmaciasmacross.com.mx/products/eligard-precio-y-disponibilidad-leuprorelina-tratamiento-de-prostata"
+          },
+          {
+            "@type": "ImageObject",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/30153576906919",
+            "caption": "Eligard 22.5 mg Leuprorelina suspensión inyectable 3 meses",
+            "inLanguage": "es",
+            "width": 4267,
+            "height": 4267,
+            "url": "https://farmaciasmacross.com.mx/cdn/shop/files/Eligard-22.5_3.jpg?v=1731019207",
+            "contentUrl": "https://farmaciasmacross.com.mx/cdn/shop/files/Eligard-22.5_3.jpg?v=1731019207"
+          },
+          {
+            "@type": "ProductGroup",
+            "@id": "https://farmaciasmacross.com.mx/products/eligard-precio-y-disponibilidad-leuprorelina-tratamiento-de-prostata/#/schema/Product",
+            "brand": [
+              {
+                "@id": "https://farmaciasmacross.com.mx/#/schema/organization/1"
+              }
+            ],
+            "mainEntityOfPage": {
+              "@id": "https://farmaciasmacross.com.mx/products/eligard-precio-y-disponibilidad-leuprorelina-tratamiento-de-prostata"
+            },
+            "name": "ELIGARD 22.5 mg Leuprorelina – Suspensión Inyectable | Tratamiento Oncológico con Receta",
+            "description": "Compra Eligard 22.5 mg Leuprorelina al mejor precio y disfruta de envío seguro y gratuito en Farmacias Macross. ¡Obtén tu tratamiento hoy!",
+            "image": [
+              {
+                "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/30153576906919"
+              }
+            ],
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": 5.0,
+              "reviewCount": 10
+            },
+            "productGroupID": "7104415236263",
+            "hasVariant": [
+              {
+                "@type": "Product",
+                "@id": "https://farmaciasmacross.com.mx/#/schema/Product/41556163592359",
+                "name": "ELIGARD 22.5 mg Leuprorelina – Suspensión Inyectable | Tratamiento Oncológico con Receta",
+                "sku": "18840469",
+                "gtin": "7501871730469",
+                "image": [
+                  {
+                    "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/30153576906919"
+                  }
+                ],
+                "offers": {
+                  "@type": "Offer",
+                  "@id": "https://farmaciasmacross.com.mx/#/schema/Offer/41556163592359",
+                  "availability": "https://schema.org/InStock",
+                  "category": "Salud y belleza > Cuidado de la salud > Medicinas y medicamentos",
+                  "priceSpecification": {
+                    "@type": "UnitPriceSpecification",
+                    "valueAddedTaxIncluded": false,
+                    "price": 7200.0,
+                    "priceCurrency": "MXN"
+                  },
+                  "seller": {
+                    "@id": "https://farmaciasmacross.com.mx/#/schema/organization/1"
+                  },
+                  "url": "https://farmaciasmacross.com.mx/products/eligard-precio-y-disponibilidad-leuprorelina-tratamiento-de-prostata",
+                  "checkoutPageURLTemplate": "https://farmaciasmacross.com.mx/cart/add?id=41556163592359&quantity=1"
+                }
+              }
+            ],
+            "url": "https://farmaciasmacross.com.mx/products/eligard-precio-y-disponibilidad-leuprorelina-tratamiento-de-prostata"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://farmaciasmacross.com.mx/products/eligard-precio-y-disponibilidad-leuprorelina-tratamiento-de-prostata/#/schema/breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "name": "FARMACIAS MACROSS",
+                "item": "https://farmaciasmacross.com.mx",
+                "position": 1
+              },
+              {
+                "@type": "ListItem",
+                "name": "ELIGARD 22.5 mg Leuprorelina – Suspensión Inyectable | Tratamiento Oncológico con Receta",
+                "position": 2
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "open_graph": {
+      "site_name": "FARMACIAS MACROSS",
+      "url": "https://farmaciasmacross.com.mx/products/eligard-precio-y-disponibilidad-leuprorelina-tratamiento-de-prostata",
+      "locale": "es_ES",
+      "type": "product",
+      "title": "Eligard precio y disponibilidad Leuprorelina tratamiento de próstata: ¡Adquiere el tuyo ahora!",
+      "description": "Mejora tu calidad de vida con Eligard, el tratamiento de leuprorelina para el cáncer de próstata avanzado. Conoce su precio y disponibilidad aquí.",
+      "image": "https://farmaciasmacross.com.mx/cdn/shop/files/Eligard-22.5_3.jpg?v=1731019207",
+      "image:height": "4267",
+      "image:width": "4267",
+      "availability": "instock"
+    },
+    "twitter_card": {
+      "card": "summary_large_image"
+    },
+    "canonical": "https://farmaciasmacross.com.mx/products/eligard-precio-y-disponibilidad-leuprorelina-tratamiento-de-prostata",
+    "hreflang": [],
+    "security_headers": {
+      "strict-transport-security": "max-age=7889238",
+      "x-frame-options": "DENY",
+      "x-content-type-options": "nosniff",
+      "x-xss-protection": "1; mode=block",
+      "content-security-policy": "block-all-mixed-content; frame-ancestors 'none'; upgrade-insecure-requests;"
+    },
+    "mixed_content": true,
+    "https_redirect": false,
+    "sitemap_reference": null,
+    "robots_meta": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  },
+  "https://farmaciasmacross.com.mx/products/synvisc-8mg-ml-precio-mexico": {
+    "url": "https://farmaciasmacross.com.mx/products/synvisc-8mg-ml-precio-mexico",
+    "error": null,
+    "status_code": 200,
+    "meta_tags": {
+      "viewport": "width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0",
+      "theme-color": "#000000",
+      "google-site-verification": "ohUu9dXdcFKI-5B_sXOxprIx18UcTdqCNEqqavTN-qw",
+      "shopify-digital-wallet": "/56118149287/digital_wallets/dialog",
+      "description": "Alivia el dolor causado por la Osteoartritis en rodillas, caderas y más con Synvisc 8 mg/ml precio México. Compra ahora y obtén envío GRATIS. 💉",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "twitter:card": "summary_large_image",
+      "og:site_name": "FARMACIAS MACROSS",
+      "og:url": "https://farmaciasmacross.com.mx/products/synvisc-8mg-ml-precio-mexico",
+      "og:locale": "es_ES",
+      "og:type": "product",
+      "og:title": "Synvisc 8 mg/ml precio México: Tratamiento para el dolor de las articulaciones",
+      "og:description": "Alivia el dolor en tus articulaciones con Synvisc 8 mg/ml. Descubre cómo este medicamento inyectable ayuda a tratar la osteoartritis. ¡Consulta el precio en México!",
+      "og:image": "https://farmaciasmacross.com.mx/cdn/shop/files/Synvisc_2_mL__1.jpg?v=1742429350",
+      "og:image:height": "4267",
+      "og:image:width": "4267",
+      "og:availability": "instock",
+      "product:availability": "instock",
+      "product:condition": "new",
+      "product:price:amount": "3499.0",
+      "product:price:currency": "MXN",
+      "product:retailer_item_id": "25940039",
+      "og:price:standard_amount": "4200.0",
+      "charset": "utf-8"
+    },
+    "headings": {
+      "h1": 1,
+      "h2": 1,
+      "h3": 8,
+      "h4": 1,
+      "h5": 1,
+      "h6": 1
+    },
+    "schema": [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "https://farmaciasmacross.com.mx/?srsltid=AfmBOopYY2DhcHDZALoeUdUfOjSFdQfMUhpotkAJr1TOOz-jI-afSzwu",
+        "logo": "https://cdn.shopify.com/s/files/1/0561/1814/9287/files/logo.Shopify.ico?v=1725638793"
+      },
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": [
+              "Organization",
+              "Brand"
+            ],
+            "@id": "https://farmaciasmacross.com.mx/#/schema/organization/1",
+            "url": "https://farmaciasmacross.com.mx",
+            "name": "farmacias macross",
+            "alternateName": "Macross pharma sa de cv",
+            "logo": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/26913251295399"
+            },
+            "image": [
+              {
+                "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/26913251295399"
+              }
+            ],
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "merchantReturnLink": "https://farmaciasmacross.com.mx/policies/refund-policy"
+            },
+            "sameAs": []
+          },
+          {
+            "@type": "ImageObject",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/26913251295399",
+            "width": 662,
+            "height": 662,
+            "url": "https://farmaciasmacross.com.mx/cdn/shop/files/farmacia_macross_e02c5b26-6edc-4433-ad91-c3c720525955.gif?v=1669158703",
+            "contentUrl": "https://farmaciasmacross.com.mx/cdn/shop/files/farmacia_macross_e02c5b26-6edc-4433-ad91-c3c720525955.gif?v=1669158703"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/website/1",
+            "url": "https://farmaciasmacross.com.mx",
+            "name": "www.farmaciasmacross.com.mx",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://farmaciasmacross.com.mx/search?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            },
+            "publisher": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/organization/1"
+            },
+            "inLanguage": "es"
+          },
+          {
+            "@type": "ItemPage",
+            "@id": "https://farmaciasmacross.com.mx/products/synvisc-8mg-ml-precio-mexico",
+            "name": "Synvisc 8 mg/ml precio México: Tratamiento para el dolor articular - FARMACIAS MACROSS",
+            "description": "Alivia el dolor causado por la Osteoartritis en rodillas, caderas y más con Synvisc 8 mg/ml precio México. Compra ahora y obtén envío GRATIS. 💉",
+            "datePublished": "2022-10-18T11:20:57-05:00",
+            "breadcrumb": {
+              "@id": "https://farmaciasmacross.com.mx/products/synvisc-8mg-ml-precio-mexico/#/schema/breadcrumb"
+            },
+            "primaryImageOfPage": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/30922704650407"
+            },
+            "image": [
+              {
+                "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/30922704650407"
+              }
+            ],
+            "isPartOf": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/website/1"
+            },
+            "url": "https://farmaciasmacross.com.mx/products/synvisc-8mg-ml-precio-mexico"
+          },
+          {
+            "@type": "ImageObject",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/30922704650407",
+            "width": 4267,
+            "height": 4267,
+            "url": "https://farmaciasmacross.com.mx/cdn/shop/files/Synvisc_2_mL__1.jpg?v=1742429350",
+            "contentUrl": "https://farmaciasmacross.com.mx/cdn/shop/files/Synvisc_2_mL__1.jpg?v=1742429350"
+          },
+          {
+            "@type": "ProductGroup",
+            "@id": "https://farmaciasmacross.com.mx/products/synvisc-8mg-ml-precio-mexico/#/schema/Product",
+            "brand": [
+              {
+                "@id": "https://farmaciasmacross.com.mx/#/schema/organization/1"
+              }
+            ],
+            "mainEntityOfPage": {
+              "@id": "https://farmaciasmacross.com.mx/products/synvisc-8mg-ml-precio-mexico"
+            },
+            "name": "SYNVISC 8 mg/ml jeringa prellenada con 2 ml",
+            "description": "Alivia el dolor causado por la Osteoartritis en rodillas, caderas y más con Synvisc 8 mg/ml precio México. Compra ahora y obtén envío GRATIS. 💉",
+            "image": [
+              {
+                "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/30922704650407"
+              }
+            ],
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": 5.0,
+              "reviewCount": 2
+            },
+            "productGroupID": "6692592943271",
+            "hasVariant": [
+              {
+                "@type": "Product",
+                "@id": "https://farmaciasmacross.com.mx/#/schema/Product/39948374638759",
+                "name": "SYNVISC 8 mg/ml jeringa prellenada con 2 ml",
+                "sku": "25940039",
+                "gtin": "7502244510039",
+                "image": [
+                  {
+                    "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/30922704650407"
+                  }
+                ],
+                "offers": {
+                  "@type": "Offer",
+                  "@id": "https://farmaciasmacross.com.mx/#/schema/Offer/39948374638759",
+                  "availability": "https://schema.org/InStock",
+                  "category": "Salud y belleza > Cuidado de la salud > Medicinas y medicamentos",
+                  "priceSpecification": {
+                    "@type": "UnitPriceSpecification",
+                    "valueAddedTaxIncluded": false,
+                    "price": 3499.0,
+                    "priceCurrency": "MXN"
+                  },
+                  "seller": {
+                    "@id": "https://farmaciasmacross.com.mx/#/schema/organization/1"
+                  },
+                  "url": "https://farmaciasmacross.com.mx/products/synvisc-8mg-ml-precio-mexico",
+                  "checkoutPageURLTemplate": "https://farmaciasmacross.com.mx/cart/add?id=39948374638759&quantity=1"
+                }
+              }
+            ],
+            "url": "https://farmaciasmacross.com.mx/products/synvisc-8mg-ml-precio-mexico"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://farmaciasmacross.com.mx/products/synvisc-8mg-ml-precio-mexico/#/schema/breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "name": "FARMACIAS MACROSS",
+                "item": "https://farmaciasmacross.com.mx",
+                "position": 1
+              },
+              {
+                "@type": "ListItem",
+                "name": "SYNVISC 8 mg/ml jeringa prellenada con 2 ml",
+                "position": 2
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "open_graph": {
+      "site_name": "FARMACIAS MACROSS",
+      "url": "https://farmaciasmacross.com.mx/products/synvisc-8mg-ml-precio-mexico",
+      "locale": "es_ES",
+      "type": "product",
+      "title": "Synvisc 8 mg/ml precio México: Tratamiento para el dolor de las articulaciones",
+      "description": "Alivia el dolor en tus articulaciones con Synvisc 8 mg/ml. Descubre cómo este medicamento inyectable ayuda a tratar la osteoartritis. ¡Consulta el precio en México!",
+      "image": "https://farmaciasmacross.com.mx/cdn/shop/files/Synvisc_2_mL__1.jpg?v=1742429350",
+      "image:height": "4267",
+      "image:width": "4267",
+      "availability": "instock",
+      "price:standard_amount": "4200.0"
+    },
+    "twitter_card": {
+      "card": "summary_large_image"
+    },
+    "canonical": "https://farmaciasmacross.com.mx/products/synvisc-8mg-ml-precio-mexico",
+    "hreflang": [],
+    "security_headers": {
+      "strict-transport-security": "max-age=7889238",
+      "x-frame-options": "DENY",
+      "x-content-type-options": "nosniff",
+      "x-xss-protection": "1; mode=block",
+      "content-security-policy": "block-all-mixed-content; frame-ancestors 'none'; upgrade-insecure-requests;"
+    },
+    "mixed_content": true,
+    "https_redirect": false,
+    "sitemap_reference": null,
+    "robots_meta": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  },
+  "https://farmaciasmacross.com.mx/products/zytiga-500-mg-precio-mexico": {
+    "url": "https://farmaciasmacross.com.mx/products/zytiga-500-mg-precio-mexico",
+    "error": null,
+    "status_code": 200,
+    "meta_tags": {
+      "viewport": "width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0",
+      "theme-color": "#000000",
+      "google-site-verification": "ohUu9dXdcFKI-5B_sXOxprIx18UcTdqCNEqqavTN-qw",
+      "shopify-digital-wallet": "/56118149287/digital_wallets/dialog",
+      "description": "Zytiga 500 mg precio México Acetato de abiterona 500 MG. Envio GRATIS a toda la republica mexicana. Tratamiento para el cáncer de próstata metastático.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "twitter:card": "summary_large_image",
+      "og:site_name": "FARMACIAS MACROSS",
+      "og:url": "https://farmaciasmacross.com.mx/products/zytiga-500-mg-precio-mexico",
+      "og:locale": "es_ES",
+      "og:type": "product",
+      "og:title": "Zytiga 500 mg precio México: Tratamiento para cáncer de próstata",
+      "og:description": "ZYTIGA 500 mg precio México. Tratamiento para cáncer de próstata en hombres adultos. Envío gratis. ¡Aprovecha el descuento pagando en efectivo o por transferencia!",
+      "og:image": "https://farmaciasmacross.com.mx/cdn/shop/files/zytiga_b95eac1b-0a7b-4bab-bf86-6d0af76d88ee.jpg?v=1722356185",
+      "og:image:height": "4267",
+      "og:image:width": "4267",
+      "og:availability": "instock",
+      "product:availability": "instock",
+      "product:condition": "new",
+      "product:price:amount": "84400.0",
+      "product:price:currency": "MXN",
+      "product:retailer_item_id": "10940562",
+      "og:price:standard_amount": "97200.0",
+      "charset": "utf-8"
+    },
+    "headings": {
+      "h1": 1,
+      "h2": 1,
+      "h3": 10,
+      "h4": 0,
+      "h5": 0,
+      "h6": 1
+    },
+    "schema": [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "https://farmaciasmacross.com.mx/?srsltid=AfmBOopYY2DhcHDZALoeUdUfOjSFdQfMUhpotkAJr1TOOz-jI-afSzwu",
+        "logo": "https://cdn.shopify.com/s/files/1/0561/1814/9287/files/logo.Shopify.ico?v=1725638793"
+      },
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": [
+              "Organization",
+              "Brand"
+            ],
+            "@id": "https://farmaciasmacross.com.mx/#/schema/organization/1",
+            "url": "https://farmaciasmacross.com.mx",
+            "name": "farmacias macross",
+            "alternateName": "Macross pharma sa de cv",
+            "logo": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/26913251295399"
+            },
+            "image": [
+              {
+                "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/26913251295399"
+              }
+            ],
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "merchantReturnLink": "https://farmaciasmacross.com.mx/policies/refund-policy"
+            },
+            "sameAs": []
+          },
+          {
+            "@type": "ImageObject",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/26913251295399",
+            "width": 662,
+            "height": 662,
+            "url": "https://farmaciasmacross.com.mx/cdn/shop/files/farmacia_macross_e02c5b26-6edc-4433-ad91-c3c720525955.gif?v=1669158703",
+            "contentUrl": "https://farmaciasmacross.com.mx/cdn/shop/files/farmacia_macross_e02c5b26-6edc-4433-ad91-c3c720525955.gif?v=1669158703"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/website/1",
+            "url": "https://farmaciasmacross.com.mx",
+            "name": "www.farmaciasmacross.com.mx",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://farmaciasmacross.com.mx/search?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            },
+            "publisher": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/organization/1"
+            },
+            "inLanguage": "es"
+          },
+          {
+            "@type": "ItemPage",
+            "@id": "https://farmaciasmacross.com.mx/products/zytiga-500-mg-precio-mexico",
+            "name": "Zytiga 500 mg precio México | Farmacias Macross - FARMACIAS MACROSS",
+            "description": "Zytiga 500 mg precio México Acetato de abiterona 500 MG. Envio GRATIS a toda la republica mexicana. Tratamiento para el cáncer de próstata metastático.",
+            "datePublished": "2021-05-03T13:58:26-05:00",
+            "breadcrumb": {
+              "@id": "https://farmaciasmacross.com.mx/products/zytiga-500-mg-precio-mexico/#/schema/breadcrumb"
+            },
+            "primaryImageOfPage": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/29707890426023"
+            },
+            "image": [
+              {
+                "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/29707890426023"
+              }
+            ],
+            "isPartOf": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/website/1"
+            },
+            "url": "https://farmaciasmacross.com.mx/products/zytiga-500-mg-precio-mexico"
+          },
+          {
+            "@type": "ImageObject",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/29707890426023",
+            "caption": "Zytiga 500 mg precio México",
+            "inLanguage": "es",
+            "width": 4267,
+            "height": 4267,
+            "url": "https://farmaciasmacross.com.mx/cdn/shop/files/zytiga_b95eac1b-0a7b-4bab-bf86-6d0af76d88ee.jpg?v=1722356185",
+            "contentUrl": "https://farmaciasmacross.com.mx/cdn/shop/files/zytiga_b95eac1b-0a7b-4bab-bf86-6d0af76d88ee.jpg?v=1722356185"
+          },
+          {
+            "@type": "ProductGroup",
+            "@id": "https://farmaciasmacross.com.mx/products/zytiga-500-mg-precio-mexico/#/schema/Product",
+            "brand": [
+              {
+                "@id": "https://farmaciasmacross.com.mx/#/schema/organization/1"
+              }
+            ],
+            "mainEntityOfPage": {
+              "@id": "https://farmaciasmacross.com.mx/products/zytiga-500-mg-precio-mexico"
+            },
+            "name": "ZYTIGA 500 mg abiraterona con 60 tabletas",
+            "description": "Zytiga 500 mg precio México Acetato de abiterona 500 MG. Envio GRATIS a toda la republica mexicana. Tratamiento para el cáncer de próstata metastático.",
+            "image": [
+              {
+                "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/29707890426023"
+              }
+            ],
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": 5.0,
+              "reviewCount": 1
+            },
+            "productGroupID": "6682108854439",
+            "hasVariant": [
+              {
+                "@type": "Product",
+                "@id": "https://farmaciasmacross.com.mx/#/schema/Product/39876056875175",
+                "name": "ZYTIGA 500 mg abiraterona con 60 tabletas",
+                "sku": "10940562",
+                "gtin": "7501109930562",
+                "image": [
+                  {
+                    "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/29707890426023"
+                  }
+                ],
+                "offers": {
+                  "@type": "Offer",
+                  "@id": "https://farmaciasmacross.com.mx/#/schema/Offer/39876056875175",
+                  "availability": "https://schema.org/InStock",
+                  "category": "Salud y belleza > Cuidado de la salud > Medicinas y medicamentos",
+                  "priceSpecification": {
+                    "@type": "UnitPriceSpecification",
+                    "valueAddedTaxIncluded": false,
+                    "price": 84400.0,
+                    "priceCurrency": "MXN"
+                  },
+                  "seller": {
+                    "@id": "https://farmaciasmacross.com.mx/#/schema/organization/1"
+                  },
+                  "url": "https://farmaciasmacross.com.mx/products/zytiga-500-mg-precio-mexico",
+                  "checkoutPageURLTemplate": "https://farmaciasmacross.com.mx/cart/add?id=39876056875175&quantity=1"
+                }
+              }
+            ],
+            "url": "https://farmaciasmacross.com.mx/products/zytiga-500-mg-precio-mexico"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://farmaciasmacross.com.mx/products/zytiga-500-mg-precio-mexico/#/schema/breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "name": "FARMACIAS MACROSS",
+                "item": "https://farmaciasmacross.com.mx",
+                "position": 1
+              },
+              {
+                "@type": "ListItem",
+                "name": "ZYTIGA 500 mg abiraterona con 60 tabletas",
+                "position": 2
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "open_graph": {
+      "site_name": "FARMACIAS MACROSS",
+      "url": "https://farmaciasmacross.com.mx/products/zytiga-500-mg-precio-mexico",
+      "locale": "es_ES",
+      "type": "product",
+      "title": "Zytiga 500 mg precio México: Tratamiento para cáncer de próstata",
+      "description": "ZYTIGA 500 mg precio México. Tratamiento para cáncer de próstata en hombres adultos. Envío gratis. ¡Aprovecha el descuento pagando en efectivo o por transferencia!",
+      "image": "https://farmaciasmacross.com.mx/cdn/shop/files/zytiga_b95eac1b-0a7b-4bab-bf86-6d0af76d88ee.jpg?v=1722356185",
+      "image:height": "4267",
+      "image:width": "4267",
+      "availability": "instock",
+      "price:standard_amount": "97200.0"
+    },
+    "twitter_card": {
+      "card": "summary_large_image"
+    },
+    "canonical": "https://farmaciasmacross.com.mx/products/zytiga-500-mg-precio-mexico",
+    "hreflang": [],
+    "security_headers": {
+      "strict-transport-security": "max-age=7889238",
+      "x-frame-options": "DENY",
+      "x-content-type-options": "nosniff",
+      "x-xss-protection": "1; mode=block",
+      "content-security-policy": "block-all-mixed-content; frame-ancestors 'none'; upgrade-insecure-requests;"
+    },
+    "mixed_content": true,
+    "https_redirect": false,
+    "sitemap_reference": null,
+    "robots_meta": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  },
+  "https://farmaciasmacross.com.mx/pages/nuestras-licencias": {
+    "url": "https://farmaciasmacross.com.mx/pages/nuestras-licencias",
+    "error": null,
+    "status_code": 200,
+    "meta_tags": {
+      "viewport": "width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0",
+      "theme-color": "#000000",
+      "google-site-verification": "ohUu9dXdcFKI-5B_sXOxprIx18UcTdqCNEqqavTN-qw",
+      "shopify-digital-wallet": "/56118149287/digital_wallets/dialog",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "twitter:card": "summary_large_image",
+      "og:site_name": "FARMACIAS MACROSS",
+      "og:url": "https://farmaciasmacross.com.mx/pages/nuestras-licencias",
+      "og:locale": "es_ES",
+      "og:type": "website",
+      "og:title": "Nuestras Licencias - FARMACIAS MACROSS",
+      "og:image": "https://farmaciasmacross.com.mx/cdn/shop/files/macrossshopy.jpg?v=1715106746",
+      "og:image:height": "2617",
+      "og:image:width": "5000",
+      "charset": "utf-8"
+    },
+    "headings": {
+      "h1": 1,
+      "h2": 0,
+      "h3": 5,
+      "h4": 0,
+      "h5": 0,
+      "h6": 0
+    },
+    "schema": [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "https://farmaciasmacross.com.mx/?srsltid=AfmBOopYY2DhcHDZALoeUdUfOjSFdQfMUhpotkAJr1TOOz-jI-afSzwu",
+        "logo": "https://cdn.shopify.com/s/files/1/0561/1814/9287/files/logo.Shopify.ico?v=1725638793"
+      },
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/organization/1",
+            "url": "https://farmaciasmacross.com.mx",
+            "name": "farmacias macross",
+            "alternateName": "Macross pharma sa de cv",
+            "logo": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/26913251295399"
+            },
+            "image": [
+              {
+                "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/26913251295399"
+              }
+            ],
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "merchantReturnLink": "https://farmaciasmacross.com.mx/policies/refund-policy"
+            },
+            "sameAs": []
+          },
+          {
+            "@type": "ImageObject",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/26913251295399",
+            "width": 662,
+            "height": 662,
+            "url": "https://farmaciasmacross.com.mx/cdn/shop/files/farmacia_macross_e02c5b26-6edc-4433-ad91-c3c720525955.gif?v=1669158703",
+            "contentUrl": "https://farmaciasmacross.com.mx/cdn/shop/files/farmacia_macross_e02c5b26-6edc-4433-ad91-c3c720525955.gif?v=1669158703"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/website/1",
+            "url": "https://farmaciasmacross.com.mx",
+            "name": "www.farmaciasmacross.com.mx",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://farmaciasmacross.com.mx/search?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            },
+            "publisher": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/organization/1"
+            },
+            "inLanguage": "es"
+          },
+          {
+            "@type": [
+              "WebPage"
+            ],
+            "@id": "https://farmaciasmacross.com.mx/pages/nuestras-licencias",
+            "name": "Nuestras Licencias - FARMACIAS MACROSS",
+            "datePublished": "2024-05-17T16:28:24-06:00",
+            "potentialAction": {
+              "@type": "ReadAction",
+              "target": "https://farmaciasmacross.com.mx/pages/nuestras-licencias"
+            },
+            "breadcrumb": {
+              "@id": "https://farmaciasmacross.com.mx/pages/nuestras-licencias/#/schema/breadcrumb"
+            },
+            "primaryImageOfPage": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/616598470823"
+            },
+            "image": [
+              {
+                "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/616598470823"
+              }
+            ],
+            "isPartOf": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/website/1"
+            },
+            "url": "https://farmaciasmacross.com.mx/pages/nuestras-licencias"
+          },
+          {
+            "@type": "ImageObject",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/616598470823",
+            "width": 5000,
+            "height": 2617,
+            "url": "https://farmaciasmacross.com.mx/cdn/shop/files/macrossshopy.jpg?v=1715106746",
+            "contentUrl": "https://farmaciasmacross.com.mx/cdn/shop/files/macrossshopy.jpg?v=1715106746"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://farmaciasmacross.com.mx/pages/nuestras-licencias/#/schema/breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "name": "FARMACIAS MACROSS",
+                "item": "https://farmaciasmacross.com.mx",
+                "position": 1
+              },
+              {
+                "@type": "ListItem",
+                "name": "Nuestras Licencias",
+                "position": 2
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "open_graph": {
+      "site_name": "FARMACIAS MACROSS",
+      "url": "https://farmaciasmacross.com.mx/pages/nuestras-licencias",
+      "locale": "es_ES",
+      "type": "website",
+      "title": "Nuestras Licencias - FARMACIAS MACROSS",
+      "image": "https://farmaciasmacross.com.mx/cdn/shop/files/macrossshopy.jpg?v=1715106746",
+      "image:height": "2617",
+      "image:width": "5000"
+    },
+    "twitter_card": {
+      "card": "summary_large_image"
+    },
+    "canonical": "https://farmaciasmacross.com.mx/pages/nuestras-licencias",
+    "hreflang": [],
+    "security_headers": {
+      "strict-transport-security": "max-age=7889238",
+      "x-frame-options": "DENY",
+      "x-content-type-options": "nosniff",
+      "x-xss-protection": "1; mode=block",
+      "content-security-policy": "block-all-mixed-content; frame-ancestors 'none'; upgrade-insecure-requests;"
+    },
+    "mixed_content": true,
+    "https_redirect": false,
+    "sitemap_reference": null,
+    "robots_meta": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  },
+  "https://farmaciasmacross.com.mx/pages/medicamentos-de-alta-especialidad-y-atencion-personalizada-farmacias-macross": {
+    "url": "https://farmaciasmacross.com.mx/pages/medicamentos-de-alta-especialidad-y-atencion-personalizada-farmacias-macross",
+    "error": null,
+    "status_code": 200,
+    "meta_tags": {
+      "viewport": "width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0",
+      "theme-color": "#000000",
+      "google-site-verification": "ohUu9dXdcFKI-5B_sXOxprIx18UcTdqCNEqqavTN-qw",
+      "shopify-digital-wallet": "/56118149287/digital_wallets/dialog",
+      "description": "Atención Farmacéutica para Tratamientos Especializados En Farmacias Macross ofrecemos asesoría profesional y atención confidencial para pacientes que requieren medicamentos de alta especialidad bajo prescripción médica.Nuestro equipo farmacéutico certificado brinda acompañamiento y orientación sobre disponibilidad, man",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "twitter:card": "summary_large_image",
+      "og:site_name": "FARMACIAS MACROSS",
+      "og:url": "https://farmaciasmacross.com.mx/pages/medicamentos-de-alta-especialidad-y-atencion-personalizada-farmacias-macross",
+      "og:locale": "es_ES",
+      "og:type": "website",
+      "og:title": "Medicamentos de Alta Especialidad y Atención Personalizada | Farmacias - FARMACIAS MACROSS",
+      "og:description": "Atención Farmacéutica para Tratamientos Especializados En Farmacias Macross ofrecemos asesoría profesional y atención confidencial para pacientes que requieren medicamentos de alta especialidad bajo prescripción médica.Nuestro equipo farmacéutico certificado brinda acompañamiento y orientación sobre disponibilidad, man",
+      "og:image": "https://farmaciasmacross.com.mx/cdn/shop/files/macrossshopy.jpg?v=1715106746",
+      "og:image:height": "2617",
+      "og:image:width": "5000",
+      "charset": "utf-8"
+    },
+    "headings": {
+      "h1": 1,
+      "h2": 0,
+      "h3": 5,
+      "h4": 0,
+      "h5": 0,
+      "h6": 0
+    },
+    "schema": [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "https://farmaciasmacross.com.mx/?srsltid=AfmBOopYY2DhcHDZALoeUdUfOjSFdQfMUhpotkAJr1TOOz-jI-afSzwu",
+        "logo": "https://cdn.shopify.com/s/files/1/0561/1814/9287/files/logo.Shopify.ico?v=1725638793"
+      },
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/organization/1",
+            "url": "https://farmaciasmacross.com.mx",
+            "name": "farmacias macross",
+            "alternateName": "Macross pharma sa de cv",
+            "logo": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/26913251295399"
+            },
+            "image": [
+              {
+                "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/26913251295399"
+              }
+            ],
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "merchantReturnLink": "https://farmaciasmacross.com.mx/policies/refund-policy"
+            },
+            "sameAs": []
+          },
+          {
+            "@type": "ImageObject",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/26913251295399",
+            "width": 662,
+            "height": 662,
+            "url": "https://farmaciasmacross.com.mx/cdn/shop/files/farmacia_macross_e02c5b26-6edc-4433-ad91-c3c720525955.gif?v=1669158703",
+            "contentUrl": "https://farmaciasmacross.com.mx/cdn/shop/files/farmacia_macross_e02c5b26-6edc-4433-ad91-c3c720525955.gif?v=1669158703"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/website/1",
+            "url": "https://farmaciasmacross.com.mx",
+            "name": "www.farmaciasmacross.com.mx",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://farmaciasmacross.com.mx/search?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            },
+            "publisher": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/organization/1"
+            },
+            "inLanguage": "es"
+          },
+          {
+            "@type": [
+              "WebPage"
+            ],
+            "@id": "https://farmaciasmacross.com.mx/pages/medicamentos-de-alta-especialidad-y-atencion-personalizada-farmacias-macross",
+            "name": "Medicamentos de Alta Especialidad y Atención Personalizada | Farmacias - FARMACIAS MACROSS",
+            "description": "Atención Farmacéutica para Tratamientos Especializados En Farmacias Macross ofrecemos asesoría profesional y atención confidencial para pacientes que requieren medicamentos de alta especialidad bajo prescripción médica.Nuestro equipo farmacéutico certificado brinda acompañamiento y orientación sobre disponibilidad, man",
+            "datePublished": "2025-10-27T15:16:16-06:00",
+            "potentialAction": {
+              "@type": "ReadAction",
+              "target": "https://farmaciasmacross.com.mx/pages/medicamentos-de-alta-especialidad-y-atencion-personalizada-farmacias-macross"
+            },
+            "breadcrumb": {
+              "@id": "https://farmaciasmacross.com.mx/pages/medicamentos-de-alta-especialidad-y-atencion-personalizada-farmacias-macross/#/schema/breadcrumb"
+            },
+            "primaryImageOfPage": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/616598470823"
+            },
+            "image": [
+              {
+                "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/616598470823"
+              }
+            ],
+            "isPartOf": {
+              "@id": "https://farmaciasmacross.com.mx/#/schema/website/1"
+            },
+            "url": "https://farmaciasmacross.com.mx/pages/medicamentos-de-alta-especialidad-y-atencion-personalizada-farmacias-macross"
+          },
+          {
+            "@type": "ImageObject",
+            "@id": "https://farmaciasmacross.com.mx/#/schema/ImageObject/616598470823",
+            "width": 5000,
+            "height": 2617,
+            "url": "https://farmaciasmacross.com.mx/cdn/shop/files/macrossshopy.jpg?v=1715106746",
+            "contentUrl": "https://farmaciasmacross.com.mx/cdn/shop/files/macrossshopy.jpg?v=1715106746"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://farmaciasmacross.com.mx/pages/medicamentos-de-alta-especialidad-y-atencion-personalizada-farmacias-macross/#/schema/breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "name": "FARMACIAS MACROSS",
+                "item": "https://farmaciasmacross.com.mx",
+                "position": 1
+              },
+              {
+                "@type": "ListItem",
+                "name": "Medicamentos de Alta Especialidad y Atención Personalizada | Farmacias Macross",
+                "position": 2
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "open_graph": {
+      "site_name": "FARMACIAS MACROSS",
+      "url": "https://farmaciasmacross.com.mx/pages/medicamentos-de-alta-especialidad-y-atencion-personalizada-farmacias-macross",
+      "locale": "es_ES",
+      "type": "website",
+      "title": "Medicamentos de Alta Especialidad y Atención Personalizada | Farmacias - FARMACIAS MACROSS",
+      "description": "Atención Farmacéutica para Tratamientos Especializados En Farmacias Macross ofrecemos asesoría profesional y atención confidencial para pacientes que requieren medicamentos de alta especialidad bajo prescripción médica.Nuestro equipo farmacéutico certificado brinda acompañamiento y orientación sobre disponibilidad, man",
+      "image": "https://farmaciasmacross.com.mx/cdn/shop/files/macrossshopy.jpg?v=1715106746",
+      "image:height": "2617",
+      "image:width": "5000"
+    },
+    "twitter_card": {
+      "card": "summary_large_image"
+    },
+    "canonical": "https://farmaciasmacross.com.mx/pages/medicamentos-de-alta-especialidad-y-atencion-personalizada-farmacias-macross",
+    "hreflang": [],
+    "security_headers": {
+      "strict-transport-security": "max-age=7889238",
+      "x-frame-options": "DENY",
+      "x-content-type-options": "nosniff",
+      "x-xss-protection": "1; mode=block",
+      "content-security-policy": "block-all-mixed-content; frame-ancestors 'none'; upgrade-insecure-requests;"
+    },
+    "mixed_content": true,
+    "https_redirect": false,
+    "sitemap_reference": null,
+    "robots_meta": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  }
+}

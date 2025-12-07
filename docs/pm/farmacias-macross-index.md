@@ -432,3 +432,5 @@ Ver: [Client Communications - Template 7](./farmacias-macross-client-comms.md#te
 
 
 
+
+

@@ -1,0 +1,29 @@
+{
+  "home": {
+    "url": "https://macross-pharma.myshopify.com/",
+    "weight": 0.17,
+    "mobile": {
+      "performance_score": 35,
+      "lcp": 13.83455593902128,
+      "cls": 0.3704050210459024,
+      "fcp": 10.68454251733785,
+      "tti": 19.885802222682074,
+      "speed_index": 10.68454251733785,
+      "accessibility_score": 71,
+      "best_practices_score": 73,
+      "seo_score": 85
+    },
+    "desktop": {
+      "performance_score": 69,
+      "lcp": 0.9450211973007242,
+      "cls": 0.0009863895328066786,
+      "fcp": 0.5688672117046147,
+      "tti": 4.239210287458571,
+      "speed_index": 3.3936286059089587,
+      "accessibility_score": 71,
+      "best_practices_score": 73,
+      "seo_score": 85
+    }
+  },
+  "weighted_average_score": 35.0
+}
