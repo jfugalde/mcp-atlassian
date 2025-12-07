@@ -1,0 +1,698 @@
+{
+  "summary": {
+    "total_pages_analyzed": 11,
+    "categories": [
+      "home",
+      "category",
+      "product",
+      "other"
+    ]
+  },
+  "averages_by_category": {
+    "home": {
+      "mobile": {
+        "performance_score": 42.0,
+        "lcp": 15.300535909248275,
+        "cls": 0.17626279904692602,
+        "fcp": 8.797525246230224,
+        "tti": 19.89602234700075,
+        "ttfb": 0.016,
+        "speed_index": 8.869680925021706
+      },
+      "desktop": {
+        "performance_score": 74.0,
+        "lcp": 1.0240270985805173,
+        "cls": 0.003159233179743608,
+        "fcp": 0.5738878291158368,
+        "tti": 3.8708814991440197,
+        "ttfb": 0.01,
+        "speed_index": 2.996467249694665
+      },
+      "page_count": 1
+    },
+    "category": {
+      "mobile": {
+        "performance_score": 64.0,
+        "lcp": 9.76922623131409,
+        "cls": 0.0020568750056708324,
+        "fcp": 4.73100919120809,
+        "tti": 11.29130338496202,
+        "ttfb": 0.00925,
+        "speed_index": 5.30887762891908
+      },
+      "desktop": {
+        "performance_score": 90.0,
+        "lcp": 1.3529218596911559,
+        "cls": 0.004826504484443454,
+        "fcp": 0.530972807992661,
+        "tti": 2.4586115982369594,
+        "ttfb": 0.007,
+        "speed_index": 0.9393923739874203
+      },
+      "page_count": 4
+    },
+    "product": {
+      "mobile": {
+        "performance_score": 59.0,
+        "lcp": 12.57560285769729,
+        "cls": 0.011252529446689995,
+        "fcp": 5.061671492028151,
+        "tti": 14.70164109503883,
+        "ttfb": 0.00825,
+        "speed_index": 6.017584338940751
+      },
+      "desktop": {
+        "performance_score": 77.75,
+        "lcp": 2.5795302804148212,
+        "cls": 0.017995271755691475,
+        "fcp": 0.5587262513685127,
+        "tti": 3.069824112998188,
+        "ttfb": 0.0185,
+        "speed_index": 1.3594185385457598
+      },
+      "page_count": 4
+    },
+    "other": {
+      "mobile": {
+        "performance_score": 76.5,
+        "lcp": 5.984546571642449,
+        "cls": 0.03921024949126629,
+        "fcp": 3.0937817956916236,
+        "tti": 12.218694086659951,
+        "ttfb": 0.006500000000000001,
+        "speed_index": 3.337322909827157
+      },
+      "desktop": {
+        "performance_score": 99.0,
+        "lcp": 0.9175355718292315,
+        "cls": 0.01549879852998717,
+        "fcp": 0.5316389153874065,
+        "tti": 2.0848858047049523,
+        "ttfb": 0.005,
+        "speed_index": 0.8111398004124097
+      },
+      "page_count": 2
+    }
+  },
+  "worst_performing_pages": {
+    "mobile": {
+      "lcp": {
+        "url": "https://farmaciasmacross.com.mx",
+        "value": 15.300535909248275,
+        "category": "home"
+      },
+      "fcp": {
+        "url": "https://farmaciasmacross.com.mx",
+        "value": 8.797525246230224,
+        "category": "home"
+      },
+      "tti": {
+        "url": "https://farmaciasmacross.com.mx",
+        "value": 19.89602234700075,
+        "category": "home"
+      },
+      "cls": {
+        "url": "https://farmaciasmacross.com.mx",
+        "value": 0.17626279904692602,
+        "category": "home"
+      }
+    },
+    "desktop": {
+      "lcp": {
+        "url": "https://farmaciasmacross.com.mx/products/biktarvy-precio-en-mexico-y-para-que-sirve",
+        "value": 3.197491412989427,
+        "category": "product"
+      },
+      "fcp": {
+        "url": "https://farmaciasmacross.com.mx",
+        "value": 0.5738878291158368,
+        "category": "home"
+      },
+      "tti": {
+        "url": "https://farmaciasmacross.com.mx",
+        "value": 3.8708814991440197,
+        "category": "home"
+      },
+      "cls": {
+        "url": "https://farmaciasmacross.com.mx/pages/medicamentos-de-alta-especialidad-y-atencion-personalizada-farmacias-macross",
+        "value": 0.02491599450752302,
+        "category": "other"
+      }
+    }
+  },
+  "compliance_with_thresholds": {
+    "home": {
+      "mobile": {
+        "lcp": {
+          "good": 0,
+          "needs_improvement": 0,
+          "poor": 1
+        },
+        "fcp": {
+          "good": 0,
+          "needs_improvement": 0,
+          "poor": 1
+        },
+        "cls": {
+          "good": 0,
+          "needs_improvement": 1,
+          "poor": 0
+        },
+        "tti": {
+          "good": 0,
+          "needs_improvement": 0,
+          "poor": 1
+        },
+        "ttfb": {
+          "good": 1,
+          "needs_improvement": 0,
+          "poor": 0
+        }
+      },
+      "desktop": {
+        "lcp": {
+          "good": 1,
+          "needs_improvement": 0,
+          "poor": 0
+        },
+        "fcp": {
+          "good": 1,
+          "needs_improvement": 0,
+          "poor": 0
+        },
+        "cls": {
+          "good": 1,
+          "needs_improvement": 0,
+          "poor": 0
+        },
+        "tti": {
+          "good": 0,
+          "needs_improvement": 1,
+          "poor": 0
+        },
+        "ttfb": {
+          "good": 1,
+          "needs_improvement": 0,
+          "poor": 0
+        }
+      }
+    },
+    "category": {
+      "mobile": {
+        "lcp": {
+          "good": 0,
+          "needs_improvement": 0,
+          "poor": 4
+        },
+        "fcp": {
+          "good": 0,
+          "needs_improvement": 1,
+          "poor": 3
+        },
+        "cls": {
+          "good": 4,
+          "needs_improvement": 0,
+          "poor": 0
+        },
+        "tti": {
+          "good": 0,
+          "needs_improvement": 0,
+          "poor": 4
+        },
+        "ttfb": {
+          "good": 4,
+          "needs_improvement": 0,
+          "poor": 0
+        }
+      },
+      "desktop": {
+        "lcp": {
+          "good": 4,
+          "needs_improvement": 0,
+          "poor": 0
+        },
+        "fcp": {
+          "good": 4,
+          "needs_improvement": 0,
+          "poor": 0
+        },
+        "cls": {
+          "good": 4,
+          "needs_improvement": 0,
+          "poor": 0
+        },
+        "tti": {
+          "good": 4,
+          "needs_improvement": 0,
+          "poor": 0
+        },
+        "ttfb": {
+          "good": 4,
+          "needs_improvement": 0,
+          "poor": 0
+        }
+      }
+    },
+    "product": {
+      "mobile": {
+        "lcp": {
+          "good": 0,
+          "needs_improvement": 0,
+          "poor": 4
+        },
+        "fcp": {
+          "good": 0,
+          "needs_improvement": 2,
+          "poor": 2
+        },
+        "cls": {
+          "good": 4,
+          "needs_improvement": 0,
+          "poor": 0
+        },
+        "tti": {
+          "good": 0,
+          "needs_improvement": 0,
+          "poor": 4
+        },
+        "ttfb": {
+          "good": 4,
+          "needs_improvement": 0,
+          "poor": 0
+        }
+      },
+      "desktop": {
+        "lcp": {
+          "good": 2,
+          "needs_improvement": 2,
+          "poor": 0
+        },
+        "fcp": {
+          "good": 4,
+          "needs_improvement": 0,
+          "poor": 0
+        },
+        "cls": {
+          "good": 4,
+          "needs_improvement": 0,
+          "poor": 0
+        },
+        "tti": {
+          "good": 3,
+          "needs_improvement": 1,
+          "poor": 0
+        },
+        "ttfb": {
+          "good": 4,
+          "needs_improvement": 0,
+          "poor": 0
+        }
+      }
+    },
+    "other": {
+      "mobile": {
+        "lcp": {
+          "good": 0,
+          "needs_improvement": 1,
+          "poor": 1
+        },
+        "fcp": {
+          "good": 1,
+          "needs_improvement": 0,
+          "poor": 1
+        },
+        "cls": {
+          "good": 2,
+          "needs_improvement": 0,
+          "poor": 0
+        },
+        "tti": {
+          "good": 0,
+          "needs_improvement": 0,
+          "poor": 2
+        },
+        "ttfb": {
+          "good": 2,
+          "needs_improvement": 0,
+          "poor": 0
+        }
+      },
+      "desktop": {
+        "lcp": {
+          "good": 2,
+          "needs_improvement": 0,
+          "poor": 0
+        },
+        "fcp": {
+          "good": 2,
+          "needs_improvement": 0,
+          "poor": 0
+        },
+        "cls": {
+          "good": 2,
+          "needs_improvement": 0,
+          "poor": 0
+        },
+        "tti": {
+          "good": 2,
+          "needs_improvement": 0,
+          "poor": 0
+        },
+        "ttfb": {
+          "good": 2,
+          "needs_improvement": 0,
+          "poor": 0
+        }
+      }
+    }
+  },
+  "thresholds": {
+    "lcp": {
+      "good": 2.5,
+      "needs_improvement": 4.0
+    },
+    "fcp": {
+      "good": 1.8,
+      "needs_improvement": 3.0
+    },
+    "cls": {
+      "good": 0.1,
+      "needs_improvement": 0.25
+    },
+    "tti": {
+      "good": 3.8,
+      "needs_improvement": 7.3
+    },
+    "ttfb": {
+      "good": 0.8,
+      "needs_improvement": 1.8
+    }
+  },
+  "pages_by_category": {
+    "home": [
+      {
+        "url": "https://farmaciasmacross.com.mx",
+        "mobile": {
+          "performance_score": 42,
+          "lcp": 15.300535909248275,
+          "cls": 0.17626279904692602,
+          "fcp": 8.797525246230224,
+          "tti": 19.89602234700075,
+          "speed_index": 8.869680925021706,
+          "accessibility_score": 71,
+          "best_practices_score": 73,
+          "seo_score": 85,
+          "ttfb": 0.016
+        },
+        "desktop": {
+          "performance_score": 74,
+          "lcp": 1.0240270985805173,
+          "cls": 0.003159233179743608,
+          "fcp": 0.5738878291158368,
+          "tti": 3.8708814991440197,
+          "speed_index": 2.996467249694665,
+          "accessibility_score": 71,
+          "best_practices_score": 73,
+          "seo_score": 85,
+          "ttfb": 0.01
+        }
+      }
+    ],
+    "category": [
+      {
+        "url": "https://farmaciasmacross.com.mx/collections/medicamento-oncologicos-al-mejor-precio-alta-especialidad",
+        "mobile": {
+          "performance_score": 60,
+          "lcp": 11.220297380766343,
+          "cls": 0,
+          "fcp": 5.5151656193545096,
+          "tti": 11.242972655146623,
+          "speed_index": 6.3997261901625695,
+          "accessibility_score": 76,
+          "best_practices_score": 96,
+          "seo_score": 92,
+          "ttfb": 0.008
+        },
+        "desktop": {
+          "performance_score": 96,
+          "lcp": 1.3450410759433422,
+          "cls": 0.004500700363190525,
+          "fcp": 0.5312608719553257,
+          "tti": 2.213748434054905,
+          "speed_index": 0.771439508869918,
+          "accessibility_score": 76,
+          "best_practices_score": 96,
+          "seo_score": 92,
+          "ttfb": 0.008
+        }
+      },
+      {
+        "url": "https://farmaciasmacross.com.mx/collections/cardiologia",
+        "mobile": {
+          "performance_score": 75,
+          "lcp": 6.240730822248203,
+          "cls": 0.005021078870234535,
+          "fcp": 1.951010529506525,
+          "tti": 12.267540200043175,
+          "speed_index": 2.979826542307308,
+          "accessibility_score": 76,
+          "best_practices_score": 96,
+          "seo_score": 92,
+          "ttfb": 0.006
+        },
+        "desktop": {
+          "performance_score": 92,
+          "lcp": 1.3505831101927845,
+          "cls": 0.003484323213303476,
+          "fcp": 0.5280042345474275,
+          "tti": 1.923614256416406,
+          "speed_index": 0.9907111647308704,
+          "accessibility_score": 76,
+          "best_practices_score": 96,
+          "seo_score": 92,
+          "ttfb": 0.006
+        }
+      },
+      {
+        "url": "https://farmaciasmacross.com.mx/collections/reumatologia-y-traumatologia",
+        "mobile": {
+          "performance_score": 59,
+          "lcp": 11.043831345747538,
+          "cls": 0,
+          "fcp": 6.258827110630688,
+          "tti": 11.069655205070658,
+          "speed_index": 6.6569242778658095,
+          "accessibility_score": 76,
+          "best_practices_score": 96,
+          "seo_score": 92,
+          "ttfb": 0.016
+        },
+        "desktop": {
+          "performance_score": 96,
+          "lcp": 1.2570374355662222,
+          "cls": 0.00531724393187693,
+          "fcp": 0.5320953459126319,
+          "tti": 2.681342976971183,
+          "speed_index": 0.9073925015785389,
+          "accessibility_score": 76,
+          "best_practices_score": 96,
+          "seo_score": 92,
+          "ttfb": 0.006
+        }
+      },
+      {
+        "url": "https://farmaciasmacross.com.mx/collections/medicamentos-para-el-sistema-inmunologico-1",
+        "mobile": {
+          "performance_score": 62,
+          "lcp": 10.57204537649427,
+          "cls": 0.0032064211524487954,
+          "fcp": 5.199033505340634,
+          "tti": 10.585045479587627,
+          "speed_index": 5.199033505340634,
+          "accessibility_score": 76,
+          "best_practices_score": 96,
+          "seo_score": 92,
+          "ttfb": 0.007
+        },
+        "desktop": {
+          "performance_score": 76,
+          "lcp": 1.4590258170622745,
+          "cls": 0.0060037504294028834,
+          "fcp": 0.5325307795552587,
+          "tti": 3.015740725505343,
+          "speed_index": 1.0880263207703538,
+          "accessibility_score": 76,
+          "best_practices_score": 96,
+          "seo_score": 92,
+          "ttfb": 0.008
+        }
+      }
+    ],
+    "product": [
+      {
+        "url": "https://farmaciasmacross.com.mx/products/biktarvy-precio-en-mexico-y-para-que-sirve",
+        "mobile": {
+          "performance_score": 55,
+          "lcp": 13.747572214566887,
+          "cls": 0.00948611076102653,
+          "fcp": 6.749048335920963,
+          "tti": 14.957329555481367,
+          "speed_index": 7.086465601630581,
+          "accessibility_score": 74,
+          "best_practices_score": 96,
+          "seo_score": 92,
+          "ttfb": 0.008
+        },
+        "desktop": {
+          "performance_score": 79,
+          "lcp": 3.197491412989427,
+          "cls": 0.01860882542679886,
+          "fcp": 0.570133085195384,
+          "tti": 3.21429184595875,
+          "speed_index": 1.3800818732858289,
+          "accessibility_score": 69,
+          "best_practices_score": 96,
+          "seo_score": 85,
+          "ttfb": 0.02
+        }
+      },
+      {
+        "url": "https://farmaciasmacross.com.mx/products/eligard-precio-y-disponibilidad-leuprorelina-tratamiento-de-prostata",
+        "mobile": {
+          "performance_score": 63,
+          "lcp": 11.237041761596359,
+          "cls": 0.011086801377783354,
+          "fcp": 2.7010122151594333,
+          "tti": 15.49405221262339,
+          "speed_index": 4.060131369159887,
+          "accessibility_score": 74,
+          "best_practices_score": 96,
+          "seo_score": 92,
+          "ttfb": 0.008
+        },
+        "desktop": {
+          "performance_score": 88,
+          "lcp": 2.1035134515711733,
+          "cls": 0.016812033644592595,
+          "fcp": 0.5682699691706837,
+          "tti": 2.462261152132643,
+          "speed_index": 1.208249496263834,
+          "accessibility_score": 69,
+          "best_practices_score": 96,
+          "seo_score": 85,
+          "ttfb": 0.038
+        }
+      },
+      {
+        "url": "https://farmaciasmacross.com.mx/products/synvisc-8mg-ml-precio-mexico",
+        "mobile": {
+          "performance_score": 53,
+          "lcp": 13.246531572650557,
+          "cls": 0.00948611076102653,
+          "fcp": 8.245606795412936,
+          "tti": 14.594890888987301,
+          "speed_index": 8.245606795412936,
+          "accessibility_score": 76,
+          "best_practices_score": 96,
+          "seo_score": 92,
+          "ttfb": 0.01
+        },
+        "desktop": {
+          "performance_score": 84,
+          "lcp": 2.433558359450443,
+          "cls": 0.01828011397568722,
+          "fcp": 0.5284223919614977,
+          "tti": 2.761052196152695,
+          "speed_index": 1.3967678354740933,
+          "accessibility_score": 69,
+          "best_practices_score": 96,
+          "seo_score": 85,
+          "ttfb": 0.006
+        }
+      },
+      {
+        "url": "https://farmaciasmacross.com.mx/products/zytiga-500-mg-precio-mexico",
+        "mobile": {
+          "performance_score": 65,
+          "lcp": 12.071265881975355,
+          "cls": 0.01495109488692356,
+          "fcp": 2.5510186216192725,
+          "tti": 13.76029172306326,
+          "speed_index": 4.678133589559602,
+          "accessibility_score": 74,
+          "best_practices_score": 96,
+          "seo_score": 92,
+          "ttfb": 0.007
+        },
+        "desktop": {
+          "performance_score": 60,
+          "lcp": 2.583557897648241,
+          "cls": 0.01828011397568722,
+          "fcp": 0.5680795591464856,
+          "tti": 3.841691257748663,
+          "speed_index": 1.452574949159283,
+          "accessibility_score": 69,
+          "best_practices_score": 96,
+          "seo_score": 85,
+          "ttfb": 0.01
+        }
+      }
+    ],
+    "other": [
+      {
+        "url": "https://farmaciasmacross.com.mx/pages/nuestras-licencias",
+        "mobile": {
+          "performance_score": 60,
+          "lcp": 9.118069061267954,
+          "cls": 0,
+          "fcp": 4.530045558950637,
+          "tti": 12.338825187413299,
+          "speed_index": 4.530045558950637,
+          "accessibility_score": 76,
+          "best_practices_score": 92,
+          "seo_score": 85,
+          "ttfb": 0.007
+        },
+        "desktop": {
+          "performance_score": 99,
+          "lcp": 0.9250283988650334,
+          "cls": 0.00608160255245132,
+          "fcp": 0.5301175601610106,
+          "tti": 2.339201318621078,
+          "speed_index": 0.8567512892927976,
+          "accessibility_score": 76,
+          "best_practices_score": 96,
+          "seo_score": 85,
+          "ttfb": 0.005
+        }
+      },
+      {
+        "url": "https://farmaciasmacross.com.mx/pages/medicamentos-de-alta-especialidad-y-atencion-personalizada-farmacias-macross",
+        "mobile": {
+          "performance_score": 93,
+          "lcp": 2.851024082016944,
+          "cls": 0.07842049898253257,
+          "fcp": 1.6575180324326095,
+          "tti": 12.098562985906604,
+          "speed_index": 2.1446002607036765,
+          "accessibility_score": 76,
+          "best_practices_score": 96,
+          "seo_score": 92,
+          "ttfb": 0.006
+        },
+        "desktop": {
+          "performance_score": 99,
+          "lcp": 0.9100427447934297,
+          "cls": 0.02491599450752302,
+          "fcp": 0.5331602706138023,
+          "tti": 1.830570290788827,
+          "speed_index": 0.7655283115320217,
+          "accessibility_score": 76,
+          "best_practices_score": 96,
+          "seo_score": 92,
+          "ttfb": 0.005
+        }
+      }
+    ]
+  }
+}

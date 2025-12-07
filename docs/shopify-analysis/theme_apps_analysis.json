@@ -1,0 +1,465 @@
+{
+  "audit_date": null,
+  "theme": {
+    "name": "Unknown (API access required)",
+    "id": null,
+    "created_at": null,
+    "updated_at": null,
+    "theme_store_id": null
+  },
+  "apps": {
+    "total": 0,
+    "list": [],
+    "by_category": {},
+    "total_monthly_cost": 0
+  },
+  "scripts": {
+    "total_scripts": 51,
+    "scripts_in_head": 31,
+    "scripts_in_body": 20,
+    "blocking_scripts": 32,
+    "async_scripts": 3,
+    "defer_scripts": 16,
+    "external_scripts": 19,
+    "inline_scripts": 32,
+    "blocking_scripts_detail": [
+      {
+        "src": "inline",
+        "async": false,
+        "defer": false,
+        "type": "text/javascript",
+        "inline": "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n})(window,document,'script','dataLayer','GTM-MZHHMLMX');",
+        "size": 342
+      },
+      {
+        "src": "inline",
+        "async": false,
+        "defer": false,
+        "type": "text/javascript",
+        "inline": "// https://codebeautify.org/jsviewer\n\n  function _debounce(fn, wait = 300) {\n    let t;\n    return (...args) => {\n      clearTimeout(t);\n      t = setTimeout(() => fn.apply(this, args), wait);\n    };\n  }\n\n  try {\n    window.MinimogSettings = window.MinimogSettings || {};\n    window.___mnag = 'userA' + (window.___mnag1 || '') + 'gent';\n\n    var _mh = document.querySelector('header.sf-header__mobile');\n    var _dh = document.querySelector('header.sf-header__desktop');\n    // Set header height\n    function _shh() {\n      if (!_mh || !_dh) {\n        _mh = document.querySelector('header.sf-header__mobile');\n        _dh = document.querySelector('header.sf-header__desktop');\n      }\n      // Header\n      var _hd = window.innerWidth < 1024 ? _mh : _dh;\n      if (_hd) {\n        document.documentElement.style.setProperty('--sf-header-height', _hd.offsetHeight + 'px');\n        window.MinimogSettings.headerHeight = _hd.offsetHeight;\n      }\n    }\n\n    // setTopbarHeight\n    function _stbh() {\n      // Topbar\n      var _tb = document.querySelector('.sf-topbar');\n      if (_tb) {\n        document.documentElement.style.setProperty('--sf-topbar-height', _tb.offsetHeight + 'px');\n        window.MinimogSettings.topbarHeight = _tb.offsetHeight;\n      }\n    }\n\n    // setAnnouncementHeight\n    function _sah() {\n      // announcement_bar\n      var _ab = document.querySelector('.announcement-bar');\n      if (_ab) {\n        document.documentElement.style.setProperty('--sf-announcement-height', _ab.offsetHeight + 'px');\n        window.MinimogSettings.topbarHeight = _ab.offsetHeight;\n      }\n    }\n\n    // setMainContentPadding\n    function _smcp() {\n      // pageTemplate\n      var _pt = document.documentElement.dataset.template;\n      if (window.innerWidth >= 1024) {\n        if (_dh && _dh.dataset.transparent === \"true\") {\n          if (_pt === 'index' || _pt === 'collection') {\n            document.documentElement.style.setProperty('--main-content-padding-top', '0px');\n          }\n        }\n      } else {\n        document.documentElement.style.removeProperty('--main-content-padding-top');\n      }\n    }\n\n    // calculateSectionsHeight\n    function _csh() {_shh();_stbh();_sah();_smcp();}\n    window.addEventListener('resize', _debounce(_csh, 1000));\n\n    document.documentElement.className = document.documentElement.className.replace('supports-no-cookies', 'supports-cookies').replace('no-js', 'js');\n  } catch (error) {\n    console.warn('Failed to execute critical scripts', error);\n  }\n\n  try {\n    // Page speed agent\n    var _nu = navigator[window.___mnag];\n    var _psas = [\n      {\n        'b': 'ome-Li',\n        'c': 'ghth',\n        'd': 'ouse',\n        'a': 'Chr',\n      },\n      {\n        'd': 'hts',\n        'a': 'Sp',\n        'c': 'nsig',\n        'b': 'eed I',\n      },\n      {\n        'b': ' Lin',\n        'd': '6_64',\n        'a': 'X11;',\n        'c': 'ux x8',\n      }\n    ];\n    function __fn(i) {\n      return Object.keys(_psas[i]).sort().reduce(function (a, c) { return a + _psas[i][c] }, '');\n    }\n\n    var __isPSA = (_nu.indexOf(__fn(0)) > -1 || _nu.indexOf(__fn(1)) > -1 || _nu.indexOf(__fn(2)) > -1);\n    // var __isPSA = true\n\n    window.___mnag = '!1';\n    _psas = null;\n  } catch (err) {\n    var __isPSA = false;\n    var _psas = null;\n    window.___mnag = '!1';\n  }\n\n  // activateFontAndCriticalCSS\n  \n\n  // __activateStyle(this)\n  function __as(l) {\n    l.rel = 'stylesheet';\n    l.media = 'all';\n    l.removeAttribute('onload');\n  }\n\n  // _onChunkStyleLoad(this)\n  function __ocsl(l) {\n    if (!__isPSA) __as(l);\n  }\n\n  window.__isPSA = __isPSA;",
+        "size": 3588
+      },
+      {
+        "src": "inline",
+        "async": false,
+        "defer": false,
+        "type": "text/javascript",
+        "inline": "window.performance && window.performance.mark && window.performance.mark('shopify.content_for_header.start');",
+        "size": 109
+      },
+      {
+        "src": "inline",
+        "async": false,
+        "defer": false,
+        "type": "application/json",
+        "inline": "{\"accessToken\":\"b9375f4fc5feccf09fe425ac4aa64f06\",\"betas\":[\"rich-media-storefront-analytics\"],\"domain\":\"farmaciasmacross.com.mx\",\"predictiveSearch\":true,\"shopId\":56118149287,\"locale\":\"es\"}",
+        "size": 188
+      },
+      {
+        "src": "inline",
+        "async": false,
+        "defer": false,
+        "type": "text/javascript",
+        "inline": "var Shopify = Shopify || {};\nShopify.shop = \"macross-pharma.myshopify.com\";\nShopify.locale = \"es\";\nShopify.currency = {\"active\":\"MXN\",\"rate\":\"1.0\"};\nShopify.country = \"MX\";\nShopify.theme = {\"name\":\"Copia de Copia de Nuevo diseño\",\"id\":134884884647,\"schema_name\":\"Minimog - OS 2.0\",\"schema_version\":\"3.3.0\",\"theme_store_id\":null,\"role\":\"main\"};\nShopify.theme.handle = \"null\";\nShopify.theme.style = {\"id\":null,\"handle\":null};\nShopify.cdnHost = \"farmaciasmacross.com.mx/cdn\";\nShopify.routes = Shopify.routes || {};\nShopify.routes.root = \"/\";",
+        "size": 538
+      },
+      {
+        "src": "inline",
+        "async": false,
+        "defer": false,
+        "type": "module",
+        "inline": "!function(o){(o.Shopify=o.Shopify||{}).modules=!0}(window);",
+        "size": 59
+      },
+      {
+        "src": "inline",
+        "async": false,
+        "defer": false,
+        "type": "text/javascript",
+        "inline": "!function(o){function n(){var o=[];function n(){o.push(Array.prototype.slice.apply(arguments))}return n.q=o,n}var t=o.Shopify=o.Shopify||{};t.loadFeatures=n(),t.autoloadFeatures=n()}(window);",
+        "size": 191
+      },
+      {
+        "src": "inline",
+        "async": false,
+        "defer": false,
+        "type": "application/json",
+        "inline": "{\"pageType\":\"index\"}",
+        "size": 20
+      },
+      {
+        "src": "inline",
+        "async": false,
+        "defer": false,
+        "type": "module",
+        "inline": "await import(\"//farmaciasmacross.com.mx/cdn/shopifycloud/shop-js/modules/v2/client.init-shop-cart-sync_DaR8I8JV.es.esm.js\");\nawait import(\"//farmaciasmacross.com.mx/cdn/shopifycloud/shop-js/modules/v2/chunk.common_CvUpgQgQ.esm.js\");\n\n  window.Shopify.SignInWithShop?.initShopCartSync?.({\"fedCMEnabled\":true,\"windoidEnabled\":true});",
+        "size": 336
+      },
+      {
+        "src": "inline",
+        "async": false,
+        "defer": false,
+        "type": "text/javascript",
+        "inline": "(function() {\n  var isLoaded = false;\n  function asyncLoad() {\n    if (isLoaded) return;\n    isLoaded = true;\n    var urls = [\"https:\\/\\/cdn.grw.reputon.com\\/assets\\/widget.js?shop=macross-pharma.myshopify.com\",\"https:\\/\\/app.testimonialhub.com\\/shopifyapp\\/showsrstemplate.js?shop=macross-pharma.myshopify.com\",\"https:\\/\\/cdn.shopify.com\\/s\\/files\\/1\\/0561\\/1814\\/9287\\/t\\/12\\/assets\\/yoast-active-script.js?v=1709832216\\u0026shop=macross-pharma.myshopify.com\"];\n    for (var i = 0; i < urls.length; i++) {\n      var s = document.createElement('script');\n      s.type = 'text/javascript';\n      s.async = true;\n      s.src = urls[i];\n      var x = document.getElementsByTagName('script')[0];\n      x.parentNode.insertBefore(s, x);\n    }\n  };\n  if(window.attachEvent) {\n    window.attachEvent('onload', asyncLoad);\n  } else {\n    window.addEventListener('load', asyncLoad, false);\n  }\n})();",
+        "size": 890
+      }
+    ],
+    "stylesheets": 23,
+    "preloads": 3,
+    "font_preconnects": 0,
+    "script_details": {
+      "head": [
+        {
+          "src": "inline",
+          "async": false,
+          "defer": false,
+          "type": "text/javascript",
+          "inline": "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n})(window,document,'script','dataLayer','GTM-MZHHMLMX');",
+          "size": 342
+        },
+        {
+          "src": "inline",
+          "async": false,
+          "defer": false,
+          "type": "text/javascript",
+          "inline": "// https://codebeautify.org/jsviewer\n\n  function _debounce(fn, wait = 300) {\n    let t;\n    return (...args) => {\n      clearTimeout(t);\n      t = setTimeout(() => fn.apply(this, args), wait);\n    };\n  }\n\n  try {\n    window.MinimogSettings = window.MinimogSettings || {};\n    window.___mnag = 'userA' + (window.___mnag1 || '') + 'gent';\n\n    var _mh = document.querySelector('header.sf-header__mobile');\n    var _dh = document.querySelector('header.sf-header__desktop');\n    // Set header height\n    function _shh() {\n      if (!_mh || !_dh) {\n        _mh = document.querySelector('header.sf-header__mobile');\n        _dh = document.querySelector('header.sf-header__desktop');\n      }\n      // Header\n      var _hd = window.innerWidth < 1024 ? _mh : _dh;\n      if (_hd) {\n        document.documentElement.style.setProperty('--sf-header-height', _hd.offsetHeight + 'px');\n        window.MinimogSettings.headerHeight = _hd.offsetHeight;\n      }\n    }\n\n    // setTopbarHeight\n    function _stbh() {\n      // Topbar\n      var _tb = document.querySelector('.sf-topbar');\n      if (_tb) {\n        document.documentElement.style.setProperty('--sf-topbar-height', _tb.offsetHeight + 'px');\n        window.MinimogSettings.topbarHeight = _tb.offsetHeight;\n      }\n    }\n\n    // setAnnouncementHeight\n    function _sah() {\n      // announcement_bar\n      var _ab = document.querySelector('.announcement-bar');\n      if (_ab) {\n        document.documentElement.style.setProperty('--sf-announcement-height', _ab.offsetHeight + 'px');\n        window.MinimogSettings.topbarHeight = _ab.offsetHeight;\n      }\n    }\n\n    // setMainContentPadding\n    function _smcp() {\n      // pageTemplate\n      var _pt = document.documentElement.dataset.template;\n      if (window.innerWidth >= 1024) {\n        if (_dh && _dh.dataset.transparent === \"true\") {\n          if (_pt === 'index' || _pt === 'collection') {\n            document.documentElement.style.setProperty('--main-content-padding-top', '0px');\n          }\n        }\n      } else {\n        document.documentElement.style.removeProperty('--main-content-padding-top');\n      }\n    }\n\n    // calculateSectionsHeight\n    function _csh() {_shh();_stbh();_sah();_smcp();}\n    window.addEventListener('resize', _debounce(_csh, 1000));\n\n    document.documentElement.className = document.documentElement.className.replace('supports-no-cookies', 'supports-cookies').replace('no-js', 'js');\n  } catch (error) {\n    console.warn('Failed to execute critical scripts', error);\n  }\n\n  try {\n    // Page speed agent\n    var _nu = navigator[window.___mnag];\n    var _psas = [\n      {\n        'b': 'ome-Li',\n        'c': 'ghth',\n        'd': 'ouse',\n        'a': 'Chr',\n      },\n      {\n        'd': 'hts',\n        'a': 'Sp',\n        'c': 'nsig',\n        'b': 'eed I',\n      },\n      {\n        'b': ' Lin',\n        'd': '6_64',\n        'a': 'X11;',\n        'c': 'ux x8',\n      }\n    ];\n    function __fn(i) {\n      return Object.keys(_psas[i]).sort().reduce(function (a, c) { return a + _psas[i][c] }, '');\n    }\n\n    var __isPSA = (_nu.indexOf(__fn(0)) > -1 || _nu.indexOf(__fn(1)) > -1 || _nu.indexOf(__fn(2)) > -1);\n    // var __isPSA = true\n\n    window.___mnag = '!1';\n    _psas = null;\n  } catch (err) {\n    var __isPSA = false;\n    var _psas = null;\n    window.___mnag = '!1';\n  }\n\n  // activateFontAndCriticalCSS\n  \n\n  // __activateStyle(this)\n  function __as(l) {\n    l.rel = 'stylesheet';\n    l.media = 'all';\n    l.removeAttribute('onload');\n  }\n\n  // _onChunkStyleLoad(this)\n  function __ocsl(l) {\n    if (!__isPSA) __as(l);\n  }\n\n  window.__isPSA = __isPSA;",
+          "size": 3588
+        },
+        {
+          "src": "//farmaciasmacross.com.mx/cdn/shop/t/12/assets/vendor.min.js?v=33890960766773293201709832215",
+          "async": false,
+          "defer": true,
+          "type": "text/javascript",
+          "inline": false,
+          "size": 0
+        },
+        {
+          "src": "//farmaciasmacross.com.mx/cdn/shop/t/12/assets/theme-global.js?v=120219309660905489651709832212",
+          "async": false,
+          "defer": true,
+          "type": "text/javascript",
+          "inline": false,
+          "size": 0
+        },
+        {
+          "src": "//farmaciasmacross.com.mx/cdn/shop/t/12/assets/app.min.js?v=115749925404019333281709832137",
+          "async": false,
+          "defer": true,
+          "type": "text/javascript",
+          "inline": false,
+          "size": 0
+        },
+        {
+          "src": "inline",
+          "async": false,
+          "defer": false,
+          "type": "text/javascript",
+          "inline": "window.performance && window.performance.mark && window.performance.mark('shopify.content_for_header.start');",
+          "size": 109
+        },
+        {
+          "src": "/checkouts/internal/preloads.js?locale=es-MX",
+          "async": true,
+          "defer": false,
+          "type": "text/javascript",
+          "inline": false,
+          "size": 0
+        },
+        {
+          "src": "inline",
+          "async": false,
+          "defer": false,
+          "type": "application/json",
+          "inline": "{\"accessToken\":\"b9375f4fc5feccf09fe425ac4aa64f06\",\"betas\":[\"rich-media-storefront-analytics\"],\"domain\":\"farmaciasmacross.com.mx\",\"predictiveSearch\":true,\"shopId\":56118149287,\"locale\":\"es\"}",
+          "size": 188
+        },
+        {
+          "src": "inline",
+          "async": false,
+          "defer": false,
+          "type": "text/javascript",
+          "inline": "var Shopify = Shopify || {};\nShopify.shop = \"macross-pharma.myshopify.com\";\nShopify.locale = \"es\";\nShopify.currency = {\"active\":\"MXN\",\"rate\":\"1.0\"};\nShopify.country = \"MX\";\nShopify.theme = {\"name\":\"Copia de Copia de Nuevo diseño\",\"id\":134884884647,\"schema_name\":\"Minimog - OS 2.0\",\"schema_version\":\"3.3.0\",\"theme_store_id\":null,\"role\":\"main\"};\nShopify.theme.handle = \"null\";\nShopify.theme.style = {\"id\":null,\"handle\":null};\nShopify.cdnHost = \"farmaciasmacross.com.mx/cdn\";\nShopify.routes = Shopify.routes || {};\nShopify.routes.root = \"/\";",
+          "size": 538
+        },
+        {
+          "src": "inline",
+          "async": false,
+          "defer": false,
+          "type": "module",
+          "inline": "!function(o){(o.Shopify=o.Shopify||{}).modules=!0}(window);",
+          "size": 59
+        },
+        {
+          "src": "inline",
+          "async": false,
+          "defer": false,
+          "type": "text/javascript",
+          "inline": "!function(o){function n(){var o=[];function n(){o.push(Array.prototype.slice.apply(arguments))}return n.q=o,n}var t=o.Shopify=o.Shopify||{};t.loadFeatures=n(),t.autoloadFeatures=n()}(window);",
+          "size": 191
+        },
+        {
+          "src": "inline",
+          "async": false,
+          "defer": false,
+          "type": "application/json",
+          "inline": "{\"pageType\":\"index\"}",
+          "size": 20
+        },
+        {
+          "src": "//farmaciasmacross.com.mx/cdn/shopifycloud/shop-js/modules/v2/client.init-shop-cart-sync_DaR8I8JV.es.esm.js",
+          "async": true,
+          "defer": true,
+          "type": "module",
+          "inline": false,
+          "size": 0
+        },
+        {
+          "src": "//farmaciasmacross.com.mx/cdn/shopifycloud/shop-js/modules/v2/chunk.common_CvUpgQgQ.esm.js",
+          "async": true,
+          "defer": true,
+          "type": "module",
+          "inline": false,
+          "size": 0
+        },
+        {
+          "src": "inline",
+          "async": false,
+          "defer": false,
+          "type": "module",
+          "inline": "await import(\"//farmaciasmacross.com.mx/cdn/shopifycloud/shop-js/modules/v2/client.init-shop-cart-sync_DaR8I8JV.es.esm.js\");\nawait import(\"//farmaciasmacross.com.mx/cdn/shopifycloud/shop-js/modules/v2/chunk.common_CvUpgQgQ.esm.js\");\n\n  window.Shopify.SignInWithShop?.initShopCartSync?.({\"fedCMEnabled\":true,\"windoidEnabled\":true});",
+          "size": 336
+        },
+        {
+          "src": "inline",
+          "async": false,
+          "defer": false,
+          "type": "text/javascript",
+          "inline": "(function() {\n  var isLoaded = false;\n  function asyncLoad() {\n    if (isLoaded) return;\n    isLoaded = true;\n    var urls = [\"https:\\/\\/cdn.grw.reputon.com\\/assets\\/widget.js?shop=macross-pharma.myshopify.com\",\"https:\\/\\/app.testimonialhub.com\\/shopifyapp\\/showsrstemplate.js?shop=macross-pharma.myshopify.com\",\"https:\\/\\/cdn.shopify.com\\/s\\/files\\/1\\/0561\\/1814\\/9287\\/t\\/12\\/assets\\/yoast-active-script.js?v=1709832216\\u0026shop=macross-pharma.myshopify.com\"];\n    for (var i = 0; i < urls.length; i++) {\n      var s = document.createElement('script');\n      s.type = 'text/javascript';\n      s.async = true;\n      s.src = urls[i];\n      var x = document.getElementsByTagName('script')[0];\n      x.parentNode.insertBefore(s, x);\n    }\n  };\n  if(window.attachEvent) {\n    window.attachEvent('onload', asyncLoad);\n  } else {\n    window.addEventListener('load', asyncLoad, false);\n  }\n})();",
+          "size": 890
+        },
+        {
+          "src": "inline",
+          "async": false,
+          "defer": false,
+          "type": "text/javascript",
+          "inline": "var __st={\"a\":56118149287,\"offset\":-21600,\"reqid\":\"e40148d5-b037-4faf-8ccb-6f9baacaf142-1765081144\",\"pageurl\":\"farmaciasmacross.com.mx\\/\",\"u\":\"727231bf5085\",\"p\":\"home\"};",
+          "size": 169
+        },
+        {
+          "src": "inline",
+          "async": false,
+          "defer": false,
+          "type": "text/javascript",
+          "inline": "window.ShopifyPaypalV4VisibilityTracking = true;",
+          "size": 48
+        },
+        {
+          "src": "inline",
+          "async": false,
+          "defer": false,
+          "type": "text/javascript",
+          "inline": "!function(){'use strict';const t='contact',e='new_comment',n=[[t,t],['blogs',e],['comments',e],[t,'customer']],o='password',r='form_key',c=['recaptcha-v3-token','g-recaptcha-response','h-captcha-response',o],s=()=>{try{return window.sessionStorage}catch{return}},i='__shopify_v',u=t=>t.elements[r],a=function(){const t=[...n].map((([t,e])=>`form[action*='/${t}']:not([data-nocaptcha='true']) input[name='form_type'][value='${e}']`)).join(',');var e;return e=t,()=>e?[...document.querySelectorAll(e)].map((t=>t.form)):[]}();function m(t){const e=u(t);a().includes(t)&&(!e||!e.value)&&function(t){try{if(!s())return;!function(t){const e=s();if(!e)return;const n=u(t);if(!n)return;const o=n.value;o&&e.removeItem(o)}(t);const e=Array.from(Array(32),(()=>Math.random().toString(36)[2])).join('');!function(t,e){u(t)||t.append(Object.assign(document.createElement('input'),{type:'hidden',name:r})),t.elements[r].value=e}(t,e),function(t,e){const n=s();if(!n)return;const r=[...t.querySelectorAll(`input[type='${o}']`)].map((({name:t})=>t)),u=[...c,...r],a={};for(const[o,c]of new FormData(t).entries())u.includes(o)||(a[o]=c);n.setItem(e,JSON.stringify({[i]:1,action:t.action,data:a}))}(t,e)}catch(e){console.error('failed to persist form',e)}}(t)}const f=t=>{if('true'===t.dataset.persistBound)return;const e=function(t,e){const n=function(t){return'function'==typeof t.submit?t.submit:HTMLFormElement.prototype.submit}(t).bind(t);return function(){let t;return()=>{t||(t=!0,(()=>{try{e(),n()}catch(t){(t=>{console.error('form submit failed',t)})(t)}})(),setTimeout((()=>t=!1),250))}}()}(t,(()=>{m(t)}));!function(t,e){if('function'==typeof t.submit&&'function'==typeof e)try{t.submit=e}catch{}}(t,e),t.addEventListener('submit',(t=>{t.preventDefault(),e()})),t.dataset.persistBound='true'};!function(){function t(t){const e=(t=>{const e=t.target;return e instanceof HTMLFormElement?e:e&&e.form})(t);e&&m(e)}document.addEventListener('submit',t),document.addEventListener('DOMContentLoaded',(()=>{const e=a();for(const t of e)f(t);var n;n=document.body,new window.MutationObserver((t=>{for(const e of t)if('childList'===e.type&&e.addedNodes.length)for(const t of e.addedNodes)1===t.nodeType&&'FORM'===t.tagName&&a().includes(t)&&f(t)})).observe(n,{childList:!0,subtree:!0,attributes:!1}),document.removeEventListener('submit',t)}))}()}();",
+          "size": 2334
+        },
+        {
+          "src": "//farmaciasmacross.com.mx/cdn/shopifycloud/storefront/assets/storefront/load_feature-81c60534.js",
+          "async": false,
+          "defer": true,
+          "type": "text/javascript",
+          "inline": false,
+          "size": 0
+        }
+      ],
+      "body": [
+        {
+          "src": "inline",
+          "async": false,
+          "defer": false,
+          "type": "text/javascript",
+          "inline": "window.MinimogThemeStyles = {  product: \"https://farmaciasmacross.com.mx/cdn/shop/t/12/assets/product.css?v=182364339088244618551709832196\"};window.MinimogTheme = {};window.MinimogTheme.version = '3.3.0';window.MinimogLibs = {};window.FoxKitStrings = {};window.MinimogStrings = {  addToCart: \"Añadir al carrito\",  soldOut: \"Agotado\",  unavailable: \"Indisponible\",  inStock: \"En stock\",  checkout: \"Check-out\",  viewCart: \"Ver carrito\",  cartRemove: \"Eliminar\",  zipcodeValidate: \"El código postal no puede estar en blanco\",  noShippingRate: \"No hay tarifas de envío para su dirección.\",  shippingRatesResult: \"Hemos encontrado {{count}} tarifa(s) de envío para tu dirección\",  recommendTitle: \"Recomendación para ti\",  shipping: \"Naviero\",  add: \"Agregar\",  itemAdded: \"Producto agregado al carrito con éxito\",  requiredField: \"Por favor, rellene todos los campos obligatorios(*) antes de Añadir al carrito!\",  hours: \"horas\",  mins: \"Minutos\",  outOfStock: \"Agotado\",  sold: \"Vendido\",  available: \"Disponible\",  preorder: \"Pre-ordenar\",  not_enough_item_message: \"No hay suficientes artículos disponibles. Solo queda __inventory_quantity__.\",  sold_out_items_message: \"El producto ya está agotado.\",  unitPrice: \"Precio por unidad\",  unitPriceSeparator: \"para\"};window.FoxKitStrings = null;window.MinimogThemeScripts = {  productModel: \"https://farmaciasmacross.com.mx/cdn/shop/t/12/assets/product-model-new.min.js?v=116323143127740990381709832193\",  productMedia: \"https://farmaciasmacross.com.mx/cdn/shop/t/12/assets/product-media.min.js?v=71879920726831169351709832193\",  variantsPicker: \"https://farmaciasmacross.com.mx/cdn/shop/t/12/assets/variant-picker.min.js?v=8029668521217398311709832214\"};window.MinimogSettings = {  design_mode: false,  requestPath: \"\\/\",  template: \"index\",  templateName: \"index\",currency_code: \"MXN\",  money_format: \"$ {{amount}}\",  base_url: window.location.origin + Shopify.routes.root,  money_with_currency_format: \"$ {{amount}} MXN\",\"filter_color1.png\": \"\\/\\/farmaciasmacross.com.mx\\/cdn\\/shop\\/t\\/12\\/assets\\/filter_color1.png?v=147458027895443808701709832164\\n\",          \"filter_color1\": \"Gingham\",      \"filter_color2.png\": \"\\/\\/farmaciasmacross.com.mx\\/cdn\\/shop\\/t\\/12\\/assets\\/filter_color2.png?v=177856991997372355631709832164\\n\",          \"filter_color2\": \"flannel\",theme: {    id: 134884884647,    name: \"Copia de Copia de Nuevo diseño\",    role: \"main\",    version: \"3.0.1\",    online_store_version: \"2.0\",    preview_url: \"https://farmaciasmacross.com.mx?preview_theme_id=134884884647\",  },  foxkitAppURL: null,  shop_domain: \"https:\\/\\/farmaciasmacross.com.mx\",  shop_locale: {    published: [{\"shop_locale\":{\"locale\":\"es\",\"enabled\":true,\"primary\":true,\"published\":true}}],    current: \"es\",    primary: \"es\",  },  routes: {    root: \"\\/\",    cart: \"\\/cart\",    product_recommendations_url: \"\\/recommendations\\/products\",    cart_add_url: '/cart/add',    cart_change_url: '/cart/change',    cart_update_url: '/cart/update',    predictive_search_url: '/search/suggest',    search_url: '/search'  },  hide_unavailable_product_options: true,  pcard_image_ratio: \"3\\/4\",  cookie_consent_allow: \"Allow Cookies\",  cookie_consent_message: \"This website uses cookies to ensure you get the best experience on our website.\",  cookie_consent_placement: \"bottom-left\",  cookie_consent_learnmore_link: \"https:\\/\\/www.cookiesandyou.com\\/\",  cookie_consent_learnmore: \"Learn more\",  cookie_consent_theme: \"white\",  cookie_consent_decline: \"Decline\",  show_cookie_consent: false,  product_colors: \"red: #FF6961,\\nyellow: #FDDA76,\\nblack: #000000,\\nblack band: #000000,\\nblue: #8DB4D2,\\ngreen: #C1E1C1,\\npurple: #B19CD9,\\nsilver: #EEEEEF,\\nwhite: #FFFFFF,\\nbrown: #836953,\\nlight brown: #B5651D,\\ndark turquoise: #23cddc,\\norange: #FFB347,\\ntan: #E9D1BF,\\nviolet: #B490B0,\\npink: #FFD1DC,\\ngrey: #E0E0E0,\\nsky: #96BDC6,\\npale leaf: #CCD4BF,\\nlight blue: #b1c5d4,\\ndark grey: #aca69f,\\nbeige: #EBE6DB,\\nbeige band: #EED9C4,\\ndark blue: #063e66,\\ncream: #FFFFCC,\\nlight pink: #FBCFCD,\\nmint: #bedce3,\\ndark gray: #3A3B3C,\\nrosy brown: #c4a287,\\nlight grey:#D3D3D3,\\ncopper: #B87333,\\nrose gold: #ECC5C0,\\nnight blue: #151B54,\\ncoral: #FF7F50,\\nlight purple: #C6AEC7\",  use_ajax_atc: true,  discount_code_enable: true,  enable_cart_drawer: true,  pcard_show_lowest_prices: false,  date_now: \"2025\\/12\\/06 22:19:00-0600 (CST)\"};window.themeStyleURLs = {  foxkitApp: {    url: \"//farmaciasmacross.com.mx/cdn/shop/t/12/assets/foxkit-app.css?v=109330822135549849281709832166\",    required: false,    afterWindowLoaded: true  },  productTemplate: {    url: \"//farmaciasmacross.com.mx/cdn/shop/t/12/assets/product-template.css?v=143442194256306734581709832195\",    required: false,    afterWindowLoaded: true  },  collection: {    url: \"//farmaciasmacross.com.mx/cdn/shop/t/12/assets/collection.css?v=173348108183914091481709832150\",    required: false  },  search: {    url: \"//farmaciasmacross.com.mx/cdn/shop/t/12/assets/collection.css?v=173348108183914091481709832150\",    required: false  },  customer: {    url: \"//farmaciasmacross.com.mx/cdn/shop/t/12/assets/customer.css?v=56279534652110279791709832157\",    required:  false ,  },  glightbox: {    url: \"//farmaciasmacross.com.mx/cdn/shop/t/12/assets/glightbox.css?v=161165302054230274211709832170\",    required:  false ,    afterWindowLoaded: true  },  plyr: {    url: \"//farmaciasmacross.com.mx/cdn/shop/t/12/assets/plyr.css?v=82538192041427600851709832184\",    required: false,    afterWindowLoaded: true  },};window.themeScriptURLs = {  productTemplate: {    url: \"//farmaciasmacross.com.mx/cdn/shop/t/12/assets/product-template.min.js?v=127468173885106848881709832196\",    required:  false ,    afterWindowLoaded: true  },  collection: {    url: \"//farmaciasmacross.com.mx/cdn/shop/t/12/assets/collection.min.js?v=110002246354775229651709832150\",    required:  false ,  },  customer: {    url: \"//farmaciasmacross.com.mx/cdn/shop/t/12/assets/customer.min.js?v=158768227566352523441709832158\",    required:  false ,  },  salesNotification: {    url: \"//farmaciasmacross.com.mx/cdn/shop/t/12/assets/sales-notifications.min.js?v=34782303980888695071709832201\",    required: false,    afterWindowLoaded: false  },  bundle: {    url: \"//farmaciasmacross.com.mx/cdn/shop/t/12/assets/bundle.min.js?v=97854917525692841141709832144\",    required: false,    afterWindowLoaded: false  },  luckyWheel: {    url: \"//farmaciasmacross.com.mx/cdn/shop/t/12/assets/lucky-wheel.min.js?v=8682629669981064011709832181\",    required: false,    afterWindowLoaded: false  },  prePurchase: {    url: \"//farmaciasmacross.com.mx/cdn/shop/t/12/assets/pre-purchase.min.js?v=18282398464817842951709832186\",    required: false,    afterWindowLoaded: false  },  inCart: {    url: \"//farmaciasmacross.com.mx/cdn/shop/t/12/assets/incart.min.js?v=73030679166103948791709832177\",    required: false,    afterWindowLoaded: false  },  cartGoal: {    url: \"//farmaciasmacross.com.mx/cdn/shop/t/12/assets/cart-goal.min.js?v=124174524718743935461709832145\",    required: false,    afterWindowLoaded: false  },  bis: {    url: \"//farmaciasmacross.com.mx/cdn/shop/t/12/assets/bis.min.js?v=109605929297449342861709832141\",    required: false,    afterWindowLoaded: false  },  quantityDiscount: {    url: \"//farmaciasmacross.com.mx/cdn/shop/t/12/assets/quantity-discount.min.js?v=142989655560127062001709832198\",    required: false,    afterWindowLoaded: false  },  popup: {    url: \"//farmaciasmacross.com.mx/cdn/shop/t/12/assets/popup.min.js?v=1463751194694169881709832185\",    required: false,    afterWindowLoaded: false  },  countdown: {    url: \"//farmaciasmacross.com.mx/cdn/shop/t/12/assets/product-countdown.min.js?v=38270570289248737001709832191\",    required: false,    afterWindowLoaded: true  },  tabs: {    url: \"//farmaciasmacross.com.mx/cdn/shop/t/12/assets/tabs.min.js?v=90566112142721290221709832208\",    required: false,  },  glightbox: {    url: \"//farmaciasmacross.com.mx/cdn/shop/t/12/assets/glightbox.min.js?v=30729078161152786201709832171\",    required:  false ,    afterWindowLoaded: true  },  plyr: {    url: \"//farmaciasmacross.com.mx/cdn/shop/t/12/assets/plyr.min.js?v=89974011772941044661709832185\",    required: false,    afterWindowLoaded: true  },  parallax: {    url: \"//farmaciasmacross.com.mx/cdn/shop/t/12/assets/simple-parallax.min.js?v=107174232393492105161709832204\",    required: false,    afterWindowLoaded: true  }};",
+          "size": 8402
+        },
+        {
+          "src": "//farmaciasmacross.com.mx/cdn/shop/t/12/assets/header.min.js?v=106840003608657764741709832172",
+          "async": false,
+          "defer": true,
+          "type": "text/javascript",
+          "inline": false,
+          "size": 0
+        },
+        {
+          "src": "inline",
+          "async": false,
+          "defer": false,
+          "type": "text/javascript",
+          "inline": "// Set header height\nfunction _shh() {\n  if (!_mh || !_dh) {\n    _mh = document.querySelector('header.sf-header__mobile');\n    _dh = document.querySelector('header.sf-header__desktop');\n  }\n  // Header\n  var _hd = window.innerWidth < 1024 ? _mh : _dh;\n  if (_hd) {\n    document.documentElement.style.setProperty('--sf-header-height', _hd.offsetHeight + 'px');\n    window.MinimogSettings.headerHeight = _hd.offsetHeight;\n  }\n}\n\n// setMainContentPadding\nfunction _smcp() {\n  // pageTemplate\n  var _pt = document.documentElement.dataset.template;\n  if (window.innerWidth >= 1024) {\n    if (_dh && _dh.dataset.transparent === \"true\") {\n      if (_pt === 'index' || _pt === 'collection') {\n        document.documentElement.style.setProperty('--main-content-padding-top', '0px');\n      }\n    }\n  } else {\n    document.documentElement.style.removeProperty('--main-content-padding-top');\n  }\n}\n_shh();\n_smcp();",
+          "size": 904
+        },
+        {
+          "src": "inline",
+          "async": false,
+          "defer": false,
+          "type": "application/json",
+          "inline": "[{\"id\":41556163592359,\"title\":\"Default Title\",\"option1\":\"Default Title\",\"option2\":null,\"option3\":null,\"sku\":\"18840469\",\"requires_shipping\":true,\"taxable\":false,\"featured_image\":null,\"available\":true,\"name\":\"ELIGARD 22.5 mg Leuprorelina – Suspensión Inyectable | Tratamiento Oncológico con Receta\",\"public_title\":null,\"options\":[\"Default Title\"],\"price\":720000,\"weight\":100,\"compare_at_price\":null,\"inventory_management\":\"shopify\",\"barcode\":\"7501871730469\",\"requires_selling_plan\":false,\"selling_plan_allocations\":[]}]",
+          "size": 525
+        },
+        {
+          "src": "inline",
+          "async": false,
+          "defer": false,
+          "type": "application/json",
+          "inline": "[{\"id\":42691982557351,\"title\":\"Default Title\",\"option1\":\"Default Title\",\"option2\":null,\"option3\":null,\"sku\":\"10946515\",\"requires_shipping\":true,\"taxable\":false,\"featured_image\":null,\"available\":true,\"name\":\"BIKTARVY 50 mg\\/200 mg\\/25 mg frasco 30 tabletas\",\"public_title\":null,\"options\":[\"Default Title\"],\"price\":729000,\"weight\":10,\"compare_at_price\":1080000,\"inventory_management\":\"shopify\",\"barcode\":\"0361958926515\",\"requires_selling_plan\":false,\"selling_plan_allocations\":[]}]",
+          "size": 487
+        },
+        {
+          "src": "inline",
+          "async": false,
+          "defer": false,
+          "type": "application/json",
+          "inline": "[{\"id\":39948374638759,\"title\":\"Default Title\",\"option1\":\"Default Title\",\"option2\":null,\"option3\":null,\"sku\":\"25940039\",\"requires_shipping\":true,\"taxable\":false,\"featured_image\":null,\"available\":true,\"name\":\"SYNVISC 8 mg\\/ml jeringa prellenada con 2 ml\",\"public_title\":null,\"options\":[\"Default Title\"],\"price\":349900,\"weight\":100,\"compare_at_price\":420000,\"inventory_management\":\"shopify\",\"barcode\":\"7502244510039\",\"requires_selling_plan\":false,\"selling_plan_allocations\":[]}]",
+          "size": 483
+        },
+        {
+          "src": "inline",
+          "async": false,
+          "defer": false,
+          "type": "application/json",
+          "inline": "[{\"id\":39876056875175,\"title\":\"Default Title\",\"option1\":\"Default Title\",\"option2\":null,\"option3\":null,\"sku\":\"10940562\",\"requires_shipping\":true,\"taxable\":false,\"featured_image\":null,\"available\":true,\"name\":\"ZYTIGA 500 mg abiraterona con 60 tabletas\",\"public_title\":null,\"options\":[\"Default Title\"],\"price\":8440000,\"weight\":100,\"compare_at_price\":9720000,\"inventory_management\":\"shopify\",\"barcode\":\"7501109930562\",\"requires_selling_plan\":false,\"selling_plan_allocations\":[]}]",
+          "size": 482
+        },
+        {
+          "src": "inline",
+          "async": false,
+          "defer": false,
+          "type": "application/json",
+          "inline": "[{\"id\":42366997233831,\"title\":\"Default Title\",\"option1\":\"Default Title\",\"option2\":null,\"option3\":null,\"sku\":\"18945917\",\"requires_shipping\":true,\"taxable\":true,\"featured_image\":null,\"available\":true,\"name\":\"XTANDI Enzalutamida | Información, Precio y Disponibilidad | Farmacias Macross\",\"public_title\":null,\"options\":[\"Default Title\"],\"price\":7910000,\"weight\":300,\"compare_at_price\":9183300,\"inventory_management\":\"shopify\",\"barcode\":\"7500464605917\",\"requires_selling_plan\":false,\"selling_plan_allocations\":[]}]",
+          "size": 518
+        },
+        {
+          "src": "//farmaciasmacross.com.mx/cdn/shop/t/12/assets/footer.min.js?v=129747128008809399091709832166",
+          "async": false,
+          "defer": true,
+          "type": "text/javascript",
+          "inline": false,
+          "size": 0
+        },
+        {
+          "src": "inline",
+          "async": false,
+          "defer": false,
+          "type": "text/javascript",
+          "inline": "window.addEventListener(\"load\", function() {\n    window.__sfWindowLoaded = true\n  })",
+          "size": 88
+        },
+        {
+          "src": "inline",
+          "async": false,
+          "defer": false,
+          "type": "text/javascript",
+          "inline": "function __lightOrDark(color) {\n    var lightness = Number((color.match(/^hsl.*,(.*)%\\)/) || ['', '100'])[1].trim());\n    return lightness > 50 ? 'light' : 'dark';\n  }\n  __detectBgSections = function () {\n    try {\n      var sections = document.querySelectorAll('[data-bg]')\n      for (var i = 0; i < sections.length; i++) {\n        var section = sections[i]\n        var lightness = __lightOrDark(section.dataset.bg)\n        section.classList.add('bg-' + lightness)\n      }\n    } catch (error) {\n      console.error(\"Failed to __detectBgSections.\", error)\n    }\n  }\n  __detectBgSections();// Fixed: Largest Contentful Paint image was lazily loaded\nconst first_image = document.querySelector('#MainContent .shopify-section img');\nif (first_image) first_image.setAttribute('loading', 'auto');",
+          "size": 791
+        },
+        {
+          "src": "//farmaciasmacross.com.mx/cdn/shop/t/12/assets/foxkit-app.min.js?v=27037143525546052611709832167",
+          "async": false,
+          "defer": true,
+          "type": "text/javascript",
+          "inline": false,
+          "size": 0
+        },
+        {
+          "src": "//farmaciasmacross.com.mx/cdn/shop/t/12/assets/quick-view.min.js?v=88435652220463138841709832199",
+          "async": false,
+          "defer": true,
+          "type": "text/javascript",
+          "inline": false,
+          "size": 0
+        },
+        {
+          "src": "//farmaciasmacross.com.mx/cdn/shop/t/12/assets/product-card-swatch.min.js?v=3399892201920584791709832189",
+          "async": false,
+          "defer": true,
+          "type": "text/javascript",
+          "inline": false,
+          "size": 0
+        },
+        {
+          "src": "//farmaciasmacross.com.mx/cdn/shop/t/12/assets/predictive-search.min.js?v=73235112597574982541709832187",
+          "async": false,
+          "defer": true,
+          "type": "text/javascript",
+          "inline": false,
+          "size": 0
+        },
+        {
+          "src": "//farmaciasmacross.com.mx/cdn/shop/t/12/assets/seedgrow-whatsapp-init.js?v=153685728095112860241709832203",
+          "async": false,
+          "defer": true,
+          "type": "text/javascript",
+          "inline": false,
+          "size": 0
+        },
+        {
+          "src": "//farmaciasmacross.com.mx/cdn/shop/t/12/assets/seedgrow-whatsapp-lib.js?v=130504537586646342821709832203",
+          "async": false,
+          "defer": true,
+          "type": "text/javascript",
+          "inline": false,
+          "size": 0
+        },
+        {
+          "src": "https://cdn.shopify.com/extensions/0199e635-6342-7cb2-9a51-89166802e59d/whatsapp-chat-63/assets/njt-whatsapp.min.js",
+          "async": false,
+          "defer": true,
+          "type": "text/javascript",
+          "inline": false,
+          "size": 0
+        },
+        {
+          "src": "inline",
+          "async": false,
+          "defer": false,
+          "type": "text/javascript",
+          "inline": "let sgwaWidgetShowOnDesktop = true;\n        let sgwaWidgetShowOnMobile = true;\n        let sgwaWidgetShowLabelOnDesktop = true;\n        let sgwaWidgetShowLabelOnMobile = true;\n        let sgwaWidgetShowDismissButtonOnDesktop = true;\n        let sgwaWidgetShowDismissButtonOnMobile = true;\n        let sgwaWidgetShowScrollBar = false;\n        let sgwaWidgetShowGDPRNotice = false;\n        let sgwaWidgetLabelText = \"Need Help? <strong>Chat with us</strong>\";\n        let sgwaWidgetText = \"Start a Conversation\";\n        let sgwaWidgetDescription = \"Hi! Click one of our member below to chat on <strong>Whatsapp</strong>\";\n        let sgwaWidgetResponseText = \"The team typically replies in a few minutes.\";\n        let sgwaWidgetGDPRNotice = 'Please accept our <a href=\"https://seedgrow.net/privacy-policy/\">privacy policy</a> first to start a conversation.';\n        let sgwaWidgetBackgroundColor = \"2DB742\";\n        let sgwaWidgetTextColor = \"ffffff\";\n        let sgwaWidgetPosition = \"right\";\n        let sgwaWidgetLabelWidth = 155;\n        let sgwaWidgetScrollBarHeight = 500;\n        let sgwaWidgetDistanceLeft = 30;\n        let sgwaWidgetDistanceRight = 30;\n        let sgwaWidgetDistanceBottom = 30; \n        let sgwaWidgetIconSize = 56;\n        let sgwaWidgetUseClickToChat = false;sgwaWidgetShowDismissButtonOnDesktop = false;sgwaWidgetShowDismissButtonOnMobile = false;sgwaWidgetLabelText = `¿Necesitas ayuda?`;sgwaWidgetText = `Conversa con un especialista`;sgwaWidgetDescription = `¡Hola! Haga clic en uno de nuestros miembros a continuación para chatear en WhatsApp`;sgwaWidgetResponseText = `El equipo suele responder en unos minutos.`;sgwaWidgetGDPRNotice = `Primero acepte nuestra política de privacidad para iniciar una conversación.`;sgwaWidgetBackgroundColor = \"#2db742\";sgwaWidgetTextColor = \"#ffffff\";sgwaWidgetPosition = \"right\";sgwaWidgetLabelWidth = 155;sgwaWidgetScrollBarHeight = 500;sgwaWidgetDistanceLeft = 30;sgwaWidgetDistanceRight = 30;sgwaWidgetDistanceBottom = 30;sgwaWidgetIconSize = 56;window.seedgrow_widget_setting = {\n            backgroundColor: sgwaWidgetBackgroundColor,\n            btnBottomDistance: sgwaWidgetDistanceBottom,\n            btnLabel: sgwaWidgetLabelText,\n            btnLabelWidth: sgwaWidgetLabelWidth,\n            btnLeftDistance: sgwaWidgetDistanceLeft,\n            btnPosition: sgwaWidgetPosition,\n            btnRightDistance: sgwaWidgetDistanceRight,\n            description: sgwaWidgetDescription,\n            gdprContent: sgwaWidgetGDPRNotice,\n            isShowOnDesktop: sgwaWidgetShowOnDesktop === true ? \"ON\" : \"OFF\",\n            isShowOnMobile: sgwaWidgetShowOnMobile === true ? \"ON\" : \"OFF\",\n            isShowLabelOnMobile: sgwaWidgetShowLabelOnMobile === true ? \"ON\" : \"OFF\",\n            isShowLabelOnDesktop: sgwaWidgetShowLabelOnDesktop === true ? \"ON\" : \"OFF\",\n            isShowDismissButtonOnDesktop: sgwaWidgetShowDismissButtonOnDesktop === true ? \"ON\" : \"OFF\",\n            isShowDismissButtonOnMobile: sgwaWidgetShowDismissButtonOnMobile === true ? \"ON\" : \"OFF\",\n            isShowGDPR: sgwaWidgetShowGDPRNotice === true ? \"ON\" : \"OFF\",\n            isShowPoweredBy: \"ON\",\n            isShowResponseText: \"ON\",\n            isShowScroll: sgwaWidgetShowScrollBar === true ? \"ON\" : \"OFF\",\n            responseText: sgwaWidgetResponseText,\n            scrollHeight: sgwaWidgetScrollBarHeight,\n            textColor: sgwaWidgetTextColor,\n            title: sgwaWidgetText,\n            iconSize: sgwaWidgetIconSize,\n            useClickToChat: sgwaWidgetUseClickToChat\n        };\n        if (typeof seedgrowWhatsAppDataJson === 'undefined' && `{\"accounts\"=>[{\"accountId\"=>\"688d76526e6cf93dcf5246fc\", \"accountName\"=>\"Sucursal Puebla\", \"avatar\"=>\"\", \"dayOffsText\"=>\"I will be back soon\", \"daysOfWeekWorking\"=>{\"sunday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"monday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"tuesday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"wednesday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"thursday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"friday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"saturday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}}, \"isAlwaysAvailable\"=>\"ON\", \"number\"=>\"+522224454192\", \"predefinedText\"=>\"\", \"title\"=>\"Te atiende Araceli Gil\", \"willBeBackText\"=>\"I will be back soon\", \"showWidget\"=>true, \"showButton\"=>true}, {\"accountId\"=>\"688d76526e6cf93dcf5246fa\", \"accountName\"=>\"Sucursal CDMX\", \"avatar\"=>\"\", \"dayOffsText\"=>\"I will be back soon\", \"daysOfWeekWorking\"=>{\"sunday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"monday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"tuesday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"wednesday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"thursday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"friday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"saturday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}}, \"isAlwaysAvailable\"=>\"ON\", \"number\"=>\"+525540729473\", \"predefinedText\"=>\"\", \"title\"=>\"Te atiende Perla Aguilar\", \"willBeBackText\"=>\"I will be back soon\", \"showWidget\"=>true, \"showButton\"=>true}], \"options\"=>{\"analytics\"=>{\"enabledFacebook\"=>\"OFF\", \"enabledGoogle\"=>\"OFF\", \"enabledGoogleGA4\"=>\"OFF\"}, \"display\"=>{\"displayCondition\"=>\"show_all_page\", \"includePages\"=>[], \"excludePages\"=>[], \"showPoweredIcon\"=>\"ON\", \"showNotificationBadge\"=>\"OFF\", \"time_symbols\"=>\"h:m\"}}, \"buttonInfo\"=>\"{}\", \"urlSettings\"=>{\"openInNewTab\"=>\"ON\", \"onDesktop\"=>\"api\", \"onMobile\"=>\"api\", \"hideAccountWhenOffline\"=>\"OFF\"}, \"timezone\"=>\"-06:00\", \"defaultAvatarUrl\"=>\"https://whatsapp-u.seedgrow.net/whatsapp-logo.svg\", \"translations\"=>{}, \"plans\"=>\"free\"}`.length > 0) {\n            let seedgrowWhatsAppDataJson = JSON.parse(`{\"accounts\"=>[{\"accountId\"=>\"688d76526e6cf93dcf5246fc\", \"accountName\"=>\"Sucursal Puebla\", \"avatar\"=>\"\", \"dayOffsText\"=>\"I will be back soon\", \"daysOfWeekWorking\"=>{\"sunday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"monday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"tuesday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"wednesday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"thursday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"friday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"saturday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}}, \"isAlwaysAvailable\"=>\"ON\", \"number\"=>\"+522224454192\", \"predefinedText\"=>\"\", \"title\"=>\"Te atiende Araceli Gil\", \"willBeBackText\"=>\"I will be back soon\", \"showWidget\"=>true, \"showButton\"=>true}, {\"accountId\"=>\"688d76526e6cf93dcf5246fa\", \"accountName\"=>\"Sucursal CDMX\", \"avatar\"=>\"\", \"dayOffsText\"=>\"I will be back soon\", \"daysOfWeekWorking\"=>{\"sunday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"monday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"tuesday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"wednesday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"thursday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"friday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"saturday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}}, \"isAlwaysAvailable\"=>\"ON\", \"number\"=>\"+525540729473\", \"predefinedText\"=>\"\", \"title\"=>\"Te atiende Perla Aguilar\", \"willBeBackText\"=>\"I will be back soon\", \"showWidget\"=>true, \"showButton\"=>true}], \"options\"=>{\"analytics\"=>{\"enabledFacebook\"=>\"OFF\", \"enabledGoogle\"=>\"OFF\", \"enabledGoogleGA4\"=>\"OFF\"}, \"display\"=>{\"displayCondition\"=>\"show_all_page\", \"includePages\"=>[], \"excludePages\"=>[], \"showPoweredIcon\"=>\"ON\", \"showNotificationBadge\"=>\"OFF\", \"time_symbols\"=>\"h:m\"}}, \"buttonInfo\"=>\"{}\", \"urlSettings\"=>{\"openInNewTab\"=>\"ON\", \"onDesktop\"=>\"api\", \"onMobile\"=>\"api\", \"hideAccountWhenOffline\"=>\"OFF\"}, \"timezone\"=>\"-06:00\", \"defaultAvatarUrl\"=>\"https://whatsapp-u.seedgrow.net/whatsapp-logo.svg\", \"translations\"=>{}, \"plans\"=>\"free\"}`.replaceAll(\"=>\", \":\").replaceAll(\"\\n\", \"\\\\n\"));\n            seedgrowWhatsAppDataJson['defaultAvatarSVG'] = '<svg width=\"48px\" height=\"48px\" class=\"nta-whatsapp-default-avatar\" version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\" viewBox=\"0 0 512 512\" style=\"enable-background:new 0 0 512 512;\" xml:space=\"preserve\"><path style=\"fill:#EDEDED;\" d=\"M0,512l35.31-128C12.359,344.276,0,300.138,0,254.234C0,114.759,114.759,0,255.117,0 S512,114.759,512,254.234S395.476,512,255.117,512c-44.138,0-86.51-14.124-124.469-35.31L0,512z\"/> <path style=\"fill:#55CD6C;\" d=\"M137.71,430.786l7.945,4.414c32.662,20.303,70.621,32.662,110.345,32.662 c115.641,0,211.862-96.221,211.862-213.628S371.641,44.138,255.117,44.138S44.138,137.71,44.138,254.234 c0,40.607,11.476,80.331,32.662,113.876l5.297,7.945l-20.303,74.152L137.71,430.786z\"/> <path style=\"fill:#FEFEFE;\" d=\"M187.145,135.945l-16.772-0.883c-5.297,0-10.593,1.766-14.124,5.297 c-7.945,7.062-21.186,20.303-24.717,37.959c-6.179,26.483,3.531,58.262,26.483,90.041s67.09,82.979,144.772,105.048 c24.717,7.062,44.138,2.648,60.028-7.062c12.359-7.945,20.303-20.303,22.952-33.545l2.648-12.359 c0.883-3.531-0.883-7.945-4.414-9.71l-55.614-25.6c-3.531-1.766-7.945-0.883-10.593,2.648l-22.069,28.248 c-1.766,1.766-4.414,2.648-7.062,1.766c-15.007-5.297-65.324-26.483-92.69-79.448c-0.883-2.648-0.883-5.297,0.883-7.062 l21.186-23.834c1.766-2.648,2.648-6.179,1.766-8.828l-25.6-57.379C193.324,138.593,190.676,135.945,187.145,135.945\"/></svg>';\n            window.seedgrow_wa_data = seedgrowWhatsAppDataJson;\n        } else if (typeof seedgrowWhatsAppDataJson === 'undefined' && `{\"accounts\"=>[{\"accountId\"=>\"64418992f971547dea31c304\", \"accountName\"=>\"Sucursal CDMX\", \"avatar\"=>\"\", \"dayOffsText\"=>\"I will be back soon\", \"daysOfWeekWorking\"=>{\"sunday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"monday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"tuesday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"wednesday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"thursday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"friday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"saturday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}}, \"isAlwaysAvailable\"=>\"ON\", \"number\"=>\"+525540729473\", \"predefinedText\"=>\"\", \"title\"=>\"Te atiende Perla Aguilar\", \"willBeBackText\"=>\"I will be back soon\", \"showWidget\"=>true, \"showButton\"=>true}, {\"accountId\"=>\"644189bef971547dea31c31a\", \"accountName\"=>\"Sucursal Puebla\", \"avatar\"=>\"\", \"dayOffsText\"=>\"I will be back soon\", \"daysOfWeekWorking\"=>{\"sunday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"monday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"tuesday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"wednesday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"thursday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"friday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"saturday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}}, \"isAlwaysAvailable\"=>\"ON\", \"number\"=>\"+522224454192\", \"predefinedText\"=>\"\", \"title\"=>\"Te atiende Araceli Gil\", \"willBeBackText\"=>\"I will be back soon\", \"showWidget\"=>true, \"showButton\"=>true}, {\"accountId\"=>\"64435900e8982187da016ab6\", \"accountName\"=>\"Sucursal Interlomas\", \"avatar\"=>\"\", \"dayOffsText\"=>\"I will be back soon\", \"daysOfWeekWorking\"=>{\"sunday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"monday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"tuesday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"wednesday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"thursday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"friday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"saturday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}}, \"isAlwaysAvailable\"=>\"ON\", \"number\"=>\"+525632497548\", \"predefinedText\"=>\"\", \"title\"=>\"Te atiende Lorena Cerón\", \"willBeBackText\"=>\"I will be back soon\", \"showWidget\"=>true, \"showButton\"=>true}], \"options\"=>{\"analytics\"=>{\"enabledFacebook\"=>\"OFF\", \"enabledGoogleGA4\"=>\"OFF\", \"enabledGoogle\"=>\"OFF\"}, \"display\"=>{\"displayCondition\"=>\"exclude_pages\", \"excludePages\"=>[], \"includePages\"=>[], \"showOnDesktop\"=>\"ON\", \"showOnMobile\"=>\"ON\", \"time_symbols\"=>\"h:m\", \"showPoweredIcon\"=>\"ON\"}, \"styles\"=>{}}, \"buttonInfo\"=>{\"styles\"=>{\"type\"=>\"round\", \"backgroundColor\"=>\"#2DB742\", \"textColor\"=>\"#fff\", \"label\"=>\"Need Help? Chat with us\", \"width\"=>300, \"height\"=>64}, \"display\"=>{\"showOnProductPage\"=>\"ON\"}}, \"timezone\"=>\"-06:00\", \"defaultAvatarUrl\"=>\"https://whatsapp-u.seedgrow.net/images/whatsapp_logo.svg\", \"urlSettings\"=>{\"onDesktop\"=>\"api\", \"onMobile\"=>\"api\", \"openInNewTab\"=>\"ON\", \"hideAccountWhenOffline\"=>\"OFF\"}, \"translations\"=>{}, \"plans\"=>\"free\"}`.length > 0) {\n            let seedgrowWhatsAppDataJson = JSON.parse(`{\"accounts\"=>[{\"accountId\"=>\"64418992f971547dea31c304\", \"accountName\"=>\"Sucursal CDMX\", \"avatar\"=>\"\", \"dayOffsText\"=>\"I will be back soon\", \"daysOfWeekWorking\"=>{\"sunday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"monday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"tuesday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"wednesday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"thursday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"friday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"saturday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}}, \"isAlwaysAvailable\"=>\"ON\", \"number\"=>\"+525540729473\", \"predefinedText\"=>\"\", \"title\"=>\"Te atiende Perla Aguilar\", \"willBeBackText\"=>\"I will be back soon\", \"showWidget\"=>true, \"showButton\"=>true}, {\"accountId\"=>\"644189bef971547dea31c31a\", \"accountName\"=>\"Sucursal Puebla\", \"avatar\"=>\"\", \"dayOffsText\"=>\"I will be back soon\", \"daysOfWeekWorking\"=>{\"sunday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"monday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"tuesday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"wednesday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"thursday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"friday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"saturday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}}, \"isAlwaysAvailable\"=>\"ON\", \"number\"=>\"+522224454192\", \"predefinedText\"=>\"\", \"title\"=>\"Te atiende Araceli Gil\", \"willBeBackText\"=>\"I will be back soon\", \"showWidget\"=>true, \"showButton\"=>true}, {\"accountId\"=>\"64435900e8982187da016ab6\", \"accountName\"=>\"Sucursal Interlomas\", \"avatar\"=>\"\", \"dayOffsText\"=>\"I will be back soon\", \"daysOfWeekWorking\"=>{\"sunday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"monday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"tuesday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"wednesday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"thursday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"friday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}, \"saturday\"=>{\"isWorkingOnDay\"=>\"OFF\", \"workHours\"=>[{\"startTime\"=>\"08:00\", \"endTime\"=>\"17:30\"}]}}, \"isAlwaysAvailable\"=>\"ON\", \"number\"=>\"+525632497548\", \"predefinedText\"=>\"\", \"title\"=>\"Te atiende Lorena Cerón\", \"willBeBackText\"=>\"I will be back soon\", \"showWidget\"=>true, \"showButton\"=>true}], \"options\"=>{\"analytics\"=>{\"enabledFacebook\"=>\"OFF\", \"enabledGoogleGA4\"=>\"OFF\", \"enabledGoogle\"=>\"OFF\"}, \"display\"=>{\"displayCondition\"=>\"exclude_pages\", \"excludePages\"=>[], \"includePages\"=>[], \"showOnDesktop\"=>\"ON\", \"showOnMobile\"=>\"ON\", \"time_symbols\"=>\"h:m\", \"showPoweredIcon\"=>\"ON\"}, \"styles\"=>{}}, \"buttonInfo\"=>{\"styles\"=>{\"type\"=>\"round\", \"backgroundColor\"=>\"#2DB742\", \"textColor\"=>\"#fff\", \"label\"=>\"Need Help? Chat with us\", \"width\"=>300, \"height\"=>64}, \"display\"=>{\"showOnProductPage\"=>\"ON\"}}, \"timezone\"=>\"-06:00\", \"defaultAvatarUrl\"=>\"https://whatsapp-u.seedgrow.net/images/whatsapp_logo.svg\", \"urlSettings\"=>{\"onDesktop\"=>\"api\", \"onMobile\"=>\"api\", \"openInNewTab\"=>\"ON\", \"hideAccountWhenOffline\"=>\"OFF\"}, \"translations\"=>{}, \"plans\"=>\"free\"}`.replaceAll(\"=>\", \":\").replaceAll(\"\\n\", \"\\\\n\"));\n            seedgrowWhatsAppDataJson['defaultAvatarSVG'] = '<svg width=\"48px\" height=\"48px\" class=\"nta-whatsapp-default-avatar\" version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\" viewBox=\"0 0 512 512\" style=\"enable-background:new 0 0 512 512;\" xml:space=\"preserve\"><path style=\"fill:#EDEDED;\" d=\"M0,512l35.31-128C12.359,344.276,0,300.138,0,254.234C0,114.759,114.759,0,255.117,0 S512,114.759,512,254.234S395.476,512,255.117,512c-44.138,0-86.51-14.124-124.469-35.31L0,512z\"/> <path style=\"fill:#55CD6C;\" d=\"M137.71,430.786l7.945,4.414c32.662,20.303,70.621,32.662,110.345,32.662 c115.641,0,211.862-96.221,211.862-213.628S371.641,44.138,255.117,44.138S44.138,137.71,44.138,254.234 c0,40.607,11.476,80.331,32.662,113.876l5.297,7.945l-20.303,74.152L137.71,430.786z\"/> <path style=\"fill:#FEFEFE;\" d=\"M187.145,135.945l-16.772-0.883c-5.297,0-10.593,1.766-14.124,5.297 c-7.945,7.062-21.186,20.303-24.717,37.959c-6.179,26.483,3.531,58.262,26.483,90.041s67.09,82.979,144.772,105.048 c24.717,7.062,44.138,2.648,60.028-7.062c12.359-7.945,20.303-20.303,22.952-33.545l2.648-12.359 c0.883-3.531-0.883-7.945-4.414-9.71l-55.614-25.6c-3.531-1.766-7.945-0.883-10.593,2.648l-22.069,28.248 c-1.766,1.766-4.414,2.648-7.062,1.766c-15.007-5.297-65.324-26.483-92.69-79.448c-0.883-2.648-0.883-5.297,0.883-7.062 l21.186-23.834c1.766-2.648,2.648-6.179,1.766-8.828l-25.6-57.379C193.324,138.593,190.676,135.945,187.145,135.945\"/></svg>';\n            window.seedgrow_wa_data = seedgrowWhatsAppDataJson;\n        }",
+          "size": 19927
+        },
+        {
+          "src": "https://cdn.shopify.com/extensions/0199e635-6342-7cb2-9a51-89166802e59d/whatsapp-chat-63/assets/whatsapp-widget.min.js",
+          "async": false,
+          "defer": true,
+          "type": "text/javascript",
+          "inline": false,
+          "size": 0
+        }
+      ]
+    }
+  },
+  "app_scripts_mapping": {},
+  "performance_impact": {
+    "blocking_scripts_count": 32,
+    "total_scripts": 51,
+    "blocking_ratio": 0.6274509803921569,
+    "recommendation": "Critical"
+  },
+  "conflicts": [],
+  "recommendations": [
+    {
+      "priority": "high",
+      "action": "Convert blocking scripts to async/defer",
+      "impact": "Reduce Time to Interactive (TTI)",
+      "scripts_count": 32
+    },
+    {
+      "priority": "medium",
+      "action": "Consolidate analytics tools",
+      "impact": "Reduce script overhead",
+      "apps_affected": 0
+    },
+    {
+      "priority": "low",
+      "action": "Review app permissions",
+      "impact": "Security and performance",
+      "apps_affected": 0
+    }
+  ]
+}
