@@ -131,3 +131,5 @@
 **Esfuerzo Total Estimado:** 100-180 horas  
 **Inversión Estimada:** $11,200 - $19,200 USD
 
+
+

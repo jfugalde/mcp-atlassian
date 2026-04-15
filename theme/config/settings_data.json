@@ -1,0 +1,335 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "favicon": "shopify://shop_images/favicon.Macross.png",
+    "enable_rtl": false,
+    "language_support_rtl": "es",
+    "container_width": 1220,
+    "container_fluid_width": 1460,
+    "container_fluid_offset": 20,
+    "spacing_sections": 0,
+    "color_primary": "#000000",
+    "color_main_bg": "#ffffff",
+    "color_field_bg": "#ffffff",
+    "color_body_text": "#000000",
+    "color_heading_text": "#000000",
+    "color_sub_text": "#666666",
+    "color_btn_bg_hover": "#000000",
+    "prod_sale_price_color": "#666666",
+    "prod_type_color": "#666666",
+    "color_annoucement_bg": "#da3f3f",
+    "color_topbar_bg": "#ffffff",
+    "color_topbar_text": "#000000",
+    "color_header_bg": "#ffffff",
+    "color_header_link": "#000000",
+    "color_header_transparent": "#000000",
+    "bg_cart_wishlist_count": "#da3f3f",
+    "color_menu_bar_bg": "#000000",
+    "color_menu_bar_text": "#f8f8f8",
+    "color_footer_bg": "#F5F5F5",
+    "color_footer_text": "#000000",
+    "color_footer_subtext": "#666666",
+    "color_footer_link_hover": "#000000",
+    "color_footer_bottom_bg": "#f5f5f5",
+    "color_border": "#dedede",
+    "img_overlay_opacity": 20,
+    "tooltip_background_color": "#000000",
+    "type_base_font": "roboto_n4",
+    "use_custom_font_body": true,
+    "custom_body_font": "https://cdn.shopify.com/s/files/1/0561/2742/2636/files/Jost-Regular.ttf?v=1618297125@400\nhttps://cdn.shopify.com/s/files/1/0561/2742/2636/files/Jost-Medium.ttf?v=1618297125@500\nhttps://cdn.shopify.com/s/files/1/0561/2742/2636/files/Jost-SemiBold.ttf?v=1618297125@600",
+    "custom_body_weight": "400",
+    "type_base_size": 18,
+    "type_header_font": "roboto_condensed_n7",
+    "use_custom_font_heading": true,
+    "custom_heading_font": "",
+    "custom_heading_weight": "400",
+    "type_header_base_size": 24,
+    "btn_line_height": 23,
+    "btn_weight": "500",
+    "pcard_layout": "1",
+    "pcard_alignment": "left",
+    "pcard_image_ratio": "3/4",
+    "show_vendor": false,
+    "variant_option_design1": "button",
+    "variant_option_design2": "color",
+    "variant_option_design3": "color",
+    "product_colors": "red: #FF6961,\nyellow: #FDDA76,\nblack: #000000,\nblack band: #000000,\nblue: #8DB4D2,\ngreen: #C1E1C1,\npurple: #B19CD9,\nsilver: #EEEEEF,\nwhite: #FFFFFF,\nbrown: #836953,\nlight brown: #B5651D,\ndark turquoise: #23cddc,\norange: #FFB347,\ntan: #E9D1BF,\nviolet: #B490B0,\npink: #FFD1DC,\ngrey: #E0E0E0,\nsky: #96BDC6,\npale leaf: #CCD4BF,\nlight blue: #b1c5d4,\ndark grey: #aca69f,\nbeige: #EBE6DB,\nbeige band: #EED9C4,\ndark blue: #063e66,\ncream: #FFFFCC,\nlight pink: #FBCFCD,\nmint: #bedce3,\ndark gray: #3A3B3C,\nrosy brown: #c4a287,\nlight grey:#D3D3D3,\ncopper: #B87333,\nrose gold: #ECC5C0,\nnight blue: #151B54,\ncoral: #FF7F50,\nlight purple: #C6AEC7",
+    "filter_color1": "Gingham",
+    "filter_color2": "flannel",
+    "article_show_date": false,
+    "article_show_excerpt": true,
+    "article_show_button": true,
+    "share_facebook": true,
+    "share_pinterest": true,
+    "social_twitter_link": "",
+    "social_twitter_label": "",
+    "social_facebook_link": "https://www.facebook.com/farmaciamacross",
+    "social_facebook_label": "",
+    "social_pinterest_link": "",
+    "social_pinterest_label": "",
+    "social_instagram_link": "https://instagram.com/",
+    "social_instagram_label": "100k Followers",
+    "discount_code_enable": true,
+    "cart_estimate_shipping": false,
+    "show_delivery_days": true,
+    "search_by_tag": true,
+    "search_by_body": true,
+    "popular_search_queries": "Zytiga,Xtandi,Eligard",
+    "wishlist_page": "wishlist",
+    "product_compare_page": "product-compare",
+    "agree_text": "",
+    "show_agree_on_cart": true,
+    "show_agree_on_product": true,
+    "show_cookie_consent": false,
+    "cookie_consent_placement": "bottom-left",
+    "cookie_consent_theme": "white",
+    "custom_css": ".sf-topbar {\n  border-color: #eee;\n}\n.sf__font-normal {\n  font-weight: 400;\n}\nbody .sf-footer__block .social-media-links {\n  gap: 12px;\n  margin: 0;\n  padding: 5px;\n  flex-wrap: wrap;\n}\n\nbody .sf-footer__block .social-media-links a {\n  color: #222;\n  width: 48px;\n  height: 48px;\n  padding: 0;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 50%;\n  background-color: #E9E9E9;\n  transition: all .3s;\n}\n\nbody .sf-footer__block .social-media-links a:hover {\n  background-color: #222;\n  color: #fff;\n  box-shadow: 0 0 0 0.2rem #222;\n}\n\n@media (min-width: 1536px) {\n  body .sf__footer-block-newsletter .sf__footer-block-title {\n    font-size: 42px;\n  }\n}",
+    "enable_page_transition": true,
+    "sections": {
+      "header": {
+        "type": "header",
+        "blocks": {
+          "5b9aec5f-b955-4765-9a87-1962d613e909": {
+            "type": "custom_html",
+            "settings": {
+              "heading": "Inicio",
+              "container": "container-fluid",
+              "html": ""
+            }
+          },
+          "a820a1bc-dfc4-4e61-8c8a-de23659759a6": {
+            "type": "banner",
+            "settings": {
+              "heading": "Shop",
+              "container": "container-fluid",
+              "banner_style": "outside",
+              "banner_link": "",
+              "banner_title": "The New - Season Shoes Edit",
+              "banner_desc": "",
+              "banner_button_text": "Shop now"
+            }
+          },
+          "31481022-f698-4968-bf06-3c24f36b09e7": {
+            "type": "product-list",
+            "settings": {
+              "heading": "Products",
+              "container": "container-fluid",
+              "stretch_width": false,
+              "collection": "best-sellers",
+              "limit": 6,
+              "columns": 2
+            }
+          },
+          "ea723308-92c0-42ae-a45d-aede426d8cdd": {
+            "type": "custom_html",
+            "settings": {
+              "heading": "Features",
+              "container": "inherit",
+              "html": ""
+            }
+          }
+        },
+        "block_order": [
+          "5b9aec5f-b955-4765-9a87-1962d613e909",
+          "a820a1bc-dfc4-4e61-8c8a-de23659759a6",
+          "31481022-f698-4968-bf06-3c24f36b09e7",
+          "ea723308-92c0-42ae-a45d-aede426d8cdd"
+        ],
+        "settings": {
+          "header_design": "logo-left__2l",
+          "container": "container-fluid",
+          "header_sticky": false,
+          "transparent_on_top": false,
+          "logo_text": "MINIMOG",
+          "logo": "shopify://shop_images/logo2.png",
+          "logo_mobile": "shopify://shop_images/logo2.png",
+          "logo_transparent": "shopify://shop_images/logo2.png",
+          "logo_svg": "",
+          "logo_mobile_svg": "",
+          "logo_transparent_svg": "",
+          "logo_max_width": 110,
+          "sticky_logo_max_width": 95,
+          "mobile_logo_max_width": 130,
+          "main_menu": "encabezado",
+          "secondary_menu": "",
+          "mobile_menu": "encabezado",
+          "uppercase_parent_level": false,
+          "search": "show_full",
+          "show_account_icon": true,
+          "show_cart_icon": true,
+          "show_wishlist_icon": false,
+          "show_compare_icon": false,
+          "show_currency_switcher": false,
+          "show_country_selector": false,
+          "show_language_switcher": true
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "7b0bf4c6-3873-4222-b8d6-ce009e710078": {
+            "type": "newsletter",
+            "settings": {
+              "title": "Suscríbete",
+              "description": "Suscríbete hoy y obtén el mayor descuento para tus futuras compras en medicamento.",
+              "email_placeholder": "Escribe tu correo",
+              "form_style": "bordered",
+              "show_social": false,
+              "show_agree_checkbox": false,
+              "width": "33%",
+              "order_first": true,
+              "open_default": true
+            }
+          },
+          "7ebc2f78-975b-4a81-b874-103c3355a866": {
+            "type": "menu",
+            "settings": {
+              "menu": "main-menu-1",
+              "title": "",
+              "width": "25%",
+              "order_first": false,
+              "open_default": false
+            }
+          },
+          "93571032-b171-4c66-8b3e-96cd91946363": {
+            "type": "our_store",
+            "settings": {
+              "title": "Síguenos",
+              "description": "",
+              "show_email": false,
+              "show_phone": false,
+              "show_socials_link": true,
+              "width": "16%",
+              "order_first": false,
+              "open_default": false
+            }
+          },
+          "78bb3beb-2dfa-4ef3-bd6f-b7ba5070db7f": {
+            "type": "custom_text",
+            "settings": {
+              "title": "Certificaciones",
+              "image": "shopify://shop_images/certificaciones.png",
+              "image_max": "200px",
+              "description": "<p><strong>Políticas de venta</strong></p><p><a href=\"https://www.farmaciasmacross.com.mx/policies/terms-of-service\" title=\"https://www.farmaciasmacross.com.mx/policies/terms-of-service\">Términos y condiciones</a></p><p><a href=\"/policies/refund-policy\" title=\"Refund Policy\">Política de devolución y reembolso</a><a href=\"/policies/shipping-policy\" title=\"Shipping Policy\">  </a></p><p><a href=\"/policies/shipping-policy\" title=\"Shipping Policy\">Política para envíos</a></p>",
+              "width": "16%",
+              "order_first": false,
+              "open_default": true
+            }
+          }
+        },
+        "block_order": [
+          "7b0bf4c6-3873-4222-b8d6-ce009e710078",
+          "7ebc2f78-975b-4a81-b874-103c3355a866",
+          "93571032-b171-4c66-8b3e-96cd91946363",
+          "78bb3beb-2dfa-4ef3-bd6f-b7ba5070db7f"
+        ],
+        "settings": {
+          "design": "footer-1",
+          "container": "container-fluid",
+          "bordered": false,
+          "copyright": "© Derechos reservados MACROSS PHARMA S.A DE C.V. Licencias sanitarias: Ciudad de México 09 004 09 0206 Puebla 21 114 09 0033",
+          "show_country_selector": false,
+          "show_currency_selector": true,
+          "show_language_selector": false,
+          "show_social_links": true,
+          "show_payment_icons": false,
+          "payment_icons_width": 300
+        }
+      },
+      "annoucement": {
+        "type": "annoucement",
+        "settings": {
+          "show_announcement": false,
+          "homepage_only": false,
+          "show_close": false,
+          "message": "",
+          "message_link": "",
+          "show_divider": false
+        }
+      },
+      "mobile-sticky-bar": {
+        "type": "mobile-sticky-bar",
+        "settings": {
+          "show_mobile_sticky": true,
+          "show_home_icon": true,
+          "show_collection_icon": true,
+          "show_cart_icon": true,
+          "show_search_icon": true,
+          "show_account_icon": false,
+          "show_wishlist_icon": false
+        }
+      }
+    },
+    "content_for_index": [],
+    "blocks": {
+      "11813581335429059158": {
+        "type": "shopify://apps/whatsapp-chat-widget/blocks/app-embed/b85b5e45-9cea-417a-9b9e-0aa961ccf3ef",
+        "disabled": false,
+        "settings": {
+          "show_on_desktop": true,
+          "show_on_mobile": true,
+          "show_label_on_desktop": true,
+          "show_label_on_mobile": true,
+          "show_scroll_bar": false,
+          "show_gdpr_notice": false,
+          "use_click_to_chat": false,
+          "widget_label_text": "¿Necesitas ayuda?",
+          "widget_text": "Conversa con un especialista",
+          "description": "¡Hola! Haga clic en uno de nuestros miembros a continuación para chatear en WhatsApp",
+          "response_text": "El equipo suele responder en unos minutos.",
+          "gdpr_text": "Primero acepte nuestra política de privacidad para iniciar una conversación.",
+          "background_color": "#2db742",
+          "text_color": "#ffffff",
+          "position": "right",
+          "label_width": 155,
+          "scroll_bar_height": 500,
+          "icon_size": 56,
+          "distance_left": 30,
+          "distance_right": 30,
+          "distance_bottom": 30
+        }
+      },
+      "478144830049398400": {
+        "type": "shopify://apps/storeseo/blocks/store_seo_meta/64b24496-16f9-4afc-a800-84e6acc4a36c",
+        "disabled": false,
+        "settings": {}
+      }
+    }
+  },
+  "presets": {
+    "Default": {
+      "sections": {
+        "featured-collection": {
+          "type": "featured-collection",
+          "settings": {
+            "collection": "frontpage"
+          }
+        },
+        "featured-product": {
+          "type": "featured-product",
+          "settings": {}
+        }
+      },
+      "content_for_index": [
+        "featured-collection",
+        "featured-product"
+      ]
+    }
+  },
+  "platform_customizations": {
+    "custom_css": [
+      "Atributo style {--sf-header-height: 0px; padding-bottom: 0px; padding-top: 0px;}",
+      ".sf-custom__block {padding: 0px;}",
+      ".sf-product__section-tabs .sf-tab-header {font-weight: 500; line-height: 26px; margin: 0 32px; padding: 12px 0; display: none;}",
+      ".section-my {margin-bottom: var(--spacing-sections-desktop); margin-top: 50px;}"
+    ]
+  }
+}

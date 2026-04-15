@@ -250,3 +250,5 @@
 
 *Este análisis demuestra que la auditoría técnica ha identificado trabajo significativo que no estaba en el scope original del proyecto FM, justificando la creación de nuevos tickets y expansión de trabajo billable.*
 
+
+

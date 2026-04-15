@@ -1,0 +1,570 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "custom-code": {
+      "type": "custom-code",
+      "settings": {
+        "custom_css": "m-handpicked-products { display: block; }\n.sf-home__iconbox .section-my {\n  padding-top: 45px;\n  padding-bottom: 45px;\n  margin-bottom: 0;\n  margin-top: 0;\n}\n.sf-home__iconbox {\n  border-top: 1px solid #eee;\n}\n.sf-home__iconbox .sf-icon-box__text h3 {\n  line-height: 26px;\n  font-size: 20px;\n  font-weight: 500;\n}\n.sf-custom-text--large .prose {\n  color: var(--color-heading-text);\n}\n.sf-custom--collection-banner .image-card--button-fixed .sf__btn-fixed {\n  border-color: #d2d2d2;\n}\n  .sf-home__collection-list .collection-card__info h3 a {\n    font-size: 24px;\nline-height: 1.4;\n    font-weight: 400;\n  }\n  .sf-home__collection-list .collection-card__info p {\n    font-size: 16px;\n    line-height: 20px;\n  }\n  .sf-home__iconbox .sf-icon-box__text h3 {\n    font-size: 18px;\n    margin-bottom: 2px;\n  }\n.sf-video--custom-content .sf-video__wrapper {\n  --aspect-ratio: 82/105 !important;\n}\n.image__card-subheading,\n.content__subheading {\n  font-weight: 600;\n}\n.sf-custom--collection-banner .image__card-heading {\n  line-height: 1.3;\n}\n.sf-handpicked-products__header .content__heading,\n.sf-custom-text--large .content__heading,\n.sf-custom--collection-banner .image__card-heading {\n  font-size: 36px;\n}\n.image-card--button-fixed .sf__btn-fixed {\n  padding-bottom: 20px;\n}\n@media (min-width: 768px) {\n  .sf-custom--collection-banner .image__card-subheading,\n  .sf-handpicked-products__header .content__subheading {\n    font-size: 20px;\n  }\n  .sf-custom__handpicked-products {\n    padding-bottom: 30px;\n  }\n  .image-card--button-fixed .sf__btn-fixed {\n    padding-bottom: 40px;\n    padding-top: 24px;\n  }\n}\n@media (min-width: 1024px) {\n  .sf__footer-block-newsletter .sf__footer-block-title {\n    font-size: 28px;\n    font-weight: 400;\n  }\n  .sf-custom__handpicked-products {\n    padding-bottom: 0;\n    padding-right: 50px;\n  }\n  .sf-handpicked-products__header .content__heading,\n  .sf-custom-text--large .content__heading,\n  .sf-custom--collection-banner .image__card-heading {\n    font-size: 48px;\n  }\n  .sf-custom--collection-banner .image-card__content {\n    padding-top: 70px;\n  }\n}\n@media (min-width: 1280px) {\n  .sf-handpicked-products__header .content__heading,\n  .sf-custom-text--large .content__heading,\n  .sf-custom--collection-banner .image__card-heading {\n    font-size: 60px;\n  }\n  .sf-custom__handpicked-products {\n    padding-bottom: 0;\n    padding-right: 100px;\n  }\n}\n@media (min-width: 1536px) {\n  .sf-home__slideshow .slide__block-title {\n    font-size: 70px;\n    line-height: 80px;\n  }\n  .sf-custom-text--large .prose {\n    font-size: 32px;\n    line-height: 1.4;\n  }\n  .sf-custom--collection-banner .image-card__content {\n    padding-top: 110px;\n  }\n}\n@media (max-width: 767px) {\n  .sf-icon-box--large .sf-icon-box h3{\n    font-size: 20px;\n  }\n}\n@media (max-width: 576px) {\n  .sf-home__slideshow a.sf__mobile-button,\n  .sf-home__product-tab .sf__btn-primary,\n  .sf-home__product-tab .sf__btn-secondary {\n    width: 100%;\n  }\n}"
+      }
+    },
+    "slideshow": {
+      "type": "slider",
+      "blocks": {
+        "slideshow-0": {
+          "type": "slider_item",
+          "settings": {
+            "background": "shopify://shop_images/banner.medicamento-11.jpg",
+            "content_in_container": false,
+            "content_position": "left middle",
+            "text_alignment": "left",
+            "text_size": "medium",
+            "text_color": "black",
+            "subheading": "",
+            "title": "",
+            "description": "",
+            "image_link": "shopify://collections/medicamento-oncologicos-al-mejor-precio-alta-especialidad",
+            "button_text": "",
+            "button_link": "shopify://collections/all",
+            "button_style": "sf__btn-secondary",
+            "button_size": "",
+            "show_footer": false,
+            "footer_alignment": "end",
+            "footer_text": "",
+            "footer_button": "Compra ahora",
+            "footer_link": ""
+          }
+        },
+        "slideshow-2": {
+          "type": "slider_item",
+          "settings": {
+            "background": "shopify://shop_images/banner.medicamento-10.jpg",
+            "content_in_container": false,
+            "content_position": "left middle",
+            "text_alignment": "left",
+            "text_size": "large",
+            "text_color": "black",
+            "subheading": "",
+            "title": "",
+            "description": "",
+            "image_link": "shopify://products/biktarvy-precio-en-mexico-y-para-que-sirve",
+            "button_text": "",
+            "button_link": "",
+            "button_style": "sf__btn-secondary",
+            "button_size": "",
+            "show_footer": false,
+            "footer_alignment": "end",
+            "footer_text": "",
+            "footer_button": "",
+            "footer_link": ""
+          }
+        },
+        "slider_item_hfjzzr": {
+          "type": "slider_item",
+          "settings": {
+            "background": "shopify://shop_images/banner.medicamento-9.jpg",
+            "content_in_container": false,
+            "content_position": "center middle",
+            "text_alignment": "center",
+            "text_size": "medium",
+            "text_color": "black",
+            "subheading": "",
+            "title": "",
+            "description": "",
+            "image_link": "https://wa.link/11nc2b",
+            "button_text": "",
+            "button_link": "",
+            "button_style": "sf__btn-primary",
+            "button_size": "",
+            "show_footer": false,
+            "footer_alignment": "end",
+            "footer_text": "New Collection",
+            "footer_button": "Shop Now",
+            "footer_link": ""
+          }
+        },
+        "slider_item_cyLUVL": {
+          "type": "slider_item",
+          "settings": {
+            "background": "shopify://shop_images/banner.medicamento-8.jpg",
+            "content_in_container": false,
+            "content_position": "center middle",
+            "text_alignment": "center",
+            "text_size": "medium",
+            "text_color": "black",
+            "subheading": "",
+            "title": "",
+            "description": "",
+            "image_link": "",
+            "button_text": "",
+            "button_link": "",
+            "button_style": "sf__btn-primary",
+            "button_size": "",
+            "show_footer": false,
+            "footer_alignment": "end",
+            "footer_text": "New Collection",
+            "footer_button": "Shop Now",
+            "footer_link": ""
+          }
+        },
+        "slider_item_VbEmYL": {
+          "type": "slider_item",
+          "settings": {
+            "background": "shopify://shop_images/banner.medicamento-15.jpg",
+            "content_in_container": false,
+            "content_position": "center middle",
+            "text_alignment": "center",
+            "text_size": "medium",
+            "text_color": "black",
+            "subheading": "",
+            "title": "",
+            "description": "",
+            "image_link": "",
+            "button_text": "",
+            "button_link": "",
+            "button_style": "sf__btn-primary",
+            "button_size": "",
+            "show_footer": false,
+            "footer_alignment": "end",
+            "footer_text": "",
+            "footer_button": "",
+            "footer_link": ""
+          }
+        },
+        "slider_item_44ybkN": {
+          "type": "slider_item",
+          "settings": {
+            "background": "shopify://shop_images/banner.medicamento-16.jpg",
+            "content_in_container": false,
+            "content_position": "center middle",
+            "text_alignment": "center",
+            "text_size": "medium",
+            "text_color": "black",
+            "subheading": "",
+            "title": "",
+            "description": "",
+            "image_link": "",
+            "button_text": "",
+            "button_link": "",
+            "button_style": "sf__btn-primary",
+            "button_size": "",
+            "show_footer": false,
+            "footer_alignment": "end",
+            "footer_text": "",
+            "footer_button": "",
+            "footer_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "slideshow-0",
+        "slideshow-2",
+        "slider_item_hfjzzr",
+        "slider_item_cyLUVL",
+        "slider_item_VbEmYL",
+        "slider_item_44ybkN"
+      ],
+      "settings": {
+        "container": "w-full",
+        "slideshow_height": "adapt",
+        "show_overlay": false,
+        "dots_position": "right",
+        "dots_color": "dark",
+        "show_dots": true,
+        "show_arrows": false,
+        "autorotate": true,
+        "autorotate_speed": 4,
+        "use_content_above": true,
+        "custom_class": "sf-home__slideshow"
+      }
+    },
+    "1680553798df70faa0": {
+      "type": "apps",
+      "blocks": {
+        "8301dfc6-02a9-4e9f-9704-cc9b94d40ab6": {
+          "type": "shopify://apps/google-reviews/blocks/carousel-widget-block/8b378e9e-c56d-47ce-a754-feca5e0caf59",
+          "settings": {
+            "contentIndex": "1",
+            "themeId": "dark",
+            "autoscroll": true,
+            "showRating": true,
+            "reviewPhotosType": "small",
+            "writeReview": true,
+            "fixedReviewsHeight": false
+          }
+        }
+      },
+      "block_order": [
+        "8301dfc6-02a9-4e9f-9704-cc9b94d40ab6"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "header_alignment": "center",
+        "container": "container",
+        "background_color": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_class": ""
+      }
+    },
+    "video_CAiz8N": {
+      "type": "video",
+      "disabled": true,
+      "settings": {
+        "container": "container-fluid",
+        "background_color": "",
+        "video_link": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "ratio": "16:9",
+        "video_title": "",
+        "text_size": "medium",
+        "text_color": "white",
+        "play_style": "solid",
+        "play_size": "medium",
+        "width": "650px",
+        "autoplay": false,
+        "loop": false,
+        "muted": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_class": ""
+      }
+    },
+    "video_HpTgng": {
+      "type": "video",
+      "settings": {
+        "container": "container-fluid",
+        "background_color": "",
+        "video_link": "https://www.youtube.com/watch?v=R6KOgL2IeZQ",
+        "ratio": "16:9",
+        "video_title": "",
+        "text_size": "medium",
+        "text_color": "white",
+        "play_style": "solid",
+        "play_size": "medium",
+        "width": "650px",
+        "autoplay": false,
+        "loop": false,
+        "muted": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_class": ""
+      }
+    },
+    "f53b0faf-c303-4932-b6b1-6704cc2be1b4": {
+      "type": "icon-box",
+      "blocks": {
+        "template--15781636538535__f53b0faf-c303-4932-b6b1-6704cc2be1b4-16807401209757e545-0": {
+          "type": "iconbox",
+          "settings": {
+            "image": "shopify://shop_images/locales.png",
+            "image_by_url": "",
+            "title": "<h2>SUCURSAL CDMX</h2>",
+            "description": "<p>55 5440 9049</p>",
+            "link": "",
+            "button_label": "",
+            "button_link": "https://goo.gl/maps/as1c4s4reponFSDH6",
+            "button_style": "sf__btn-link",
+            "button_size": "sf__btn-small"
+          }
+        },
+        "template--15781636538535__f53b0faf-c303-4932-b6b1-6704cc2be1b4-16807401209757e545-1": {
+          "type": "iconbox",
+          "settings": {
+            "image": "shopify://shop_images/locales.png",
+            "image_by_url": "",
+            "title": "<h2>SUCURSAL PUEBLA</h2>",
+            "description": "<p>2223991076</p>",
+            "link": "",
+            "button_label": "",
+            "button_link": "https://goo.gl/maps/djTxKQMQ2HAy6ywM6",
+            "button_style": "sf__btn-link",
+            "button_size": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15781636538535__f53b0faf-c303-4932-b6b1-6704cc2be1b4-16807401209757e545-0",
+        "template--15781636538535__f53b0faf-c303-4932-b6b1-6704cc2be1b4-16807401209757e545-1"
+      ],
+      "custom_css": [
+        ".mt-3 {margin-top: 0.1rem;}"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "left",
+        "container": "container-fluid",
+        "background_color": "rgba(0,0,0,0)",
+        "item_per_row": 3,
+        "item_gap": 30,
+        "item_gap_mobile": 10,
+        "card_style": "horizontal",
+        "image_max_width": "70px",
+        "content_alignment": "start",
+        "hover_effect": "zoom-in",
+        "enable_slider": false,
+        "show_pagination": false,
+        "show_navigation": false,
+        "use_scroll_mobile": true,
+        "use_grid_column_mb": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_class": "sucursal"
+      }
+    },
+    "custom-content-3": {
+      "type": "custom-content",
+      "blocks": {
+        "template--15977492021425__custom-content-3-1676964924e5998206-1": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/CALL.png",
+            "link": "",
+            "width": "100%",
+            "alignment": "center",
+            "block_custom_class": ".sf-custom__block {     padding: 0px; }"
+          }
+        }
+      },
+      "block_order": [
+        "template--15977492021425__custom-content-3-1676964924e5998206-1"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "w-full",
+        "background_color": "",
+        "gap": 80,
+        "use_scroll_mobile": false,
+        "gap_mobile": 40,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_class": ""
+      }
+    },
+    "product-tabs": {
+      "type": "product-tabs",
+      "blocks": {
+        "product-tabs-0": {
+          "type": "tab",
+          "settings": {
+            "title": "Lo más vendido",
+            "collection": "lo-mas-vendido"
+          }
+        },
+        "product-tabs-1": {
+          "type": "tab",
+          "settings": {
+            "title": "new arrivals",
+            "collection": "new-arrivals"
+          }
+        }
+      },
+      "block_order": [
+        "product-tabs-0",
+        "product-tabs-1"
+      ],
+      "custom_css": [
+        ".product-tabs__header {margin-bottom: 50px; display: none;}"
+      ],
+      "settings": {
+        "heading": "LO MÁS VENDIDO",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "background_color": "rgba(0,0,0,0)",
+        "tab_header": "horizontal",
+        "limit": 10,
+        "show_button": true,
+        "button_type": "load",
+        "button_label": "Todos los productos",
+        "button_style": "sf__btn-secondary",
+        "button_size": "",
+        "pcard_layout": "",
+        "pcard_image_ratio": "",
+        "show_vendor": false,
+        "items_per_row": 5,
+        "item_gap": 20,
+        "enable_slider": false,
+        "show_navigation": false,
+        "show_pagination": false,
+        "use_scroll_mobile": true,
+        "item_gap_mobile": 16,
+        "padding_top": 14,
+        "padding_bottom": 26,
+        "custom_class": "sf-home__product-tab"
+      }
+    },
+    "collection-list": {
+      "type": "collection-list",
+      "blocks": {
+        "6d4abb37-5aa2-4499-a2b0-5d85f0d36eec": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "medicamento-oncologicos-al-mejor-precio-alta-especialidad",
+            "title": "",
+            "item_image": "shopify://shop_images/imagen_2023-04-03_142546553.png"
+          }
+        },
+        "collection-list-1": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "medicamentos-para-el-sistema-inmunologico",
+            "title": "",
+            "item_image": "shopify://shop_images/imagen_2023-04-03_142021791.png"
+          }
+        },
+        "collection-list-2": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "enfermedades-infecciosas-y-parasitarias",
+            "title": "Infecciosas y paracitarias",
+            "item_image": "shopify://shop_images/imagen_2023-04-03_142914263.png"
+          }
+        },
+        "12985deb-0775-45ce-80f6-6be7f3150a91": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "cardiologia",
+            "title": "Cardiológicos",
+            "item_image": "shopify://shop_images/imagen_2023-04-03_143736464.png"
+          }
+        },
+        "65e38235-f03b-43c9-8590-38c9c656e51c": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "reumatologia-y-traumatologia",
+            "title": "Reumatología y traumatología",
+            "item_image": "shopify://shop_images/imagen_2023-04-03_145556394.png"
+          }
+        }
+      },
+      "block_order": [
+        "6d4abb37-5aa2-4499-a2b0-5d85f0d36eec",
+        "collection-list-1",
+        "collection-list-2",
+        "12985deb-0775-45ce-80f6-6be7f3150a91",
+        "65e38235-f03b-43c9-8590-38c9c656e51c"
+      ],
+      "custom_css": [
+        ".sf-home__collection-list .collection-card__info h3 a {font-size: 0px; line-height: 1.4; font-weight: 400;}"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "left",
+        "container": "container-fluid",
+        "background_color": "",
+        "layout": "grid",
+        "expanded": true,
+        "card_style": "inside",
+        "text_alignment": "left",
+        "hover_effect": "scaling-up",
+        "show_product_count": false,
+        "count_inline_title": true,
+        "image_rounded": false,
+        "items_per_row": 3,
+        "item_gap": 30,
+        "enable_slider": true,
+        "show_pagination": true,
+        "show_navigation": true,
+        "autorotate": false,
+        "autorotate_speed": 4,
+        "use_scroll_mobile": true,
+        "mobile_gap": 16,
+        "hidden_slide_control_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_class": "sf-home__collection-list"
+      }
+    },
+    "d1931db9-7c55-4c61-906b-2eb379b3e320": {
+      "type": "custom-content",
+      "blocks": {
+        "4a6729bc-bbe7-4a33-9b3e-ff840d8b0723": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/imagen_2023-04-03_162521981.png",
+            "link": "",
+            "width": "100%",
+            "alignment": "center",
+            "block_custom_class": ".sf-custom__block {     padding: 0px; }"
+          }
+        }
+      },
+      "block_order": [
+        "4a6729bc-bbe7-4a33-9b3e-ff840d8b0723"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "w-full",
+        "background_color": "",
+        "gap": 80,
+        "use_scroll_mobile": false,
+        "gap_mobile": 40,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_class": ""
+      }
+    },
+    "8b631405-afe0-44ff-82fd-eb2e7446734b": {
+      "type": "image-with-text-2",
+      "disabled": true,
+      "custom_css": [
+        ".contacto {margin-top: 50px; font-size: 14px;}"
+      ],
+      "settings": {
+        "container": "w-full",
+        "hero_size": "adapt",
+        "show_overlay": false,
+        "bg_position": "center",
+        "image_link": "",
+        "parallax": false,
+        "content_in_container": true,
+        "content_position": "left middle",
+        "text_alignment": "left",
+        "text_size": "medium",
+        "text_color": "white",
+        "title": "",
+        "subtitle": "",
+        "text": "<p></p><p></p><p></p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "sf__btn-primary",
+        "button_size": "",
+        "use_content_above": true,
+        "custom_class": "contacto"
+      }
+    }
+  },
+  "order": [
+    "custom-code",
+    "slideshow",
+    "1680553798df70faa0",
+    "video_CAiz8N",
+    "video_HpTgng",
+    "f53b0faf-c303-4932-b6b1-6704cc2be1b4",
+    "custom-content-3",
+    "product-tabs",
+    "collection-list",
+    "d1931db9-7c55-4c61-906b-2eb379b3e320",
+    "8b631405-afe0-44ff-82fd-eb2e7446734b"
+  ]
+}

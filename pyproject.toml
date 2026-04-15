@@ -35,9 +35,6 @@ email = "soomiles.dev@gmail.com"
 requires = ["hatchling", "uv-dynamic-versioning>=0.7.0"]
 build-backend = "hatchling.build"
 
-[project.scripts]
-mcp-atlassian = "mcp_atlassian:main"
-
 [dependency-groups]
 dev = [
     "uv>=0.1.0",
