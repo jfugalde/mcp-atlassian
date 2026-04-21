@@ -328,7 +328,7 @@
     "custom_css": [
       "Atributo style {--sf-header-height: 0px; padding-bottom: 0px; padding-top: 0px;}",
       ".sf-custom__block {padding: 0px;}",
-      ".sf-product__section-tabs .sf-tab-header {font-weight: 500; line-height: 26px; margin: 0 32px; padding: 12px 0; display: none;}",
+      ".sf-product__section-tabs .sf-tab-header {font-weight: 500; line-height: 26px; margin: 0 32px; padding: 12px 0;}",
       ".section-my {margin-bottom: var(--spacing-sections-desktop); margin-top: 50px;}"
     ]
   }

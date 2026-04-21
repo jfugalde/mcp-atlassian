@@ -422,7 +422,9 @@
         "pick_up_available_at_html": "Recogida disponible en <span class=\"color-foreground\">{{ location_name }}</span>",
         "pick_up_unavailable_at_html": "Recogida actualmente no disponible en <span class=\"color-foreground\">{{ location_name }}</span>",
         "unavailable": "No se pudo cargar la disponibilidad de recogida",
-        "refresh": "Actualizar"
+        "refresh": "Actualizar",
+        "inline_heading": "Recogida en tienda",
+        "variant_note": "Las disponibilidades corresponden a la variante seleccionada."
       }
     }
   },

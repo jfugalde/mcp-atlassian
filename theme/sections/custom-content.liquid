@@ -107,6 +107,8 @@
                                   assign cover_image = false
                                   if block.settings.image != blank
                                     assign cover_image = true
+                                  elsif block.settings.video_link != blank and block.settings.video_link.type == 'youtube'
+                                    assign cover_image = true
                                   endif
                                 %}
                                 <div class="sf-video" data-video-block>
@@ -127,6 +129,8 @@
                                               {%- endunless -%}
                                               {%- if block.settings.image != blank -%}
                                                 <div class="sf-video__cover bg-center" style="background-image: url({{ block.settings.image | image_url: width: 1920 }})"></div>
+                                              {%- elsif block.settings.video_link.type == 'youtube' -%}
+                                                <div class="sf-video__cover bg-center" style="background-image: url(https://i.ytimg.com/vi/{{ block.settings.video_link.id }}/hqdefault.jpg)"></div>
                                               {%- else -%}
                                                 <div class="sf-video__cover sf-video__cover-placeholder">{{ 'lifestyle-2' | placeholder_svg_tag: 'sf__placeholder-svg w-full h-full' }}</div>
                                               {%- endif -%}

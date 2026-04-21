@@ -232,7 +232,7 @@ window.themeScriptURLs = {
   },
   tabs: {
     url: "{{ 'tabs.min.js' | asset_url }}",
-    required: false,
+    required: {% if template.name == "product" %} true {% else %} false {% endif %},
   },
   glightbox: {
     url: "{{ 'glightbox.min.js' | asset_url }}",

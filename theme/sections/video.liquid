@@ -22,6 +22,8 @@
   assign cover_image = false
   if section.settings.image != blank
     assign cover_image = true
+  elsif section.settings.video_link != blank and section.settings.video_link.type == 'youtube'
+    assign cover_image = true
   endif
 %}
 
@@ -56,6 +58,10 @@
               {%- endunless -%}
               {%- if section.settings.image != blank -%}
                 <div class="sf-video__cover bg-center" style="background-image: url({{ section.settings.image | image_url: width: 1920 }})"></div>
+              {%- elsif section.settings.video_link.type == 'youtube' -%}
+                <div class="sf-video__cover bg-center" style="background-image: url(https://i.ytimg.com/vi/{{ section.settings.video_link.id }}/hqdefault.jpg)"></div>
+              {%- else -%}
+                <div class="sf-video__cover sf-video__cover-placeholder">{{ 'lifestyle-2' | placeholder_svg_tag: 'sf__placeholder-svg w-full h-full' }}</div>
               {%- endif -%}
             </button>  
             <template>

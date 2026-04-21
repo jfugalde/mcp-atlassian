@@ -1,0 +1,14 @@
+{
+  "source": "shopify store execute --store macross-pharma.myshopify.com --query-file metafield-definitions-product.graphql",
+  "macross_product_fields": [
+    { "namespace": "custom", "key": "macross_resumen", "name": "Macross — Resumen del producto", "type": "rich_text_field" },
+    { "namespace": "custom", "key": "macross_indicaciones", "name": "Macross — Indicaciones médicas", "type": "rich_text_field" },
+    { "namespace": "custom", "key": "macross_conservacion", "name": "Macross — Conservación", "type": "rich_text_field" },
+    { "namespace": "custom", "key": "macross_advertencias", "name": "Macross — Advertencias", "type": "rich_text_field" },
+    { "namespace": "custom", "key": "macross_envio", "name": "Macross — Envío", "type": "rich_text_field" },
+    { "namespace": "custom", "key": "macross_faq", "name": "Macross — Preguntas frecuentes", "type": "rich_text_field" }
+  ],
+  "liquid_access": "product.metafields.custom.macross_faq",
+  "theme_tabs_product_json": "Description tab first (Shopify product body), then mf_tab blocks: macross_indicaciones, macross_conservacion, macross_advertencias, macross_faq, then reviews. macross_resumen and macross_envio are not rendered as tabs (definitions may still exist in Admin for data/API).",
+  "theme_note": "Product description is only in tabs, not in the main product column (see templates/product.json)."
+}

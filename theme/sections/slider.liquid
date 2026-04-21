@@ -49,6 +49,11 @@ assign use_content_above = section.settings.use_content_above
             if bs.mb_background != blank
               assign bg_image = bs.mb_background
             endif
+
+            assign use_single_banner_image = false
+            if block.type != 'video_slide' and bs.mb_background == blank
+              assign use_single_banner_image = true
+            endif
             %}
   
             {% capture video_bg %}
@@ -87,15 +92,13 @@ assign use_content_above = section.settings.use_content_above
                 <a href="{{ image_link }}" class="sf-slider__link"></a>
                 {% endif %}
   
-                {% comment %} Image on desktop {% endcomment %}
-                <div class="hidden md:block">
-                  <div class="sf__slide-bg{% if bs.background == blank and bs.video == blank %} sf__slideshow-placeholder overflow-hidden{% endif %}">
-                    {% if bs.background == blank and bs.video == blank %}
-                      {% capture current %}{% cycle 1, 2 %}{% endcapture %}
-                      {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'sf__placeholder-svg w-full h-full' }}
-                    {% else %}
-                      {% if block.type == 'video_slide' %}
-                        {{ video_bg }}
+                {% if use_single_banner_image %}
+                  {% comment %} One responsive image: avoids loading 750w + 1500w for the same viewport {% endcomment %}
+                  <div>
+                    <div class="sf__slide-bg{% if bs.background == blank and bs.video == blank %} sf__slideshow-placeholder overflow-hidden{% endif %}">
+                      {% if bs.background == blank and bs.video == blank %}
+                        {% capture current %}{% cycle 1, 2 %}{% endcapture %}
+                        {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'sf__placeholder-svg w-full h-full' }}
                       {% else %}
                         {%- liquid
                           assign image_height = bs.background.width | divided_by: bs.background.aspect_ratio | round
@@ -103,7 +106,7 @@ assign use_content_above = section.settings.use_content_above
                           unless forloop.first
                             assign lazy_load = 'lazy'
                           endunless
-                        -%} 
+                        -%}
                         {{ bs.background | image_url: width: 1500 | image_tag:
                           loading: lazy_load,
                           width: bs.background.width,
@@ -113,42 +116,72 @@ assign use_content_above = section.settings.use_content_above
                           alt: bs.background.alt | escape
                         }}
                       {% endif %}
-                    {% endif %}
+                    </div>
                   </div>
-                </div>
-  
-                {% comment %} Image on mobile {% endcomment %}
-                <div class="md:hidden">
-                  <div class="sf__slide-bg-mobile{% if bg_image == blank and bs.video == blank %} sf__slideshow-placeholder overflow-hidden{% endif %}" style="--aspect-ratio-mobile: {{ aspect_ratio_mobile }}">
-                    {% if bg_image == blank and bs.video == blank %}
-                      {% capture current %}{% cycle 1, 2 %}{% endcapture %}
-                      {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'sf__placeholder-svg w-full h-full' }}
-                    {% else %}
-                      {% if block.type == 'video_slide' and bg_image == blank %}
-                        {{ video_bg }}
+                {% else %}
+                  {% comment %} Image on desktop {% endcomment %}
+                  <div class="hidden md:block">
+                    <div class="sf__slide-bg{% if bs.background == blank and bs.video == blank %} sf__slideshow-placeholder overflow-hidden{% endif %}">
+                      {% if bs.background == blank and bs.video == blank %}
+                        {% capture current %}{% cycle 1, 2 %}{% endcapture %}
+                        {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'sf__placeholder-svg w-full h-full' }}
                       {% else %}
-                        {%- liquid
-                          assign bg_image_height = bg_image.width | divided_by: bg_image.aspect_ratio | round
-                          assign lazy_load = 'eager'
-                          unless forloop.first
-                            assign lazy_load = 'lazy'
-                          endunless
-                        -%}
-                        {{ bg_image | image_url: width: 750 | image_tag:
-                          loading: lazy_load,
-                          width: bg_image.width,
-                          height: bg_image_height,
-                          sizes: '100vw',
-                          widths: '375, 550, 750, 1100',
-                          alt: bg_image.alt | escape
-                        }}
-                        {% if image_link != blank %}
-                          <a href="{{ image_link }}" class="sf-slider__link"></a>
+                        {% if block.type == 'video_slide' %}
+                          {{ video_bg }}
+                        {% else %}
+                          {%- liquid
+                            assign image_height = bs.background.width | divided_by: bs.background.aspect_ratio | round
+                            assign lazy_load = 'eager'
+                            unless forloop.first
+                              assign lazy_load = 'lazy'
+                            endunless
+                          -%}
+                          {{ bs.background | image_url: width: 1500 | image_tag:
+                            loading: lazy_load,
+                            width: bs.background.width,
+                            height: image_height,
+                            sizes: '100vw',
+                            widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
+                            alt: bs.background.alt | escape
+                          }}
                         {% endif %}
                       {% endif %}
-                    {% endif %}
+                    </div>
                   </div>
-                </div>
+
+                  {% comment %} Image on mobile {% endcomment %}
+                  <div class="md:hidden">
+                    <div class="sf__slide-bg-mobile{% if bg_image == blank and bs.video == blank %} sf__slideshow-placeholder overflow-hidden{% endif %}" style="--aspect-ratio-mobile: {{ aspect_ratio_mobile }}">
+                      {% if bg_image == blank and bs.video == blank %}
+                        {% capture current %}{% cycle 1, 2 %}{% endcapture %}
+                        {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'sf__placeholder-svg w-full h-full' }}
+                      {% else %}
+                        {% if block.type == 'video_slide' and bg_image == blank %}
+                          {{ video_bg }}
+                        {% else %}
+                          {%- liquid
+                            assign bg_image_height = bg_image.width | divided_by: bg_image.aspect_ratio | round
+                            assign lazy_load = 'eager'
+                            unless forloop.first
+                              assign lazy_load = 'lazy'
+                            endunless
+                          -%}
+                          {{ bg_image | image_url: width: 750 | image_tag:
+                            loading: lazy_load,
+                            width: bg_image.width,
+                            height: bg_image_height,
+                            sizes: '100vw',
+                            widths: '375, 550, 750, 1100',
+                            alt: bg_image.alt | escape
+                          }}
+                          {% if image_link != blank %}
+                            <a href="{{ image_link }}" class="sf-slider__link"></a>
+                          {% endif %}
+                        {% endif %}
+                      {% endif %}
+                    </div>
+                  </div>
+                {% endif %}
                 {% if st.show_overlay %}
                   <div class="sf__slideshow-overlay"></div>
                 {% endif %}

@@ -8,36 +8,100 @@
   <div class="{{ section.settings.container }}">
     <div class="sf-tabs sf-tabs--responsive sf-pdt__accordion">
       <div class="hidden md:flex border-b border-color-border justify-center">
+        {% assign tab_i = 0 %}
         {% for block in section.blocks %}
-          <div class="sf-tab-header text-lg cursor-pointer" data-index="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
-            {{ block.settings.header }}
-          </div>
+          {% assign show_tab = true %}
+          {% assign mf_rendered = '' %}
+          {% if block.type == 'mf_tab' %}
+            {%- liquid
+              assign _tab_ns = block.settings.metafield_namespace | strip
+              assign _tab_ky = block.settings.metafield_key | strip
+              assign _tab_mf = blank
+              if _tab_ns != blank and _tab_ky != blank
+                assign _tab_mf = product.metafields[_tab_ns][_tab_ky]
+              endif
+              if _tab_mf == blank and _tab_ky != blank
+                assign _tab_mf = product.metafields.custom[_tab_ky]
+              endif
+            -%}
+            {% if _tab_mf == blank %}
+              {% assign show_tab = false %}
+            {% endif %}
+          {% elsif block.type == 'description' %}
+            {% if product.description == blank %}
+              {% assign show_tab = false %}
+            {% endif %}
+          {% endif %}
+          {% if show_tab %}
+            <div class="sf-tab-header text-lg cursor-pointer" data-index="{{ tab_i }}" {{ block.shopify_attributes }}>
+              {{ block.settings.header }}
+            </div>
+            {% assign tab_i = tab_i | plus: 1 %}
+          {% endif %}
         {% endfor %}
       </div>
       <div class="md:py-10">
+        {% assign tab_i = 0 %}
         {% for block in section.blocks %}
-          <div class="sf__accordion-item sf-tab-content md:opacity-0{% if forloop.first and section.settings.default_open %} open{% endif %}" data-block-type="{{ block.type }}"{% if forloop.first == false and section.settings.default_open == false %} style="--content-max-height:0px;"{% endif %}>
-            <div class="sf__accordion-button pb-3 pr-4">{{ block.settings.header }}</div>
-            <div class="sf__accordion-content">
-              <div class="pb-8 {% if block.type != 'reviews' %}prose{% endif %}">
-                {% case block.type %}
-                  {% when 'description' %}
-                    {%- assign description = product.description | replace: 'src=', 'loading="lazy" width="auto" height="auto" src=' -%}
-                    {{ description }}
-                  {% when 'reviews' %}
-                    <div class="{{ block.settings.container | default: 'container' }}">
-                      {% render 'product-reviews-app__snippet', custom_liquid: block.settings.custom_liquid %}
-                    </div>
-                  {% when 'tab' %}
-                    {{ block.settings.content }}
-                    {{ block.settings.content_page.content }}
-                  {% when 'liquid' %}
-                    {{ block.settings.custom_liquid }}
-                  {% else %}
-                {% endcase %}
+          {% assign show_tab = true %}
+          {% assign mf_rendered = '' %}
+          {% if block.type == 'mf_tab' %}
+            {%- liquid
+              assign _tab_ns = block.settings.metafield_namespace | strip
+              assign _tab_ky = block.settings.metafield_key | strip
+              assign _tab_mf = blank
+              if _tab_ns != blank and _tab_ky != blank
+                assign _tab_mf = product.metafields[_tab_ns][_tab_ky]
+              endif
+              if _tab_mf == blank and _tab_ky != blank
+                assign _tab_mf = product.metafields.custom[_tab_ky]
+              endif
+            -%}
+            {% if _tab_mf == blank %}
+              {% assign show_tab = false %}
+            {% else %}
+              {% capture mf_rendered %}
+                {% render 'product-tab-metafield', product: product, block: block %}
+              {% endcapture %}
+            {% endif %}
+          {% elsif block.type == 'description' %}
+            {% if product.description == blank %}
+              {% assign show_tab = false %}
+            {% endif %}
+          {% endif %}
+          {% if show_tab %}
+            <div
+              class="sf__accordion-item sf-tab-content md:opacity-0{% if tab_i == 0 and section.settings.default_open %} open{% endif %}"
+              data-block-type="{{ block.type }}"
+              {% if tab_i > 0 and section.settings.default_open == false %}
+                style="--content-max-height:0px;"
+              {% endif %}
+            >
+              <div class="sf__accordion-button pb-3 pr-4">{{ block.settings.header }}</div>
+              <div class="sf__accordion-content">
+                <div class="pb-8 {% if block.type != 'reviews' %}prose{% endif %}">
+                  {% case block.type %}
+                    {% when 'description' %}
+                      {%- assign description = product.description | replace: 'src=', 'loading="lazy" width="auto" height="auto" src=' -%}
+                      {{ description }}
+                    {% when 'reviews' %}
+                      <div class="{{ block.settings.container | default: 'container' }}">
+                        {% render 'product-reviews-app__snippet', custom_liquid: block.settings.custom_liquid %}
+                      </div>
+                    {% when 'tab' %}
+                      {{ block.settings.content }}
+                      {{ block.settings.content_page.content }}
+                    {% when 'liquid' %}
+                      {{ block.settings.custom_liquid }}
+                    {% when 'mf_tab' %}
+                      {{ mf_rendered }}
+                    {% else %}
+                  {% endcase %}
+                </div>
               </div>
             </div>
-          </div>
+            {% assign tab_i = tab_i | plus: 1 %}
+          {% endif %}
         {% endfor %}
       </div>
     </div>
@@ -83,7 +147,7 @@
       "default": true
     }
   ],
-  "max_blocks": 6,
+  "max_blocks": 16,
   "blocks": [
     {
       "type": "description",
@@ -92,13 +156,13 @@
       "settings": [
         {
           "type": "paragraph",
-          "content": "This tab will show the product's description"
+          "content": "Shows the Shopify product description (body HTML). Hidden if the body is empty. Use one block."
         },
         {
           "type": "text",
           "id": "header",
           "label": "Tab header",
-          "default": "Product description"
+          "default": "Descripción del producto"
         }
       ]
     },
@@ -188,6 +252,33 @@
           "type": "liquid",
           "id": "custom_liquid",
           "label": "Custom liquid"
+        }
+      ]
+    },
+    {
+      "type": "mf_tab",
+      "name": "Product metafield",
+      "settings": [
+        {
+          "type": "text",
+          "id": "header",
+          "label": "Tab heading",
+          "default": "Preguntas frecuentes",
+          "info": "Tab hidden if this metafield is empty for the product."
+        },
+        {
+          "type": "text",
+          "id": "metafield_namespace",
+          "label": "Metafield namespace",
+          "default": "custom",
+          "info": "Usually custom."
+        },
+        {
+          "type": "text",
+          "id": "metafield_key",
+          "label": "Metafield key",
+          "default": "macross_faq",
+          "info": "e.g. macross_faq, macross_envio (see metafieldDefinitions in Admin API)."
         }
       ]
     }

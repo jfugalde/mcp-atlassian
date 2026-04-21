@@ -52,10 +52,6 @@
             "show_ask_a_question": true,
             "show_social": true
           }
-        },
-        "product_description": {
-          "type": "description",
-          "settings": {}
         }
       },
       "block_order": [
@@ -63,8 +59,7 @@
         "price",
         "variant_picker",
         "buy_buttons",
-        "addons",
-        "product_description"
+        "addons"
       ],
       "settings": {
         "container": "container",
@@ -87,12 +82,42 @@
     "product-details-tabs": {
       "type": "product-details-tabs",
       "blocks": {
-        "tab_envio": {
-          "type": "tab",
+        "macross_indicaciones": {
+          "type": "mf_tab",
           "settings": {
-            "header": "Tiempos y costos de entrega",
-            "content": "<p>Edita este texto en el editor de temas (sección Pestañas de información del producto → pestaña personalizada).</p>",
-            "content_page": ""
+            "header": "Indicaciones médicas",
+            "metafield_namespace": "custom",
+            "metafield_key": "macross_indicaciones"
+          }
+        },
+        "macross_conservacion": {
+          "type": "mf_tab",
+          "settings": {
+            "header": "Conservación",
+            "metafield_namespace": "custom",
+            "metafield_key": "macross_conservacion"
+          }
+        },
+        "macross_advertencias": {
+          "type": "mf_tab",
+          "settings": {
+            "header": "Advertencias",
+            "metafield_namespace": "custom",
+            "metafield_key": "macross_advertencias"
+          }
+        },
+        "macross_faq": {
+          "type": "mf_tab",
+          "settings": {
+            "header": "Preguntas frecuentes",
+            "metafield_namespace": "custom",
+            "metafield_key": "macross_faq"
+          }
+        },
+        "tab_descripcion_producto": {
+          "type": "description",
+          "settings": {
+            "header": "Descripción del producto"
           }
         },
         "product_reviews_tab": {
@@ -105,7 +130,11 @@
         }
       },
       "block_order": [
-        "tab_envio",
+        "tab_descripcion_producto",
+        "macross_indicaciones",
+        "macross_conservacion",
+        "macross_advertencias",
+        "macross_faq",
         "product_reviews_tab"
       ],
       "settings": {

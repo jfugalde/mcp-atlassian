@@ -1,0 +1,31 @@
+{%- comment -%}
+  Renders one product metafield for mf_tab blocks. Uses block namespace + key, with custom.* fallback.
+{%- endcomment -%}
+{%- liquid
+  assign ns = block.settings.metafield_namespace | strip
+  assign ky = block.settings.metafield_key | strip
+  assign mf = blank
+  if ns != blank and ky != blank
+    assign mf = product.metafields[ns][ky]
+  endif
+  if mf == blank and ky != blank
+    assign mf = product.metafields.custom[ky]
+  endif
+-%}
+{%- if mf != blank -%}
+  {%- capture mf_tagged -%}{{- mf | metafield_tag -}}{%- endcapture -%}
+  {%- assign mf_tagged = mf_tagged | strip -%}
+  <div class="rte rte-product-tab-metafield">
+    {%- if mf_tagged != blank -%}
+      {{- mf_tagged -}}
+    {%- elsif mf.value != blank and mf.type == 'single_line_text_field' -%}
+      {{- mf.value -}}
+    {%- elsif mf.value != blank and mf.type == 'multi_line_text_field' -%}
+      {{- mf.value -}}
+    {%- elsif mf.value != blank and mf.type == 'rich_text_field' -%}
+      <div class="rte">{{ mf.value }}</div>
+    {%- elsif mf.value != blank -%}
+      {{- mf.value -}}
+    {%- endif -%}
+  </div>
+{%- endif -%}
