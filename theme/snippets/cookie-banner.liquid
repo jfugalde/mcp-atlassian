@@ -18,12 +18,12 @@
 
 {% if should_show %}
 {{ 'cookie-banner.css' | asset_url | stylesheet_tag }}
-<div id="m-cookie-banner" class="m-cookie-banner m-cookie-banner--{{ cookie_consent_placement }} m-cookie-banner--{{ cookie_consent_theme }}" {% if cookie_design_mode and request.design_mode %}style="display: flex;"{% endif %}>
+<div id="m-cookie-banner" class="m-cookie-banner m-cookie-banner--{{ cookie_consent_placement }} m-cookie-banner--{{ cookie_consent_theme }}" data-cookie-banner="1" role="region" aria-label="Aviso de cookies"{% if request.design_mode %} data-shopify-design-mode="true"{% endif %} {% if cookie_design_mode and request.design_mode %}style="display: flex;"{% endif %}>
   {% if cookie_consent_message != blank %}
   <span class="m-cookie-banner__message">
     {{ cookie_consent_message }}
     {% if cookie_consent_learnmore != blank %}
-      <a class="m-cookie-banner__learn-more" href="{{ cookie_consent_learnmore_link | default: "#" }}">{{ cookie_consent_learnmore }}</a>
+      <a class="m-cookie-banner__learn-more" href="{{ cookie_consent_learnmore_link | default: '/policies/privacy-policy' }}">{{ cookie_consent_learnmore }}</a>
     {% endif %}
   </span>
   {% endif %}
@@ -57,23 +57,29 @@
 
     function handleAccept(e) {
       window.Shopify.customerPrivacy.setTrackingConsent(true, hideBanner);
-
-      document.addEventListener('trackingConsentAccepted',function() {
-        console.log('trackingConsentAccepted event fired');
-      });
+      try {
+        localStorage.setItem('theme_cookie_banner_ack', '1');
+      } catch (err) {}
     }
 
     function handleDecline() {
       window.Shopify.customerPrivacy.setTrackingConsent(false, hideBanner);
+      try {
+        localStorage.setItem('theme_cookie_banner_ack', '1');
+      } catch (err) {}
     }
 
     function initCookieBanner() {
-      const userCanBeTracked = window.Shopify.customerPrivacy.userCanBeTracked();
-      const userTrackingConsent = window.Shopify.customerPrivacy.getTrackingConsent();
-
-      if(!userCanBeTracked && userTrackingConsent === 'no_interaction') {
-        showBanner();
+      var root = getBannerEl();
+      var inDesignMode = root && root.getAttribute('data-shopify-design-mode') === 'true';
+      if (!inDesignMode) {
+        try {
+          if (localStorage.getItem('theme_cookie_banner_ack')) {
+            return;
+          }
+        } catch (e) {}
       }
+      showBanner();
     }
 
     window.Shopify.loadFeatures([

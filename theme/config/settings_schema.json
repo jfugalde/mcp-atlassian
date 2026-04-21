@@ -2515,33 +2515,33 @@
         "type": "textarea",
         "id": "cookie_consent_message",
         "label": "Message",
-        "default": "This website uses cookies to ensure you get the best experience on our website."
+        "default": "Usamos cookies necesarias para operar la tienda y, con su consentimiento, cookies de analítica y publicidad. Puede aceptar, rechazar las no esenciales o revisar el aviso completo."
       },
       {
         "type": "text",
         "id": "cookie_consent_allow",
         "label": "Allow button",
-        "default": "Allow Cookies"
+        "default": "Aceptar"
       },
       {
         "type": "text",
         "id": "cookie_consent_decline",
         "label": "Decline button",
         "info": "Leave blank to hide",
-        "default": "Decline"
+        "default": "Solo necesarias"
       },
       {
         "type": "text",
         "id": "cookie_consent_learnmore",
         "label": "Learn more text",
-        "default": "Learn more"
+        "default": "Aviso de privacidad"
       },
       {
         "type": "text",
         "id": "cookie_consent_learnmore_link",
         "label": "Learn more link",
         "info": "Leave blank to hide",
-        "default": "https://www.cookiesandyou.com/"
+        "default": "/policies/privacy-policy"
       },
       {
         "type": "header",
