@@ -1,0 +1,125 @@
+{% comment %}
+  Farmacia Macross — aviso para profesionales de la salud y pacientes (PDP).
+  Omitido en productos digitales: si ninguna variante requiere envío (requires_shipping),
+  Shopify trata el artículo como entrega digital y el aviso de receta no aplica.
+{% endcomment %}
+{% liquid
+  assign show_macross_pdp_disclaimer = false
+  for variant in product.variants
+    if variant.requires_shipping
+      assign show_macross_pdp_disclaimer = true
+    endif
+  endfor
+%}
+{% if show_macross_pdp_disclaimer %}
+<div class="macross-pdp-disclaimer" role="region" aria-label="Aviso de información para profesionales de la salud y pacientes">
+  <div class="macross-pdp-disclaimer__brand">
+    <div class="macross-pdp-disclaimer__mark" aria-hidden="true">
+      <span class="macross-pdp-disclaimer__quad macross-pdp-disclaimer__quad--tl"></span>
+      <span class="macross-pdp-disclaimer__quad macross-pdp-disclaimer__quad--tr"></span>
+      <span class="macross-pdp-disclaimer__quad macross-pdp-disclaimer__quad--bl"></span>
+      <span class="macross-pdp-disclaimer__quad macross-pdp-disclaimer__quad--br"></span>
+    </div>
+    <span class="macross-pdp-disclaimer__name">MACROSS</span>
+  </div>
+  <p class="macross-pdp-disclaimer__lead">
+    Información dirigida a profesionales de la salud y sus pacientes. No te automediques, consulta a tu médico.
+  </p>
+  <p class="macross-pdp-disclaimer__emphasis">
+    Si requieres alguna información, recuerda tener tu receta a la mano.
+  </p>
+</div>
+{% endif %}
+
+{% stylesheet %}
+  .macross-pdp-disclaimer {
+    position: relative;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    padding: 1.75rem 1.25rem 1.5rem;
+    border: 4px solid #666666;
+    background-color: var(--color-main-background, #fff);
+    text-align: left;
+  }
+
+  .macross-pdp-disclaimer__brand {
+    position: absolute;
+    top: -0.85rem;
+    left: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0 0.35rem;
+    background-color: var(--color-main-background, #fff);
+  }
+
+  .macross-pdp-disclaimer__mark {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .macross-pdp-disclaimer__quad {
+    display: block;
+  }
+
+  .macross-pdp-disclaimer__quad--tl,
+  .macross-pdp-disclaimer__quad--br {
+    background-color: #b33029;
+  }
+
+  .macross-pdp-disclaimer__quad--tr {
+    background-color: #ffffff;
+  }
+
+  .macross-pdp-disclaimer__quad--bl {
+    background-color: #c4c4c4;
+  }
+
+  .macross-pdp-disclaimer__name {
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #b33029;
+    line-height: 1;
+  }
+
+  .macross-pdp-disclaimer__lead {
+    margin: 0.25rem 0 0.85rem;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 0.9375rem;
+    line-height: 1.45;
+    font-weight: 500;
+    color: #555555;
+  }
+
+  .macross-pdp-disclaimer__emphasis {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.45;
+    font-weight: 700;
+    color: #b33029;
+  }
+
+  @media (min-width: 768px) {
+    .macross-pdp-disclaimer {
+      padding: 2rem 1.75rem 1.75rem;
+    }
+
+    .macross-pdp-disclaimer__lead {
+      font-size: 1rem;
+    }
+
+    .macross-pdp-disclaimer__emphasis {
+      font-size: 1.0625rem;
+    }
+  }
+{% endstylesheet %}

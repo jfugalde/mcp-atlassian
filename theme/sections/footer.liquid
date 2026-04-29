@@ -1,7 +1,14 @@
-<footer class="sf-footer" data-section-type="footer" data-section-id="{{ section.id }}">
+<footer class="sf-footer sf-footer--macross-legal" data-section-type="footer" data-section-id="{{ section.id }}">
   {% render 'footer-blocks', blocks: section.blocks, bordered: section.settings.bordered, container: section.settings.container %}
-  {% render 'footer-design', container: section.settings.container %}
+  {% render 'footer-design', section: section, container: section.settings.container %}
 </footer>
+{% stylesheet %}
+  @media (max-width: 767px) {
+    .sf-footer.sf-footer--macross-legal {
+      padding-bottom: calc(4.5rem + env(safe-area-inset-bottom, 0px));
+    }
+  }
+{% endstylesheet %}
 <script src="{{ 'footer.min.js' | asset_url }}" defer="defer"></script>
 {% schema %}
 {
