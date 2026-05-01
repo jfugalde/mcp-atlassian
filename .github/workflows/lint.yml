@@ -7,6 +7,17 @@ on:
     branches: [ main ]
 
 jobs:
+  theme-check:
+    name: Shopify theme-check (theme/)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Theme Check
+        uses: shopify/theme-check-action@v2
+        with:
+          theme_root: theme
+
   lint:
     runs-on: ubuntu-latest
     steps:
