@@ -21,7 +21,7 @@ Canonical code: **`ryu-platform/tools/shopify-analysis/`** (sibling git checkout
 Upstream docs: [ryu-platform `tools/shopify-analysis`](https://github.com/jfugalde/ryu-platform/tree/main/tools/shopify-analysis).
 
 ## Related Repositories
-- `ryu-platform`: Core MCP Atlassian platform code, tests, and multi-tenant analysis tools
+- `ryu-platform`: Shared Shopify analysis and enrichment tooling (`tools/shopify-analysis`)
 - `RYU`: Marketing/website frontend
 
 ## Notes
