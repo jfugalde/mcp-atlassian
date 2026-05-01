@@ -28,14 +28,42 @@ template-{{ template.name | handle }} {{ template.name }}-{{ template.suffix }} 
   <head>{% render 'yoast-seo' %}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="{{ settings.color_primary }}">
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-P3HGCJQB');</script>
+<!-- Google Tag Manager: deferred until idle or load to reduce main-thread contention during LCP -->
+<script>
+  (function () {
+    function loadGtm() {
+      if (window.__gtmLoaded) return;
+      window.__gtmLoaded = true;
+      var w = window,
+        d = document,
+        s = 'script',
+        l = 'dataLayer',
+        i = 'GTM-P3HGCJQB';
+      w[l] = w[l] || [];
+      w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    }
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(
+        function () {
+          loadGtm();
+        },
+        { timeout: 2500 }
+      );
+    } else {
+      window.addEventListener('load', function () {
+        setTimeout(loadGtm, 0);
+      });
+    }
+  })();
+</script>
 <!-- End Google Tag Manager -->
     {%- liquid
       render 'preload'

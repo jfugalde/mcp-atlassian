@@ -1,29 +1,64 @@
 {
+  "meta": {
+    "generated_at_utc": "2026-04-30T01:43:14.182238+00:00",
+    "shop_base": "https://macross-pharma.myshopify.com",
+    "preview_theme_id": "153022431399",
+    "note": "Scores reflect the exact URLs tested. Compare the same URLs and env (e.g. same preview_theme_id) before claiming improvement."
+  },
   "home": {
-    "url": "https://macross-pharma.myshopify.com/",
+    "url": "https://macross-pharma.myshopify.com/?preview_theme_id=153022431399",
     "weight": 0.17,
     "mobile": {
-      "performance_score": 35,
-      "lcp": 13.83455593902128,
-      "cls": 0.3704050210459024,
-      "fcp": 10.68454251733785,
-      "tti": 19.885802222682074,
-      "speed_index": 10.68454251733785,
-      "accessibility_score": 71,
-      "best_practices_score": 73,
-      "seo_score": 85
+      "performance_score": 44,
+      "lcp": 5.242736548307222,
+      "cls": 0.21091700000000002,
+      "fcp": 3.4492006110652564,
+      "tti": 26.211138197740336,
+      "speed_index": 9.65896217907804,
+      "accessibility_score": 72,
+      "best_practices_score": 54,
+      "seo_score": 69
     },
     "desktop": {
-      "performance_score": 69,
-      "lcp": 0.9450211973007242,
-      "cls": 0.0009863895328066786,
-      "fcp": 0.5688672117046147,
-      "tti": 4.239210287458571,
-      "speed_index": 3.3936286059089587,
-      "accessibility_score": 71,
-      "best_practices_score": 73,
-      "seo_score": 85
+      "performance_score": 76,
+      "lcp": 1.177733883017953,
+      "cls": 0.00448,
+      "fcp": 0.6801403298107718,
+      "tti": 4.571781075243734,
+      "speed_index": 3.091674173827757,
+      "accessibility_score": 73,
+      "best_practices_score": 77,
+      "seo_score": 69
     }
   },
-  "weighted_average_score": 35.0
+  "product": {
+    "error": "The read operation timed out"
+  },
+  "collection": {
+    "url": "https://macross-pharma.myshopify.com/collections/medicamento-oncologicos-al-mejor-precio-alta-especialidad?preview_theme_id=153022431399",
+    "weight": 0.43,
+    "mobile": {
+      "performance_score": 56,
+      "lcp": 7.340493676258647,
+      "cls": 0.001414,
+      "fcp": 2.5637889777337057,
+      "tti": 22.895883032710532,
+      "speed_index": 5.3572815283139095,
+      "accessibility_score": 75,
+      "best_practices_score": 73,
+      "seo_score": 77
+    },
+    "desktop": {
+      "performance_score": 67,
+      "lcp": 1.7664356285233993,
+      "cls": 0.0017879999999999999,
+      "fcp": 0.6012265840640982,
+      "tti": 4.37563610700962,
+      "speed_index": 1.903858676667418,
+      "accessibility_score": 75,
+      "best_practices_score": 73,
+      "seo_score": 77
+    }
+  },
+  "weighted_average_score": 52.6
 }

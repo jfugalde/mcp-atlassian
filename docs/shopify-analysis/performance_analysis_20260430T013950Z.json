@@ -1,0 +1,11 @@
+{
+  "meta": {
+    "generated_at_utc": "2026-04-30T01:39:50.360484+00:00",
+    "shop_base": "https://macross-pharma.myshopify.com",
+    "preview_theme_id": null,
+    "note": "Scores reflect the exact URLs tested. Compare the same URLs and env (e.g. same preview_theme_id) before claiming improvement."
+  },
+  "home": {
+    "error": "PageSpeed Insights API key is required.\nSet PAGESPEED_INSIGHTS_API_KEY environment variable.\nGet a free API key from: https://developers.google.com/speed/docs/insights/v5/get-started"
+  }
+}

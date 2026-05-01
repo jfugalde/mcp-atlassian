@@ -33,7 +33,11 @@ window.addEventListener('shopify:section:load', function (e) {
 })
 {%- endif -%}
 
-// Fixed: Largest Contentful Paint image was lazily loaded
-const first_image = document.querySelector('#MainContent .shopify-section img');
-if (first_image) first_image.setAttribute('loading', 'auto');
+// Prefer eager LCP candidate in first viewport section (fixes lazy default on hero)
+(function () {
+  var first_image = document.querySelector('#MainContent .shopify-section img');
+  if (!first_image) return;
+  first_image.setAttribute('loading', 'eager');
+  first_image.setAttribute('fetchpriority', 'high');
+})();
 </script>

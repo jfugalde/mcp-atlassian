@@ -106,9 +106,15 @@ assign use_content_above = section.settings.use_content_above
                           unless forloop.first
                             assign lazy_load = 'lazy'
                           endunless
+                          if lazy_load == 'eager'
+                            assign img_fetchpriority = 'high'
+                          else
+                            assign img_fetchpriority = 'low'
+                          endif
                         -%}
                         {{ bs.background | image_url: width: 1500 | image_tag:
                           loading: lazy_load,
+                          fetchpriority: img_fetchpriority,
                           width: bs.background.width,
                           height: image_height,
                           sizes: '100vw',
@@ -135,9 +141,15 @@ assign use_content_above = section.settings.use_content_above
                             unless forloop.first
                               assign lazy_load = 'lazy'
                             endunless
+                            if lazy_load == 'eager'
+                              assign img_fetchpriority = 'high'
+                            else
+                              assign img_fetchpriority = 'low'
+                            endif
                           -%}
                           {{ bs.background | image_url: width: 1500 | image_tag:
                             loading: lazy_load,
+                            fetchpriority: img_fetchpriority,
                             width: bs.background.width,
                             height: image_height,
                             sizes: '100vw',
@@ -165,9 +177,15 @@ assign use_content_above = section.settings.use_content_above
                             unless forloop.first
                               assign lazy_load = 'lazy'
                             endunless
+                            if lazy_load == 'eager'
+                              assign img_fetchpriority = 'high'
+                            else
+                              assign img_fetchpriority = 'low'
+                            endif
                           -%}
                           {{ bg_image | image_url: width: 750 | image_tag:
                             loading: lazy_load,
+                            fetchpriority: img_fetchpriority,
                             width: bg_image.width,
                             height: bg_image_height,
                             sizes: '100vw',

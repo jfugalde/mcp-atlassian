@@ -25,6 +25,11 @@
   elsif section.settings.video_link != blank and section.settings.video_link.type == 'youtube'
     assign cover_image = true
   endif
+
+  assign video_ratio_str = section.settings.ratio | default: '16:9'
+  assign video_ratio_parts = video_ratio_str | split: ':'
+  assign video_ratio_w = video_ratio_parts[0] | strip | default: '16'
+  assign video_ratio_h = video_ratio_parts[1] | strip | default: '9'
 %}
 
 <section
@@ -43,7 +48,10 @@
   <div class="{{ section.settings.container }}{% if has_bg == false %} section-my{% else %} section-py{% endif %}">
     {%- if section.settings.video_link != blank -%}
       <div class="sf-video__container mx-auto max-w-full" style="width: {{- width -}};">
-        <div class="sf-video__wrapper" style="--aspect-ratio: {{ section.settings.ratio | replace: ':', '/' }}">
+        <div
+          class="sf-video__wrapper"
+          style="--aspect-ratio: {{ video_ratio_str | replace: ':', '/' }}; aspect-ratio: {{ video_ratio_w }} / {{ video_ratio_h }}; width: 100%;"
+        >
           <video-component class="deferred-media no-js-hidden" data-media-id="{{ section.settings.video_link.id }}" data-auto-play="{{ autoplay }}" data-cover-image="{{ cover_image }}">
             <button id="Deferred-Poster-Modal-{{ section.settings.video_link.id }}" class="deferred-media__poster" type="button" aria-label="{{ 'sections.video.play' | t }}">
               <span class="deferred-media__poster-button motion-reduce absolute sf-video__play sf-video__play--style-{{ section.settings.play_style }} sf-video__play--size-{{ section.settings.play_size }} text-{{ section.settings.text_color }}">

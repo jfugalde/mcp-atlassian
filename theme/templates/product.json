@@ -42,7 +42,7 @@
           "settings": {
             "show_quantity_selector": true,
             "show_atc_button": true,
-            "show_dynamic_checkout": true
+            "show_dynamic_checkout": false
           }
         },
         "addons": {
