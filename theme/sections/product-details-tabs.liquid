@@ -16,6 +16,11 @@
             {%- liquid
               assign _tab_ns = block.settings.metafield_namespace | strip
               assign _tab_ky = block.settings.metafield_key | strip
+              assign _tab_ky2 = block.settings.metafield_key_2 | default: '' | strip
+              assign _tab_ns2 = block.settings.metafield_namespace_2 | default: '' | strip
+              if _tab_ns2 == blank
+                assign _tab_ns2 = _tab_ns
+              endif
               assign _tab_mf = blank
               if _tab_ns != blank and _tab_ky != blank
                 assign _tab_mf = product.metafields[_tab_ns][_tab_ky]
@@ -23,9 +28,24 @@
               if _tab_mf == blank and _tab_ky != blank
                 assign _tab_mf = product.metafields.custom[_tab_ky]
               endif
+              assign _tab_mf2 = blank
+              if _tab_ky2 != blank
+                if _tab_ns2 != blank
+                  assign _tab_mf2 = product.metafields[_tab_ns2][_tab_ky2]
+                endif
+                if _tab_mf2 == blank
+                  assign _tab_mf2 = product.metafields.custom[_tab_ky2]
+                endif
+              endif
             -%}
-            {% if _tab_mf == blank %}
-              {% assign show_tab = false %}
+            {% if _tab_ky2 == blank %}
+              {% if _tab_mf == blank %}
+                {% assign show_tab = false %}
+              {% endif %}
+            {% else %}
+              {% if _tab_mf == blank and _tab_mf2 == blank %}
+                {% assign show_tab = false %}
+              {% endif %}
             {% endif %}
           {% elsif block.type == 'description' %}
             {% if product.description == blank %}
@@ -49,6 +69,11 @@
             {%- liquid
               assign _tab_ns = block.settings.metafield_namespace | strip
               assign _tab_ky = block.settings.metafield_key | strip
+              assign _tab_ky2 = block.settings.metafield_key_2 | default: '' | strip
+              assign _tab_ns2 = block.settings.metafield_namespace_2 | default: '' | strip
+              if _tab_ns2 == blank
+                assign _tab_ns2 = _tab_ns
+              endif
               assign _tab_mf = blank
               if _tab_ns != blank and _tab_ky != blank
                 assign _tab_mf = product.metafields[_tab_ns][_tab_ky]
@@ -56,13 +81,32 @@
               if _tab_mf == blank and _tab_ky != blank
                 assign _tab_mf = product.metafields.custom[_tab_ky]
               endif
+              assign _tab_mf2 = blank
+              if _tab_ky2 != blank
+                if _tab_ns2 != blank
+                  assign _tab_mf2 = product.metafields[_tab_ns2][_tab_ky2]
+                endif
+                if _tab_mf2 == blank
+                  assign _tab_mf2 = product.metafields.custom[_tab_ky2]
+                endif
+              endif
             -%}
-            {% if _tab_mf == blank %}
-              {% assign show_tab = false %}
+            {% if _tab_ky2 == blank %}
+              {% if _tab_mf == blank %}
+                {% assign show_tab = false %}
+              {% else %}
+                {% capture mf_rendered %}
+                  {% render 'product-tab-metafield', product: product, block: block %}
+                {% endcapture %}
+              {% endif %}
             {% else %}
-              {% capture mf_rendered %}
-                {% render 'product-tab-metafield', product: product, block: block %}
-              {% endcapture %}
+              {% if _tab_mf == blank and _tab_mf2 == blank %}
+                {% assign show_tab = false %}
+              {% else %}
+                {% capture mf_rendered %}
+                  {% render 'product-tab-metafield', product: product, block: block %}
+                {% endcapture %}
+              {% endif %}
             {% endif %}
           {% elsif block.type == 'description' %}
             {% if product.description == blank %}
@@ -79,22 +123,32 @@
             >
               <div class="sf__accordion-button pb-3 pr-4">{{ block.settings.header }}</div>
               <div class="sf__accordion-content">
-                <div class="pb-8 {% if block.type != 'reviews' %}prose{% endif %}">
+                <div
+                  class="macross-pdp-tab-panel pb-8{% if block.type == 'reviews' %} macross-pdp-tab-panel--reviews{% else %} macross-pdp-tab-panel--body rte prose max-w-none{% endif %}"
+                >
                   {% case block.type %}
                     {% when 'description' %}
                       {%- assign description = product.description | replace: 'src=', 'loading="lazy" width="auto" height="auto" src=' -%}
-                      {{ description }}
+                      <div class="macross-pdp-tab-panel__flow">
+                        {{ description }}
+                      </div>
                     {% when 'reviews' %}
-                      <div class="{{ block.settings.container | default: 'container' }}">
+                      <div class="macross-pdp-tab-panel__flow {{ block.settings.container | default: 'container' }}">
                         {% render 'product-reviews-app__snippet', custom_liquid: block.settings.custom_liquid %}
                       </div>
                     {% when 'tab' %}
-                      {{ block.settings.content }}
-                      {{ block.settings.content_page.content }}
+                      <div class="macross-pdp-tab-panel__flow">
+                        {{ block.settings.content }}
+                        {{ block.settings.content_page.content }}
+                      </div>
                     {% when 'liquid' %}
-                      {{ block.settings.custom_liquid }}
+                      <div class="macross-pdp-tab-panel__flow">
+                        {{ block.settings.custom_liquid }}
+                      </div>
                     {% when 'mf_tab' %}
-                      {{ mf_rendered }}
+                      <div class="macross-pdp-tab-panel__flow">
+                        {{ mf_rendered }}
+                      </div>
                     {% else %}
                   {% endcase %}
                 </div>
@@ -111,6 +165,104 @@
 <script>
   window.themeScriptURLs.tabs.required = true
 </script>
+
+{% stylesheet %}
+  /* PDP information tabs — consistent, readable layout for regulated / pharmacy content */
+  .macross-pdp-tab-panel--body {
+    --macross-tab-font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: var(--macross-tab-font);
+    font-size: 1rem;
+    line-height: 1.65;
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--color-body-text, #1a1a1a);
+  }
+
+  .macross-pdp-tab-panel--body :where(p, li, td, th) {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .macross-pdp-tab-panel--body :where(ul, ol) {
+    margin-top: 0.65em;
+    margin-bottom: 0.65em;
+    padding-inline-start: 1.35em;
+  }
+
+  .macross-pdp-tab-panel--body :where(ul) li + li,
+  .macross-pdp-tab-panel--body :where(ol) li + li {
+    margin-top: 0.35em;
+  }
+
+  .macross-pdp-tab-panel--body :where(h1, h2, h3, h4) {
+    margin-top: 1.35em;
+    margin-bottom: 0.45em;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--color-body-text, #111);
+  }
+
+  .macross-pdp-tab-panel--body :where(h1, h2, h3, h4):first-child {
+    margin-top: 0;
+  }
+
+  .macross-pdp-tab-panel--body :where(strong, b) {
+    font-weight: 600;
+  }
+
+  .macross-pdp-tab-panel__flow > :first-child {
+    margin-top: 0;
+  }
+
+  .macross-pdp-tab-panel__flow > :last-child {
+    margin-bottom: 0;
+  }
+
+  .macross-pdp-tab-panel__segment :first-child {
+    margin-top: 0;
+  }
+
+  .macross-pdp-tab-panel__segment + .macross-pdp-tab-panel__segment {
+    margin-top: 1.25rem;
+  }
+
+  .macross-pdp-tab-panel__subheading {
+    margin: 0 0 0.75rem;
+    padding-top: 1.35rem;
+    margin-top: 1.35rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+    font-family: var(--macross-tab-font, ui-sans-serif, system-ui, sans-serif);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    line-height: 1.35;
+    color: var(--color-body-text, #333);
+    opacity: 0.88;
+  }
+
+  .macross-pdp-tab-panel__subheading--first {
+    padding-top: 0;
+    margin-top: 0;
+    border-top: none;
+  }
+
+  .macross-pdp-tab-panel--reviews {
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.65;
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--color-body-text, #1a1a1a);
+  }
+
+  .macross-pdp-tab-panel--reviews .macross-pdp-tab-panel__flow {
+    max-width: 100%;
+  }
+{% endstylesheet %}
+
 {% schema %}
 {
   "name": "Product information tabs",
@@ -279,6 +431,25 @@
           "label": "Metafield key",
           "default": "macross_faq",
           "info": "e.g. macross_faq, macross_envio (see metafieldDefinitions in Admin API)."
+        },
+        {
+          "type": "text",
+          "id": "metafield_namespace_2",
+          "label": "Second metafield namespace (optional)",
+          "info": "Leave blank to reuse the first namespace. Used to show two metafields in one tab."
+        },
+        {
+          "type": "text",
+          "id": "metafield_key_2",
+          "label": "Second metafield key (optional)",
+          "info": "If set, this metafield is shown below the first. Tab is shown if either field has content."
+        },
+        {
+          "type": "text",
+          "id": "secondary_block_heading",
+          "label": "Heading above second metafield",
+          "default": "Conservación",
+          "info": "Only used when a second metafield key is set. Leave blank to omit the subheading."
         }
       ]
     }

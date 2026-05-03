@@ -1,0 +1,20 @@
+{%- comment -%}
+  One resolved product metafield — markup aligned with PDP tab panel typography (pharmacy / long-form).
+{%- endcomment -%}
+{%- if mf != blank -%}
+  <div class="macross-pdp-tab-panel__segment">
+    {%- capture mf_tagged -%}{{ mf | metafield_tag }}{%- endcapture -%}
+    {%- assign mf_tagged = mf_tagged | strip -%}
+    {%- if mf_tagged != blank -%}
+      {{ mf_tagged }}
+    {%- elsif mf.value != blank and mf.type == 'rich_text_field' -%}
+      <div class="rte">{{ mf.value }}</div>
+    {%- elsif mf.value != blank and mf.type == 'single_line_text_field' -%}
+      <p class="m-0">{{ mf.value }}</p>
+    {%- elsif mf.value != blank and mf.type == 'multi_line_text_field' -%}
+      <p class="m-0 whitespace-pre-wrap">{{ mf.value }}</p>
+    {%- elsif mf.value != blank -%}
+      <div class="rte">{{ mf.value }}</div>
+    {%- endif -%}
+  </div>
+{%- endif -%}

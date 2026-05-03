@@ -1,5 +1,5 @@
 {%- comment -%}
-  Renders one product metafield for mf_tab blocks. Uses block namespace + key, with custom.* fallback.
+  Renders product metafield(s) for mf_tab blocks. Optional metafield_key_2 shows a second field below the first (e.g. conservación under advertencias).
 {%- endcomment -%}
 {%- liquid
   assign ns = block.settings.metafield_namespace | strip
@@ -11,21 +11,36 @@
   if mf == blank and ky != blank
     assign mf = product.metafields.custom[ky]
   endif
+
+  assign ky2 = block.settings.metafield_key_2 | default: '' | strip
+  assign ns2 = block.settings.metafield_namespace_2 | default: '' | strip
+  if ns2 == blank
+    assign ns2 = ns
+  endif
+  assign mf2 = blank
+  if ky2 != blank
+    if ns2 != blank
+      assign mf2 = product.metafields[ns2][ky2]
+    endif
+    if mf2 == blank
+      assign mf2 = product.metafields.custom[ky2]
+    endif
+  endif
+
+  assign secondary_heading = block.settings.secondary_block_heading | default: '' | strip
 -%}
-{%- if mf != blank -%}
-  {%- capture mf_tagged -%}{{- mf | metafield_tag -}}{%- endcapture -%}
-  {%- assign mf_tagged = mf_tagged | strip -%}
-  <div class="rte rte-product-tab-metafield">
-    {%- if mf_tagged != blank -%}
-      {{- mf_tagged -}}
-    {%- elsif mf.value != blank and mf.type == 'single_line_text_field' -%}
-      {{- mf.value -}}
-    {%- elsif mf.value != blank and mf.type == 'multi_line_text_field' -%}
-      {{- mf.value -}}
-    {%- elsif mf.value != blank and mf.type == 'rich_text_field' -%}
-      <div class="rte">{{ mf.value }}</div>
-    {%- elsif mf.value != blank -%}
-      {{- mf.value -}}
+{%- if ky2 == blank -%}
+  {% render 'product-tab-metafield-inner', mf: mf %}
+{%- else -%}
+  {%- if mf != blank -%}
+    {% render 'product-tab-metafield-inner', mf: mf %}
+  {%- endif -%}
+  {%- if mf2 != blank -%}
+    {%- if secondary_heading != blank -%}
+      <h3 class="macross-pdp-tab-panel__subheading{% if mf == blank %} macross-pdp-tab-panel__subheading--first{% endif %}">
+        {{ secondary_heading }}
+      </h3>
     {%- endif -%}
-  </div>
+    {% render 'product-tab-metafield-inner', mf: mf2 %}
+  {%- endif -%}
 {%- endif -%}

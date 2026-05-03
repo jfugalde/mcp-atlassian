@@ -82,28 +82,31 @@
     "product-details-tabs": {
       "type": "product-details-tabs",
       "blocks": {
-        "macross_indicaciones": {
+        "macross_que_es": {
           "type": "mf_tab",
           "settings": {
-            "header": "Indicaciones médicas",
+            "header": "¿Qué es?",
             "metafield_namespace": "custom",
-            "metafield_key": "macross_indicaciones"
+            "metafield_key": "macross_que_es"
           }
         },
-        "macross_conservacion": {
+        "macross_usos_reconocidos": {
           "type": "mf_tab",
           "settings": {
-            "header": "Conservación",
+            "header": "Usos reconocidos",
             "metafield_namespace": "custom",
-            "metafield_key": "macross_conservacion"
+            "metafield_key": "macross_usos_reconocidos"
           }
         },
-        "macross_advertencias": {
+        "macross_advertencias_y_conservacion": {
           "type": "mf_tab",
           "settings": {
-            "header": "Advertencias",
+            "header": "Advertencias y conservación",
             "metafield_namespace": "custom",
-            "metafield_key": "macross_advertencias"
+            "metafield_key": "macross_advertencias",
+            "metafield_namespace_2": "custom",
+            "metafield_key_2": "macross_conservacion",
+            "secondary_block_heading": "Conservación"
           }
         },
         "macross_faq": {
@@ -131,9 +134,9 @@
       },
       "block_order": [
         "tab_descripcion_producto",
-        "macross_indicaciones",
-        "macross_conservacion",
-        "macross_advertencias",
+        "macross_que_es",
+        "macross_usos_reconocidos",
+        "macross_advertencias_y_conservacion",
         "macross_faq",
         "product_reviews_tab"
       ],

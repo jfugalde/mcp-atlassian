@@ -27,7 +27,7 @@
           <summary class="pickup-availability-details__summary flex w-full items-center justify-between gap-3 p-3 text-left cursor-pointer">
             <span class="pickup-availability-details__title flex min-w-0 flex-1 items-center gap-2">
               {%- if availability.available -%}
-                <svg class="pickup-availability-details__status-icon w-[18px] h-[18px] flex-shrink-0 text-[#108043]" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                <svg class="pickup-availability-details__status-icon pickup-availability-details__status-icon--available w-[18px] h-[18px] flex-shrink-0" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                   <path fill="currentColor" stroke="#fff" d="M16.136 6.979h0l.003-.004a1.499 1.499 0 00-2.275-1.954l-5.945 6.777-1.858-1.859A1.499 1.499 0 103.94 12.06l2.999 3s0 0 0 0c.289.29.675.44 1.1.439h.019a1.5 1.5 0 001.08-.522l6.998-7.998z"/>
                 </svg>
               {%- else -%}
@@ -42,15 +42,20 @@
             </span>
           </summary>
           <div class="pickup-availability-details__panel border-t border-color-border px-3 pb-3 pt-2">
-            <div class="pickup-availability-line flex items-start gap-2">
+            <div class="pickup-availability-line flex flex-col items-start gap-0">
               {%- if availability.available -%}
-                <p class="m-0 text-sm">
-                  {%- render 'new-locale', key: 'products.product.pickup_availability.pick_up_available' -%}, {{ availability.pick_up_time | downcase }}
+                <p class="m-0 text-sm pickup-availability-details__pickup-line">
+                  <span class="pickup-availability-details__recoleccion-disponible">{{ 'products.product.pickup_availability.pick_up_available' | t }}</span><span class="pickup-availability-details__pickup-time">, {{ availability.pick_up_time | downcase }}</span>
                 </p>
               {%- else -%}
                 <p class="m-0 text-sm text-color-subtext">
                   {%- render 'new-locale', key: 'products.product.pickup_availability.pick_up_unavailable_at_html', param: '{{ location_name }}', value: availability.location.name -%}
                 </p>
+                {%- if product_variant.available -%}
+                  <p class="pickup-availability-details__online-available m-0 mt-2 text-sm">
+                    {{- 'products.product.pickup_availability.online_purchase_available' | t -}}
+                  </p>
+                {%- endif -%}
               {%- endif -%}
             </div>
 

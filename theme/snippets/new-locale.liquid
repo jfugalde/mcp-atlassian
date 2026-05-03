@@ -46,6 +46,8 @@
         Pickup available at <span>{%- raw -%}{{ location_name }}{%- endraw -%}</span>
       {%- when 'products.product.pickup_availability.pick_up_unavailable_at_html' -%}
         Pickup currently unavailable at <span>{%- raw -%}{{ location_name }}{%- endraw -%}</span>
+      {%- when 'products.product.pickup_availability.online_purchase_available' -%}
+        Online purchase available.
       {%- when 'products.product.pickup_availability.inline_heading' -%}
         Store pickup
       {%- else -%}

@@ -8,4 +8,8 @@
 .pickup-availability-details__summary::-webkit-details-marker{display:none}
 .pickup-availability-details[open] .pickup-availability-details__caret svg{transform:rotate(180deg)}
 .pickup-availability-details__status-icon--muted{display:inline-block;height:10px;width:10px;flex-shrink:0;border-radius:9999px;background:currentColor;opacity:.35}
+.pickup-availability-details__status-icon--available{color:#b33029}
+.pickup-availability-details__recoleccion-disponible{color:#b33029;font-weight:600}
+.pickup-availability-details__pickup-time{color:inherit}
+.pickup-availability-details__online-available{color:var(--color-body-text,#1a1a1a);line-height:1.5}
 /*# sourceMappingURL=pickup-availability.css.map */

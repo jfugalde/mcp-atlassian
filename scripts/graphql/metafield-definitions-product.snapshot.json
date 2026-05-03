@@ -3,8 +3,14 @@
   "macross_product_fields": [
     {
       "namespace": "custom",
-      "key": "macross_indicaciones",
-      "name": "Macross — Indicaciones médicas",
+      "key": "macross_que_es",
+      "name": "¿Qué es?",
+      "type": "rich_text_field"
+    },
+    {
+      "namespace": "custom",
+      "key": "macross_usos_reconocidos",
+      "name": "Usos Reconocidos",
       "type": "rich_text_field"
     },
     {
@@ -27,6 +33,6 @@
     }
   ],
   "liquid_access": "product.metafields.custom.macross_faq",
-  "theme_tabs_product_json": "Description tab first (Shopify product body), then mf_tab blocks: macross_indicaciones, macross_conservacion, macross_advertencias, macross_faq, then reviews. macross_resumen and macross_envio are not rendered as tabs (definitions may still exist in Admin for data/API).",
+  "theme_tabs_product_json": "Description tab first (Shopify product body), then mf_tab blocks: macross_que_es, macross_usos_reconocidos, combined tab macross_advertencias + macross_conservacion (subheading Conservación), macross_faq, then reviews.",
   "theme_note": "Product description is only in tabs, not in the main product column (see templates/product.json)."
 }

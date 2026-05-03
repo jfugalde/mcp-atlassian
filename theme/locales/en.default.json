@@ -422,6 +422,7 @@
         "pick_up_available": "Pickup available",
         "pick_up_available_at_html": "Pickup available at <span>{{ location_name }}</span>",
         "pick_up_unavailable_at_html": "Pickup currently unavailable at <span>{{ location_name }}</span>",
+        "online_purchase_available": "Online purchase available.",
         "unavailable": "Couldn't load pickup availability",
         "refresh": "Refresh",
         "inline_heading": "Store pickup",
