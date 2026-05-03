@@ -122,14 +122,6 @@
           "settings": {
             "header": "Descripción del producto"
           }
-        },
-        "product_reviews_tab": {
-          "type": "reviews",
-          "settings": {
-            "header": "Reseñas",
-            "container": "container",
-            "custom_liquid": ""
-          }
         }
       },
       "block_order": [
@@ -137,8 +129,7 @@
         "macross_que_es",
         "macross_usos_reconocidos",
         "macross_advertencias_y_conservacion",
-        "macross_faq",
-        "product_reviews_tab"
+        "macross_faq"
       ],
       "settings": {
         "container": "container",
