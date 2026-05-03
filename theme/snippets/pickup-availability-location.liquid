@@ -1,0 +1,49 @@
+{% comment %}
+  Single pickup location row for pickup-availability section.
+  Accepts: availability (store_availability), details_open (boolean)
+{% endcomment %}
+<details class="pickup-availability-details border border-color-border rounded-md" role="listitem" {% if details_open %}open{% endif %}>
+  <summary class="pickup-availability-details__summary flex w-full items-center justify-between gap-3 p-3 text-left cursor-pointer">
+    <span class="pickup-availability-details__title flex min-w-0 flex-1 items-center gap-2">
+      {%- if availability.available -%}
+        <svg class="pickup-availability-details__status-icon pickup-availability-details__status-icon--available w-[18px] h-[18px] flex-shrink-0" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+          <path fill="currentColor" stroke="#fff" d="M16.136 6.979h0l.003-.004a1.499 1.499 0 00-2.275-1.954l-5.945 6.777-1.858-1.859A1.499 1.499 0 103.94 12.06l2.999 3s0 0 0 0c.289.29.675.44 1.1.439h.019a1.5 1.5 0 001.08-.522l6.998-7.998z"/>
+        </svg>
+      {%- else -%}
+        <span class="pickup-availability-details__status-icon pickup-availability-details__status-icon--muted" aria-hidden="true"></span>
+      {%- endif -%}
+      <span class="pickup-availability-details__name truncate font-medium">{{ availability.location.name | escape }}</span>
+    </span>
+    <span class="pickup-availability-details__caret flex-shrink-0" aria-hidden="true">
+      <svg class="h-5 w-5 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </span>
+  </summary>
+  <div class="pickup-availability-details__panel border-t border-color-border px-3 pb-3 pt-2">
+    <div class="pickup-availability-line flex flex-col items-start gap-0">
+      {%- if availability.available -%}
+        <p class="m-0 text-sm pickup-availability-details__pickup-line">
+          <span class="pickup-availability-details__recoleccion-disponible">{{ 'products.product.pickup_availability.pick_up_available' | t }}</span><span class="pickup-availability-details__pickup-time">, {{ availability.pick_up_time | downcase }}</span>
+        </p>
+      {%- else -%}
+        <p class="m-0 text-sm text-color-subtext">
+          {%- render 'new-locale', key: 'products.product.pickup_availability.pick_up_unavailable_at_html', param: '{{ location_name }}', value: availability.location.name -%}
+        </p>
+        {%- if product_variant.available -%}
+          <p class="pickup-availability-details__online-available m-0 mt-2 text-sm">
+            {{- 'products.product.pickup_availability.online_purchase_available' | t -}}
+          </p>
+        {%- endif -%}
+      {%- endif -%}
+    </div>
+
+    {%- assign address = availability.location.address -%}
+    <address class="pickup-availability-address not-italic mt-3 text-sm">
+      {{ address | format_address }}
+      {%- if address.phone.size > 0 -%}
+        <p class="mt-1 mb-0">{{ address.phone }}</p>
+      {%- endif -%}
+    </address>
+  </div>
+</details>

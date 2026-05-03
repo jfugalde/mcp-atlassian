@@ -365,6 +365,7 @@
       "brand": "Marca",
       "colors": "Colores",
       "in_stock": "En stock",
+      "in_stock_online": "Disponible en línea (envío)",
       "out_of_stock": "Agotado",
       "unavailable": "Indisponible",
       "on_sale": "En venta",
@@ -408,7 +409,7 @@
       "copy_link": "Copiar enlace",
       "unit_price_label": "Precio por unidad",
       "size_guide": "Guía de tallas",
-      "save_html": "Salvar <span class=\"sf-currency sf-currency--saved font-medium\" data-saved-price>{{ amount }}</span>",
+      "save_html": "¡Ahorra! <span class=\"sf-currency sf-currency--saved font-medium\" data-saved-price>{{ amount }}</span>",
       "recently_viewed_products": "Productos vistos recientemente",
       "select_options": "Seleccionar opciones",
       "sold": "Vendido",
@@ -491,5 +492,12 @@
       "signup_form_success": "We will send you an email right before we open!",
       "password_link": "Enter using password"
     }
+  },
+  "macross": {
+    "pdp_sale_save_html": "¡Ahorra! <span class=\"sf-currency sf-currency--saved font-medium\" data-saved-price>{{ amount }}</span>",
+    "pdp_sale_tier_1": "Oferta",
+    "pdp_sale_tier_2": "Super oferta",
+    "pdp_sale_tier_3": "Oferta inmejorable",
+    "pdp_sale_gauge_aria": "Intensidad del descuento: {{ tier }} ({{ amount }})."
   }
 }

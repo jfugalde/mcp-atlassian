@@ -17,83 +17,203 @@
 %}
 
 {% if should_show %}
-{{ 'cookie-banner.css' | asset_url | stylesheet_tag }}
-<div id="m-cookie-banner" class="m-cookie-banner m-cookie-banner--{{ cookie_consent_placement }} m-cookie-banner--{{ cookie_consent_theme }}" data-cookie-banner="1" role="region" aria-label="Aviso de cookies"{% if request.design_mode %} data-shopify-design-mode="true"{% endif %} {% if cookie_design_mode and request.design_mode %}style="display: flex;"{% endif %}>
-  {% if cookie_consent_message != blank %}
-  <span class="m-cookie-banner__message">
-    {{ cookie_consent_message }}
-    {% if cookie_consent_learnmore != blank %}
-      <a class="m-cookie-banner__learn-more" href="{{ cookie_consent_learnmore_link | default: '/policies/privacy-policy' }}">{{ cookie_consent_learnmore }}</a>
+  {{ 'cookie-banner.css' | asset_url | stylesheet_tag }}
+  <div
+    id="m-cookie-banner"
+    class="m-cookie-banner m-cookie-banner--{{ cookie_consent_placement }} m-cookie-banner--{{ cookie_consent_theme }}{% if cookie_design_mode and request.design_mode %} show{% endif %}"
+    data-cookie-banner="1"
+    role="dialog"
+    aria-modal="false"
+    aria-label="Aviso de cookies"
+    aria-describedby="m-cookie-banner-desc"
+    {% if request.design_mode %}
+      data-shopify-design-mode="true"
     {% endif %}
-  </span>
-  {% endif %}
-  <div class="m-cookie-banner__buttons">
-    {% if cookie_consent_decline != blank %}
-      <a class="cookie-action--decline" onclick="handleDecline()">{{ cookie_consent_decline }}</a>
+    {% if cookie_design_mode and request.design_mode %}
+      style="display: flex; opacity: 1; transform: none; pointer-events: auto;"
     {% endif %}
-    {% if cookie_consent_allow != blank %}
-      <a class="cookie-action--accept" onclick="handleAccept()">{{ cookie_consent_allow }}</a>
-    {% endif %}
+  >
+    <div class="m-cookie-banner__expanded" data-cookie-expanded>
+      <div class="m-cookie-banner__toolbar">
+        <span class="m-cookie-banner__toolbar-title">Cookies</span>
+        <button
+          type="button"
+          class="m-cookie-banner__minimize-btn"
+          data-cookie-minimize
+          aria-label="Minimizar aviso y continuar navegando"
+        >
+          <span aria-hidden="true" class="m-cookie-banner__minimize-icon"></span>
+        </button>
+      </div>
+
+      <div class="m-cookie-banner__message-wrap" id="m-cookie-banner-desc">
+        {% if cookie_consent_message != blank %}
+          <span class="m-cookie-banner__message">
+            {{ cookie_consent_message }}
+            {% if cookie_consent_learnmore != blank %}
+              <a class="m-cookie-banner__learn-more" href="{{ cookie_consent_learnmore_link | default: '/policies/privacy-policy' }}">{{ cookie_consent_learnmore }}</a>
+            {% endif %}
+          </span>
+        {% endif %}
+      </div>
+
+      <div class="m-cookie-banner__buttons">
+        {% if cookie_consent_decline != blank %}
+          <button type="button" class="cookie-action cookie-action--decline" data-cookie-decline>
+            {{ cookie_consent_decline }}
+          </button>
+        {% endif %}
+        {% if cookie_consent_allow != blank %}
+          <button type="button" class="cookie-action cookie-action--accept" data-cookie-accept>
+            {{ cookie_consent_allow }}
+          </button>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="m-cookie-banner__minimized-bar" data-cookie-minimized hidden>
+      <span class="m-cookie-banner__minimized-text">Cookies y privacidad</span>
+      <button type="button" class="m-cookie-banner__expand-btn" data-cookie-expand>
+        Elegir
+      </button>
+    </div>
   </div>
-</div>
-<script>
-  function getBannerEl() {
-      return document.getElementById('m-cookie-banner');
-    }
+  <script>
+    (function () {
+      var STORAGE_ACK = 'theme_cookie_banner_ack';
+      var STORAGE_MIN = 'theme_cookie_banner_minimized';
 
-    function hideBanner(res) {
-      getBannerEl().classList.remove('show')
-      setTimeout(() => {
-          getBannerEl().style.display = 'none';
-      }, 500)
-    }
+      function getBannerEl() {
+        return document.getElementById('m-cookie-banner');
+      }
 
-    function showBanner() {
-     getBannerEl().style.display = 'flex';
-     setTimeout(() => {
-          getBannerEl().classList.add('show')
-     }, 500)
-    }
-
-    function handleAccept(e) {
-      window.Shopify.customerPrivacy.setTrackingConsent(true, hideBanner);
-      try {
-        localStorage.setItem('theme_cookie_banner_ack', '1');
-      } catch (err) {}
-    }
-
-    function handleDecline() {
-      window.Shopify.customerPrivacy.setTrackingConsent(false, hideBanner);
-      try {
-        localStorage.setItem('theme_cookie_banner_ack', '1');
-      } catch (err) {}
-    }
-
-    function initCookieBanner() {
-      var root = getBannerEl();
-      var inDesignMode = root && root.getAttribute('data-shopify-design-mode') === 'true';
-      if (!inDesignMode) {
+      function hideBanner() {
+        var el = getBannerEl();
+        if (!el) return;
+        el.classList.remove('show', 'm-cookie-banner--minimized');
         try {
-          if (localStorage.getItem('theme_cookie_banner_ack')) {
-            return;
+          sessionStorage.removeItem(STORAGE_MIN);
+        } catch (e) {}
+        setTimeout(function () {
+          el.style.display = 'none';
+        }, 420);
+      }
+
+      function showBanner() {
+        var el = getBannerEl();
+        if (!el) return;
+        el.style.display = 'flex';
+        requestAnimationFrame(function () {
+          el.classList.add('show');
+        });
+      }
+
+      function applyMinimized(minimized) {
+        var root = getBannerEl();
+        if (!root) return;
+        var minBar = root.querySelector('[data-cookie-minimized]');
+        var expanded = root.querySelector('[data-cookie-expanded]');
+        if (minimized) {
+          root.classList.add('m-cookie-banner--minimized');
+          if (minBar) minBar.hidden = false;
+          if (expanded) expanded.setAttribute('aria-hidden', 'true');
+          try {
+            sessionStorage.setItem(STORAGE_MIN, '1');
+          } catch (e) {}
+        } else {
+          root.classList.remove('m-cookie-banner--minimized');
+          if (minBar) minBar.hidden = true;
+          if (expanded) expanded.setAttribute('aria-hidden', 'false');
+          try {
+            sessionStorage.removeItem(STORAGE_MIN);
+          } catch (e) {}
+        }
+      }
+
+      function handleAccept() {
+        if (window.Shopify && window.Shopify.customerPrivacy) {
+          window.Shopify.customerPrivacy.setTrackingConsent(true, hideBanner);
+        } else {
+          hideBanner();
+        }
+        try {
+          localStorage.setItem(STORAGE_ACK, '1');
+          sessionStorage.removeItem(STORAGE_MIN);
+        } catch (err) {}
+      }
+
+      function handleDecline() {
+        if (window.Shopify && window.Shopify.customerPrivacy) {
+          window.Shopify.customerPrivacy.setTrackingConsent(false, hideBanner);
+        } else {
+          hideBanner();
+        }
+        try {
+          localStorage.setItem(STORAGE_ACK, '1');
+          sessionStorage.removeItem(STORAGE_MIN);
+        } catch (err) {}
+      }
+
+      function bindControls() {
+        var root = getBannerEl();
+        if (!root) return;
+        var accept = root.querySelector('[data-cookie-accept]');
+        var decline = root.querySelector('[data-cookie-decline]');
+        var minBtn = root.querySelector('[data-cookie-minimize]');
+        var expandBtn = root.querySelector('[data-cookie-expand]');
+
+        if (accept) accept.addEventListener('click', handleAccept);
+        if (decline) decline.addEventListener('click', handleDecline);
+        if (minBtn) {
+          minBtn.addEventListener('click', function () {
+            applyMinimized(true);
+          });
+        }
+        if (expandBtn) {
+          expandBtn.addEventListener('click', function () {
+            applyMinimized(false);
+          });
+        }
+      }
+
+      function initCookieBanner() {
+        var root = getBannerEl();
+        if (!root) return;
+        var inDesignMode = root.getAttribute('data-shopify-design-mode') === 'true';
+        if (!inDesignMode) {
+          try {
+            if (localStorage.getItem(STORAGE_ACK)) {
+              return;
+            }
+          } catch (e) {}
+        }
+
+        bindControls();
+
+        try {
+          if (sessionStorage.getItem(STORAGE_MIN) === '1') {
+            applyMinimized(true);
           }
         } catch (e) {}
-      }
-      showBanner();
-    }
 
-    window.Shopify.loadFeatures([
-      {
-        name: 'consent-tracking-api',
-        version: '0.1',
-      }
-    ],
-    function(error) {
-      if (error) {
-        throw error;
+        showBanner();
       }
 
-      initCookieBanner();
-    });
-</script>
+      window.Shopify.loadFeatures(
+        [
+          {
+            name: 'consent-tracking-api',
+            version: '0.1',
+          },
+        ],
+        function (error) {
+          if (error) {
+            console.error(error);
+            return;
+          }
+          initCookieBanner();
+        }
+      );
+    })();
+  </script>
 {% endif %}

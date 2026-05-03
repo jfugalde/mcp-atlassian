@@ -366,6 +366,7 @@
       "brand": "Brand",
       "colors": "Colors",
       "in_stock": "In Stock",
+      "in_stock_online": "Available online (shipping)",
       "out_of_stock": "Out of stock",
       "unavailable": "Unavailable",
       "on_sale": "On Sale",
@@ -492,5 +493,12 @@
       "signup_form_success": "We will send you an email right before we open!",
       "password_link": "Enter using password"
     }
+  },
+  "macross": {
+    "pdp_sale_save_html": "Save <span class=\"sf-currency sf-currency--saved font-medium\" data-saved-price>{{ amount }}</span>",
+    "pdp_sale_tier_1": "Offer",
+    "pdp_sale_tier_2": "Super offer",
+    "pdp_sale_tier_3": "Unbeatable offer",
+    "pdp_sale_gauge_aria": "Discount level: {{ tier }} ({{ amount }})."
   }
 }

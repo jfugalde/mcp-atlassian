@@ -158,6 +158,13 @@
                   </li>
                 {% endif %}
                 {% if block.settings.show_availability and is_preorder == false %}
+                  {%- liquid
+                    assign pickup_rows_for_variant = selected_variant.store_availabilities | where: 'pick_up_enabled', true | size
+                    assign use_online_stock_label = false
+                    if settings.macross_clarify_online_pickup_availability and pickup_rows_for_variant > 0 and selected_variant.available
+                      assign use_online_stock_label = true
+                    endif
+                  -%}
                   <li>
                     <span class="prod__additional_infos-label">{{ 'products.product.availability' | t }}:</span>
                     <div
@@ -165,7 +172,11 @@
                       data-availability
                     >
                       {%- if selected_variant.available -%}
-                        {{- 'products.product.in_stock' | t -}}
+                        {%- if use_online_stock_label -%}
+                          {{- 'products.product.in_stock_online' | t -}}
+                        {%- else -%}
+                          {{- 'products.product.in_stock' | t -}}
+                        {%- endif -%}
                       {%- else -%}
                         {% render 'new-locale', key: 'products.product.out_of_stock' %}
                       {%- endif -%}

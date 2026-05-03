@@ -2718,5 +2718,23 @@
         "default": false
       }
     ]
+  },
+  {
+    "name": "Farmacia Macross — pickup & PDP availability",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "macross_clarify_online_pickup_availability",
+        "label": "PDP: use online-focused in-stock label when local pickup is shown",
+        "default": true,
+        "info": "Avoids implying the default store has stock: the availability line refers to buying online; the Store pickup block shows each location. Turn off to use the theme default “In stock” wording."
+      },
+      {
+        "type": "text",
+        "id": "macross_priority_pickup_location_id",
+        "label": "Primary pickup location ID (optional)",
+        "info": "Admin → Settings → Locations → open your main retail location. Copy the numeric ID from the URL (…/locations/123456789). That location is listed first in the PDP pickup accordion."
+      }
+    ]
   }
 ]

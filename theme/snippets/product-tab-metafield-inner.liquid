@@ -1,20 +1,20 @@
 {%- comment -%}
-  One resolved product metafield — markup aligned with PDP tab panel typography (pharmacy / long-form).
+  One resolved product metafield: metafield_tag first; if empty, fall back to .value (e.g. rich text edge cases).
 {%- endcomment -%}
 {%- if mf != blank -%}
   <div class="macross-pdp-tab-panel__segment">
-    {%- capture mf_tagged -%}{{ mf | metafield_tag }}{%- endcapture -%}
-    {%- assign mf_tagged = mf_tagged | strip -%}
-    {%- if mf_tagged != blank -%}
-      {{ mf_tagged }}
-    {%- elsif mf.value != blank and mf.type == 'rich_text_field' -%}
-      <div class="rte">{{ mf.value }}</div>
-    {%- elsif mf.value != blank and mf.type == 'single_line_text_field' -%}
+    {%- if mf.type == 'single_line_text_field' and mf.value != blank -%}
       <p class="m-0">{{ mf.value }}</p>
-    {%- elsif mf.value != blank and mf.type == 'multi_line_text_field' -%}
+    {%- elsif mf.type == 'multi_line_text_field' and mf.value != blank -%}
       <p class="m-0 whitespace-pre-wrap">{{ mf.value }}</p>
-    {%- elsif mf.value != blank -%}
-      <div class="rte">{{ mf.value }}</div>
+    {%- else -%}
+      {%- capture _mf_tagged -%}{{ mf | metafield_tag }}{%- endcapture -%}
+      {%- assign _mf_tagged = _mf_tagged | strip -%}
+      {%- if _mf_tagged != blank -%}
+        {{- _mf_tagged -}}
+      {%- elsif mf.value != blank -%}
+        <div class="rte">{{ mf.value }}</div>
+      {%- endif -%}
     {%- endif -%}
   </div>
 {%- endif -%}

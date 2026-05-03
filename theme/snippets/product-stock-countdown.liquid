@@ -40,9 +40,9 @@
       {%- liquid 
         if countdown_type == 'use_quantity'
           assign number = product.selected_or_first_available_variant.inventory_quantity
-          unless number > 0
-            assign number = product.selected_or_first_available_variant.id | split: '' | last | plus: 1
-          endunless
+          if number < 1
+            assign number = 0
+          endif
         else
           assign hour = "now" | date: "%I"
           assign range = to | minus: from

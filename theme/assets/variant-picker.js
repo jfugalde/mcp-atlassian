@@ -701,7 +701,8 @@ if (!customElements.get("variant-picker")) {
       } = this.currentVariant;
       const {
         inStock,
-        outOfStock
+        outOfStock,
+        inStockOnline
       } = window.MinimogStrings;
       const productAvailability = (_this$section3 = this.section) === null || _this$section3 === void 0 ? void 0 : _this$section3.querySelector(this.selectors.productAvailability);
       const productSku = (_this$section4 = this.section) === null || _this$section4 === void 0 ? void 0 : _this$section4.querySelector(this.selectors.productSku);
@@ -714,7 +715,10 @@ if (!customElements.get("variant-picker")) {
       }
       if (productAvailability) {
         const method = !available ? 'add' : 'remove';
-        productAvailability.innerText = available ? inStock : outOfStock;
+        const clarifyPickup = this.container.dataset.clarifyPickupAvailability === 'true';
+        const hasPickup = this.container.dataset.productHasPickup === 'true';
+        const inStockLabel = available && clarifyPickup && hasPickup && inStockOnline ? inStockOnline : inStock;
+        productAvailability.innerText = available ? inStockLabel : outOfStock;
         productAvailability.classList[method]('prod__availability--outofstock');
       }
     }
@@ -738,7 +742,7 @@ if (!customElements.get("variant-picker")) {
         if (stockCountdown.dataset.countdownType === "use_quantity") {
           const countdownNumber = stockCountdown.querySelector("[data-countdown-number]");
           if (countdownNumber) {
-            countdownNumber.textContent = variant.inventory_quantity > 0 ? variant.inventory_quantity : variant.id.toString().split("")[13] - -1;
+            countdownNumber.textContent = variant.inventory_quantity > 0 ? String(variant.inventory_quantity) : "0";
           }
         }
       }
