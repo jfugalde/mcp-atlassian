@@ -2734,6 +2734,13 @@
         "id": "macross_priority_pickup_location_id",
         "label": "Primary pickup location ID (optional)",
         "info": "Admin → Settings → Locations → open your main retail location. Copy the numeric ID from the URL (…/locations/123456789). That location is listed first in the PDP pickup accordion."
+      },
+      {
+        "type": "checkbox",
+        "id": "macross_whatsapp_pdp_addons_integration",
+        "label": "PDP: WhatsApp in addon row (hide floating bubble)",
+        "default": true,
+        "info": "On product pages, adds a WhatsApp row under Compare / Question / Share in the Addon buttons block and hides the floating widget until opened. Uses the same Seedgrow multi-agent chat."
       }
     ]
   }

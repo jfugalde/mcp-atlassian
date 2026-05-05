@@ -1,0 +1,70 @@
+/**
+ * Farmacia Macross — product card offer presentation (badge + on-sale price row).
+ * Loaded once from theme layout.
+ */
+
+.sf__pcard-offer-chip {
+  contain: layout style;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.1rem;
+  padding: 0.35rem 0.55rem 0.4rem;
+  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
+  border-radius: 0.35rem;
+  background: linear-gradient(165deg, #1a1211 0%, #0d0a0a 100%);
+  border: 1px solid rgba(179, 48, 41, 0.55);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.06) inset,
+    0 6px 18px rgba(0, 0, 0, 0.35);
+  font-family: var(--font-stack-body, ui-sans-serif, system-ui, sans-serif);
+  font-weight: 700;
+  line-height: 1;
+  text-transform: none;
+  color: #f6f1e7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.sf__pcard-offer-chip__kicker {
+  font-family: inherit;
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(246, 241, 231, 0.72);
+}
+
+.sf__pcard-offer-chip__value {
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+  color: #fff;
+  text-shadow: 0 0 20px rgba(179, 48, 41, 0.45);
+}
+
+.sf__pcard .f-price--on-sale .f-price-item--sale {
+  font-weight: 700;
+  color: #b33029;
+}
+
+.sf__pcard .f-price--on-sale .prod__compare_price {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sf__pcard--onsale .sf__pcard-offer-chip {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .sf__pcard--onsale:hover .sf__pcard-offer-chip {
+    transform: translateY(-1px);
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.08) inset,
+      0 10px 24px rgba(0, 0, 0, 0.4);
+  }
+}

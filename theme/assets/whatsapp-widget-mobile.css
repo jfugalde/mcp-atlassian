@@ -1,0 +1,61 @@
+/**
+ * Seedgrow / Ninja WhatsApp widget — mobile-only tweaks (classes from seedgrow-whatsapp-lib.js).
+ * Keeps the launcher usable but smaller: icon-first trigger, shorter popup, safe-area spacing.
+ */
+@media screen and (max-width: 767px) {
+  .wa__widget_container {
+    transform: scale(0.9);
+    transform-origin: bottom right;
+    bottom: max(12px, env(safe-area-inset-bottom, 0px)) !important;
+    right: max(6px, env(safe-area-inset-right, 0px)) !important;
+  }
+
+  html[dir="rtl"] .wa__widget_container {
+    transform-origin: bottom left;
+    right: auto !important;
+    left: max(6px, env(safe-area-inset-left, 0px)) !important;
+  }
+
+  /* Launcher strip: hide “Need help?” text, keep circular icon */
+  .wa__btn_popup_txt {
+    display: none !important;
+  }
+
+  .wa__btn_popup {
+    width: 52px !important;
+    min-width: 52px !important;
+    max-width: 52px !important;
+    height: 52px !important;
+    padding: 0 !important;
+    justify-content: center !important;
+    align-items: center !important;
+    border-radius: 50% !important;
+    overflow: hidden;
+  }
+
+  .wa__btn_popup_icon {
+    width: 52px !important;
+    height: 52px !important;
+    min-width: 52px !important;
+    border-radius: 50% !important;
+    flex-shrink: 0;
+  }
+
+  /* Chat panel: don’t eat the whole screen */
+  .wa__popup_chat_box {
+    max-width: min(360px, calc(100vw - 16px)) !important;
+    width: calc(100vw - 16px) !important;
+    max-height: min(420px, 50vh) !important;
+  }
+
+  .wa__popup_heading .wa__popup_title,
+  .wa__popup_intro {
+    font-size: 14px !important;
+    line-height: 1.35 !important;
+  }
+
+  .wa__btn_title {
+    font-size: 12px !important;
+    line-height: 1.25 !important;
+  }
+}

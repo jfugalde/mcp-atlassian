@@ -1,9 +1,8 @@
 {% comment %}
-  Discount PDP — “luminance” hero: editorial % + arc readout, frosted surface (not a voucher frame).
+  Discount PDP — price-first hero with tier badge and strike-through.
+  Compact, high-impact, no filler text. The price speaks for itself.
 {% endcomment %}
 {%- liquid
-  assign ph_heading = section.settings.discount_heading
-  assign ph_supporting = section.settings.discount_supporting_text
   assign ph_only_when_on_sale = section.settings.discount_only_when_on_sale | default: true
   assign ph_show_unit_hint = section.settings.discount_show_unit_hint | default: true
 
@@ -23,8 +22,10 @@
 {% if show_band %}
   {%- liquid
     assign discount_pct = 0
+    assign saved_amount = 0
     if on_sale
-      assign discount_pct = compare_at | minus: price | times: 100 | divided_by: compare_at
+      assign saved_amount = compare_at | minus: price
+      assign discount_pct = saved_amount | times: 100 | divided_by: compare_at
     endif
     if discount_pct > 100
       assign discount_pct = 100
@@ -45,394 +46,334 @@
         assign tier_label = 'macross.pdp_sale_tier_1' | t
     endcase
 
-    assign pct_display = discount_pct | append: '%'
     assign money_sale = price | money
     assign money_compare = compare_at | money
+    assign money_saved = saved_amount | money
     if settings.currency_code_enabled
       assign money_sale = price | money_with_currency
       assign money_compare = compare_at | money_with_currency
+      assign money_saved = saved_amount | money_with_currency
     endif
 
-    assign arc_offset = 100 | minus: discount_pct
-    assign save_badge_html = 'macross.pdp_sale_save_html' | t: amount: pct_display
-    assign gauge_aria = 'macross.pdp_sale_gauge_aria' | t: tier: tier_label, amount: pct_display
+    assign region_aria = 'macross.pdp_sale_region_aria' | t: pct: discount_pct, pay_pct: 100 | minus: discount_pct, tier: tier_label, compare: money_compare, sale: money_sale
   -%}
   <div
-    class="discount-pdp-hero discount-pdp-hero--lumen{% unless on_sale %} discount-pdp-hero--no-compare{% endunless %}"
+    class="mp-offer mp-offer--tier-{{ tier_level }}{% unless on_sale %} mp-offer--regular{% endunless %}"
     role="region"
-    aria-label="{{ gauge_aria | strip_html | escape }}"
+    aria-label="{{ product.title }}. {{ region_aria | strip_html | escape }}"
   >
-    <div class="discount-pdp-hero__wash" aria-hidden="true"></div>
-    <div class="discount-pdp-hero__noise" aria-hidden="true"></div>
+    <div class="mp-offer__glow" aria-hidden="true"></div>
 
-    <div class="discount-pdp-hero__grid">
-      <div class="discount-pdp-hero__instrument">
-        {% if on_sale %}
-          <div class="discount-pdp-hero__arc" role="img" aria-hidden="true">
-            <svg class="discount-pdp-hero__arc-svg" viewBox="0 0 120 72" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="discountArcGrad-{{ section.id }}" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#f4d4cc" />
-                  <stop offset="55%" stop-color="#e8a598" />
-                  <stop offset="100%" stop-color="#b33029" />
-                </linearGradient>
-              </defs>
-              <path
-                class="discount-pdp-hero__arc-track"
-                d="M 12 60 A 48 48 0 0 1 108 60"
-                fill="none"
-                stroke-width="5"
-                stroke-linecap="round"
-                pathLength="100"
-              />
-              <path
-                class="discount-pdp-hero__arc-fill"
-                d="M 12 60 A 48 48 0 0 1 108 60"
-                fill="none"
-                stroke="url(#discountArcGrad-{{ section.id }})"
-                stroke-width="5"
-                stroke-linecap="round"
-                pathLength="100"
-                stroke-dasharray="100"
-                stroke-dashoffset="{{ arc_offset }}"
-              />
-            </svg>
-          </div>
-          <p class="discount-pdp-hero__pct-massive" aria-hidden="true">
-            <span class="discount-pdp-hero__pct-value">{{ discount_pct }}</span><span class="discount-pdp-hero__pct-sign">%</span>
-          </p>
-        {% else %}
-          <p class="discount-pdp-hero__pct-massive discount-pdp-hero__pct-massive--muted" aria-hidden="true">—</p>
-        {% endif %}
+    {% if on_sale %}
+      <div class="mp-offer__badge" aria-hidden="true">
+        <span class="mp-offer__badge-pct">-{{ discount_pct }}%</span>
+      </div>
+    {% endif %}
+
+    <h1 class="mp-offer__title">{{ product.title }}</h1>
+
+    {% if on_sale %}
+      <div class="mp-offer__prices">
+        <span class="mp-offer__now">{{ money_sale }}</span>
+        <span class="mp-offer__was">
+          <span class="visually-hidden">{{ 'products.product.price.regular_price' | t }}</span>
+          <s>{{ money_compare }}</s>
+        </span>
       </div>
 
-      <div class="discount-pdp-hero__body">
-        <p class="discount-pdp-hero__eyebrow">
-          <span class="discount-pdp-hero__brand">Macross</span>
-          {% if ph_heading != blank %}
-            <span class="discount-pdp-hero__eyebrow-sep" aria-hidden="true">·</span>
-            <span class="discount-pdp-hero__context">{{ ph_heading | escape }}</span>
-          {% endif %}
-        </p>
-
-        {% if on_sale %}
-          <p class="discount-pdp-hero__tier">{{ tier_label }}</p>
-
-          <div class="discount-pdp-hero__price-row">
-            <span class="discount-pdp-hero__sale">{{ money_sale }}</span>
-            <span class="discount-pdp-hero__compare-wrap">
-              <span class="visually-hidden">{{ 'products.product.price.regular_price' | t }}</span>
-              <s class="discount-pdp-hero__compare">{{ money_compare }}</s>
-            </span>
-          </div>
-
-          <div class="discount-pdp-hero__savings-line">
-            <span class="discount-pdp-hero__savings-mark" aria-hidden="true"></span>
-            <span class="discount-pdp-hero__savings-text">{{ save_badge_html }}</span>
-          </div>
-        {% else %}
-          <p class="discount-pdp-hero__tier discount-pdp-hero__tier--quiet">{{ 'products.product.price.regular_price' | t }}</p>
-          <div class="discount-pdp-hero__price-row">
-            <span class="discount-pdp-hero__sale discount-pdp-hero__sale--solo">{{ money_sale }}</span>
-          </div>
-        {% endif %}
-
-        {% if ph_supporting != blank %}
-          <p class="discount-pdp-hero__fine">{{ ph_supporting | escape }}</p>
-        {% endif %}
-        {% if ph_show_unit_hint and v.unit_price_measurement %}
-          <p class="discount-pdp-hero__unit">
-            <span class="discount-pdp-hero__unit-label">{{ 'products.product.price.unit_price' | t }}</span>
-            <span data-unit-price-highlight>{{ v.unit_price | money }}</span>
-            <span aria-hidden="true"> / </span>
-            <span>
-              {%- if v.unit_price_measurement.reference_value != 1 -%}
-                {{- v.unit_price_measurement.reference_value -}}
-              {%- endif -%}
-              {{ v.unit_price_measurement.reference_unit }}
-            </span>
-          </p>
-        {% endif %}
+      <div class="mp-offer__tier">
+        <span class="mp-offer__tier-label">{{ tier_label }}</span>
+        <span class="mp-offer__tier-saved">{{ 'macross.pdp_sale_you_save' | t }} {{ money_saved }}</span>
       </div>
-    </div>
+    {% else %}
+      <div class="mp-offer__prices mp-offer__prices--solo">
+        <span class="mp-offer__now mp-offer__now--regular">{{ money_sale }}</span>
+      </div>
+    {% endif %}
+
+    {% if ph_show_unit_hint and v.unit_price_measurement %}
+      <p class="mp-offer__unit">
+        {{ v.unit_price | money }}
+        <span aria-hidden="true">/</span>
+        {%- if v.unit_price_measurement.reference_value != 1 -%}
+          {{ v.unit_price_measurement.reference_value }}
+        {%- endif -%}
+        {{ v.unit_price_measurement.reference_unit }}
+      </p>
+    {% endif %}
   </div>
 {% endif %}
 
 {% stylesheet %}
-  .discount-pdp-hero--lumen {
-    --lumen-accent: #e8a598;
-    --lumen-accent-deep: #b33029;
-    --lumen-ink: rgba(248, 246, 242, 0.94);
-    --lumen-muted: rgba(248, 246, 242, 0.62);
+  /* Light by default (matches typical white storefront) — dark via OS preference */
+  .mp-offer {
+    --offer-red: var(--mp-red, #b33029);
+    --offer-red-soft: var(--mp-red-soft, #d45850);
+    --offer-paper: var(--mp-warm-paper, #f6f1e7);
 
     position: relative;
-    margin: 0;
-    padding: 0;
-    border: none;
-    border-radius: 1.15rem;
-    overflow: hidden;
-    background: rgba(28, 48, 40, 0.55);
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.14),
-      0 1px 0 rgba(0, 0, 0, 0.35);
-    -webkit-backdrop-filter: blur(16px) saturate(1.35);
-    backdrop-filter: blur(16px) saturate(1.35);
-  }
-
-  @supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
-    .discount-pdp-hero--lumen {
-      background: rgba(22, 38, 32, 0.94);
-    }
-  }
-
-  .discount-pdp-hero__wash {
-    position: absolute;
-    inset: -40%;
-    background:
-      radial-gradient(ellipse 70% 55% at 18% 35%, rgba(179, 48, 41, 0.35), transparent 55%),
-      radial-gradient(ellipse 55% 50% at 88% 20%, rgba(232, 165, 152, 0.22), transparent 50%),
-      radial-gradient(ellipse 50% 40% at 55% 95%, rgba(20, 34, 28, 0.45), transparent 55%);
-    animation: discount-pdp-lumen-drift 14s ease-in-out infinite alternate;
-    pointer-events: none;
-  }
-
-  @keyframes discount-pdp-lumen-drift {
-    0% {
-      transform: translate(0, 0) rotate(0deg);
-    }
-    100% {
-      transform: translate(3%, -2%) rotate(2deg);
-    }
-  }
-
-  .discount-pdp-hero__noise {
-    position: absolute;
-    inset: 0;
-    opacity: 0.07;
-    mix-blend-mode: overlay;
-    pointer-events: none;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    background-size: 180px 180px;
-  }
-
-  .discount-pdp-hero__grid {
-    position: relative;
-    z-index: 1;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem 1.25rem;
-    padding: 1.15rem 1.2rem 1.25rem;
-  }
-
-  @media (min-width: 640px) {
-    .discount-pdp-hero__grid {
-      grid-template-columns: minmax(7.5rem, 0.42fr) 1fr;
-      align-items: center;
-      padding: 1.25rem 1.35rem 1.35rem 1.15rem;
-    }
-  }
-
-  .discount-pdp-hero__instrument {
     display: flex;
     flex-direction: column;
+    gap: 0.65rem;
+    padding: 1.25rem 1.35rem 1.15rem;
+    border-radius: 0.85rem;
+    overflow: hidden;
+    background: linear-gradient(165deg, #fffcfb 0%, #f8f4f0 100%);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.9),
+      inset 0 0 0 1px rgba(179, 48, 41, 0.22),
+      0 6px 24px rgba(42, 34, 32, 0.1);
+    font-family: var(--discount-pdp-font-ui);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .mp-offer__glow {
+    position: absolute;
+    top: -60%;
+    left: -30%;
+    width: 100%;
+    height: 140%;
+    background: radial-gradient(ellipse 65% 50% at 25% 35%, rgba(179, 48, 41, 0.18), transparent 60%);
+    pointer-events: none;
+    filter: blur(40px);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .mp-offer__glow {
+      animation: mp-offer-pulse 6s ease-in-out infinite alternate;
+    }
+  }
+
+  @keyframes mp-offer-pulse {
+    0% { opacity: 0.7; transform: scale(1); }
+    100% { opacity: 1; transform: scale(1.08); }
+  }
+
+  .mp-offer__title {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    padding-right: 5.5rem;
+    font-family: var(--discount-pdp-font-display);
+    font-size: clamp(1.15rem, 3vw, 1.4rem);
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: rgba(26, 20, 18, 0.92);
+  }
+
+  .mp-offer__badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.15rem;
-    text-align: center;
+    min-width: 4.5rem;
+    padding: 0.55rem 0.9rem 0.5rem;
+    background: linear-gradient(145deg, var(--offer-red-soft), var(--offer-red));
+    border-radius: 0 0.85rem 0 0.75rem;
+    box-shadow:
+      0 4px 16px rgba(179, 48, 41, 0.45),
+      inset 0 1px 0 rgba(255, 255, 255, 0.25);
   }
 
-  .discount-pdp-hero__arc {
-    width: min(9.5rem, 100%);
-    margin-bottom: -0.35rem;
-  }
-
-  .discount-pdp-hero__arc-svg {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-
-  .discount-pdp-hero__arc-track {
-    stroke: rgba(255, 255, 255, 0.14);
-  }
-
-  .discount-pdp-hero__arc-fill {
-    stroke-dasharray: 100;
-    transition: stroke-dashoffset 0.65s cubic-bezier(0.33, 1, 0.68, 1);
-  }
-
-  .discount-pdp-hero__arc-svg {
-    filter: drop-shadow(0 0 12px rgba(179, 48, 41, 0.35));
-  }
-
-  .discount-pdp-hero__pct-massive {
-    margin: 0;
-    line-height: 0.85;
-    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  .mp-offer__badge-pct {
+    font-family: var(--discount-pdp-font-display);
+    font-size: 1.15rem;
     font-weight: 800;
-    letter-spacing: -0.06em;
-    background: linear-gradient(168deg, #fff7f0 0%, #f0c9bf 38%, #c75a52 72%, #8c241f 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-    font-size: clamp(2.75rem, 10vw, 4.25rem);
+    letter-spacing: -0.03em;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
   }
 
-  .discount-pdp-hero__pct-massive--muted {
-    background: none;
-    color: var(--lumen-muted);
-    -webkit-text-fill-color: var(--lumen-muted);
-    font-size: 2rem;
+  .mp-offer--tier-2 .mp-offer__badge {
+    min-width: 5rem;
   }
 
-  .discount-pdp-hero__pct-sign {
-    font-size: 0.42em;
-    font-weight: 700;
-    letter-spacing: 0;
-    vertical-align: super;
-    margin-left: 0.02em;
+  .mp-offer--tier-2 .mp-offer__badge-pct {
+    font-size: 1.3rem;
   }
 
-  .discount-pdp-hero__body {
-    min-width: 0;
+  .mp-offer--tier-3 .mp-offer__badge {
+    min-width: 5.5rem;
+    padding: 0.65rem 1rem 0.6rem;
   }
 
-  .discount-pdp-hero__eyebrow {
-    margin: 0 0 0.4rem;
-    font-size: 0.68rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--lumen-muted);
+  .mp-offer--tier-3 .mp-offer__badge-pct {
+    font-size: 1.5rem;
   }
 
-  .discount-pdp-hero__brand {
-    color: var(--lumen-accent);
-    font-family: ui-monospace, Menlo, Consolas, monospace;
-    font-weight: 700;
-  }
-
-  .discount-pdp-hero__eyebrow-sep {
-    margin: 0 0.35rem;
-    opacity: 0.5;
-  }
-
-  .discount-pdp-hero__context {
-    font-family: ui-sans-serif, system-ui, sans-serif;
-    letter-spacing: 0.06em;
-    text-transform: none;
-    font-weight: 500;
-  }
-
-  .discount-pdp-hero__tier {
-    margin: 0 0 0.55rem;
-    font-family: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
-    font-size: clamp(1.2rem, 2.8vw, 1.55rem);
-    font-weight: 600;
-    line-height: 1.15;
-    color: var(--lumen-ink);
-    letter-spacing: -0.02em;
-  }
-
-  .discount-pdp-hero__tier--quiet {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    font-family: ui-sans-serif, system-ui, sans-serif;
-    font-weight: 600;
-    color: var(--lumen-muted);
-  }
-
-  .discount-pdp-hero__price-row {
+  .mp-offer__prices {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
-    gap: 0.5rem 1rem;
+    gap: 0.5rem 0.85rem;
+    padding-right: 5.5rem;
   }
 
-  .discount-pdp-hero__sale {
-    font-family: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
-    font-size: clamp(1.65rem, 4.2vw, 2.15rem);
-    font-weight: 700;
-    line-height: 1.05;
-    color: #fff0eb;
-    text-shadow: 0 0 40px rgba(179, 48, 41, 0.45);
+  .mp-offer__prices--solo {
+    padding-right: 0;
   }
 
-  .discount-pdp-hero__sale--solo {
-    text-shadow: none;
+  .mp-offer__now {
+    font-family: var(--discount-pdp-font-display);
+    font-size: clamp(2rem, 5.5vw, 2.65rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    font-variant-numeric: tabular-nums;
+    color: var(--offer-red);
   }
 
-  .discount-pdp-hero__compare {
+  .mp-offer__now--regular {
+    color: rgba(26, 20, 18, 0.85);
+  }
+
+  .mp-offer__was {
+    font-family: var(--discount-pdp-font-ui);
     font-size: 1rem;
     font-weight: 500;
-    color: var(--lumen-muted);
-    text-decoration-color: rgba(255, 255, 255, 0.35);
+    font-variant-numeric: tabular-nums;
+    color: rgba(42, 34, 32, 0.55);
   }
 
-  .discount-pdp-hero__savings-line {
+  .mp-offer__was s {
+    text-decoration: line-through;
+    text-decoration-thickness: 1.5px;
+    text-decoration-color: rgba(179, 48, 41, 0.5);
+  }
+
+  .mp-offer__tier {
+    position: relative;
+    z-index: 1;
     display: flex;
-    align-items: flex-start;
-    gap: 0.5rem;
-    margin-top: 0.55rem;
-    max-width: 36rem;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 0.75rem;
   }
 
-  .discount-pdp-hero__savings-mark {
-    flex-shrink: 0;
-    width: 0.28rem;
-    margin-top: 0.35rem;
-    min-height: 2.25rem;
-    border-radius: 999px;
-    background: linear-gradient(180deg, var(--lumen-accent) 0%, var(--lumen-accent-deep) 100%);
-    box-shadow: 0 0 14px rgba(179, 48, 41, 0.45);
-  }
-
-  .discount-pdp-hero__savings-text {
-    font-family: ui-sans-serif, system-ui, sans-serif;
-    font-size: 0.875rem;
-    line-height: 1.45;
-    font-weight: 600;
-    color: rgba(255, 248, 244, 0.92);
-  }
-
-  .discount-pdp-hero__savings-text .sf-currency--saved {
-    color: var(--lumen-accent);
-    font-weight: 800;
-  }
-
-  .discount-pdp-hero__fine {
-    margin: 0.85rem 0 0;
-    font-size: 0.8rem;
-    line-height: 1.5;
-    color: var(--lumen-muted);
-    max-width: 40rem;
-  }
-
-  .discount-pdp-hero__unit {
-    margin: 0.75rem 0 0;
-    padding-top: 0.65rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    font-family: ui-monospace, Menlo, Consolas, monospace;
+  .mp-offer__tier-label {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.3rem 0.65rem 0.25rem;
+    border-radius: 0.3rem;
+    background: rgba(42, 34, 32, 0.05);
+    border: 1px solid rgba(42, 34, 32, 0.1);
     font-size: 0.72rem;
-    color: rgba(248, 246, 242, 0.55);
-  }
-
-  .discount-pdp-hero__unit-label {
     font-weight: 700;
-    margin-right: 0.35rem;
-    color: rgba(248, 246, 242, 0.45);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(42, 34, 32, 0.78);
   }
 
-  .discount-pdp-hero--no-compare .discount-pdp-hero__sale {
-    color: var(--lumen-ink);
-    text-shadow: none;
+  .mp-offer--tier-2 .mp-offer__tier-label,
+  .mp-offer--tier-3 .mp-offer__tier-label {
+    background: rgba(179, 48, 41, 0.1);
+    border-color: rgba(179, 48, 41, 0.2);
+    color: var(--offer-red);
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    .discount-pdp-hero__wash {
-      animation: none;
+  .mp-offer__tier-saved {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--offer-red);
+  }
+
+  .mp-offer__unit {
+    position: relative;
+    z-index: 1;
+    margin: 0.25rem 0 0;
+    padding-top: 0.55rem;
+    border-top: 1px solid rgba(42, 34, 32, 0.1);
+    font-size: 0.72rem;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+    color: rgba(42, 34, 32, 0.55);
+  }
+
+  .mp-offer--regular {
+    background: linear-gradient(165deg, #fdfbfa 0%, #f5f2ef 100%);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.8),
+      inset 0 0 0 1px rgba(42, 34, 32, 0.08),
+      0 4px 16px rgba(42, 34, 32, 0.06);
+  }
+
+  .mp-offer--regular .mp-offer__glow {
+    display: none;
+  }
+
+  /* Dark mode via OS preference */
+  @media (prefers-color-scheme: dark) {
+    .mp-offer {
+      background: linear-gradient(165deg, #141110 0%, #0a0908 100%);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.06),
+        inset 0 0 0 1px rgba(179, 48, 41, 0.35),
+        0 8px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    .mp-offer__glow {
+      background: radial-gradient(ellipse 65% 50% at 25% 35%, rgba(179, 48, 41, 0.5), transparent 60%);
+    }
+
+    .mp-offer__title {
+      color: rgba(246, 241, 231, 0.94);
+    }
+
+    .mp-offer__now {
+      color: var(--offer-paper);
+    }
+
+    .mp-offer__now--regular {
+      color: rgba(246, 241, 231, 0.88);
+    }
+
+    .mp-offer__was {
+      color: rgba(246, 241, 231, 0.5);
+    }
+
+    .mp-offer__was s {
+      text-decoration-color: rgba(179, 48, 41, 0.7);
+    }
+
+    .mp-offer__tier-label {
+      background: rgba(246, 241, 231, 0.08);
+      border-color: rgba(246, 241, 231, 0.12);
+      color: rgba(246, 241, 231, 0.85);
+    }
+
+    .mp-offer--tier-2 .mp-offer__tier-label,
+    .mp-offer--tier-3 .mp-offer__tier-label {
+      background: rgba(179, 48, 41, 0.2);
+      border-color: rgba(179, 48, 41, 0.35);
+      color: var(--offer-paper);
+    }
+
+    .mp-offer__tier-saved {
+      color: var(--offer-red-soft);
+    }
+
+    .mp-offer__unit {
+      border-top-color: rgba(102, 102, 102, 0.25);
+      color: rgba(196, 196, 196, 0.65);
+    }
+
+    .mp-offer--regular {
+      background: linear-gradient(165deg, #1a1715 0%, #0e0c0b 100%);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.04),
+        inset 0 0 0 1px rgba(102, 102, 102, 0.2),
+        0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .mp-offer__badge {
+      box-shadow:
+        0 4px 16px rgba(179, 48, 41, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
     }
   }
 {% endstylesheet %}

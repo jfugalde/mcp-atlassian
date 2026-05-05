@@ -78,49 +78,55 @@
             {%- when 'breadcrumb' -%}
               {% render 'breadcrumb', container: 'container', justify: alignBreadcrumb, hide_current: true %}
             {%- when 'title' -%}
-              <div class="prod__title flex justify-between items-start pt-0.5 relative{% if section.settings.show_atwl and section.settings.layout != 'layout-7' %} pr-12{% endif %}">
-                {% if is_featured == true %}
-                  <h2 class="text-2xl md:text-3xl md:leading-[42px] pr-2">{{ product.title }}</h2>
-                {% else %}
-                  <h1 class="text-2xl md:text-3xl md:leading-[42px] pr-2">{{ product.title }}</h1>
-                {% endif %}
-                {% if section.settings.show_atwl and section.settings.layout != 'layout-7' %}
-                  <div class="hidden md:block absolute right-0 top-0">
-                    {% if wishlist_app == 'growave' %}
-                      {% liquid
-                        capture the_snippet_fave_icon
-                          render 'ssw-widget-faveicon' with product.id
-                        endcapture
-                      %}
-                      {% unless the_snippet_fave_icon contains 'Liquid error' %}
-                        {{ the_snippet_fave_icon }}
+              {%- unless section.type == 'discount-product' -%}
+                <div class="prod__title flex justify-between items-start pt-0.5 relative{% if section.settings.show_atwl and section.settings.layout != 'layout-7' %} pr-12{% endif %}">
+                  {% if is_featured == true %}
+                    <h2 class="text-2xl md:text-3xl md:leading-[42px] pr-2">{{ product.title }}</h2>
+                  {% else %}
+                    <h1 class="text-2xl md:text-3xl md:leading-[42px] pr-2">{{ product.title }}</h1>
+                  {% endif %}
+                  {% if section.settings.show_atwl and section.settings.layout != 'layout-7' %}
+                    <div class="hidden md:block absolute right-0 top-0">
+                      {% if wishlist_app == 'growave' %}
+                        {% liquid
+                          capture the_snippet_fave_icon
+                            render 'ssw-widget-faveicon' with product.id
+                          endcapture
+                        %}
+                        {% unless the_snippet_fave_icon contains 'Liquid error' %}
+                          {{ the_snippet_fave_icon }}
+                        {% else %}
+                          {% render 'mm-ssw-widget-faveicon' with product.id %}
+                        {% endunless %}
                       {% else %}
-                        {% render 'mm-ssw-widget-faveicon' with product.id %}
-                      {% endunless %}
-                    {% else %}
-                      {% render 'tooltip', type: 'wishlist', product: product, class_name: "sf__tooltip-left", style: style %}
-                    {% endif %}
-                  </div>
-                {% endif %}
-              </div>
-              {% if settings.review_app == 'ali_reviews' %}
-                <div product-id="{{ product.id }}" class="alr-display-review-badge mt-2"></div>
-              {% endif %}
-            {%- when 'price' -%}
-              <div class="prod__reviews-and-prices flex">
-                {% render 'product-prices', use_variant: true, product: product, show_sale_badge: block.settings.show_saving, price_text_size: 'text-xl md:text-2xl' %}
-              </div>
-              {%- if shop.taxes_included -%}
-                <div class="main-product__block-tax text-color-subtext">
-                  {{ 'products.product.include_taxes' | t }}
+                        {% render 'tooltip', type: 'wishlist', product: product, class_name: "sf__tooltip-left", style: style %}
+                      {% endif %}
+                    </div>
+                  {% endif %}
                 </div>
-              {%- endif -%}
-              <div class="installment-shoppay">
-                {%- form 'product', product, id: 'product-form-installment', class: 'installment' -%}
-                  <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-                  {{ form | payment_terms }}
-                {%- endform -%}
-              </div>
+                {% if settings.review_app == 'ali_reviews' %}
+                  <div product-id="{{ product.id }}" class="alr-display-review-badge mt-2"></div>
+                {% endif %}
+              {%- endunless -%}
+            {%- when 'price' -%}
+              {%- unless section.type == 'discount-product' -%}
+                <div class="prod__reviews-and-prices flex">
+                  {% render 'product-prices', use_variant: true, product: product, show_sale_badge: block.settings.show_saving, price_text_size: 'text-xl md:text-2xl' %}
+                </div>
+                {%- if shop.taxes_included -%}
+                  <div class="main-product__block-tax text-color-subtext">
+                    {{ 'products.product.include_taxes' | t }}
+                  </div>
+                {%- endif -%}
+              {%- endunless -%}
+              {%- unless section.type == 'discount-product' -%}
+                <div class="installment-shoppay">
+                  {%- form 'product', product, id: 'product-form-installment', class: 'installment' -%}
+                    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                    {{ form | payment_terms }}
+                  {%- endform -%}
+                </div>
+              {%- endunless -%}
             {%- when 'short_description' -%}
               {% if product.metafields.descriptor.short_description != blank %}
                 <div class="prod__description leading-6">{{ product.metafields.descriptor.short_description }}</div>
@@ -500,8 +506,19 @@
                   endif
                 endfor
               %}
+              {%- liquid
+                assign addons_form_row = false
+                if block.settings.show_atcp or block.settings.show_ask_a_question or show_size_button or block.settings.show_social
+                  assign addons_form_row = true
+                endif
+                assign addons_block_visible = false
+                if addons_form_row or settings.macross_whatsapp_pdp_addons_integration
+                  assign addons_block_visible = true
+                endif
+              -%}
+              {% if addons_block_visible %}
               <div class="actions-block border-b border-color-border">
-                {% if block.settings.show_atcp or block.settings.show_ask_a_question or show_size_button %}
+                {% if addons_form_row %}
                   <div class="prod__form-buttons flex flex-wrap">
                     {% if block.settings.show_atcp %}
                       <a href="#add-to-compare" class="sf-prod-compare__button in-prod-page flex items-center mr-[30px]" data-product-handle="{{ product.handle }}">
@@ -542,11 +559,12 @@
                       </div>
                     {% endif %}
                   </div>
-                  {% if block.settings.show_ask_a_question %}
-                    <div class="form-ask__success-block"></div>
-                  {% endif %}
+                {% endif %}
+                {% if block.settings.show_ask_a_question %}
+                  <div class="form-ask__success-block"></div>
                 {% endif %}
               </div>
+              {% endif %}
             {%- when 'shipping' -%}
               <ul>
                 {% if block.settings.show_delivery_times %}

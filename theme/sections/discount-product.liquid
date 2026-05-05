@@ -206,46 +206,55 @@
     margin-bottom: 0.75rem;
   }
 
+  /* Macross Pharma — same palette as PDP disclaimer + mark */
   .discount-pdp {
     position: relative;
+    color-scheme: dark;
+    /* One UI stack + theme heading for display moments (matches storefront fonts) */
+    --discount-pdp-font-ui: var(
+      --font-stack-body,
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      sans-serif
+    );
+    --discount-pdp-font-display: var(
+      --font-stack-header,
+      var(--font-stack-body),
+      ui-sans-serif,
+      system-ui,
+      sans-serif
+    );
+    --mp-red: #b33029;
+    --mp-red-dark: #8c241f;
+    --mp-red-soft: #d45850;
+    /* Disclaimer uses #14221c (reads green on big fields) — offer UI uses warm charcoal */
+    --mp-charcoal: #131110;
+    --mp-charcoal-mid: #1c1817;
+    --mp-charcoal-deep: #0a0909;
+    --mp-gray: #555555;
+    --mp-silver: #c4c4c4;
+    --mp-border: #666666;
+    --mp-paper: #ffffff;
+    --mp-warm-paper: #f6f1e7;
   }
 
   .discount-pdp::before {
-    content: '';
-    position: absolute;
-    inset: -0.5rem -0.5rem auto;
-    height: 4px;
-    background: linear-gradient(90deg, #b33029 0%, #14221c 45%, #b33029 100%);
-    opacity: 0.9;
-    pointer-events: none;
-    border-radius: 2px;
-    z-index: 1;
-  }
-
-  @media (min-width: 768px) {
-    .discount-pdp::before {
-      inset: -0.75rem -1rem auto;
-    }
+    display: none;
   }
 
   .discount-pdp__masthead {
     position: relative;
-    background: linear-gradient(185deg, #0a1210 0%, #14221c 38%, #1b2d26 100%);
-    padding: 1rem 0 1.35rem;
-    margin-bottom: 1rem;
+    background: transparent;
+    padding: 0.75rem 0 1rem;
+    margin-bottom: 0.75rem;
     border-bottom: none;
-    box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.06);
   }
 
   .discount-pdp__masthead::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent 0%, rgba(179, 48, 41, 0.55) 35%, rgba(232, 165, 152, 0.35) 65%, transparent 100%);
-    pointer-events: none;
+    display: none;
   }
 
   .discount-pdp__masthead-inner {
@@ -256,20 +265,41 @@
 
   .discount-pdp__masthead-label {
     margin: 0;
-    font-family: ui-monospace, Menlo, Consolas, monospace;
+    font-family: var(--discount-pdp-font-ui);
     font-size: 0.7rem;
-    font-weight: 800;
-    letter-spacing: 0.18em;
+    font-weight: 700;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: #f6f1e7;
-    opacity: 0.95;
+    color: #2a2220;
+    opacity: 0.85;
   }
 
   @media (min-width: 768px) {
     .discount-pdp__masthead {
-      padding: 1.25rem 0 1.5rem;
-      margin-bottom: 1.25rem;
+      padding: 0.5rem 0 0.75rem;
+      margin-bottom: 0.5rem;
     }
+  }
+
+
+  /*
+   * Layout-6 (thumbs + main): align to start so the media column doesn’t stretch
+   * with empty space below thumbnails (was worsened by full-height gallery fills).
+   */
+  .discount-pdp .sf-prod-media__wrapper.sf-prod__layout-6 {
+    align-items: flex-start;
+  }
+
+  .discount-pdp .sf-prod-media__wrapper.sf-prod__layout-6 .nav-swiper-container {
+    align-items: flex-start;
+  }
+
+  .discount-pdp .sf-prod-media__wrapper.sf-prod__layout-6 .sf-media-nav {
+    align-self: flex-start;
+  }
+
+  .discount-pdp #fox-product-bundle-inside:empty {
+    display: none;
   }
 {% endstylesheet %}
 
@@ -443,21 +473,8 @@
       "type": "text",
       "id": "masthead_label",
       "label": "Masthead label",
-      "default": "Página de descuento · Macross",
+      "default": "Oferta especial · Macross",
       "info": "Short line above the discount hero (e.g. “Discount PDP”)."
-    },
-    {
-      "type": "text",
-      "id": "discount_heading",
-      "label": "Hero context (optional)",
-      "default": "Precio promocional",
-      "info": "Next to the Macross mark inside the hero."
-    },
-    {
-      "type": "textarea",
-      "id": "discount_supporting_text",
-      "label": "Supporting line under prices",
-      "default": "Comparado con el precio de referencia (PVP). La disponibilidad y las condiciones pueden variar según laboratorio o distribuidor."
     },
     {
       "type": "checkbox",

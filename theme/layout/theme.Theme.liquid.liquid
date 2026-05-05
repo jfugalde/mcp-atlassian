@@ -50,6 +50,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     {{ 'theme.css' | asset_url | stylesheet_tag }}
     {{ 'chunk.css' | asset_url | stylesheet_tag }}
+    {{ 'whatsapp-widget-mobile.css' | asset_url | stylesheet_tag }}
+    {%- if template.name == 'product'
+      or template.name == 'collection'
+      or template.name == 'index'
+      or template.name == 'search'
+      or template.name == 'cart'
+      or template.name == 'list-collections'
+    -%}
+      {{ 'macross-product-card.css' | asset_url | stylesheet_tag }}
+    {%- endif -%}
+    {%- if template.name == 'product' and settings.macross_whatsapp_pdp_addons_integration -%}
+      {{ 'pdp-whatsapp-addons.css' | asset_url | stylesheet_tag }}
+    {%- endif -%}
 
     {% render 'style-tags' %}
 
@@ -65,7 +78,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <body
     id="sf-theme"
-    class="{{ body_classes }} relative min-h-screen{% if customer %} customer-logged-in{% endif %}"
+    class="{{ body_classes }} relative min-h-screen{% if customer %} customer-logged-in{% endif %}{% if template.name == 'product' and settings.macross_whatsapp_pdp_addons_integration %} macross-whatsapp-pdp-addons{% endif %}"
     {% if template.name == 'product' %}
       data-product-id="{{ product.id }}"
     {% endif %}
@@ -100,5 +113,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     {%- if settings.enable_predictive_search -%}
       <script src="{{ 'predictive-search.min.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-  <script src="{{ 'seedgrow-whatsapp-init.js' | asset_url }}" defer="defer"></script><script src="{{ 'seedgrow-whatsapp-lib.js' | asset_url }}" defer="defer"></script></body>
+  <script src="{{ 'seedgrow-whatsapp-init.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'seedgrow-whatsapp-lib.js' | asset_url }}" defer="defer"></script>
+  {%- if template.name == 'product' and settings.macross_whatsapp_pdp_addons_integration -%}
+    <script src="{{ 'pdp-whatsapp-addons.js' | asset_url }}" defer="defer"></script>
+  {%- endif -%}
+</body>
 </html>

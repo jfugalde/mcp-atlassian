@@ -237,22 +237,23 @@
                 {% endfor %}
               {% endif %}
               {% if show_on_sale_badge %}
-                {%- liquid 
+                {%- liquid
                   if settings.on_sale_badge == 'show_percentage'
-                    assign sale_class = 'prod__tag-discounted'
+                    assign sale_class = 'prod__tag-discounted sf__pcard-offer-chip'
                   else
                     assign sale_class = 'prod__tag-sale'
                   endif
                 -%}
-                <span class="py-0.5 px-2 mb-2 mr-2 font-medium rounded-xl text-white prod__tag {{ sale_class }}">
-                  {%- if settings.on_sale_badge == 'show_text' -%}
+                {%- if settings.on_sale_badge == 'show_percentage' -%}
+                  <span class="{{ sale_class }}" role="img" aria-label="{{ 'products.product.on_sale' | t }}: {{ discount }}%">
+                    <span class="sf__pcard-offer-chip__kicker">{{ 'products.product.pcard_offer_short' | t }}</span>
+                    <span class="sf__pcard-offer-chip__value">−{{ discount }}%</span>
+                  </span>
+                {%- else -%}
+                  <span class="py-0.5 px-2 mb-2 mr-2 font-medium rounded-xl text-white prod__tag {{ sale_class }}">
                     {{ 'products.product.on_sale' | t }}
-                  {%- endif -%}
-                  {%- if settings.on_sale_badge == 'show_percentage' -%}
-                    {% assign discount = discount | append: '%' %}
-                    {% render 'new-locale', key: 'products.product.discounted_price_html', param: '{{ value }}', value: discount %}
-                  {%- endif -%}
-                </span>
+                  </span>
+                {%- endif -%}
               {% endif %}
             </div>
           {%- endif -%}

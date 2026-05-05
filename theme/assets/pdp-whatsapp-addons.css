@@ -1,0 +1,30 @@
+/**
+ * Hide only the floating WhatsApp button on product pages — 
+ * WhatsApp is now in the sticky add-to-cart bar.
+ * Keep the popup/chat container functional.
+ */
+body.macross-whatsapp-pdp-addons.template-product .wa__widget_container {
+  /* Position container off-screen but keep it in DOM for the popup */
+  position: fixed !important;
+  bottom: -200px !important;
+  right: 0 !important;
+  pointer-events: none;
+  z-index: 100001;
+}
+
+/* Show the popup when chat is active */
+body.macross-whatsapp-pdp-addons.template-product .wa__widget_container:has(.wa__popup_chat_box) {
+  bottom: 0 !important;
+  pointer-events: auto;
+}
+
+/* Hide only the floating launcher button itself */
+body.macross-whatsapp-pdp-addons.template-product .wa__widget_container .wa__btn_popup {
+  display: none !important;
+}
+
+/* Sticky bar WhatsApp button hover */
+.sticky-atc__whatsapp:hover {
+  background: #22c55e !important;
+  transform: translateY(-1px);
+}

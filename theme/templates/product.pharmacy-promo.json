@@ -12,16 +12,6 @@
     "main": {
       "type": "discount-product",
       "blocks": {
-        "title": {
-          "type": "title",
-          "settings": {}
-        },
-        "price": {
-          "type": "price",
-          "settings": {
-            "show_saving": true
-          }
-        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -40,14 +30,12 @@
           "type": "addons",
           "settings": {
             "show_atcp": false,
-            "show_ask_a_question": true,
-            "show_social": true
+            "show_ask_a_question": false,
+            "show_social": false
           }
         }
       },
       "block_order": [
-        "title",
-        "price",
         "variant_picker",
         "buy_buttons",
         "addons"
@@ -68,10 +56,7 @@
         "enable_dynamic_checkout": false,
         "sticky_atc_wishtlist": false,
         "sticky_atc_compare": false,
-        "show_masthead_label": true,
-        "masthead_label": "Página de descuento · Macross",
-        "discount_heading": "Precio promocional",
-        "discount_supporting_text": "Comparado con el precio de referencia (PVP). La disponibilidad y las condiciones pueden variar según laboratorio o distribuidor.",
+        "show_masthead_label": false,
         "discount_only_when_on_sale": true,
         "discount_show_unit_hint": true
       }
@@ -79,6 +64,12 @@
     "product-details-tabs": {
       "type": "product-details-tabs",
       "blocks": {
+        "tab_descripcion_producto": {
+          "type": "description",
+          "settings": {
+            "header": "Descripción"
+          }
+        },
         "macross_que_es": {
           "type": "mf_tab",
           "settings": {
@@ -112,12 +103,6 @@
             "header": "Preguntas frecuentes",
             "metafield_namespace": "custom",
             "metafield_key": "macross_faq"
-          }
-        },
-        "tab_descripcion_producto": {
-          "type": "description",
-          "settings": {
-            "header": "Description"
           }
         }
       },

@@ -369,6 +369,7 @@
       "out_of_stock": "Agotado",
       "unavailable": "Indisponible",
       "on_sale": "En venta",
+      "pcard_offer_short": "Oferta",
       "from_text_html": "Desde {{ price }}",
       "quantity": "Cantidad",
       "add_to_cart": "Añadir al carrito",
@@ -405,6 +406,7 @@
       "type": "Tipo",
       "sku": "SKU",
       "collections": "Colecciones",
+      "whatsapp_chat_branches": "WhatsApp — elige sucursal",
       "social_share": "Compartir",
       "copy_link": "Copiar enlace",
       "unit_price_label": "Precio por unidad",
@@ -494,10 +496,11 @@
     }
   },
   "macross": {
-    "pdp_sale_save_html": "¡Ahorra! <span class=\"sf-currency sf-currency--saved font-medium\" data-saved-price>{{ amount }}</span>",
+    "pdp_sale_save_html": "Te ahorras <span class=\"sf-currency sf-currency--saved font-medium\" data-saved-price>{{ amount }}</span>",
+    "pdp_sale_you_save": "Ahorras",
     "pdp_sale_tier_1": "Oferta",
-    "pdp_sale_tier_2": "Super oferta",
-    "pdp_sale_tier_3": "Oferta inmejorable",
-    "pdp_sale_gauge_aria": "Intensidad del descuento: {{ tier }} ({{ amount }})."
+    "pdp_sale_tier_2": "Súper oferta",
+    "pdp_sale_tier_3": "Precio imbatible",
+    "pdp_sale_region_aria": "{{ pct }}% de descuento. Antes {{ compare }}, ahora {{ sale }}. {{ tier }}."
   }
 }
