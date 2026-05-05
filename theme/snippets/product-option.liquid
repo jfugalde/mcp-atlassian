@@ -283,6 +283,14 @@
   <script id="productVariants" type="application/json">
     {{ product.variants | json }}
   </script>
+  <script id="productVariantPickupFlags" type="application/json">
+    {
+    {%- for variant in product.variants -%}
+      {%- assign pickup_loc_count = variant.store_availabilities | where: 'pick_up_enabled', true | size -%}
+      "{{ variant.id }}": {% if pickup_loc_count > 0 %}true{% else %}false{% endif %}{%- unless forloop.last -%},{%- endunless -%}
+    {%- endfor -%}
+    }
+  </script>
   {%- if section.settings.enable_variant_group_images -%}
     <script id="variantGroup" type="application/json">
       {{ product.metafields.foxecom-bs-kit.variant-images.value | json }}

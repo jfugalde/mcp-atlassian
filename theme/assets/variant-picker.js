@@ -716,7 +716,8 @@ if (!customElements.get("variant-picker")) {
       if (productAvailability) {
         const method = !available ? 'add' : 'remove';
         const clarifyPickup = this.container.dataset.clarifyPickupAvailability === 'true';
-        const hasPickup = this.container.dataset.productHasPickup === 'true';
+        const hasPickup = this.variantHasPickupLocations(this.currentVariant.id);
+        this.container.setAttribute("data-product-has-pickup", hasPickup ? "true" : "false");
         const inStockLabel = available && clarifyPickup && hasPickup && inStockOnline ? inStockOnline : inStock;
         productAvailability.innerText = available ? inStockLabel : outOfStock;
         productAvailability.classList[method]('prod__availability--outofstock');
@@ -750,6 +751,29 @@ if (!customElements.get("variant-picker")) {
     getVariantData() {
       this.variantData = this.variantData || JSON.parse(this.container.querySelector('#productVariants[type="application/json"]').textContent);
       return this.variantData;
+    }
+    getVariantPickupFlags() {
+      if ("_variantPickupFlags" in this) return this._variantPickupFlags;
+      const el = this.container.querySelector('#productVariantPickupFlags[type="application/json"]');
+      if (!el || !el.textContent.trim()) {
+        this._variantPickupFlags = null;
+        return this._variantPickupFlags;
+      }
+      try {
+        this._variantPickupFlags = JSON.parse(el.textContent);
+      } catch (_unused) {
+        this._variantPickupFlags = null;
+      }
+      return this._variantPickupFlags;
+    }
+    variantHasPickupLocations(variantId) {
+      if (variantId == null) return false;
+      const flags = this.getVariantPickupFlags();
+      const key = String(variantId);
+      if (flags && Object.prototype.hasOwnProperty.call(flags, key)) {
+        return flags[key] === true;
+      }
+      return this.container.dataset.productHasPickup === "true";
     }
     getVariantGroupImageData() {
       this.variantGroupImages = this.variantGroupImages || JSON.parse(this.container.querySelector('#variantGroup[type="application/json"]').textContent);

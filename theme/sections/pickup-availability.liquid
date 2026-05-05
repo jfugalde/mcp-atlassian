@@ -39,15 +39,15 @@
 
     <div class="pickup-availability-dropdowns flex flex-col gap-3 w-full" role="list">
       {%- if priority_availability -%}
-        {% render 'pickup-availability-location', availability: priority_availability, details_open: true %}
+        {% render 'pickup-availability-location', availability: priority_availability, details_open: true, product_variant: product_variant %}
         {%- for availability in pick_up_availabilities -%}
           {%- if availability.location.id != priority_pickup_location_id -%}
-            {% render 'pickup-availability-location', availability: availability, details_open: false %}
+            {% render 'pickup-availability-location', availability: availability, details_open: false, product_variant: product_variant %}
           {%- endif -%}
         {%- endfor -%}
       {%- else -%}
         {%- for availability in pick_up_availabilities -%}
-          {% render 'pickup-availability-location', availability: availability, details_open: forloop.first %}
+          {% render 'pickup-availability-location', availability: availability, details_open: forloop.first, product_variant: product_variant %}
         {%- endfor -%}
       {%- endif -%}
     </div>

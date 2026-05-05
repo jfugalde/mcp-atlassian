@@ -1,6 +1,6 @@
 {% comment %}
   Single pickup location row for pickup-availability section.
-  Accepts: availability (store_availability), details_open (boolean)
+  Accepts: availability (store_availability), details_open (boolean), product_variant (variant drop — required for online purchase line when pickup unavailable)
 {% endcomment %}
 <details class="pickup-availability-details border border-color-border rounded-md" role="listitem" {% if details_open %}open{% endif %}>
   <summary class="pickup-availability-details__summary flex w-full items-center justify-between gap-3 p-3 text-left cursor-pointer">
