@@ -393,6 +393,7 @@
         "save_price_html": "Guardar <span data-sale-value>{{ amount }}</span>"
       },
       "preorder": "Pre-ordenar",
+      "preorder_note": "Producto en preventa",
       "product_quantity": "Cantidad de producto",
       "product_recommendation_heading": "Productos relacionados",
       "product_reviews_heading": "Valoraciones y Reseñas",

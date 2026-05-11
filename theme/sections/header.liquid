@@ -786,7 +786,8 @@ _smcp();
       "type": "checkbox",
       "id": "show_language_switcher",
       "label": "Show language selector",
-      "default": false
+      "default": false,
+      "info": "Lists only languages published in Settings → Languages. Theme copy comes from locales/*.json for each language; keep those files in sync with published languages."
     },
     {
       "type": "header",
@@ -799,6 +800,10 @@ _smcp();
     {
       "type": "paragraph",
       "content": "To add a language, go to your [language settings.](/admin/settings/languages)"
+    },
+    {
+      "type": "paragraph",
+      "content": "After publishing a language, translate the theme under Online store → Themes → … → Edit default theme content, or edit the matching file in the theme’s locales folder (for example locales/es.json for Spanish)."
     }
   ],
   "blocks": [
@@ -857,7 +862,8 @@ _smcp();
           "type": "checkbox",
           "id": "show_language_switcher",
           "label": "Show language selector",
-          "default": false
+          "default": false,
+          "info": "Leave off if the main header already shows the language selector (section setting above) or the footer language selector is enabled, to avoid duplicate controls."
         },
         {
           "type": "textarea",
