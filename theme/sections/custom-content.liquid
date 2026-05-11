@@ -116,7 +116,7 @@
                                     <div class="sf-video__container sf-video__container--{{ block.id }} mx-auto">
                                         <div class="sf-video__wrapper sf-video__wrapper--{{ block.id }}" style="--aspect-ratio: {{ block.settings.ratio | replace: ':', '/' }}">
                                           <video-component class="deferred-media no-js-hidden" data-media-id="{{ block.settings.video_link.id }}" data-auto-play="{{ autoplay }}" data-cover-image="{{ cover_image }}">
-                                            <button id="Deferred-Poster-Modal-{{ block.settings.video_link.id }}" class="deferred-media__poster" type="button" aria-label="Play">
+                                            <button id="Deferred-Poster-Modal-{{ block.settings.video_link.id }}" class="deferred-media__poster" type="button" aria-label="{{ 'sections.video.play' | t }}">
                                               <span class="deferred-media__poster-button motion-reduce absolute sf-video__play sf-video__play--style-{{ block.settings.play_style }} sf-video__play--size-{{ block.settings.play_size }} text-{{ block.settings.text_color }}">
                                                 <svg class="w-[20px] h-[20px]" viewBox="0 0 18 18" fill="currentColor">
                                                   <path d="M15.562 8.1L3.87.225c-.818-.562-1.87 0-1.87.9v15.75c0 .9 1.052 1.462 1.87.9L15.563 9.9c.584-.45.584-1.35 0-1.8z" fill="currentColor"></path>

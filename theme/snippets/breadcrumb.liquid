@@ -23,7 +23,7 @@
     <nav
         class="sf-breadcrumb w-full {{ class }}{% if container == 'w-full' %} px-4{% endif %}"
         role="navigation"
-        aria-label="breadcrumbs"
+        aria-label="{{ 'general.accessibility.breadcrumb' | t }}"
     >
       <div class="{{ container }}">
         <div class="flex -mx-4 items-center justify-{{ justify | default: 'start' }}"

@@ -17,6 +17,7 @@
     "accessibility": {
       "unit_price_separator": "para",
       "error": "Error",
+      "breadcrumb": "Migas de pan",
       "link_messages": {
         "new_window": "Se abre en una ventana nueva."
       },
@@ -31,10 +32,10 @@
       "days": "Días",
       "hrs": "Horas",
       "hours": "horas",
-      "mins": "Minutos",
-      "minutes": "acta",
-      "secs": "Seco",
-      "seconds": "sobras"
+      "mins": "Min",
+      "minutes": "minutos",
+      "secs": "Seg",
+      "seconds": "segundos"
     },
     "breadcrumbs": {
       "home": "Menú Principal",
@@ -80,7 +81,7 @@
   },
   "sections": {
     "video": {
-      "play": "Jugar"
+      "play": "Reproducir"
     },
     "collection_template": {
       "from": "De",
@@ -132,7 +133,7 @@
       "remove": "Eliminar",
       "note": "Instrucciones especiales para el vendedor",
       "drawer_note": "Nota",
-      "shipping": "Naviero",
+      "shipping": "Envío",
       "drawer_coupon": "Cupón",
       "subtotal": "Subtotal",
       "taxes_and_shipping_at_checkout": "Impuestos y envío calculados al finalizar la compra",
@@ -140,7 +141,7 @@
       "taxes_included_but_shipping_at_checkout": "Impuestos incluidos y envío calculado al finalizar la compra",
       "taxes_included_and_shipping_policy_html": "Impuestos incluidos. <a href=\"{{ link }}\">envío</a> calculado al finalizar la compra.",
       "enter_discount_code": "Ingrese el código de descuento aquí",
-      "checkout": "Check-out",
+      "checkout": "Finalizar compra",
       "viewcart": "Ver carrito",
       "empty": "Su carrito está actualmente vacío.",
       "coupon_title": "Añadir un código de descuento",
@@ -148,7 +149,7 @@
       "estimate_shipping_button": "Calcular tarifas de envío",
       "note_title": "Añadir nota para el vendedor",
       "cancel": "Cancelar",
-      "save": "Salvar",
+      "save": "Guardar",
       "zipcode_validate": "El código postal no puede estar en blanco",
       "shipping_rates_result": "Hemos encontrado {{count}} tarifa(s) de envío para tu dirección",
       "no_found_shipping_rate": "No hay tarifas de envío para su dirección.",
@@ -162,7 +163,7 @@
       "product": "Producto",
       "price": "Precio",
       "quantity": "Cantidad",
-      "qty": "Qty",
+      "qty": "Cant.",
       "total": "Total",
       "regular_total": "Total regular",
       "discounted_total": "Total con descuento",
@@ -218,7 +219,7 @@
     "account": {
       "title": "Mi cuenta",
       "page_title": "Cuenta",
-      "dashboard": "Salpicadero",
+      "dashboard": "Panel",
       "addresses": "Direcciones",
       "wishlist": "Lista de deseos",
       "log_out": "Cerrar sesión",
@@ -271,7 +272,7 @@
     },
     "orders": {
       "title": "Historial de pedidos",
-      "order_number": "Orden",
+      "order_number": "Pedido",
       "date": "Fecha",
       "payment_status": "Estado del pago",
       "fulfillment_status": "Estado de cumplimiento",
@@ -290,7 +291,7 @@
       "shipping_address": "Dirección de envío",
       "fulfillment_status": "Estado de cumplimiento",
       "discounts": "Descuentos",
-      "shipping": "Naviero",
+      "shipping": "Envío",
       "tax": "Impuesto",
       "product": "Producto",
       "sku": "SKU",
@@ -454,46 +455,46 @@
   "pagefly": {
     "products": {
       "product": {
-        "regular_price": "Regular price",
-        "sold_out": "Sold out",
-        "unavailable": "Unavailable",
-        "on_sale": "Sale",
-        "quantity": "Quantity",
-        "add_to_cart": "Add to cart",
-        "back_to_collection": "Back to {{ title }}",
-        "view_details": "View details"
+        "regular_price": "Precio regular",
+        "sold_out": "Agotado",
+        "unavailable": "No disponible",
+        "on_sale": "Oferta",
+        "quantity": "Cantidad",
+        "add_to_cart": "Añadir al carrito",
+        "back_to_collection": "Volver a {{ title }}",
+        "view_details": "Ver detalles"
       }
     },
     "article": {
-      "tags": "Tags:",
-      "all_topics": "All topics",
-      "by_author": "by {{ author }}",
-      "posted_in": "Posted in",
-      "read_more": "Read more",
-      "back_to_blog": "Back to {{ title }}"
+      "tags": "Etiquetas:",
+      "all_topics": "Todos los temas",
+      "by_author": "por {{ author }}",
+      "posted_in": "Publicado en",
+      "read_more": "Leer más",
+      "back_to_blog": "Volver a {{ title }}"
     },
     "comments": {
-      "title": "Leave a comment",
-      "name": "Name",
-      "email": "Email",
-      "message": "Message",
-      "post": "Post comment",
-      "moderated": "Please note, comments must be approved before they are published",
-      "success_moderated": "Your comment was posted successfully. We will publish it in a little while, as our blog is moderated.",
-      "success": "Your comment was posted successfully! Thank you!",
+      "title": "Deja un comentario",
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "message": "Mensaje",
+      "post": "Publicar comentario",
+      "moderated": "Los comentarios deben aprobarse antes de publicarse.",
+      "success_moderated": "Tu comentario se envió correctamente. Lo publicaremos en breve; el blog está moderado.",
+      "success": "¡Tu comentario se publicó correctamente! Gracias.",
       "comments_with_count": {
-        "one": "{{ count }} comment",
-        "other": "{{ count }} comments"
+        "one": "{{ count }} comentario",
+        "other": "{{ count }} comentarios"
       }
     },
     "password_page": {
-      "login_form_message": "Enter store using password:",
-      "login_form_password_label": "Password",
-      "login_form_password_placeholder": "Your password",
-      "login_form_submit": "Enter",
-      "signup_form_email_label": "Email",
-      "signup_form_success": "We will send you an email right before we open!",
-      "password_link": "Enter using password"
+      "login_form_message": "Entra a la tienda con tu contraseña:",
+      "login_form_password_label": "Contraseña",
+      "login_form_password_placeholder": "Tu contraseña",
+      "login_form_submit": "Entrar",
+      "signup_form_email_label": "Correo electrónico",
+      "signup_form_success": "Te enviaremos un correo justo antes de abrir.",
+      "password_link": "Entrar con contraseña"
     }
   },
   "macross": {
