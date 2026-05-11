@@ -17,6 +17,7 @@
     "accessibility": {
       "unit_price_separator": "為",
       "error": "錯誤",
+      "breadcrumb": "麵包屑導覽",
       "link_messages": {
         "new_window": "在新視窗中打開。"
       },

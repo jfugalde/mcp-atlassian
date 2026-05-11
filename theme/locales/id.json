@@ -17,6 +17,7 @@
     "accessibility": {
       "unit_price_separator": "bagi",
       "error": "Kesalahan",
+      "breadcrumb": "Jejak navigasi",
       "link_messages": {
         "new_window": "Membuka di jendela baru."
       },

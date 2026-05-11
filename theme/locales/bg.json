@@ -17,6 +17,7 @@
     "accessibility": {
       "unit_price_separator": "за",
       "error": "Грешка",
+      "breadcrumb": "Навигационна пътека",
       "link_messages": {
         "new_window": "Отваря се в нов прозорец."
       },

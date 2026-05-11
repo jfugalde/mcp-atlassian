@@ -17,6 +17,7 @@
     "accessibility": {
       "unit_price_separator": "เพื่อ",
       "error": "ความผิดพลาด",
+      "breadcrumb": "เส้นทางนำทาง",
       "link_messages": {
         "new_window": "เปิดในหน้าต่างใหม่"
       },

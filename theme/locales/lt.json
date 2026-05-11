@@ -17,6 +17,7 @@
     "accessibility": {
       "unit_price_separator": "dėl",
       "error": "Klaida",
+      "breadcrumb": "Naršymo kelias",
       "link_messages": {
         "new_window": "Atsidaro naujame lange."
       },

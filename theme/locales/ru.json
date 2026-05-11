@@ -17,6 +17,7 @@
     "accessibility": {
       "unit_price_separator": "для",
       "error": "Ошибка",
+      "breadcrumb": "Навигационная цепочка",
       "link_messages": {
         "new_window": "Откроется в новом окне."
       },

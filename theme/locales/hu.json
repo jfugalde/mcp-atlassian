@@ -17,6 +17,7 @@
     "accessibility": {
       "unit_price_separator": "részére",
       "error": "Hiba",
+      "breadcrumb": "Morzsamenü",
       "link_messages": {
         "new_window": "Megnyílik egy új ablakban."
       },

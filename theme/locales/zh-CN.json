@@ -17,6 +17,7 @@
     "accessibility": {
       "unit_price_separator": "为",
       "error": "错误",
+      "breadcrumb": "面包屑导航",
       "link_messages": {
         "new_window": "在新窗口中打开。"
       },

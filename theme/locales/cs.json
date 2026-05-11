@@ -17,6 +17,7 @@
     "accessibility": {
       "unit_price_separator": "pro",
       "error": "Chyba",
+      "breadcrumb": "Drobečková navigace",
       "link_messages": {
         "new_window": "Otevře se v novém okně."
       },

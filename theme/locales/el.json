@@ -17,6 +17,7 @@
     "accessibility": {
       "unit_price_separator": "για",
       "error": "Λάθος",
+      "breadcrumb": "Διαδρομή πλοήγησης",
       "link_messages": {
         "new_window": "Ανοίγει σε νέο παράθυρο."
       },

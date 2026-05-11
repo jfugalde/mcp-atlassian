@@ -17,6 +17,7 @@
     "accessibility": {
       "unit_price_separator": "때문에",
       "error": "오류",
+      "breadcrumb": "이동 경로",
       "link_messages": {
         "new_window": "새 창에서 엽니다."
       },

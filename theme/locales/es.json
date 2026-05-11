@@ -157,7 +157,8 @@
       "delivery_days": {
         "one": "día",
         "other": "Días"
-      }
+      },
+      "trust_badge_alt": "Insignia de confianza y pago seguro"
     },
     "label": {
       "product": "Producto",
@@ -281,7 +282,7 @@
       "none": "Todavía no has realizado ningún pedido."
     },
     "order": {
-      "title": "Orden {{ name }}",
+      "title": "Pedido {{ name }}",
       "date": "Colocado en {{ date }}",
       "cancelled": "Pedido cancelado en {{ date }}",
       "cancelled_reason": "Motivo: {{ reason }}",

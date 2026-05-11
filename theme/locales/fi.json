@@ -17,6 +17,7 @@
     "accessibility": {
       "unit_price_separator": "varten",
       "error": "Virhe",
+      "breadcrumb": "Murupolku",
       "link_messages": {
         "new_window": "Avautuu uuteen ikkunaan."
       },

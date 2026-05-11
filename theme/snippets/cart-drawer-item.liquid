@@ -117,7 +117,7 @@
       {%- endif -%}
       <div class="flex items-center mt-[10px]">
         <div class="scd-item__quantity flex justify-between rounded">
-          <button class="scd-item__btn" data-id="{{- item.key -}}" data-qty-change="dec">-</button>
+          <button type="button" class="scd-item__btn" data-id="{{- item.key -}}" data-qty-change="dec" aria-label="{{ 'products.product.decrease_quantity' | t: title: item.product.title }}">-</button>
           <input
             class="py-1 scd-item__qty_input w-9 text-center"
             type="number"
@@ -125,8 +125,9 @@
             data-id="{{- item.key -}}"
             value="{{- item.quantity -}}"
             min="0"
+            aria-label="{{ 'products.product.product_quantity' | t }}: {{ item.product.title | escape }}"
           />
-          <button class="scd-item__btn" data-id="{{- item.key -}}" data-qty-change="inc">+</button>
+          <button type="button" class="scd-item__btn" data-id="{{- item.key -}}" data-qty-change="inc" aria-label="{{ 'products.product.increase_quantity' | t: title: item.product.title }}">+</button>
         </div>
         <button class="scd-item__remove underline p-2 ml-2" data-id="{{- item.key -}}">
           {{- 'cart.general.remove' | t -}}

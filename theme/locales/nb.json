@@ -17,6 +17,7 @@
     "accessibility": {
       "unit_price_separator": "for",
       "error": "Feil",
+      "breadcrumb": "Brødsmulesti",
       "link_messages": {
         "new_window": "Åpnes i et nytt vindu."
       },

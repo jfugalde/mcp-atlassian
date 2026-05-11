@@ -17,6 +17,7 @@
     "accessibility": {
       "unit_price_separator": "pentru",
       "error": "Eroare",
+      "breadcrumb": "Fil de navigare",
       "link_messages": {
         "new_window": "Se deschide într-o fereastră nouă."
       },

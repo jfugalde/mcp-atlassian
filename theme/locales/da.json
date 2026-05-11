@@ -17,6 +17,7 @@
     "accessibility": {
       "unit_price_separator": "for",
       "error": "Fejl",
+      "breadcrumb": "Brødkrummesti",
       "link_messages": {
         "new_window": "Åbner i et nyt vindue."
       },

@@ -17,6 +17,7 @@
     "accessibility": {
       "unit_price_separator": "za",
       "error": "Napaka",
+      "breadcrumb": "Drobčična navigacija",
       "link_messages": {
         "new_window": "Se odpre v novem oknu."
       },

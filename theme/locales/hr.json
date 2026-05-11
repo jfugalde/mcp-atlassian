@@ -17,6 +17,7 @@
     "accessibility": {
       "unit_price_separator": "za",
       "error": "Greška",
+      "breadcrumb": "Putanja navigacije",
       "link_messages": {
         "new_window": "Otvara se u novom prozoru."
       },

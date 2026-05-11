@@ -17,6 +17,7 @@
     "accessibility": {
       "unit_price_separator": "için",
       "error": "Hata",
+      "breadcrumb": "İçerik yolu",
       "link_messages": {
         "new_window": "Yeni bir pencerede açılır."
       },

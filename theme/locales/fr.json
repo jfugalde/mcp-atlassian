@@ -17,6 +17,7 @@
     "accessibility": {
       "unit_price_separator": "pour",
       "error": "Erreur",
+      "breadcrumb": "Fil d'Ariane",
       "link_messages": {
         "new_window": "S’ouvre dans une nouvelle fenêtre."
       },

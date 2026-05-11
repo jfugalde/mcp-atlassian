@@ -158,7 +158,8 @@
       "delivery_days": {
         "one": "day",
         "other": "days"
-      }
+      },
+      "trust_badge_alt": "Trust and secure checkout badge"
     },
     "label": {
       "product": "Product",

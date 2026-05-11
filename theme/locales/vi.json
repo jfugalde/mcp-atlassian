@@ -17,6 +17,7 @@
     "accessibility": {
       "unit_price_separator": "cho",
       "error": "Lỗi",
+      "breadcrumb": "Đường dẫn trang",
       "link_messages": {
         "new_window": "Mở ra trong một cửa sổ mới."
       },

@@ -17,6 +17,7 @@
     "accessibility": {
       "unit_price_separator": "für",
       "error": "Fehler",
+      "breadcrumb": "Brotkrumennavigation",
       "link_messages": {
         "new_window": "Wird in einem neuen Fenster geöffnet."
       },

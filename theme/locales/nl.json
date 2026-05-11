@@ -17,6 +17,7 @@
     "accessibility": {
       "unit_price_separator": "voor",
       "error": "Fout",
+      "breadcrumb": "Broodkruimelpad",
       "link_messages": {
         "new_window": "Opent in een nieuw venster."
       },

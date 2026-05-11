@@ -17,6 +17,7 @@
     "accessibility": {
       "unit_price_separator": "durante",
       "error": "Erro",
+      "breadcrumb": "Trilha de navegação",
       "link_messages": {
         "new_window": "Abre em uma nova janela."
       },
