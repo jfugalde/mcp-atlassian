@@ -38,12 +38,46 @@
   data-container="{{ container }}"
   class="product-template discount-pdp md:mt-4 mb-5 md:mb-12"
 >
+  {%- liquid
+    assign masthead_promo_image = section.settings.masthead_promo_image
+    assign masthead_promo_alt = section.settings.masthead_promo_image_alt | strip
+    assign masthead_has_promo = false
+    if masthead_promo_image != blank
+      assign masthead_has_promo = true
+    endif
+  -%}
   <div class="discount-pdp__masthead">
-    <div class="{{ container }} discount-pdp__masthead-inner">
+    <div
+      class="{{ container }} discount-pdp__masthead-inner{% if masthead_has_promo %} discount-pdp__masthead-inner--promo{% endif %}"
+    >
+      {% if masthead_has_promo %}
+        <div class="discount-pdp__masthead-promo">
+          {% if masthead_promo_alt != blank %}
+            {% render 'responsive-image',
+              image: masthead_promo_image,
+              alt: masthead_promo_alt,
+              wrapper_class: 'discount-pdp__masthead-promo__img',
+              image_class: 'w-full h-auto max-h-[5.5rem] md:max-h-[7.5rem] object-contain rounded-lg',
+              lazy_load: false
+            %}
+          {% else %}
+            {% render 'responsive-image',
+              image: masthead_promo_image,
+              wrapper_class: 'discount-pdp__masthead-promo__img',
+              image_class: 'w-full h-auto max-h-[5.5rem] md:max-h-[7.5rem] object-contain rounded-lg',
+              lazy_load: false
+            %}
+          {% endif %}
+        </div>
+        <div class="discount-pdp__masthead-stack">
+      {% endif %}
       {% if section.settings.show_masthead_label %}
         <p class="discount-pdp__masthead-label">{{ section.settings.masthead_label | escape }}</p>
       {% endif %}
       {% render 'pdp-discount-hero', product: product, section: section %}
+      {% if masthead_has_promo %}
+        </div>
+      {% endif %}
     </div>
   </div>
   <div class="{{ container }}">
@@ -137,10 +171,20 @@
             if compare_at_price > price
               assign on_sale = true
             endif
+            assign ph_only_when_on_sale = section.settings.discount_only_when_on_sale | default: true
+            assign discount_hero_band_visible = true
+            if ph_only_when_on_sale and on_sale == false
+              assign discount_hero_band_visible = false
+            endif
           -%}
           <div class="sf-prod__info-wrapper">
             <div class="sf-prod__info{% if on_sale %} sf-product--onsale{% endif %}">
-              {% render 'main-product-blocks', section: section, product: product, is_preorder: is_preorder %}
+              {% if discount_hero_band_visible %}
+                <div class="discount-pdp__variant-price-sync visually-hidden" aria-hidden="true">
+                  {% render 'product-prices', use_variant: true, product: product, show_sale_badge: false, price_text_size: 'text-xl md:text-2xl' %}
+                </div>
+              {% endif %}
+              {% render 'main-product-blocks', section: section, product: product, is_preorder: is_preorder, discount_hero_band_visible: discount_hero_band_visible %}
               <div class="addons-block">
                 <div
                   id="fox-product-bundle-inside"
@@ -178,6 +222,7 @@
 {%- endif -%}
 {% if product.options_with_values.size > 0 %}
   <script src="{{ 'variant-picker.min.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'discount-pdp-hero-sync.js' | asset_url }}" defer="defer"></script>
 {% endif %}
 <div
   id="fox-product-bundle-outside"
@@ -261,6 +306,48 @@
     display: flex;
     flex-direction: column;
     gap: 0.65rem;
+  }
+
+  .discount-pdp__masthead-inner--promo {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  @media (min-width: 768px) {
+    .discount-pdp__masthead-inner--promo {
+      display: grid;
+      grid-template-columns: minmax(4.5rem, 8.75rem) minmax(0, 1fr);
+      column-gap: 1rem;
+      row-gap: 0.65rem;
+      align-items: start;
+    }
+
+    .discount-pdp__masthead-promo {
+      grid-row: 1 / span 2;
+    }
+
+    .discount-pdp__masthead-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      min-width: 0;
+    }
+  }
+
+  .discount-pdp__masthead-promo__img {
+    display: block;
+    width: 100%;
+    max-width: 10rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (min-width: 768px) {
+    .discount-pdp__masthead-promo__img {
+      margin-left: 0;
+      margin-right: 0;
+      max-width: none;
+    }
   }
 
   .discount-pdp__masthead-label {
@@ -475,6 +562,19 @@
       "label": "Masthead label",
       "default": "Oferta especial · Macross",
       "info": "Short line above the discount hero (e.g. “Discount PDP”)."
+    },
+    {
+      "type": "image_picker",
+      "id": "masthead_promo_image",
+      "label": "Masthead promo image",
+      "info": "Optional image in the discount banner (e.g. gift-with-purchase). Shown beside the offer on desktop, above on mobile."
+    },
+    {
+      "type": "text",
+      "id": "masthead_promo_image_alt",
+      "label": "Promo image alt text",
+      "default": "",
+      "info": "Describe the promo for screen readers (e.g. “promo” or “Regalo con compra”). If empty, the image file’s alt in Shopify is used when set."
     },
     {
       "type": "checkbox",

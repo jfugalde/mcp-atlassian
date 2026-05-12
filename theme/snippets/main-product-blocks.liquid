@@ -57,7 +57,17 @@
     data-enable-video-autoplay="{{ section.settings.enable_video_autoplay }}">
     <div class="main-product__blocks">
       {%- for block in section.blocks -%}
-        <div class="main-product__block main-product__block-{{ block.type }}" {{ block.shopify_attributes }}>
+        {%- liquid
+          assign suppress_discount_title_price_wrapper = false
+          if section.type == 'discount-product' and discount_hero_band_visible
+            if block.type == 'title' or block.type == 'price'
+              assign suppress_discount_title_price_wrapper = true
+            endif
+          endif
+        -%}
+        {%- unless suppress_discount_title_price_wrapper -%}
+          <div class="main-product__block main-product__block-{{ block.type }}" {{ block.shopify_attributes }}>
+        {%- endunless -%}
           {%- case block.type -%}
             {%- when '@app' -%}
               {% render block %}
@@ -78,7 +88,7 @@
             {%- when 'breadcrumb' -%}
               {% render 'breadcrumb', container: 'container', justify: alignBreadcrumb, hide_current: true %}
             {%- when 'title' -%}
-              {%- unless section.type == 'discount-product' -%}
+              {%- unless section.type == 'discount-product' and discount_hero_band_visible -%}
                 <div class="prod__title flex justify-between items-start pt-0.5 relative{% if section.settings.show_atwl and section.settings.layout != 'layout-7' %} pr-12{% endif %}">
                   {% if is_featured == true %}
                     <h2 class="text-2xl md:text-3xl md:leading-[42px] pr-2">{{ product.title }}</h2>
@@ -109,7 +119,7 @@
                 {% endif %}
               {%- endunless -%}
             {%- when 'price' -%}
-              {%- unless section.type == 'discount-product' -%}
+              {%- unless section.type == 'discount-product' and discount_hero_band_visible -%}
                 <div class="prod__reviews-and-prices flex">
                   {% render 'product-prices', use_variant: true, product: product, show_sale_badge: block.settings.show_saving, price_text_size: 'text-xl md:text-2xl' %}
                 </div>
@@ -119,7 +129,7 @@
                   </div>
                 {%- endif -%}
               {%- endunless -%}
-              {%- unless section.type == 'discount-product' -%}
+              {%- unless section.type == 'discount-product' and discount_hero_band_visible -%}
                 <div class="installment-shoppay">
                   {%- form 'product', product, id: 'product-form-installment', class: 'installment' -%}
                     <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
@@ -678,7 +688,9 @@
                 {%- endif -%}
               </product-recommendations>
           {%- endcase -%}
-        </div>
+        {%- unless suppress_discount_title_price_wrapper -%}
+          </div>
+        {%- endunless -%}
       {%- endfor -%}
     </div>
   </div>

@@ -25,7 +25,7 @@
     assign saved_amount = 0
     if on_sale
       assign saved_amount = compare_at | minus: price
-      assign discount_pct = saved_amount | times: 100 | divided_by: compare_at
+      assign discount_pct = saved_amount | times: 100.0 | divided_by: compare_at | round
     endif
     if discount_pct > 100
       assign discount_pct = 100
@@ -55,50 +55,54 @@
       assign money_saved = saved_amount | money_with_currency
     endif
 
-    assign region_aria = 'macross.pdp_sale_region_aria' | t: pct: discount_pct, pay_pct: 100 | minus: discount_pct, tier: tier_label, compare: money_compare, sale: money_sale
+    assign pay_pct = 100 | minus: discount_pct
+    assign region_aria = 'macross.pdp_sale_region_aria' | t: pct: discount_pct, pay_pct: pay_pct, tier: tier_label, compare: money_compare, sale: money_sale
   -%}
   <div
     class="mp-offer mp-offer--tier-{{ tier_level }}{% unless on_sale %} mp-offer--regular{% endunless %}"
     role="region"
+    data-discount-pdp-hero
+    data-tier-label-1="{{ 'macross.pdp_sale_tier_1' | t | escape }}"
+    data-tier-label-2="{{ 'macross.pdp_sale_tier_2' | t | escape }}"
+    data-tier-label-3="{{ 'macross.pdp_sale_tier_3' | t | escape }}"
     aria-label="{{ product.title }}. {{ region_aria | strip_html | escape }}"
   >
     <div class="mp-offer__glow" aria-hidden="true"></div>
 
-    {% if on_sale %}
-      <div class="mp-offer__badge" aria-hidden="true">
-        <span class="mp-offer__badge-pct">-{{ discount_pct }}%</span>
-      </div>
-    {% endif %}
+    <div class="mp-offer__badge{% unless on_sale %} hidden{% endunless %}" data-mp-offer-badge aria-hidden="true">
+      <span class="mp-offer__badge-pct"><span data-mp-offer-pct>-{{ discount_pct }}%</span></span>
+    </div>
 
     <h1 class="mp-offer__title">{{ product.title }}</h1>
 
-    {% if on_sale %}
-      <div class="mp-offer__prices">
-        <span class="mp-offer__now">{{ money_sale }}</span>
-        <span class="mp-offer__was">
-          <span class="visually-hidden">{{ 'products.product.price.regular_price' | t }}</span>
-          <s>{{ money_compare }}</s>
+    <div class="mp-offer__prices{% unless on_sale %} mp-offer__prices--solo{% endunless %}">
+      <span class="mp-offer__now{% unless on_sale %} mp-offer__now--regular{% endunless %}" data-mp-offer-now>{{ money_sale }}</span>
+      <span class="mp-offer__was{% unless on_sale %} hidden{% endunless %}" data-mp-offer-was-wrap>
+        <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
+        <s data-mp-offer-compare>{% if on_sale %}{{ money_compare }}{% endif %}</s>
+      </span>
+    </div>
+
+    <div class="mp-offer__tier{% unless on_sale %} hidden{% endunless %}" data-mp-offer-tier>
+      <span class="mp-offer__tier-label" data-mp-offer-tier-label>{{ tier_label }}</span>
+      <span class="mp-offer__tier-saved">{{ 'macross.pdp_sale_you_save' | t }} <span data-mp-offer-saved-amount>{{ money_saved }}</span></span>
+    </div>
+
+    {% if ph_show_unit_hint %}
+      <p
+        class="mp-offer__unit{% unless v.unit_price_measurement %} hidden{% endunless %}"
+        data-mp-offer-unit-row
+      >
+        <span data-mp-offer-unit-inner>
+          {% if v.unit_price_measurement %}
+            {{- v.unit_price | money -}}
+            <span aria-hidden="true"> / </span>
+            {%- if v.unit_price_measurement.reference_value != 1 -%}
+              {{- v.unit_price_measurement.reference_value -}}
+            {%- endif -%}
+            {{- v.unit_price_measurement.reference_unit -}}
+          {% endif %}
         </span>
-      </div>
-
-      <div class="mp-offer__tier">
-        <span class="mp-offer__tier-label">{{ tier_label }}</span>
-        <span class="mp-offer__tier-saved">{{ 'macross.pdp_sale_you_save' | t }} {{ money_saved }}</span>
-      </div>
-    {% else %}
-      <div class="mp-offer__prices mp-offer__prices--solo">
-        <span class="mp-offer__now mp-offer__now--regular">{{ money_sale }}</span>
-      </div>
-    {% endif %}
-
-    {% if ph_show_unit_hint and v.unit_price_measurement %}
-      <p class="mp-offer__unit">
-        {{ v.unit_price | money }}
-        <span aria-hidden="true">/</span>
-        {%- if v.unit_price_measurement.reference_value != 1 -%}
-          {{ v.unit_price_measurement.reference_value }}
-        {%- endif -%}
-        {{ v.unit_price_measurement.reference_unit }}
       </p>
     {% endif %}
   </div>
