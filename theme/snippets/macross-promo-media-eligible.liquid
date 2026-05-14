@@ -1,0 +1,14 @@
+{% comment %}
+  Discount PDP: exclude product media whose preview alt contains the promo token from the main gallery.
+  Params: media, token (downcased substring, e.g. [macross-promo]). Renders a single character: y = include, n = skip.
+{% endcomment %}
+{%- if token == blank -%}
+  y
+{%- else -%}
+  {%- assign macross_gal_alt = media.preview_image.alt | default: '' | strip | downcase -%}
+  {%- if macross_gal_alt contains token -%}
+    n
+  {%- else -%}
+    y
+  {%- endif -%}
+{%- endif -%}

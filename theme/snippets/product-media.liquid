@@ -35,8 +35,24 @@
     endif
   endfor
 
+  assign macross_promo_token_effective = ''
+  if macross_promo_alt_marker != blank
+    assign macross_promo_token_effective = macross_promo_alt_marker | strip | downcase
+  endif
+
+  assign macross_gallery_media_count = product.media.size
+  if macross_promo_token_effective != blank
+    assign macross_gallery_media_count = 0
+    for pm_gallery in product.media
+      assign pm_gallery_alt = pm_gallery.preview_image.alt | default: '' | strip | downcase
+      unless pm_gallery_alt contains macross_promo_token_effective
+        assign macross_gallery_media_count = macross_gallery_media_count | plus: 1
+      endunless
+    endfor
+  endif
+
   assign wrapper_class = ''
-  if product.media.size > 1
+  if macross_gallery_media_count > 1
     assign wrapper_class = 'swiper-container'
   endif
 
@@ -46,6 +62,27 @@
   endif
 %}
 {% if product.media.size > 0 %}
+  {% if macross_gallery_media_count < 1 %}
+    <div class="{{ class }} w-full" data-macross-promo-only-gallery>
+      <div
+        class="sf-prod-media-item media-type-{{ product.featured_media.media_type }} overflow-hidden relative group"
+        data-index="0"
+        data-media-type="{{ product.featured_media.media_type }}"
+      >
+        {% render 'product-thumbnail',
+          media: product.featured_media,
+          index: 0,
+          autoplay: enable_video_autoplay,
+          loop: true
+        %}
+        {%- if enable_zoom and product.featured_media.media_type != 'model' -%}
+          <div class="zoom-in transition-all opacity-100 md:opacity-0 absolute z-10 {{ position | default: '-right-14 top-5' }}">
+            {% render 'tooltip', type: 'zoom-in', class_name: ' sf__tooltip-left' %}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  {% else %}
   <media-gallery
     data-product-id="{{ product.id }}"
     data-product-handle="{{ product.handle }}"
@@ -61,7 +98,7 @@
     {% if enableLoadingMedia %}
       data-media-loading
     {% endif %}
-    data-media-size="{{ product.media.size }}"
+    data-media-size="{{ macross_gallery_media_count }}"
   >
     {% case media_layout %}
       {% when 'layout-1' %}
@@ -72,15 +109,18 @@
           {% endif %}
         >
           <div class="flex-grow sf__product-media-lists">
+            {%- assign macross_pm_idx = 0 -%}
             {%- for media in product.media -%}
+              {%- capture macross_pm_elig %}{% render 'macross-promo-media-eligible', media: media, token: macross_promo_token_effective %}{% endcapture -%}
+              {%- if macross_pm_elig contains 'y' -%}
               <div
                 class="sf-prod-media-item media-type-{{ media.media_type }} overflow-hidden relative group"
-                data-index="{{ forloop.index0 }}"
+                data-index="{{ macross_pm_idx }}"
                 data-media-type="{{ media.media_type }}"
               >
                 {% render 'product-thumbnail',
                   media: media,
-                  index: forloop.index0,
+                  index: macross_pm_idx,
                   autoplay: enable_video_autoplay,
                   loop: true,
                 %}
@@ -90,6 +130,8 @@
                   </div>
                 {%- endif -%}
               </div>
+              {%- assign macross_pm_idx = macross_pm_idx | plus: 1 -%}
+              {%- endif -%}
             {%- endfor -%}
           </div>
         </div>
@@ -99,17 +141,20 @@
             style="opacity: 0;"
           {% endif %}
         >
-          <div class="md:grid gap-2.5 {% if product.media.size > 1 %}grid-cols-2{% endif %} sf__product-media-lists">
+          <div class="md:grid gap-2.5 {% if macross_gallery_media_count > 1 %}grid-cols-2{% endif %} sf__product-media-lists">
+            {%- assign macross_pm_idx = 0 -%}
             {%- for media in product.media -%}
-              {%- assign remainder = forloop.index0 | modulo: 3 -%}
+              {%- capture macross_pm_elig %}{% render 'macross-promo-media-eligible', media: media, token: macross_promo_token_effective %}{% endcapture -%}
+              {%- if macross_pm_elig contains 'y' -%}
+              {%- assign remainder = macross_pm_idx | modulo: 3 -%}
               <div
-                class="sf-prod-media-item media-type-{{ media.media_type }} overflow-hidden relative group {% if remainder == 0 or product.media.size < 3 %}col-span-2{% endif %}"
-                data-index="{{ forloop.index0 }}"
+                class="sf-prod-media-item media-type-{{ media.media_type }} overflow-hidden relative group {% if remainder == 0 or macross_gallery_media_count < 3 %}col-span-2{% endif %}"
+                data-index="{{ macross_pm_idx }}"
                 data-media-type="{{ media.media_type }}"
               >
                 {% render 'product-thumbnail',
                   media: media,
-                  index: forloop.index0,
+                  index: macross_pm_idx,
                   autoplay: enable_video_autoplay,
                   loop: true,
                 %}
@@ -119,6 +164,8 @@
                   </div>
                 {%- endif -%}
               </div>
+              {%- assign macross_pm_idx = macross_pm_idx | plus: 1 -%}
+              {%- endif -%}
             {%- endfor -%}
           </div>
         </div>
@@ -128,17 +175,20 @@
             style="opacity: 0;"
           {% endif %}
         >
-          <div class="grid gap-2.5 {% if product.media.size > 1 %}grid-cols-2{% endif %} sf__product-media-lists">
+          <div class="grid gap-2.5 {% if macross_gallery_media_count > 1 %}grid-cols-2{% endif %} sf__product-media-lists">
+            {%- assign macross_pm_idx = 0 -%}
             {%- for media in product.media -%}
-              {%- assign remainder = forloop.index0 | modulo: 3 -%}
+              {%- capture macross_pm_elig %}{% render 'macross-promo-media-eligible', media: media, token: macross_promo_token_effective %}{% endcapture -%}
+              {%- if macross_pm_elig contains 'y' -%}
+              {%- assign remainder = macross_pm_idx | modulo: 3 -%}
               <div
                 class="sf-prod-media-item media-type-{{ media.media_type }} overflow-hidden relative"
-                data-index="{{ forloop.index0 }}"
+                data-index="{{ macross_pm_idx }}"
                 data-media-type="{{ media.media_type }}"
               >
                 {% render 'product-thumbnail',
                   media: media,
-                  index: forloop.index0,
+                  index: macross_pm_idx,
                   autoplay: enable_video_autoplay,
                   loop: true,
                 %}
@@ -148,6 +198,8 @@
                   </div>
                 {%- endif -%}
               </div>
+              {%- assign macross_pm_idx = macross_pm_idx | plus: 1 -%}
+              {%- endif -%}
             {%- endfor -%}
           </div>
         </div>
@@ -162,17 +214,20 @@
           <div class="sf-preview__wrapper mb-4 flex-grow">
             <div class="{{ wrapper_class }} h-full group {{ swiper_class }}">
               <div class="swiper-wrapper main-slider sf-pis h-full">
+                {% assign macross_pm_idx = 0 %}
                 {% for media in product.media %}
+                  {% capture macross_pm_elig %}{% render 'macross-promo-media-eligible', media: media, token: macross_promo_token_effective %}{% endcapture %}
+                  {% if macross_pm_elig contains 'y' %}
                   <div
                     class="swiper-slide sf-prod-media-item relative overflow-hidden media-type-{{ media.media_type }}"
-                    data-index="{{ forloop.index0 }}"
+                    data-index="{{ macross_pm_idx }}"
                     data-media-type="{{ media.media_type }}"
                     data-media-id="{{ media.id }}"
                     data-aspect-ratio="{{ media.aspect_ratio | default: '1' }}"
                   >
                     {% render 'product-thumbnail',
                       media: media,
-                      index: forloop.index0,
+                      index: macross_pm_idx,
                       autoplay: enable_video_autoplay,
                       loop: true,
                     %}
@@ -182,9 +237,11 @@
                       </div>
                     {%- endif -%}
                   </div>
+                  {% assign macross_pm_idx = macross_pm_idx | plus: 1 %}
+                  {% endif %}
                 {% endfor %}
               </div>
-              {% if show_nav and product.media.size > 1 %}
+              {% if show_nav and macross_gallery_media_count > 1 %}
                 <div class="absolute z-10 pointer-events-none inset-x-0 top-1/2 -translate-y-1/2 flex items-center justify-between px-4">
                   <button class="swiper-button-control swiper-button-prev sf__btn-icon">
                     <svg
@@ -212,15 +269,18 @@
               {% endif %}
             </div>
           </div>
-          {% if show_thumbnails and product.media.size > 1 %}
+          {% if show_thumbnails and macross_gallery_media_count > 1 %}
             <div class="sf-media-nav">
               <div class="nav-swiper-container flex items-stretch sf-no-scroll-bar opacity-0 transition-all">
                 <div class="swiper-wrapper flex flex-nowrap w-auto max-w-none" style="min-width: 70px;">
+                  {% assign macross_pm_thumb = 0 %}
                   {% for media in product.media %}
+                    {% capture macross_pm_elig %}{% render 'macross-promo-media-eligible', media: media, token: macross_promo_token_effective %}{% endcapture %}
+                    {% if macross_pm_elig contains 'y' %}
                     {% assign aspect_ratio = media.preview_image.aspect_ratio | default: 1 %}
                     <div
                       class="swiper-slide relative cursor-pointer media-type-{{ media.media_type }}"
-                      data-index="{{ forloop.index0 }}"
+                      data-index="{{ macross_pm_thumb }}"
                       {%- if product_layout == 'layout-6' -%}
                         style="--slide-height: {{ 70 | divided_by: aspect_ratio }}px;"
                       {%- endif -%}
@@ -253,12 +313,14 @@
                         </div>
                       {% endif %}
                     </div>
+                    {% assign macross_pm_thumb = macross_pm_thumb | plus: 1 %}
+                    {% endif %}
                   {% endfor %}
                 </div>
               </div>
             </div>
           {% endif %}
-          {% if show_pagination and product.media.size > 1 %}
+          {% if show_pagination and macross_gallery_media_count > 1 %}
             <div class="swiper-pagination"></div>
           {% endif %}
         </div>
@@ -273,17 +335,20 @@
           <div class="sf-preview__wrapper mb-4 flex-grow">
             <div class="{{ wrapper_class }} h-full group {{ swiper_class }}">
               <div class="swiper-wrapper main-slider sf-pis h-full">
+                {% assign macross_pm_idx = 0 %}
                 {% for media in product.media %}
+                  {% capture macross_pm_elig %}{% render 'macross-promo-media-eligible', media: media, token: macross_promo_token_effective %}{% endcapture %}
+                  {% if macross_pm_elig contains 'y' %}
                   <div
                     class="swiper-slide sf-prod-media-item relative overflow-hidden media-type-{{ media.media_type }}"
-                    data-index="{{ forloop.index0 }}"
+                    data-index="{{ macross_pm_idx }}"
                     data-media-type="{{ media.media_type }}"
                     data-media-id="{{ media.id }}"
                     data-aspect-ratio="{{ media.aspect_ratio | default: '1' }}"
                   >
                     {% render 'product-thumbnail',
                       media: media,
-                      index: forloop.index0,
+                      index: macross_pm_idx,
                       autoplay: enable_video_autoplay,
                       loop: true
                     %}
@@ -293,9 +358,11 @@
                       </div>
                     {%- endif -%}
                   </div>
+                  {% assign macross_pm_idx = macross_pm_idx | plus: 1 %}
+                  {% endif %}
                 {% endfor %}
               </div>
-              {% if show_nav and product.media.size > 1 %}
+              {% if show_nav and macross_gallery_media_count > 1 %}
                 <div class="absolute z-10 pointer-events-none inset-x-0 top-1/2 -translate-y-1/2 flex items-center justify-between px-4">
                   <button class="swiper-button-control swiper-button-prev sf__btn-icon">
                     <svg
@@ -323,7 +390,7 @@
               {% endif %}
             </div>
           </div>
-          {% if show_dots and product.media.size > 1 %}
+          {% if show_dots and macross_gallery_media_count > 1 %}
             <div class="swiper-pagination"></div>
           {% endif %}
         </div>
@@ -338,17 +405,20 @@
           <div class="sf-preview__wrapper mb-4 flex-grow">
             <div class="{{ wrapper_class }} h-full group {{ swiper_class }}">
               <div class="swiper-wrapper main-slider sf-pis h-full">
+                {% assign macross_pm_idx = 0 %}
                 {% for media in product.media %}
+                  {% capture macross_pm_elig %}{% render 'macross-promo-media-eligible', media: media, token: macross_promo_token_effective %}{% endcapture %}
+                  {% if macross_pm_elig contains 'y' %}
                   <div
                     class="swiper-slide sf-prod-media-item relative overflow-hidden media-type-{{ media.media_type }}"
-                    data-index="{{ forloop.index0 }}"
+                    data-index="{{ macross_pm_idx }}"
                     data-media-type="{{ media.media_type }}"
                     data-media-id="{{ media.id }}"
                     data-aspect-ratio="{{ media.aspect_ratio | default: '1' }}"
                   >
                     {% render 'product-thumbnail',
                       media: media,
-                      index: forloop.index0,
+                      index: macross_pm_idx,
                       autoplay: enable_video_autoplay,
                       loop: true
                     %}
@@ -358,9 +428,11 @@
                       </div>
                     {%- endif -%}
                   </div>
+                  {% assign macross_pm_idx = macross_pm_idx | plus: 1 %}
+                  {% endif %}
                 {% endfor %}
               </div>
-              {% if show_nav and product.media.size > 1 %}
+              {% if show_nav and macross_gallery_media_count > 1 %}
                 <div class="absolute z-10 pointer-events-none inset-x-0 top-1/2 -translate-y-1/2 flex items-center justify-between px-4">
                   <button class="swiper-button-control swiper-button-prev sf__btn-icon">
                     <svg
@@ -388,15 +460,18 @@
               {% endif %}
             </div>
           </div>
-          {% if show_thumbnails and product.media.size > 1 %}
+          {% if show_thumbnails and macross_gallery_media_count > 1 %}
             <div class="sf-media-nav">
               <div class="nav-swiper-container flex items-stretch sf-no-scroll-bar opacity-0 transition-all">
                 <div class="swiper-wrapper flex flex-nowrap w-auto max-w-none" style="min-width: 70px;">
+                  {% assign macross_pm_thumb = 0 %}
                   {% for media in product.media %}
+                    {% capture macross_pm_elig %}{% render 'macross-promo-media-eligible', media: media, token: macross_promo_token_effective %}{% endcapture %}
+                    {% if macross_pm_elig contains 'y' %}
                     {% assign aspect_ratio = media.preview_image.aspect_ratio | default: 1 %}
                     <div
                       class="swiper-slide relative cursor-pointer media-type-{{ media.media_type }}"
-                      data-index="{{ forloop.index0 }}"
+                      data-index="{{ macross_pm_thumb }}"
                       style="--slide-height: {{ 70 | divided_by: aspect_ratio }}px;"
                     >
                       {% render 'product-thumbnail', media: media, thumbnail: true %}
@@ -427,6 +502,8 @@
                         </div>
                       {% endif %}
                     </div>
+                    {% assign macross_pm_thumb = macross_pm_thumb | plus: 1 %}
+                    {% endif %}
                   {% endfor %}
                 </div>
               </div>
@@ -440,19 +517,22 @@
             style="opacity: 0;"
           {% endif %}
         >
-          {% if product.media.size <= 3 %}
+          {% if macross_gallery_media_count <= 3 %}
             <div class="flex justify-center items-center mx-auto">
+              {% assign macross_pm_idx = 0 %}
               {% for media in product.media %}
+                {% capture macross_pm_elig %}{% render 'macross-promo-media-eligible', media: media, token: macross_promo_token_effective %}{% endcapture %}
+                {% if macross_pm_elig contains 'y' %}
                 <div
                   class="sf-prod-media-item relative overflow-hidden media-type-{{ media.media_type }}"
-                  data-index="{{ forloop.index0 }}"
+                  data-index="{{ macross_pm_idx }}"
                   data-media-type="{{ media.media_type }}"
                   data-media-id="{{ media.id }}"
                   style="width: 33.33%"
                 >
                   {% render 'product-thumbnail',
                     media: media,
-                    index: forloop.index0,
+                    index: macross_pm_idx,
                     autoplay: enable_video_autoplay,
                     loop: true
                   %}
@@ -462,22 +542,27 @@
                     </div>
                   {%- endif -%}
                 </div>
+                {% assign macross_pm_idx = macross_pm_idx | plus: 1 %}
+                {% endif %}
               {% endfor %}
             </div>
           {% else %}
             {% assign aspect_ratio = product.featured_media.aspect_ratio | times: 3 %}
             <div class="swiper-container {{ swiper_class }}">
               <div class="swiper-wrapper main-slider">
+                {% assign macross_pm_idx = 0 %}
                 {% for media in product.media %}
+                  {% capture macross_pm_elig %}{% render 'macross-promo-media-eligible', media: media, token: macross_promo_token_effective %}{% endcapture %}
+                  {% if macross_pm_elig contains 'y' %}
                   <div
                     class="swiper-slide sf-prod-media-item relative overflow-hidden media-type-{{ media.media_type }}"
-                    data-index="{{ forloop.index0 }}"
+                    data-index="{{ macross_pm_idx }}"
                     data-media-type="{{ media.media_type }}"
                     data-media-id="{{ media.id }}"
                   >
                     {% render 'product-thumbnail',
                       media: media,
-                      index: forloop.index0,
+                      index: macross_pm_idx,
                       autoplay: enable_video_autoplay,
                       loop: true
                     %}
@@ -487,9 +572,12 @@
                       </div>
                     {%- endif -%}
                   </div>
+                  {% assign macross_pm_idx = macross_pm_idx | plus: 1 %}
+                  {% endif %}
                 {% endfor %}
               </div>
             </div>
+            {% if macross_gallery_media_count > 1 %}
             <div class="absolute z-10 inset-x-0 top-1/2 flex items-center justify-between px-4 pointer-events-none">
               <button class="swiper-button-control sf__btn-icon swiper-button-prev pointer-events-auto">
                 <svg
@@ -514,10 +602,12 @@
                 </svg>
               </button>
             </div>
+            {% endif %}
           {% endif %}
         </div>
     {% endcase %}
   </media-gallery>
+  {% endif %}
 {% else %}
   {{ 'product-1' | placeholder_svg_tag: 'sf__placeholder-svg' }}
 {% endif %}

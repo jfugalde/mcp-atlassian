@@ -39,8 +39,34 @@
   class="product-template discount-pdp md:mt-4 mb-5 md:mb-12"
 >
   {%- liquid
+    assign macross_promo_marker_setting = section.settings.macross_promo_alt_marker | default: '[macross-promo]'
+    assign macross_promo_token = macross_promo_marker_setting | strip | downcase
+    assign macross_gallery_count = product.media.size
+    if macross_promo_token != blank
+      assign macross_gallery_count = 0
+      for pm_gallery in product.media
+        assign pm_gallery_alt = pm_gallery.preview_image.alt | default: '' | strip | downcase
+        unless pm_gallery_alt contains macross_promo_token
+          assign macross_gallery_count = macross_gallery_count | plus: 1
+        endunless
+      endfor
+    endif
+
     assign masthead_promo_image = section.settings.masthead_promo_image
     assign masthead_promo_alt = section.settings.masthead_promo_image_alt | strip
+    if masthead_promo_image == blank and section.settings.use_product_media_promo_when_masthead_empty and macross_promo_token != blank
+      for pm_mast in product.media
+        assign pm_mast_alt = pm_mast.preview_image.alt | default: '' | strip | downcase
+        if pm_mast_alt contains macross_promo_token
+          assign masthead_promo_image = pm_mast.preview_image
+          if masthead_promo_alt == blank
+            assign masthead_promo_alt = pm_mast.alt | default: pm_mast.preview_image.alt | default: '' | strip
+          endif
+          break
+        endif
+      endfor
+    endif
+
     assign masthead_has_promo = false
     if masthead_promo_image != blank
       assign masthead_has_promo = true
@@ -105,23 +131,23 @@
       <div class="{{ wrapper_class }} sf-prod__block">
         <div class="{{ media_class }}">
           <div class="sf-product-media__desktop sf-prod-media__wrapper justify-end hidden md:block sf-prod__{{ section.settings.layout }}">
-            {% render 'product-media', section: section, template_product: true, class: 'hidden md:block', swiper_class: 'f-media-desktop' %}
+            {% render 'product-media', section: section, template_product: true, class: 'hidden md:block', swiper_class: 'f-media-desktop', macross_promo_alt_marker: macross_promo_marker_setting %}
           </div>
           <div class="sf-product-media__mobile md:hidden">
             {% liquid
               assign aspect_ratio = product.featured_image.aspect_ratio | default: 1
             %}
             <div class="product-mb__media product-page-mobile__slider {% if aspect_ratio < 1 %}px-5{% endif %}">
-              {% if product.media.size <= 1 %}
+              {% if macross_gallery_count <= 1 %}
                 <div
                   class="flex justify-center items-center relative sf-prod-media-item media-type-{{ product.featured_media.media_type }}"
                   data-index="0"
                 >
-                  {% render 'product-media', screen: 'mobile', template_product: true, section: section, swiper_class: 'f-media-mobile' %}
+                  {% render 'product-media', screen: 'mobile', template_product: true, section: section, swiper_class: 'f-media-mobile', macross_promo_alt_marker: macross_promo_marker_setting %}
                 </div>
               {% else %}
                 {%- liquid 
-                  render 'product-media', screen: 'mobile', template_product: true, position: 'right-5 bottom-2.5', swiper_class: 'f-media-mobile', class: 'md:hidden', section: section, media_layout: 'layout-4', show_nav: false, show_thumbnails: section.settings.show_nav_media_mobile, show_pagination: section.settings.show_pagination_mobile
+                  render 'product-media', screen: 'mobile', template_product: true, position: 'right-5 bottom-2.5', swiper_class: 'f-media-mobile', class: 'md:hidden', section: section, media_layout: 'layout-4', show_nav: false, show_thumbnails: section.settings.show_nav_media_mobile, show_pagination: section.settings.show_pagination_mobile, macross_promo_alt_marker: macross_promo_marker_setting
                 -%}
               {% endif %}
               {% if section.settings.show_atwl %}
@@ -597,6 +623,20 @@
       "id": "masthead_promo_image_alt",
       "label": "Promo image alt text",
       "info": "Describe the promo for screen readers (e.g. “promo” or “Regalo con compra”). Leave blank to use the image file’s alt in Shopify when set."
+    },
+    {
+      "type": "text",
+      "id": "macross_promo_alt_marker",
+      "label": "Promo marker in product media alt",
+      "default": "[macross-promo]",
+      "info": "Case-insensitive. Product media whose preview alt contains this substring is used for the masthead (when enabled below) and is hidden from the main PDP gallery on this template."
+    },
+    {
+      "type": "checkbox",
+      "id": "use_product_media_promo_when_masthead_empty",
+      "label": "Use first marked product media when masthead image is empty",
+      "default": true,
+      "info": "If the masthead promo image picker is empty, the first product image whose alt contains the marker above becomes the masthead promo."
     },
     {
       "type": "checkbox",
