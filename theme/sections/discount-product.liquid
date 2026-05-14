@@ -64,6 +64,17 @@
 
     assign masthead_promo_image = section.settings.masthead_promo_image
     assign masthead_promo_alt = section.settings.masthead_promo_image_alt | strip
+
+    assign macross_mf_promo_image_meta = product.metafields.custom.macross_promo_image
+    assign macross_mf_promo_text_meta = product.metafields.custom.macross_promo
+
+    if masthead_promo_image == blank and macross_mf_promo_image_meta != blank
+      assign masthead_promo_image = macross_mf_promo_image_meta.value
+      if masthead_promo_alt == blank
+        assign masthead_promo_alt = macross_mf_promo_image_meta.alt | default: masthead_promo_image.alt | default: '' | strip
+      endif
+    endif
+
     if masthead_promo_image == blank and section.settings.use_product_media_promo_when_masthead_empty and macross_promo_token != blank
       for pm_mast in product.media
         assign pm_mast_alt = pm_mast.preview_image.alt | default: '' | strip | downcase
@@ -77,32 +88,55 @@
       endfor
     endif
 
-    assign masthead_has_promo = false
+    if masthead_promo_alt == blank and masthead_promo_image != blank
+      assign masthead_promo_alt = masthead_promo_image.alt | default: '' | strip
+    endif
+
+    assign masthead_show_image = false
     if masthead_promo_image != blank
+      assign masthead_show_image = true
+    endif
+
+    assign masthead_show_text_banner = false
+    if macross_mf_promo_text_meta != blank
+      assign masthead_show_text_banner = true
+    endif
+
+    assign masthead_has_promo = false
+    if masthead_show_image or masthead_show_text_banner
       assign masthead_has_promo = true
     endif
   -%}
   <div class="discount-pdp__masthead">
     <div
-      class="{{ container }} discount-pdp__masthead-inner{% if masthead_has_promo %} discount-pdp__masthead-inner--promo{% endif %}"
+      class="{{ container }} discount-pdp__masthead-inner{% if masthead_has_promo %} discount-pdp__masthead-inner--promo{% if masthead_show_text_banner and masthead_show_image == false %} discount-pdp__masthead-inner--promo-no-image{% endif %}{% endif %}"
     >
       {% if masthead_has_promo %}
-        <div class="discount-pdp__masthead-promo discount-pdp__masthead-promo--well">
-          {% if masthead_promo_alt != blank %}
-            {% render 'responsive-image',
-              image: masthead_promo_image,
-              alt: masthead_promo_alt,
-              wrapper_class: 'discount-pdp__masthead-promo__img',
-              image_class: 'w-full h-auto max-h-[5.5rem] md:max-h-[7.5rem] object-contain rounded-lg',
-              lazy_load: false
-            %}
-          {% else %}
-            {% render 'responsive-image',
-              image: masthead_promo_image,
-              wrapper_class: 'discount-pdp__masthead-promo__img',
-              image_class: 'w-full h-auto max-h-[5.5rem] md:max-h-[7.5rem] object-contain rounded-lg',
-              lazy_load: false
-            %}
+        <div class="discount-pdp__masthead-promo-column">
+          {% if masthead_show_image %}
+            <div class="discount-pdp__masthead-promo discount-pdp__masthead-promo--well">
+              {% if masthead_promo_alt != blank %}
+                {% render 'responsive-image',
+                  image: masthead_promo_image,
+                  alt: masthead_promo_alt,
+                  wrapper_class: 'discount-pdp__masthead-promo__img',
+                  image_class: 'w-full h-auto max-h-[5.5rem] md:max-h-[7.5rem] object-contain rounded-lg',
+                  lazy_load: false
+                %}
+              {% else %}
+                {% render 'responsive-image',
+                  image: masthead_promo_image,
+                  wrapper_class: 'discount-pdp__masthead-promo__img',
+                  image_class: 'w-full h-auto max-h-[5.5rem] md:max-h-[7.5rem] object-contain rounded-lg',
+                  lazy_load: false
+                %}
+              {% endif %}
+            </div>
+          {% endif %}
+          {% if masthead_show_text_banner %}
+            <div class="discount-pdp__masthead-promo-copy rte">
+              {{ macross_mf_promo_text_meta | metafield_tag }}
+            </div>
           {% endif %}
         </div>
         <div class="discount-pdp__masthead-stack">
@@ -370,8 +404,14 @@
       align-items: start;
     }
 
-    .discount-pdp__masthead-promo {
+    .discount-pdp__masthead-inner--promo.discount-pdp__masthead-inner--promo-no-image {
+      grid-template-columns: minmax(10rem, 22rem) minmax(0, 1fr);
+    }
+
+    .discount-pdp__masthead-promo-column {
       grid-row: 1 / span 2;
+      align-self: start;
+      min-width: 0;
     }
 
     .discount-pdp__masthead-stack {
@@ -380,6 +420,40 @@
       gap: 0.65rem;
       min-width: 0;
     }
+  }
+
+  .discount-pdp__masthead-promo-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-self: stretch;
+    width: 100%;
+  }
+
+  .discount-pdp__masthead-promo-copy {
+    font-family: var(--discount-pdp-font-ui);
+    font-size: 0.8125rem;
+    line-height: 1.4;
+    color: var(--mp-charcoal);
+    padding: 0.45rem 0.55rem;
+    border-radius: 0.5rem;
+    background: rgba(179, 48, 41, 0.07);
+    border: 1px solid rgba(102, 102, 102, 0.22);
+    max-width: 100%;
+  }
+
+  .discount-pdp__masthead-promo-copy p {
+    margin: 0 0 0.35em;
+  }
+
+  .discount-pdp__masthead-promo-copy p:last-child {
+    margin-bottom: 0;
+  }
+
+  .discount-pdp__masthead-promo-copy a {
+    color: var(--mp-red-dark);
+    text-decoration: underline;
+    text-underline-offset: 2px;
   }
 
   .discount-pdp__masthead-promo__img {
@@ -604,6 +678,10 @@
     },
     {
       "type": "paragraph",
+      "content": "Product metafields (Shopify Admin → Settings → Custom data → Products, namespace custom): macross_promo_image = image or file (promo graphic in the masthead well). macross_promo = single line, multi-line, or rich text (second small promo banner below the image on mobile, same column on desktop). Metafield image is used when the section “Masthead promo image” below is empty; the section image always wins when set."
+    },
+    {
+      "type": "paragraph",
       "content": "Full-width discount hero above the standard product columns. Use this section only on the “discount” product template. Tier labels follow discount depth (theme locales macross.pdp_sale_tier_*)."
     },
     {
@@ -623,7 +701,7 @@
       "type": "image_picker",
       "id": "masthead_promo_image",
       "label": "Masthead promo image",
-      "info": "Optional image in the discount banner (e.g. gift-with-purchase). Shown beside the offer on desktop, above on mobile."
+      "info": "Optional override in the theme editor. If empty, the product metafield custom.macross_promo_image is used when set; otherwise see “marked product media” below."
     },
     {
       "type": "text",
@@ -636,7 +714,7 @@
       "id": "macross_promo_alt_marker",
       "label": "Promo marker in product media alt",
       "default": "[macross-promo]",
-      "info": "Case-insensitive. Product media whose preview alt contains this substring is used for the masthead (when enabled below) and is hidden from the main PDP gallery on this template."
+      "info": "Case-insensitive. Product media whose preview alt contains this substring is hidden from the main PDP gallery. When “Use first marked product media…” is on, the first match is also used for the masthead image if the section image and custom.macross_promo_image are both empty."
     },
     {
       "type": "checkbox",

@@ -1,6 +1,6 @@
 # Discount banner promo image — alt-text marker design
 
-**Status:** Approved direction (brainstorming closure)  
+**Status:** Approved direction (brainstorming closure); **metafields added** for masthead visibility (`custom.macross_promo_image`, `custom.macross_promo`) — see theme section “Discount page (masthead)” paragraph. Alt-marker remains for **gallery exclusion** and optional tertiary masthead image.  
 **Scope:** `discount-product` PDP masthead promo slot + product media pipeline  
 **Non-goals:** Hidden catalog products, metafield-linked gift SKUs, variant-picker JS sync for promo (phase 2 if needed)
 
