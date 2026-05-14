@@ -69,9 +69,16 @@
     assign macross_mf_promo_text_meta = product.metafields.custom.macross_promo
 
     if masthead_promo_image == blank and macross_mf_promo_image_meta != blank
-      assign masthead_promo_image = macross_mf_promo_image_meta.value
-      if masthead_promo_alt == blank
-        assign masthead_promo_alt = macross_mf_promo_image_meta.alt | default: masthead_promo_image.alt | default: '' | strip
+      assign mf_img_val = macross_mf_promo_image_meta.value
+      if mf_img_val != blank
+        if mf_img_val.preview_image != blank
+          assign masthead_promo_image = mf_img_val.preview_image
+        else
+          assign masthead_promo_image = mf_img_val
+        endif
+        if masthead_promo_alt == blank
+          assign masthead_promo_alt = macross_mf_promo_image_meta.alt | default: mf_img_val.alt | default: masthead_promo_image.alt | default: '' | strip
+        endif
       endif
     endif
 
@@ -115,7 +122,7 @@
         <div class="discount-pdp__masthead-promo-column">
           {% if masthead_show_image %}
             <div class="discount-pdp__masthead-promo discount-pdp__masthead-promo--well">
-              {% if masthead_promo_alt != blank %}
+              {% if masthead_promo_image.width > 0 %}
                 {% render 'responsive-image',
                   image: masthead_promo_image,
                   alt: masthead_promo_alt,
@@ -123,9 +130,14 @@
                   image_class: 'w-full h-auto max-h-[5.5rem] md:max-h-[7.5rem] object-contain rounded-lg',
                   lazy_load: false
                 %}
+              {% elsif macross_mf_promo_image_meta != blank %}
+                <div class="discount-pdp__masthead-promo__img sf-image flex w-full justify-center">
+                  {{ macross_mf_promo_image_meta | image_url: width: 720 | image_tag: loading: 'eager', class: 'w-full h-auto max-h-[5.5rem] md:max-h-[7.5rem] object-contain rounded-lg', alt: masthead_promo_alt }}
+                </div>
               {% else %}
                 {% render 'responsive-image',
                   image: masthead_promo_image,
+                  alt: masthead_promo_alt,
                   wrapper_class: 'discount-pdp__masthead-promo__img',
                   image_class: 'w-full h-auto max-h-[5.5rem] md:max-h-[7.5rem] object-contain rounded-lg',
                   lazy_load: false
@@ -678,7 +690,7 @@
     },
     {
       "type": "paragraph",
-      "content": "Product metafields (Shopify Admin → Settings → Custom data → Products, namespace custom): macross_promo_image = image or file (promo graphic in the masthead well). macross_promo = single line, multi-line, or rich text (second small promo banner below the image on mobile, same column on desktop). Metafield image is used when the section “Masthead promo image” below is empty; the section image always wins when set."
+      "content": "Product metafields (Shopify Admin → Settings → Custom data → Products, namespace custom): macross_promo_image = File type, choose an image file (the theme resolves Shopify file references for URLs). macross_promo = single line, multi-line, or rich text (second small promo banner). Metafield image is used when the section Masthead promo image is empty; the section image always wins when set."
     },
     {
       "type": "paragraph",
