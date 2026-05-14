@@ -133,57 +133,64 @@
   -%}
   <div class="discount-pdp__masthead">
     <div
-      class="{{ container }} discount-pdp__masthead-inner{% if masthead_has_promo %} discount-pdp__masthead-inner--promo{% if masthead_show_text_banner and masthead_show_image == false %} discount-pdp__masthead-inner--promo-no-image{% endif %}{% endif %}"
+      class="{{ container }} discount-pdp__masthead-inner{% if masthead_has_promo %} discount-pdp__masthead-inner--promo{% if section.settings.show_masthead_label %} discount-pdp__masthead-inner--promo-with-label{% endif %}{% if masthead_show_text_banner and masthead_show_image == false %} discount-pdp__masthead-inner--promo-no-image{% endif %}{% endif %}"
     >
       {% if masthead_has_promo %}
-        <div class="discount-pdp__masthead-stack">
-      {% endif %}
-      {% if section.settings.show_masthead_label %}
-        <p class="discount-pdp__masthead-label">{{ section.settings.masthead_label | escape }}</p>
-      {% endif %}
-      {% render 'pdp-discount-hero', product: product, section: section %}
-      {% if masthead_has_promo %}
+        {% if section.settings.show_masthead_label %}
+          <p class="discount-pdp__masthead-label discount-pdp__masthead-label--promo-span">
+            {{ section.settings.masthead_label | escape }}
+          </p>
+        {% endif %}
+        <div class="discount-pdp__masthead-stack discount-pdp__masthead-stack--hero-only">
+          {% render 'pdp-discount-hero', product: product, section: section %}
         </div>
         <div class="discount-pdp__masthead-promo-column">
-          {% if masthead_show_image %}
-            <div class="discount-pdp__masthead-promo discount-pdp__masthead-promo--well">
-              {% if masthead_promo_image and masthead_promo_image.width > 0 %}
-                <div class="discount-pdp__masthead-promo__img sf-image flex w-full justify-center">
-                  <img
-                    src="{{ masthead_promo_image | image_url: width: 360 }}"
-                    srcset="{%- if masthead_promo_image.width >= 165 -%}{{ masthead_promo_image | image_url: width: 165 }} 165w,{%- endif -%}
-                      {%- if masthead_promo_image.width >= 360 -%}{{ masthead_promo_image | image_url: width: 360 }} 360w,{%- endif -%}
-                      {%- if masthead_promo_image.width >= 533 -%}{{ masthead_promo_image | image_url: width: 533 }} 533w,{%- endif -%}
-                      {{ masthead_promo_image | image_url }} {{ masthead_promo_image.width }}w"
-                    sizes="(max-width: 767px) 42vw, min(9rem, 25vw)"
-                    alt="{{ masthead_promo_alt | escape }}"
-                    width="{{ masthead_promo_image.width }}"
-                    height="{{ masthead_promo_image.height }}"
-                    loading="eager"
-                    decoding="async"
-                    fetchpriority="high"
-                    class="w-full h-auto max-h-[5.5rem] md:max-h-[7.5rem] object-contain rounded-lg"
-                  >
-                </div>
-              {% elsif macross_masthead_img_src != blank %}
-                <div class="discount-pdp__masthead-promo__img sf-image flex w-full justify-center">
-                  <img
-                    src="{{ macross_masthead_img_src }}"
-                    alt="{{ masthead_promo_alt | escape }}"
-                    loading="eager"
-                    decoding="async"
-                    class="w-full h-auto max-h-[5.5rem] md:max-h-[7.5rem] object-contain rounded-lg"
-                  >
-                </div>
-              {% endif %}
-            </div>
-          {% endif %}
-          {% if masthead_show_text_banner %}
-            <div class="discount-pdp__masthead-promo-copy rte">
-              {{ macross_mf_promo_text_meta | metafield_tag }}
-            </div>
-          {% endif %}
+          <div class="discount-pdp__masthead-promo-card{% if masthead_show_image and masthead_show_text_banner %} discount-pdp__masthead-promo-card--has-both{% endif %}">
+            {% if masthead_show_image %}
+              <div class="discount-pdp__masthead-promo-card__media">
+                {% if masthead_promo_image and masthead_promo_image.width > 0 %}
+                  <div class="discount-pdp__masthead-promo__img sf-image flex w-full justify-center">
+                    <img
+                      src="{{ masthead_promo_image | image_url: width: 360 }}"
+                      srcset="{%- if masthead_promo_image.width >= 165 -%}{{ masthead_promo_image | image_url: width: 165 }} 165w,{%- endif -%}
+                        {%- if masthead_promo_image.width >= 360 -%}{{ masthead_promo_image | image_url: width: 360 }} 360w,{%- endif -%}
+                        {%- if masthead_promo_image.width >= 533 -%}{{ masthead_promo_image | image_url: width: 533 }} 533w,{%- endif -%}
+                        {{ masthead_promo_image | image_url }} {{ masthead_promo_image.width }}w"
+                      sizes="(max-width: 767px) 42vw, min(9rem, 25vw)"
+                      alt="{{ masthead_promo_alt | escape }}"
+                      width="{{ masthead_promo_image.width }}"
+                      height="{{ masthead_promo_image.height }}"
+                      loading="eager"
+                      decoding="async"
+                      fetchpriority="high"
+                      class="w-full h-auto max-h-[5.5rem] md:max-h-[7.5rem] object-contain rounded-md"
+                    >
+                  </div>
+                {% elsif macross_masthead_img_src != blank %}
+                  <div class="discount-pdp__masthead-promo__img sf-image flex w-full justify-center">
+                    <img
+                      src="{{ macross_masthead_img_src }}"
+                      alt="{{ masthead_promo_alt | escape }}"
+                      loading="eager"
+                      decoding="async"
+                      class="w-full h-auto max-h-[5.5rem] md:max-h-[7.5rem] object-contain rounded-md"
+                    >
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+            {% if masthead_show_text_banner %}
+              <div class="discount-pdp__masthead-promo-card__copy rte">
+                {{ macross_mf_promo_text_meta | metafield_tag }}
+              </div>
+            {% endif %}
+          </div>
         </div>
+      {% else %}
+        {% if section.settings.show_masthead_label %}
+          <p class="discount-pdp__masthead-label">{{ section.settings.masthead_label | escape }}</p>
+        {% endif %}
+        {% render 'pdp-discount-hero', product: product, section: section %}
       {% endif %}
     </div>
   </div>
@@ -445,15 +452,37 @@
       grid-template-columns: minmax(0, 1fr) minmax(10rem, 22rem);
     }
 
+    .discount-pdp__masthead-inner--promo-with-label .discount-pdp__masthead-label--promo-span {
+      grid-column: 1 / -1;
+      grid-row: 1;
+    }
+
+    .discount-pdp__masthead-inner--promo-with-label .discount-pdp__masthead-stack--hero-only {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    .discount-pdp__masthead-inner--promo-with-label .discount-pdp__masthead-promo-column {
+      grid-column: 2;
+      grid-row: 2;
+    }
+
+    .discount-pdp__masthead-inner--promo:not(.discount-pdp__masthead-inner--promo-with-label) .discount-pdp__masthead-stack--hero-only {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .discount-pdp__masthead-inner--promo:not(.discount-pdp__masthead-inner--promo-with-label) .discount-pdp__masthead-promo-column {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
     .discount-pdp__masthead-promo-column {
       align-self: start;
       min-width: 0;
     }
 
-    .discount-pdp__masthead-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 0.65rem;
+    .discount-pdp__masthead-stack--hero-only {
       min-width: 0;
     }
   }
@@ -461,32 +490,56 @@
   .discount-pdp__masthead-promo-column {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
     align-self: stretch;
     width: 100%;
   }
 
-  .discount-pdp__masthead-promo-copy {
+  .discount-pdp__masthead-promo-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 0.55rem 0.65rem 0.6rem;
+    border-radius: 0.75rem;
+    color-scheme: light;
+    color: rgba(26, 20, 18, 0.92);
+    background: linear-gradient(165deg, #fffdfb 0%, #f6f2ed 100%);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.85),
+      inset 0 0 0 1px rgba(179, 48, 41, 0.12),
+      0 4px 14px rgba(42, 34, 32, 0.06);
+    outline: 1px solid rgba(102, 102, 102, 0.26);
+    outline-offset: 1px;
     font-family: var(--discount-pdp-font-ui);
-    font-size: 0.8125rem;
-    line-height: 1.4;
-    color: var(--mp-charcoal);
-    padding: 0.45rem 0.55rem;
-    border-radius: 0.5rem;
-    background: rgba(179, 48, 41, 0.07);
-    border: 1px solid rgba(102, 102, 102, 0.22);
-    max-width: 100%;
+    -webkit-font-smoothing: antialiased;
   }
 
-  .discount-pdp__masthead-promo-copy p {
+  .discount-pdp__masthead-promo-card__media {
+    padding: 0.1rem 0 0;
+  }
+
+  .discount-pdp__masthead-promo-card__copy {
+    margin: 0;
+    font-size: 0.8125rem;
+    line-height: 1.45;
+    color: var(--mp-charcoal);
+  }
+
+  .discount-pdp__masthead-promo-card--has-both .discount-pdp__masthead-promo-card__copy {
+    padding-top: 0.45rem;
+    margin-top: 0.15rem;
+    border-top: 1px solid rgba(42, 34, 32, 0.08);
+  }
+
+  .discount-pdp__masthead-promo-card__copy p {
     margin: 0 0 0.35em;
   }
 
-  .discount-pdp__masthead-promo-copy p:last-child {
+  .discount-pdp__masthead-promo-card__copy p:last-child {
     margin-bottom: 0;
   }
 
-  .discount-pdp__masthead-promo-copy a {
+  .discount-pdp__masthead-promo-card__copy a {
     color: var(--mp-red-dark);
     text-decoration: underline;
     text-underline-offset: 2px;
@@ -506,15 +559,6 @@
       margin-right: 0;
       max-width: none;
     }
-  }
-
-  .discount-pdp__masthead-promo--well {
-    align-self: start;
-    padding: 0.5rem;
-    border-radius: 0.65rem;
-    background: rgba(179, 48, 41, 0.06);
-    border: 1px solid rgba(102, 102, 102, 0.2);
-    min-width: 4.5rem;
   }
 
   .discount-pdp__masthead-label {
