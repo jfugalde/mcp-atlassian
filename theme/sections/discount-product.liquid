@@ -42,15 +42,25 @@
     assign macross_promo_marker_setting = section.settings.macross_promo_alt_marker | default: '[macross-promo]'
     assign macross_promo_token = macross_promo_marker_setting | strip | downcase
     assign macross_gallery_count = product.media.size
+    assign macross_mobile_preview_media = product.featured_media
     if macross_promo_token != blank
       assign macross_gallery_count = 0
+      assign macross_mobile_preview_set = false
       for pm_gallery in product.media
         assign pm_gallery_alt = pm_gallery.preview_image.alt | default: '' | strip | downcase
         unless pm_gallery_alt contains macross_promo_token
           assign macross_gallery_count = macross_gallery_count | plus: 1
+          unless macross_mobile_preview_set
+            assign macross_mobile_preview_media = pm_gallery
+            assign macross_mobile_preview_set = true
+          endunless
         endunless
       endfor
+      unless macross_mobile_preview_set
+        assign macross_mobile_preview_media = product.featured_media
+      endunless
     endif
+    assign macross_mobile_aspect_ratio = macross_mobile_preview_media.preview_image.aspect_ratio | default: macross_mobile_preview_media.aspect_ratio | default: 1
 
     assign masthead_promo_image = section.settings.masthead_promo_image
     assign masthead_promo_alt = section.settings.masthead_promo_image_alt | strip
@@ -134,13 +144,10 @@
             {% render 'product-media', section: section, template_product: true, class: 'hidden md:block', swiper_class: 'f-media-desktop', macross_promo_alt_marker: macross_promo_marker_setting %}
           </div>
           <div class="sf-product-media__mobile md:hidden">
-            {% liquid
-              assign aspect_ratio = product.featured_image.aspect_ratio | default: 1
-            %}
-            <div class="product-mb__media product-page-mobile__slider {% if aspect_ratio < 1 %}px-5{% endif %}">
+            <div class="product-mb__media product-page-mobile__slider {% if macross_mobile_aspect_ratio < 1 %}px-5{% endif %}">
               {% if macross_gallery_count <= 1 %}
                 <div
-                  class="flex justify-center items-center relative sf-prod-media-item media-type-{{ product.featured_media.media_type }}"
+                  class="flex justify-center items-center relative sf-prod-media-item media-type-{{ macross_mobile_preview_media.media_type }}"
                   data-index="0"
                 >
                   {% render 'product-media', screen: 'mobile', template_product: true, section: section, swiper_class: 'f-media-mobile', macross_promo_alt_marker: macross_promo_marker_setting %}
