@@ -136,6 +136,14 @@
       class="{{ container }} discount-pdp__masthead-inner{% if masthead_has_promo %} discount-pdp__masthead-inner--promo{% if masthead_show_text_banner and masthead_show_image == false %} discount-pdp__masthead-inner--promo-no-image{% endif %}{% endif %}"
     >
       {% if masthead_has_promo %}
+        <div class="discount-pdp__masthead-stack">
+      {% endif %}
+      {% if section.settings.show_masthead_label %}
+        <p class="discount-pdp__masthead-label">{{ section.settings.masthead_label | escape }}</p>
+      {% endif %}
+      {% render 'pdp-discount-hero', product: product, section: section %}
+      {% if masthead_has_promo %}
+        </div>
         <div class="discount-pdp__masthead-promo-column">
           {% if masthead_show_image %}
             <div class="discount-pdp__masthead-promo discount-pdp__masthead-promo--well">
@@ -175,14 +183,6 @@
               {{ macross_mf_promo_text_meta | metafield_tag }}
             </div>
           {% endif %}
-        </div>
-        <div class="discount-pdp__masthead-stack">
-      {% endif %}
-      {% if section.settings.show_masthead_label %}
-        <p class="discount-pdp__masthead-label">{{ section.settings.masthead_label | escape }}</p>
-      {% endif %}
-      {% render 'pdp-discount-hero', product: product, section: section %}
-      {% if masthead_has_promo %}
         </div>
       {% endif %}
     </div>
@@ -435,18 +435,17 @@
   @media (min-width: 768px) {
     .discount-pdp__masthead-inner--promo {
       display: grid;
-      grid-template-columns: minmax(4.5rem, 8.75rem) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1fr) minmax(4.5rem, 8.75rem);
       column-gap: 1rem;
       row-gap: 0.65rem;
       align-items: start;
     }
 
     .discount-pdp__masthead-inner--promo.discount-pdp__masthead-inner--promo-no-image {
-      grid-template-columns: minmax(10rem, 22rem) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1fr) minmax(10rem, 22rem);
     }
 
     .discount-pdp__masthead-promo-column {
-      grid-row: 1 / span 2;
       align-self: start;
       min-width: 0;
     }
