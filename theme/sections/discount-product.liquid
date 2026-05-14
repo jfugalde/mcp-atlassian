@@ -62,27 +62,42 @@
     endif
     assign macross_mobile_aspect_ratio = macross_mobile_preview_media.preview_image.aspect_ratio | default: macross_mobile_preview_media.aspect_ratio | default: 1
 
-    assign masthead_promo_image = section.settings.masthead_promo_image
     assign masthead_promo_alt = section.settings.masthead_promo_image_alt | strip
-
     assign macross_mf_promo_image_meta = product.metafields.custom.macross_promo_image
     assign macross_mf_promo_text_meta = product.metafields.custom.macross_promo
 
-    if masthead_promo_image == blank and macross_mf_promo_image_meta != blank
-      assign mf_img_val = macross_mf_promo_image_meta.value
-      if mf_img_val != blank
-        if mf_img_val.preview_image != blank
-          assign masthead_promo_image = mf_img_val.preview_image
-        else
-          assign masthead_promo_image = mf_img_val
+    assign masthead_promo_image = false
+    assign macross_masthead_img_src = ''
+    assign masthead_section_img = section.settings.masthead_promo_image
+
+    if masthead_section_img != blank and masthead_section_img.width > 0
+      assign masthead_promo_image = masthead_section_img
+    elsif macross_mf_promo_image_meta != blank
+      assign mf_raw = macross_mf_promo_image_meta.value
+      if macross_mf_promo_image_meta.list? and mf_raw != blank
+        for mf_one in mf_raw
+          assign mf_raw = mf_one
+          break
+        endfor
+      endif
+      if mf_raw != blank
+        if mf_raw.preview_image != blank and mf_raw.preview_image.width > 0
+          assign masthead_promo_image = mf_raw.preview_image
+        elsif mf_raw.preview_image != blank
+          assign macross_masthead_img_src = mf_raw.preview_image | image_url: width: 800
+        elsif mf_raw.url != blank
+          assign macross_masthead_img_src = mf_raw.url
         endif
         if masthead_promo_alt == blank
-          assign masthead_promo_alt = macross_mf_promo_image_meta.alt | default: mf_img_val.alt | default: masthead_promo_image.alt | default: '' | strip
+          assign masthead_promo_alt = macross_mf_promo_image_meta.alt | default: mf_raw.alt | default: '' | strip
         endif
+      endif
+      if masthead_promo_image == false and macross_masthead_img_src == blank
+        assign macross_masthead_img_src = macross_mf_promo_image_meta | image_url: width: 800
       endif
     endif
 
-    if masthead_promo_image == blank and section.settings.use_product_media_promo_when_masthead_empty and macross_promo_token != blank
+    if masthead_promo_image == false and macross_masthead_img_src == blank and section.settings.use_product_media_promo_when_masthead_empty and macross_promo_token != blank
       for pm_mast in product.media
         assign pm_mast_alt = pm_mast.preview_image.alt | default: '' | strip | downcase
         if pm_mast_alt contains macross_promo_token
@@ -95,12 +110,14 @@
       endfor
     endif
 
-    if masthead_promo_alt == blank and masthead_promo_image != blank
+    if masthead_promo_alt == blank and masthead_promo_image
       assign masthead_promo_alt = masthead_promo_image.alt | default: '' | strip
     endif
 
     assign masthead_show_image = false
-    if masthead_promo_image != blank
+    if masthead_promo_image and masthead_promo_image.width > 0
+      assign masthead_show_image = true
+    elsif macross_masthead_img_src != blank
       assign masthead_show_image = true
     endif
 
@@ -122,7 +139,7 @@
         <div class="discount-pdp__masthead-promo-column">
           {% if masthead_show_image %}
             <div class="discount-pdp__masthead-promo discount-pdp__masthead-promo--well">
-              {% if masthead_promo_image.width > 0 %}
+              {% if masthead_promo_image and masthead_promo_image.width > 0 %}
                 {% render 'responsive-image',
                   image: masthead_promo_image,
                   alt: masthead_promo_alt,
@@ -130,18 +147,16 @@
                   image_class: 'w-full h-auto max-h-[5.5rem] md:max-h-[7.5rem] object-contain rounded-lg',
                   lazy_load: false
                 %}
-              {% elsif macross_mf_promo_image_meta != blank %}
+              {% elsif macross_masthead_img_src != blank %}
                 <div class="discount-pdp__masthead-promo__img sf-image flex w-full justify-center">
-                  {{ macross_mf_promo_image_meta | image_url: width: 720 | image_tag: loading: 'eager', class: 'w-full h-auto max-h-[5.5rem] md:max-h-[7.5rem] object-contain rounded-lg', alt: masthead_promo_alt }}
+                  <img
+                    src="{{ macross_masthead_img_src }}"
+                    alt="{{ masthead_promo_alt | escape }}"
+                    loading="eager"
+                    decoding="async"
+                    class="w-full h-auto max-h-[5.5rem] md:max-h-[7.5rem] object-contain rounded-lg"
+                  >
                 </div>
-              {% else %}
-                {% render 'responsive-image',
-                  image: masthead_promo_image,
-                  alt: masthead_promo_alt,
-                  wrapper_class: 'discount-pdp__masthead-promo__img',
-                  image_class: 'w-full h-auto max-h-[5.5rem] md:max-h-[7.5rem] object-contain rounded-lg',
-                  lazy_load: false
-                %}
               {% endif %}
             </div>
           {% endif %}
@@ -713,7 +728,7 @@
       "type": "image_picker",
       "id": "masthead_promo_image",
       "label": "Masthead promo image",
-      "info": "Optional override in the theme editor. If empty, the product metafield custom.macross_promo_image is used when set; otherwise see “marked product media” below."
+      "info": "Optional override. If you pick an image here but nothing shows, remove it: an invalid or empty section image used to block the product metafield. Metafield is used when this is empty or the file has no usable width."
     },
     {
       "type": "text",
