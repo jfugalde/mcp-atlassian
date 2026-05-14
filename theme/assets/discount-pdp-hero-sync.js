@@ -47,12 +47,24 @@
     hero.setAttribute('aria-label', parts.join('. '));
   }
 
+  function saleFromCompare(price, cap) {
+    if (cap == null || price == null) return { onSale: false, saving: 0, pct: 0 };
+    var p = Number(price);
+    var c = Number(cap);
+    if (!(p >= 0) || !(c > 0) || !(c > p)) return { onSale: false, saving: 0, pct: 0 };
+    var saving = c - p;
+    var pct = Math.round((saving * 100) / c);
+    if (pct < 1) return { onSale: false, saving: 0, pct: 0 };
+    return { onSale: true, saving: saving, pct: pct };
+  }
+
   window.MinimogEvents.subscribe(productId + '__VARIANT_CHANGE', function (variant) {
     if (!variant) return;
 
     var price = variant.price;
     var cap = variant.compare_at_price;
-    var onSale = cap != null && cap > price;
+    var sale = saleFromCompare(price, cap);
+    var onSale = sale.onSale;
 
     var nowEl = hero.querySelector('[data-mp-offer-now]');
     if (nowEl) nowEl.innerHTML = formatCents(price);
@@ -72,7 +84,7 @@
     if (wasWrap && cmpEl) {
       if (onSale) {
         wasWrap.classList.remove('hidden');
-        cmpEl.innerHTML = formatCents(cap);
+        cmpEl.innerHTML = formatCents(Number(cap));
       } else {
         wasWrap.classList.add('hidden');
         cmpEl.innerHTML = '';
@@ -85,8 +97,7 @@
         badge.classList.remove('hidden');
         var pctEl = badge.querySelector('[data-mp-offer-pct]');
         if (pctEl) {
-          var p = Math.round(((cap - price) * 100) / cap);
-          pctEl.textContent = '-' + p + '%';
+          pctEl.textContent = '-' + sale.pct + '%';
         }
       } else {
         badge.classList.add('hidden');
@@ -99,11 +110,10 @@
     if (tierRow) {
       if (onSale) {
         tierRow.classList.remove('hidden');
-        var saving = cap - price;
         var savedEl = tierRow.querySelector('[data-mp-offer-saved-amount]');
-        if (savedEl) savedEl.innerHTML = formatCents(saving);
+        if (savedEl) savedEl.innerHTML = formatCents(sale.saving);
 
-        var discountPct = Math.round((saving * 100) / cap);
+        var discountPct = sale.pct;
         var tierNum = 1;
         if (discountPct >= 30) tierNum = 3;
         else if (discountPct >= 15) tierNum = 2;

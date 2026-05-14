@@ -3,15 +3,35 @@
   Compact, high-impact, no filler text. The price speaks for itself.
 {% endcomment %}
 {%- liquid
-  assign ph_only_when_on_sale = section.settings.discount_only_when_on_sale | default: true
+  assign ph_only_when_on_sale = section.settings.discount_only_when_on_sale | default: false
   assign ph_show_unit_hint = section.settings.discount_show_unit_hint | default: true
 
   assign v = product.selected_or_first_available_variant
   assign compare_at = v.compare_at_price
   assign price = v.price
+  # compare_at_price_max only safe for single-variant; else max can be another SKU's MSRP
+  if compare_at == blank or compare_at == 0
+    if product.has_only_default_variant
+      assign compare_at = product.compare_at_price_max
+    endif
+  endif
+  if compare_at == blank
+    assign compare_at = 0
+  endif
   assign on_sale = false
+  assign discount_pct = 0
+  assign saved_amount = 0
   if compare_at > price
-    assign on_sale = true
+    assign saved_amount = compare_at | minus: price
+    if saved_amount > 0
+      assign discount_pct = saved_amount | times: 100.0 | divided_by: compare_at | round
+      if discount_pct >= 1
+        assign on_sale = true
+      else
+        assign saved_amount = 0
+        assign discount_pct = 0
+      endif
+    endif
   endif
 
   assign show_band = true
@@ -21,12 +41,6 @@
 -%}
 {% if show_band %}
   {%- liquid
-    assign discount_pct = 0
-    assign saved_amount = 0
-    if on_sale
-      assign saved_amount = compare_at | minus: price
-      assign discount_pct = saved_amount | times: 100.0 | divided_by: compare_at | round
-    endif
     if discount_pct > 100
       assign discount_pct = 100
     endif
@@ -109,8 +123,10 @@
 {% endif %}
 
 {% stylesheet %}
-  /* Light by default (matches typical white storefront) — dark via OS preference */
+  /* Light card only; avoids OS dark mode flipping the masthead to black */
   .mp-offer {
+    color-scheme: light;
+    color: rgba(26, 20, 18, 0.92);
     --offer-red: var(--mp-red, #b33029);
     --offer-red-soft: var(--mp-red-soft, #d45850);
     --offer-paper: var(--mp-warm-paper, #f6f1e7);
@@ -127,6 +143,8 @@
       inset 0 1px 0 rgba(255, 255, 255, 0.9),
       inset 0 0 0 1px rgba(179, 48, 41, 0.22),
       0 6px 24px rgba(42, 34, 32, 0.1);
+    outline: 1px solid rgba(102, 102, 102, 0.35);
+    outline-offset: 2px;
     font-family: var(--discount-pdp-font-ui);
     -webkit-font-smoothing: antialiased;
   }
@@ -308,76 +326,5 @@
 
   .mp-offer--regular .mp-offer__glow {
     display: none;
-  }
-
-  /* Dark mode via OS preference */
-  @media (prefers-color-scheme: dark) {
-    .mp-offer {
-      background: linear-gradient(165deg, #141110 0%, #0a0908 100%);
-      box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.06),
-        inset 0 0 0 1px rgba(179, 48, 41, 0.35),
-        0 8px 32px rgba(0, 0, 0, 0.4);
-    }
-
-    .mp-offer__glow {
-      background: radial-gradient(ellipse 65% 50% at 25% 35%, rgba(179, 48, 41, 0.5), transparent 60%);
-    }
-
-    .mp-offer__title {
-      color: rgba(246, 241, 231, 0.94);
-    }
-
-    .mp-offer__now {
-      color: var(--offer-paper);
-    }
-
-    .mp-offer__now--regular {
-      color: rgba(246, 241, 231, 0.88);
-    }
-
-    .mp-offer__was {
-      color: rgba(246, 241, 231, 0.5);
-    }
-
-    .mp-offer__was s {
-      text-decoration-color: rgba(179, 48, 41, 0.7);
-    }
-
-    .mp-offer__tier-label {
-      background: rgba(246, 241, 231, 0.08);
-      border-color: rgba(246, 241, 231, 0.12);
-      color: rgba(246, 241, 231, 0.85);
-    }
-
-    .mp-offer--tier-2 .mp-offer__tier-label,
-    .mp-offer--tier-3 .mp-offer__tier-label {
-      background: rgba(179, 48, 41, 0.2);
-      border-color: rgba(179, 48, 41, 0.35);
-      color: var(--offer-paper);
-    }
-
-    .mp-offer__tier-saved {
-      color: var(--offer-red-soft);
-    }
-
-    .mp-offer__unit {
-      border-top-color: rgba(102, 102, 102, 0.25);
-      color: rgba(196, 196, 196, 0.65);
-    }
-
-    .mp-offer--regular {
-      background: linear-gradient(165deg, #1a1715 0%, #0e0c0b 100%);
-      box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.04),
-        inset 0 0 0 1px rgba(102, 102, 102, 0.2),
-        0 6px 20px rgba(0, 0, 0, 0.25);
-    }
-
-    .mp-offer__badge {
-      box-shadow:
-        0 4px 16px rgba(179, 48, 41, 0.55),
-        inset 0 1px 0 rgba(255, 255, 255, 0.25);
-    }
   }
 {% endstylesheet %}

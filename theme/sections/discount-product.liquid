@@ -51,7 +51,7 @@
       class="{{ container }} discount-pdp__masthead-inner{% if masthead_has_promo %} discount-pdp__masthead-inner--promo{% endif %}"
     >
       {% if masthead_has_promo %}
-        <div class="discount-pdp__masthead-promo">
+        <div class="discount-pdp__masthead-promo discount-pdp__masthead-promo--well">
           {% if masthead_promo_alt != blank %}
             {% render 'responsive-image',
               image: masthead_promo_image,
@@ -167,11 +167,25 @@
             assign variant = product.selected_or_first_available_variant
             assign compare_at_price = variant.compare_at_price
             assign price = variant.price
+            if compare_at_price == blank or compare_at_price == 0
+              if product.has_only_default_variant
+                assign compare_at_price = product.compare_at_price_max
+              endif
+            endif
+            if compare_at_price == blank
+              assign compare_at_price = 0
+            endif
             assign on_sale = false
             if compare_at_price > price
-              assign on_sale = true
+              assign _sale_saved = compare_at_price | minus: price
+              if _sale_saved > 0
+                assign _sale_pct = _sale_saved | times: 100.0 | divided_by: compare_at_price | round
+                if _sale_pct >= 1
+                  assign on_sale = true
+                endif
+              endif
             endif
-            assign ph_only_when_on_sale = section.settings.discount_only_when_on_sale | default: true
+            assign ph_only_when_on_sale = section.settings.discount_only_when_on_sale | default: false
             assign discount_hero_band_visible = true
             if ph_only_when_on_sale and on_sale == false
               assign discount_hero_band_visible = false
@@ -222,8 +236,8 @@
 {%- endif -%}
 {% if product.options_with_values.size > 0 %}
   <script src="{{ 'variant-picker.min.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'discount-pdp-hero-sync.js' | asset_url }}" defer="defer"></script>
 {% endif %}
+<script src="{{ 'discount-pdp-hero-sync.js' | asset_url }}" defer="defer"></script>
 <div
   id="fox-product-bundle-outside"
   data-fox-app="true"
@@ -254,7 +268,8 @@
   /* Macross Pharma — same palette as PDP disclaimer + mark */
   .discount-pdp {
     position: relative;
-    color-scheme: dark;
+    color-scheme: light;
+    color: var(--mp-charcoal, #131110);
     /* One UI stack + theme heading for display moments (matches storefront fonts) */
     --discount-pdp-font-ui: var(
       --font-stack-body,
@@ -348,6 +363,14 @@
       margin-right: 0;
       max-width: none;
     }
+  }
+
+  .discount-pdp__masthead-promo--well {
+    align-self: start;
+    padding: 0.5rem;
+    border-radius: 0.65rem;
+    background: rgba(179, 48, 41, 0.06);
+    border: 1px solid rgba(102, 102, 102, 0.2);
   }
 
   .discount-pdp__masthead-label {
@@ -573,14 +596,14 @@
       "type": "text",
       "id": "masthead_promo_image_alt",
       "label": "Promo image alt text",
-      "default": "",
-      "info": "Describe the promo for screen readers (e.g. “promo” or “Regalo con compra”). If empty, the image file’s alt in Shopify is used when set."
+      "info": "Describe the promo for screen readers (e.g. “promo” or “Regalo con compra”). Leave blank to use the image file’s alt in Shopify when set."
     },
     {
       "type": "checkbox",
       "id": "discount_only_when_on_sale",
       "label": "Show discount hero only when the variant is on sale",
-      "default": true
+      "info": "When enabled, the masthead hides unless Shopify has a compare-at price above the selling price (variant or product max). Turn off to always show the masthead on this template.",
+      "default": false
     },
     {
       "type": "checkbox",

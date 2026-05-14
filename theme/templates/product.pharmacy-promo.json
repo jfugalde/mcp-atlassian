@@ -68,8 +68,9 @@
         "enable_dynamic_checkout": false,
         "sticky_atc_wishtlist": false,
         "sticky_atc_compare": false,
-        "show_masthead_label": false,
-        "discount_only_when_on_sale": true,
+        "show_masthead_label": true,
+        "masthead_label": "Oferta especial · Farmacia Macross",
+        "discount_only_when_on_sale": false,
         "discount_show_unit_hint": true
       }
     },
