@@ -140,13 +140,23 @@
           {% if masthead_show_image %}
             <div class="discount-pdp__masthead-promo discount-pdp__masthead-promo--well">
               {% if masthead_promo_image and masthead_promo_image.width > 0 %}
-                {% render 'responsive-image',
-                  image: masthead_promo_image,
-                  alt: masthead_promo_alt,
-                  wrapper_class: 'discount-pdp__masthead-promo__img',
-                  image_class: 'w-full h-auto max-h-[5.5rem] md:max-h-[7.5rem] object-contain rounded-lg',
-                  lazy_load: false
-                %}
+                <div class="discount-pdp__masthead-promo__img sf-image flex w-full justify-center">
+                  <img
+                    src="{{ masthead_promo_image | image_url: width: 360 }}"
+                    srcset="{%- if masthead_promo_image.width >= 165 -%}{{ masthead_promo_image | image_url: width: 165 }} 165w,{%- endif -%}
+                      {%- if masthead_promo_image.width >= 360 -%}{{ masthead_promo_image | image_url: width: 360 }} 360w,{%- endif -%}
+                      {%- if masthead_promo_image.width >= 533 -%}{{ masthead_promo_image | image_url: width: 533 }} 533w,{%- endif -%}
+                      {{ masthead_promo_image | image_url }} {{ masthead_promo_image.width }}w"
+                    sizes="(max-width: 767px) 42vw, min(9rem, 25vw)"
+                    alt="{{ masthead_promo_alt | escape }}"
+                    width="{{ masthead_promo_image.width }}"
+                    height="{{ masthead_promo_image.height }}"
+                    loading="eager"
+                    decoding="async"
+                    fetchpriority="high"
+                    class="w-full h-auto max-h-[5.5rem] md:max-h-[7.5rem] object-contain rounded-lg"
+                  >
+                </div>
               {% elsif macross_masthead_img_src != blank %}
                 <div class="discount-pdp__masthead-promo__img sf-image flex w-full justify-center">
                   <img
@@ -505,6 +515,7 @@
     border-radius: 0.65rem;
     background: rgba(179, 48, 41, 0.06);
     border: 1px solid rgba(102, 102, 102, 0.2);
+    min-width: 4.5rem;
   }
 
   .discount-pdp__masthead-label {
