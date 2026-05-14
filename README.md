@@ -7,7 +7,7 @@ This repository contains client-specific deliverables for Farmacias Macross.
 - `vendor/skeleton-reference/Macross-V1.0.1/` – Archived **Shopify skeleton** copy for reference only; not deployed.
 - `docs/pm/` – Project management documentation for Macross
 - `docs/shopify-analysis/` – Audit outputs (see `scripts/README.md`; canonical tooling lives in `ryu-platform`)
-- `scripts/` – Jira import helpers, GraphQL snapshots, and pointers to shared tooling
+- `scripts/` – GraphQL snapshots and pointers to shared tooling (`scripts/shopify-analysis/`)
 - `admin-app/` – Shopify admin app (Macross)
 
 ## Analysis tooling
