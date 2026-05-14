@@ -12,5 +12,6 @@ Return image link or emtpy
 {%- assign key = '_' | append: t | append: '|' -%}
 {%- if schema contains key -%}
     {%- assign image_index = schema | strip_newlines | split: key | first | split: '|' | size | plus: 1 -%}
-    {{ 'filter_color' | append: image_index | append: '.png' }}
+    {%- assign swk = 'filter_color' | append: image_index | append: '_swatch' -%}
+    {%- render 'swatch-texture-url', swatch_key: swk -%}
 {%- endif -%}

@@ -86,12 +86,7 @@
                         capture texture
                           render 'get_swatch_texture', texture_name: tag
                         endcapture
-
-                        capture texture_style
-                          if texture != ''
-                            echo texture | asset_url
-                          endif
-                        endcapture
+                        assign texture_style = texture | strip
                         
                         assign colors = ',' | append: settings.product_colors | strip_newlines | downcase | append: ','
                         assign _tag = tag | downcase | strip

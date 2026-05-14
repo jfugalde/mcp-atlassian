@@ -9,14 +9,15 @@
 {%- capture color_swatches -%}
   {%- for i in (1..100) -%}
       {%- assign key = 'filter_color' | append: i -%}
-      {%- assign key2 = 'filter_color' | append: i | append: '.png' -%}
+      {%- assign key2 = 'filter_color' | append: i | append: '_swatch' -%}
+      {%- assign legacy_json_key = 'filter_color' | append: i | append: '.png' -%}
 
       {%- capture texture_style -%}
-          {{ key2 | asset_url }}
+          {%- render 'swatch-texture-url', swatch_key: key2 -%}
       {%- endcapture -%}
 
       {%- if texture_style != '' and settings[key] != null and settings[key] != '' -%}
-          {{ key2 | json }}: {{ texture_style | json }},
+          {{ legacy_json_key | json }}: {{ texture_style | json }},
           {{ key | json }}: {{ settings[key] | json }},
       {% endif %}
   {%- endfor -%}

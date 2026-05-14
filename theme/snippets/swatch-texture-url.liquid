@@ -1,0 +1,13 @@
+{% comment %}
+  Resolves a color swatch image URL from theme settings (image_picker) or falls back to
+  a legacy static asset named filter_color{N}.png in /assets/.
+  @param swatch_key {String} e.g. filter_color3_swatch
+{% endcomment %}
+{%- unless swatch_key == blank -%}
+  {%- if settings[swatch_key] != blank -%}
+    {{- settings[swatch_key] | image_url: width: 120 -}}
+  {%- else -%}
+    {%- assign legacy = swatch_key | remove: '_swatch' | append: '.png' -%}
+    {{- legacy | asset_url -}}
+  {%- endif -%}
+{%- endunless -%}
