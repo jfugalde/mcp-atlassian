@@ -62,9 +62,15 @@
 <div class="image-card {{ grid_columns }} sm:max-h-full {{ padding_bot | default: 'pb-0' }} {% if stack_on_mobile == true or use_content_above == false %}image-card--content-stack{% endif %} {% if button_fixed == true %}image-card--button-fixed{% endif %} {{ image_card_class }}">
     <div class="image-card__inner relative sm:overflow-hidden flex flex-col h-full w-full">
         {% if image != blank %}
-            <{% if block.settings.link %}a{% else %}div{% endif %} class="image-card__img block h-full" href="{{ block.settings.link | default: "#" }}">
+            {% if block.settings.link != blank %}
+              <a class="image-card__img block h-full" href="{{ block.settings.link }}">
                 {% render 'responsive-image', image: image, wrapper_class: 'w-full h-full' %}
-            </{% if block.settings.link %}a{% else %}div{% endif %}>
+              </a>
+            {% else %}
+              <div class="image-card__img block h-full">
+                {% render 'responsive-image', image: image, wrapper_class: 'w-full h-full' %}
+              </div>
+            {% endif %}
         {% else %}
             <div class="image-card__img  h-full w-full sf__placeholder-wrapper sf-image--loaded">
                 {% capture current %}{% cycle 1, 2, 3, 4, 5 %}{% endcapture %}

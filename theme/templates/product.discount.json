@@ -69,7 +69,7 @@
         "sticky_atc_wishtlist": false,
         "sticky_atc_compare": false,
         "show_masthead_label": false,
-        "discount_only_when_on_sale": true,
+        "discount_only_when_on_sale": false,
         "discount_show_unit_hint": true
       }
     },

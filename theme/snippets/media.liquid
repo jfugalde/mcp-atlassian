@@ -3,7 +3,7 @@
     {% render 'responsive-image', image: media.preview_image %}
   </div>
   {% if media.media_type == 'model' %}
-    <div class="sf-prod-media media-model hidden" style="--aspect-ratio: 1/1;" data-media-id="{{ media.id }}"">
+    <div class="sf-prod-media media-model hidden" style="--aspect-ratio: 1/1;" data-media-id="{{ media.id }}">
       {{ media | model_viewer_tag }}
     </div>
   {% endif %}
