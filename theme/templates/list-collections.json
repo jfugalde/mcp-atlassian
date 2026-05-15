@@ -46,6 +46,20 @@
             "collection": "productos-hormonales-especializados",
             "image": "shopify://shop_images/imagen_2023-04-03_142914263.png"
           }
+        },
+        "cl-hema": {
+          "type": "collection_item",
+          "settings": {
+            "collection": "hematologia",
+            "image": "shopify://shop_images/imagen_2023-04-03_142546553.png"
+          }
+        },
+        "cl-infec": {
+          "type": "collection_item",
+          "settings": {
+            "collection": "infecciosas-y-parasitarias",
+            "image": "shopify://shop_images/imagen_2023-04-03_142914263.png"
+          }
         }
       },
       "block_order": [
@@ -53,7 +67,9 @@
         "cl-immune",
         "cl-cardio",
         "cl-reuma",
-        "cl-hormonal"
+        "cl-hormonal",
+        "cl-hema",
+        "cl-infec"
       ],
       "settings": {
         "title": "Categorías",

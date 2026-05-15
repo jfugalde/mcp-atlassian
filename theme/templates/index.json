@@ -394,13 +394,31 @@
             "title": "Reumatología y traumatología",
             "item_image": "shopify://shop_images/imagen_2023-04-03_145556394.png"
           }
+        },
+        "cl-hematologia": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "hematologia",
+            "title": "Hematología",
+            "item_image": "shopify://shop_images/imagen_2023-04-03_142546553.png"
+          }
+        },
+        "cl-infecciosas": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "infecciosas-y-parasitarias",
+            "title": "Infecciosas y Parasitarias",
+            "item_image": "shopify://shop_images/imagen_2023-04-03_142914263.png"
+          }
         }
       },
       "block_order": [
         "6d4abb37-5aa2-4499-a2b0-5d85f0d36eec",
         "collection-list-1",
         "12985deb-0775-45ce-80f6-6be7f3150a91",
-        "65e38235-f03b-43c9-8590-38c9c656e51c"
+        "65e38235-f03b-43c9-8590-38c9c656e51c",
+        "cl-hematologia",
+        "cl-infecciosas"
       ],
       "custom_css": [],
       "settings": {
