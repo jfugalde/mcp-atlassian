@@ -108,7 +108,7 @@
           "container": "container-fluid",
           "header_sticky": false,
           "transparent_on_top": false,
-          "logo_text": "MINIMOG",
+          "logo_text": "",
           "logo": "shopify://shop_images/logo2.png",
           "logo_mobile": "shopify://shop_images/logo2.png",
           "logo_transparent": "shopify://shop_images/logo2.png",
@@ -152,8 +152,8 @@
           "7ebc2f78-975b-4a81-b874-103c3355a866": {
             "type": "menu",
             "settings": {
-              "menu": "main-menu-1",
-              "title": "",
+              "menu": "encabezado",
+              "title": "Navegación",
               "width": "25%",
               "order_first": false,
               "open_default": false
