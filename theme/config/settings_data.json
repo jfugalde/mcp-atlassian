@@ -82,7 +82,7 @@
     "show_delivery_days": true,
     "search_by_tag": true,
     "search_by_body": true,
-    "popular_search_queries": "Zytiga,Xtandi,Eligard",
+    "popular_search_queries": "Zytiga, Xtandi, Eligard, Biktarvy, Synvisc, Oncológicos, Cardiología",
     "wishlist_page": "wishlist",
     "product_compare_page": "product-compare",
     "agree_text": "",
@@ -101,53 +101,8 @@
     "sections": {
       "header": {
         "type": "header",
-        "blocks": {
-          "5b9aec5f-b955-4765-9a87-1962d613e909": {
-            "type": "custom_html",
-            "settings": {
-              "heading": "Inicio",
-              "container": "container-fluid",
-              "html": ""
-            }
-          },
-          "a820a1bc-dfc4-4e61-8c8a-de23659759a6": {
-            "type": "banner",
-            "settings": {
-              "heading": "Shop",
-              "container": "container-fluid",
-              "banner_style": "outside",
-              "banner_link": "",
-              "banner_title": "The New - Season Shoes Edit",
-              "banner_desc": "",
-              "banner_button_text": "Shop now"
-            }
-          },
-          "31481022-f698-4968-bf06-3c24f36b09e7": {
-            "type": "product-list",
-            "settings": {
-              "heading": "Products",
-              "container": "container-fluid",
-              "stretch_width": false,
-              "collection": "best-sellers",
-              "limit": 6,
-              "columns": 2
-            }
-          },
-          "ea723308-92c0-42ae-a45d-aede426d8cdd": {
-            "type": "custom_html",
-            "settings": {
-              "heading": "Features",
-              "container": "inherit",
-              "html": ""
-            }
-          }
-        },
-        "block_order": [
-          "5b9aec5f-b955-4765-9a87-1962d613e909",
-          "a820a1bc-dfc4-4e61-8c8a-de23659759a6",
-          "31481022-f698-4968-bf06-3c24f36b09e7",
-          "ea723308-92c0-42ae-a45d-aede426d8cdd"
-        ],
+        "blocks": {},
+        "block_order": [],
         "settings": {
           "header_design": "logo-left__2l",
           "container": "container-fluid",
