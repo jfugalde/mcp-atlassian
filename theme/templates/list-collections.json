@@ -12,52 +12,52 @@
     "main": {
       "type": "collection-list-template",
       "blocks": {
-        "06786fde-900d-4048-b2a7-2f1af4b4963e": {
+        "cl-onc": {
           "type": "collection_item",
           "settings": {
-            "collection": "sweaters",
-            "image": "shopify://shop_images/1_a49daa5e-800a-463a-9b51-cbdee5b9d46a.jpg"
+            "collection": "medicamento-oncologicos-al-mejor-precio-alta-especialidad",
+            "image": "shopify://shop_images/imagen_2023-04-03_142546553.png"
           }
         },
-        "c3c7dd10-c393-458e-a903-3de238b2e424": {
+        "cl-immune": {
           "type": "collection_item",
           "settings": {
-            "collection": "leather-boots",
-            "image": "shopify://shop_images/2_3d429d45-b48d-4f2c-9756-43e16ba15a58.jpg"
+            "collection": "medicamentos-para-el-sistema-inmunologico-1",
+            "image": "shopify://shop_images/imagen_2023-04-03_142021791.png"
           }
         },
-        "b43bcd47-6305-4507-86b2-397dcbb3cdfc": {
+        "cl-cardio": {
           "type": "collection_item",
           "settings": {
-            "collection": "denim-pants",
-            "image": "shopify://shop_images/3_453ceb49-11f8-4463-a304-5d1ac0d355a1.jpg"
+            "collection": "cardiologia",
+            "image": "shopify://shop_images/imagen_2023-04-03_143736464.png"
           }
         },
-        "17b453d1-b173-4aed-8571-7dc75d2ec6ca": {
+        "cl-reuma": {
           "type": "collection_item",
           "settings": {
-            "collection": "sunglasses",
-            "image": "shopify://shop_images/4_de697563-5f04-4d88-8028-1e5ff3fcea3e.jpg"
+            "collection": "reumatologia-y-traumatologia",
+            "image": "shopify://shop_images/imagen_2023-04-03_145556394.png"
           }
         },
-        "3aedbb94-935a-4d80-865f-7c7fbbbddb39": {
+        "cl-hormonal": {
           "type": "collection_item",
           "settings": {
-            "collection": "leather-bag",
-            "image": "shopify://shop_images/5_a506fafd-bde8-4dfc-b652-1db5fb97144c.jpg"
+            "collection": "productos-hormonales-especializados",
+            "image": "shopify://shop_images/imagen_2023-04-03_142914263.png"
           }
         }
       },
       "block_order": [
-        "06786fde-900d-4048-b2a7-2f1af4b4963e",
-        "c3c7dd10-c393-458e-a903-3de238b2e424",
-        "b43bcd47-6305-4507-86b2-397dcbb3cdfc",
-        "17b453d1-b173-4aed-8571-7dc75d2ec6ca",
-        "3aedbb94-935a-4d80-865f-7c7fbbbddb39"
+        "cl-onc",
+        "cl-immune",
+        "cl-cardio",
+        "cl-reuma",
+        "cl-hormonal"
       ],
       "settings": {
-        "title": "All collection",
-        "description": "<p>Posuere in netus a eu varius adipiscing suspendisse elementum vitae tempor suspendisse <br/>ullamcorper aenean taciti morbi potenti.</p>"
+        "title": "Categorías",
+        "description": "<p>Medicamentos de alta especialidad por área terapéutica.</p>"
       }
     }
   },
