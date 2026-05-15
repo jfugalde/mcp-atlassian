@@ -19,14 +19,22 @@
 {%- endunless -%}
 {%- endif -%}
 
-{%- unless use_custom_font_body or settings.type_base_font.system? -%}
+{%- if use_custom_font_body == true and custom_body_font != blank -%}
+  {%- assign first_body_font = custom_body_font | newline_to_br | split: '<br />' | first -%}
+  {%- assign first_body_font_url = first_body_font | split: '@' | first | strip_newlines -%}
+  <link rel="preload" as="font" href="{{ first_body_font_url }}" type="font/ttf" crossorigin>
+{%- elsif settings.type_base_font.system? == false -%}
   <link rel="preload" as="font" href="{{ base_font | font_url }}" type="font/woff2" crossorigin>
   <link rel="preload" as="font" href="{{ base_font_bold | font_url }}" type="font/woff2" crossorigin>
-{%- endunless -%}
+{%- endif -%}
 
-{%- unless use_custom_font_heading or settings.type_header_font.system? -%}
+{%- if use_custom_font_heading == true and custom_heading_font != blank -%}
+  {%- assign first_heading_font = custom_heading_font | newline_to_br | split: '<br />' | first -%}
+  {%- assign first_heading_font_url = first_heading_font | split: '@' | first | strip_newlines -%}
+  <link rel="preload" as="font" href="{{ first_heading_font_url }}" type="font/ttf" crossorigin>
+{%- elsif settings.type_header_font.system? == false -%}
   <link rel="preload" as="font" href="{{ header_font | font_url }}" type="font/woff2" crossorigin>
-{%- endunless -%}
+{%- endif -%}
 
 {%- capture typo_settings -%}
 {%- if use_custom_font_heading == true and custom_heading_font != blank -%}
