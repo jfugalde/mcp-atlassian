@@ -33,7 +33,7 @@
           "settings": {
             "design_filtergroup": "inrow",
             "title": "Tags",
-            "filtergroup": "Cardiologia,Oncologia,",
+            "filtergroup": "Cardiologia,Oncologia,Reumatologia,",
             "show_label": false,
             "use_accordion": true,
             "open_filtergroup": true
@@ -51,7 +51,7 @@
         "pagination_limit": 12,
         "paginate_type": "paginate",
         "show_sorting": true,
-        "show_filter": false,
+        "show_filter": true,
         "filters_type": "tags_filter",
         "sidebar": "leftColumn",
         "sidebar_title": "Filters",

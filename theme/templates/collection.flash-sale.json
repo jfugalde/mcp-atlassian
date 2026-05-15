@@ -29,6 +29,22 @@
     },
     "main": {
       "type": "main-collection-product-grid",
+      "blocks": {
+        "00b3badd-1613-4230-85d8-f87f04306aaa": {
+          "type": "filter",
+          "settings": {
+            "design_filtergroup": "inrow",
+            "title": "Tags",
+            "filtergroup": "Cardiologia,Oncologia,Reumatologia,",
+            "show_label": false,
+            "use_accordion": true,
+            "open_filtergroup": true
+          }
+        }
+      },
+      "block_order": [
+        "00b3badd-1613-4230-85d8-f87f04306aaa"
+      ],
       "settings": {
         "container": "container",
         "grid_layout": "grid",
@@ -36,18 +52,23 @@
         "pagination_limit": 12,
         "paginate_type": "paginate",
         "show_sorting": true,
-        "show_filter": false,
+        "show_filter": true,
         "filters_type": "tags_filter",
         "sidebar": "leftColumn",
         "sidebar_title": "Filters",
-        "limit_height_widget": false
+        "limit_height_widget": false,
+        "limit_height": 300,
+        "change_product_variant_on_fitlering": true,
+        "show_product_count": true,
+        "collapsed_groups": "Brand, Vendor, Size",
+        "color_swatches": "color,colour,couleur,farbe"
       }
     },
     "recent-viewed": {
       "type": "recent-viewed-products",
       "settings": {
         "container": "container",
-        "heading": "Recently Viewed Products",
+        "heading": "Recientemente vistos",
         "columns": 4,
         "column_gap": 30,
         "enable_slider": true
