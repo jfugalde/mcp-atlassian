@@ -327,9 +327,9 @@
         "explora-text": {
           "type": "text",
           "settings": {
-            "title": "<h2>Explora por especialidad</h2>",
+            "title": "",
             "subheading": "",
-            "text": "<p>Encuentra tus medicamentos de alta especialidad organizados por área terapéutica: oncología, hematología, reumatología, cardiología, inmunología, hormonales y más.</p>",
+            "text": "<p>Oncología, hematología, reumatología, cardiología, inmunología, hormonales y más.</p>",
             "width": "100%",
             "alignment": "center",
             "align_text": "center",
@@ -359,6 +359,115 @@
         "padding_top": 60,
         "padding_bottom": 60,
         "custom_class": "sf-home__explora-cta"
+      }
+    },
+    "collection-list": {
+      "type": "collection-list",
+      "blocks": {
+        "cl-onc": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "medicamento-oncologicos-al-mejor-precio-alta-especialidad",
+            "title": "",
+            "item_image": "shopify://shop_images/imagen_2023-04-03_142546553.png"
+          }
+        },
+        "cl-hema": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "hematologia",
+            "title": "Hematología",
+            "item_image": "shopify://shop_images/imagen_2023-04-03_142546553.png"
+          }
+        },
+        "cl-reuma": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "reumatologia-y-traumatologia",
+            "title": "Reumatología y traumatología",
+            "item_image": "shopify://shop_images/imagen_2023-04-03_145556394.png"
+          }
+        },
+        "cl-infec": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "infecciosas-y-parasitarias",
+            "title": "Infecciosas y Parasitarias",
+            "item_image": "shopify://shop_images/imagen_2023-04-03_142914263.png"
+          }
+        },
+        "cl-immune": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "medicamentos-para-el-sistema-inmunologico-1",
+            "title": "",
+            "item_image": "shopify://shop_images/imagen_2023-04-03_142021791.png"
+          }
+        },
+        "cl-hormonal": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "productos-hormonales-especializados",
+            "title": "",
+            "item_image": "shopify://shop_images/imagen_2023-04-03_142914263.png"
+          }
+        },
+        "cl-cardio": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "cardiologia",
+            "title": "Cardiológicos",
+            "item_image": "shopify://shop_images/imagen_2023-04-03_143736464.png"
+          }
+        },
+        "cl-mas-vendido": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "lo-mas-vendido",
+            "title": "Lo más vendido",
+            "item_image": "shopify://shop_images/imagen_2023-04-03_143736464.png"
+          }
+        }
+      },
+      "block_order": [
+        "cl-onc",
+        "cl-hema",
+        "cl-reuma",
+        "cl-infec",
+        "cl-immune",
+        "cl-hormonal",
+        "cl-cardio",
+        "cl-mas-vendido"
+      ],
+      "custom_css": [],
+      "settings": {
+        "heading": "Explora por especialidad",
+        "subheading": "",
+        "description": "<p>Medicamentos de alta especialidad organizados por área terapéutica.</p>",
+        "header_alignment": "center",
+        "container": "container",
+        "background_color": "",
+        "layout": "grid",
+        "expanded": true,
+        "card_style": "inside",
+        "text_alignment": "left",
+        "hover_effect": "scaling-up",
+        "show_product_count": false,
+        "count_inline_title": true,
+        "image_rounded": false,
+        "items_per_row": 4,
+        "item_gap": 30,
+        "enable_slider": true,
+        "show_pagination": true,
+        "show_navigation": true,
+        "autorotate": false,
+        "autorotate_speed": 4,
+        "use_scroll_mobile": true,
+        "mobile_gap": 16,
+        "hidden_slide_control_mobile": false,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "custom_class": "sf-home__collection-list"
       }
     },
     "d1931db9-7c55-4c61-906b-2eb379b3e320": {
@@ -397,6 +506,7 @@
   "order": [
     "slideshow",
     "explora-cta",
+    "collection-list",
     "product-tabs",
     "1680553798df70faa0",
     "f53b0faf-c303-4932-b6b1-6704cc2be1b4",

@@ -355,6 +355,9 @@
     "customer": {
       "account": "Account",
       "log_in": "Log in"
+    },
+    "mobile_menu": {
+      "whatsapp": "WhatsApp — choose a branch"
     }
   },
   "pages": {

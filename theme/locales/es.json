@@ -354,6 +354,9 @@
     "customer": {
       "account": "Cuenta",
       "log_in": "Inicia sesión"
+    },
+    "mobile_menu": {
+      "whatsapp": "WhatsApp — elige sucursal"
     }
   },
   "pages": {
