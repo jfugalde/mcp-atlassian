@@ -19,18 +19,11 @@
             "image": "shopify://shop_images/imagen_2023-04-03_142546553.png"
           }
         },
-        "cl-immune": {
+        "cl-hema": {
           "type": "collection_item",
           "settings": {
-            "collection": "medicamentos-para-el-sistema-inmunologico-1",
-            "image": "shopify://shop_images/imagen_2023-04-03_142021791.png"
-          }
-        },
-        "cl-cardio": {
-          "type": "collection_item",
-          "settings": {
-            "collection": "cardiologia",
-            "image": "shopify://shop_images/imagen_2023-04-03_143736464.png"
+            "collection": "hematologia",
+            "image": "shopify://shop_images/imagen_2023-04-03_142546553.png"
           }
         },
         "cl-reuma": {
@@ -40,6 +33,20 @@
             "image": "shopify://shop_images/imagen_2023-04-03_145556394.png"
           }
         },
+        "cl-infec": {
+          "type": "collection_item",
+          "settings": {
+            "collection": "infecciosas-y-parasitarias",
+            "image": "shopify://shop_images/imagen_2023-04-03_142914263.png"
+          }
+        },
+        "cl-immune": {
+          "type": "collection_item",
+          "settings": {
+            "collection": "medicamentos-para-el-sistema-inmunologico-1",
+            "image": "shopify://shop_images/imagen_2023-04-03_142021791.png"
+          }
+        },
         "cl-hormonal": {
           "type": "collection_item",
           "settings": {
@@ -47,33 +54,36 @@
             "image": "shopify://shop_images/imagen_2023-04-03_142914263.png"
           }
         },
-        "cl-hema": {
+        "cl-cardio": {
           "type": "collection_item",
           "settings": {
-            "collection": "hematologia",
-            "image": "shopify://shop_images/imagen_2023-04-03_142546553.png"
+            "collection": "cardiologia",
+            "image": "shopify://shop_images/imagen_2023-04-03_143736464.png"
           }
         },
-        "cl-infec": {
+        "cl-mas-vendido": {
           "type": "collection_item",
           "settings": {
-            "collection": "infecciosas-y-parasitarias",
-            "image": "shopify://shop_images/imagen_2023-04-03_142914263.png"
+            "collection": "lo-mas-vendido",
+            "image": "shopify://shop_images/imagen_2023-04-03_143736464.png"
           }
         }
       },
       "block_order": [
         "cl-onc",
-        "cl-immune",
-        "cl-cardio",
-        "cl-reuma",
-        "cl-hormonal",
         "cl-hema",
-        "cl-infec"
+        "cl-reuma",
+        "cl-infec",
+        "cl-immune",
+        "cl-hormonal",
+        "cl-cardio",
+        "cl-mas-vendido"
       ],
       "settings": {
-        "title": "Categorías",
-        "description": "<p>Medicamentos de alta especialidad por área terapéutica.</p>"
+        "container": "container",
+        "display_type": "selected",
+        "title": "Explora por especialidad",
+        "description": "<p>Medicamentos de alta especialidad organizados por área terapéutica. Selecciona una categoría para ver los tratamientos disponibles, precios y disponibilidad.</p>"
       }
     }
   },
