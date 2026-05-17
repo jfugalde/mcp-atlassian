@@ -1,0 +1,86 @@
+/* ── Collection icon pill strip ───────────────────────────────── */
+.sf-icon-strip {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 8px;
+}
+.sf-icon-strip::-webkit-scrollbar { display: none; }
+
+.sf-icon-pill {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  padding: 16px 20px;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.07);
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.2s, transform 0.2s;
+  min-width: 90px;
+}
+.sf-icon-pill:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+.sf-icon-pill .collection-icon { font-size: 28px; color: var(--color-primary, #1f4e8c); }
+.sf-icon-pill .collection-icon svg { width: 36px; height: 36px; }
+.sf-icon-pill__label { font-size: 12px; font-weight: 600; text-align: center; line-height: 1.2; color: #111; }
+
+/* ── Marquee mode (homepage auto-scroll) ─────────────────────── */
+.sf-marquee-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: sf-marquee 30s linear infinite;
+}
+.sf-marquee-track:hover { animation-play-state: paused; }
+.sf-marquee-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+@keyframes sf-marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ── /collections page compact grid ─────────────────────────── */
+.sf-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+@media (min-width: 640px)  { .sf-icon-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1024px) { .sf-icon-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.sf-icon-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.07);
+  text-decoration: none;
+  color: inherit;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.4s, transform 0.4s, box-shadow 0.2s;
+}
+.sf-icon-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.sf-icon-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+.sf-icon-card .collection-icon { font-size: 24px; flex: 0 0 auto; color: var(--color-primary, #1f4e8c); }
+.sf-icon-card .collection-icon svg { width: 28px; height: 28px; }
+.sf-icon-card__text { display: flex; flex-direction: column; }
+.sf-icon-card__title { font-size: 14px; font-weight: 600; color: #111; }
+.sf-icon-card__count { font-size: 12px; color: #777; }
