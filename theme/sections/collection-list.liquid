@@ -1,3 +1,4 @@
+{{ 'sf-collection-icons.css' | asset_url | stylesheet_tag }}
 {{ 'collection-list.css' | asset_url | stylesheet_tag }}
 
 {%- comment -%}
@@ -143,6 +144,41 @@
         {% if enable_slider and section.settings.layout != 'left-side' %}</div>{% endif %}
     {% endif %}
 
+    {% if section.settings.icon_mode %}
+      {%- if section.settings.marquee_mode -%}
+        <div class="sf-marquee-wrapper">
+          <div class="sf-marquee-track">
+            {%- for block in section.blocks -%}
+              {%- assign collection = collections[block.settings.collection] -%}
+              {%- assign pill_title = block.settings.title | default: collection.title -%}
+              <a href="{{ collection.url }}" class="sf-icon-pill" {{ block.shopify_attributes }}>
+                {%- render 'collection-icon', collection: collection, size: 'text-3xl' -%}
+                <span class="sf-icon-pill__label">{{ pill_title }}</span>
+              </a>
+            {%- endfor -%}
+            {%- for block in section.blocks -%}
+              {%- assign collection = collections[block.settings.collection] -%}
+              {%- assign pill_title = block.settings.title | default: collection.title -%}
+              <a href="{{ collection.url }}" class="sf-icon-pill" aria-hidden="true" tabindex="-1">
+                {%- render 'collection-icon', collection: collection, size: 'text-3xl' -%}
+                <span class="sf-icon-pill__label">{{ pill_title }}</span>
+              </a>
+            {%- endfor -%}
+          </div>
+        </div>
+      {%- else -%}
+        <div class="sf-icon-strip">
+          {%- for block in section.blocks -%}
+            {%- assign collection = collections[block.settings.collection] -%}
+            {%- assign pill_title = block.settings.title | default: collection.title -%}
+            <a href="{{ collection.url }}" class="sf-icon-pill" {{ block.shopify_attributes }}>
+              {%- render 'collection-icon', collection: collection, size: 'text-3xl' -%}
+              <span class="sf-icon-pill__label">{{ pill_title }}</span>
+            </a>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    {% else %}
     <div class="sf__ms{% if enable_slider == true %} sf-grid sf__ms--slider collection-list__inner--overflow{% endif %}{% unless use_scroll_mobile %} sf__ms--mb-grid{% endunless %}">
         <div class="sf__ms-wrapper {% if enable_slider == false %}sf-grid grid sf__ms-wrapper--max {% else %}flex flex-nowrap {% endif %} md:grid-cols-{{ items_per_row | divided_by: 2 | ceil }} xl:grid-cols-{{ items_per_row }}{% if enable_slider %} sf-slider-{{ section.id }} swiper-container swiper--equal-height{% endif %}">
             {% if enable_slider == true %}<!-- Start .swiper-wrapper --><div class="swiper-wrapper">{% endif %}
@@ -195,6 +231,7 @@
           {% endif %}
         {% endif %}
     </div>
+    {% endif %}
 {% endcapture %}
 
 {% comment %}
@@ -281,6 +318,23 @@
           "label": "Center"
         }
       ]
+    },
+    {
+      "type": "header",
+      "content": "Icon strip mode"
+    },
+    {
+      "type": "checkbox",
+      "id": "icon_mode",
+      "label": "Icon strip mode (replaces image tiles)",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "marquee_mode",
+      "label": "Auto-scroll marquee (homepage use)",
+      "default": false,
+      "info": "Loops collection pills continuously. Works best with icon mode enabled."
     },
     {
       "type": "header",
