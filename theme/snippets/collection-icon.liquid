@@ -1,0 +1,11 @@
+{%- liquid
+  assign fa_icon = collection.metafields.custom.fa_icon | strip
+  assign icon_size = size | default: 'text-4xl'
+-%}
+<span class="collection-icon" aria-hidden="true">
+  {%- if fa_icon != blank -%}
+    <i class="{{ fa_icon }} {{ icon_size }}"></i>
+  {%- else -%}
+    {%- render 'category-icon', collection: collection -%}
+  {%- endif -%}
+</span>
