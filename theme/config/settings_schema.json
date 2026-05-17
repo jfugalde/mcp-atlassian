@@ -2650,5 +2650,17 @@
         "info": "On product pages, adds a WhatsApp row under Compare / Question / Share in the Addon buttons block and hides the floating widget until opened. Uses the same Seedgrow multi-agent chat."
       }
     ]
+  },
+  {
+    "name": "Icons",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_fa_icons",
+        "label": "Enable Font Awesome icons",
+        "default": true,
+        "info": "Loads Font Awesome Free 6 from CDN (~40 KB). Used for collection icon strips."
+      }
+    ]
   }
 ]

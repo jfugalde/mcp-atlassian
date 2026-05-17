@@ -110,6 +110,10 @@ template-{{ template.name | handle }} {{ template.name }}-{{ template.suffix }} 
       }
     </script>
 
+  {% if settings.enable_fa_icons %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" media="print" onload="this.media='all'" crossorigin="anonymous">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous"></noscript>
+  {% endif %}
   </head>
 
   <body
