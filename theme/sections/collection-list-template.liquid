@@ -26,6 +26,7 @@
         {% else %}
           {% for block in section.blocks %}
             {%- assign collection = collections[block.settings.collection] -%}
+            {% unless collection == blank %}
             <a href="{{ collection.url }}" class="sf-icon-card" {{ block.shopify_attributes }}>
               {%- render 'collection-icon', collection: collection -%}
               <div class="sf-icon-card__text">
@@ -33,6 +34,7 @@
                 <span class="sf-icon-card__count">{{ collection.all_products_count }} productos</span>
               </div>
             </a>
+            {% endunless %}
           {% endfor %}
         {% endif %}
       </div>
