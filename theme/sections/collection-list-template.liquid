@@ -1,3 +1,4 @@
+{{ 'sf-collection-icons.css' | asset_url | stylesheet_tag }}
 {% assign settings = section.settings %}
 <div class="sf__collection-lists">
   <div class="{{ section.settings.container }}">
@@ -11,26 +12,48 @@
     </div>
 
     <div class="sf__collection-layout">
-      <div class="grid sf-grid grid-cols-1 sm:grid-cols-2 mg:grid-cols-3 lg:grid-cols-4" style="--column-gap: 30px; --row-gap: 30px;">
+      <div class="sf-icon-grid" id="sf-collection-grid">
         {% if section.settings.display_type == 'all' %}
           {% for collection in collections %}
-            {% render 'collection-card', section: section, collection: collection, card_style: 'standard', text_alignment: 'center', image: collection.image, show_product_count: false, hover_effect: 'scaling-up', title: collection.title %}
+            <a href="{{ collection.url }}" class="sf-icon-card">
+              {%- render 'collection-icon', collection: collection -%}
+              <div class="sf-icon-card__text">
+                <span class="sf-icon-card__title">{{ collection.title }}</span>
+                <span class="sf-icon-card__count">{{ collection.all_products_count }} productos</span>
+              </div>
+            </a>
           {% endfor %}
         {% else %}
-            {% for block in section.blocks %}
-              {% liquid 
-                assign settings = block.settings
-                assign collection = collections[settings.collection]
-                assign featuredImage = collection.image
-
-                if block.settings.image != blank
-                  assign featuredImage = block.settings.image
-                endif
-              %}
-              {% render 'collection-card', section: section, collection: collection, card_style: 'standard', text_alignment: 'center', image: featuredImage, show_product_count: false, hover_effect: 'scaling-up', title: collection.title %}
-            {% endfor %}
+          {% for block in section.blocks %}
+            {%- assign collection = collections[block.settings.collection] -%}
+            <a href="{{ collection.url }}" class="sf-icon-card" {{ block.shopify_attributes }}>
+              {%- render 'collection-icon', collection: collection -%}
+              <div class="sf-icon-card__text">
+                <span class="sf-icon-card__title">{{ collection.title }}</span>
+                <span class="sf-icon-card__count">{{ collection.all_products_count }} productos</span>
+              </div>
+            </a>
+          {% endfor %}
         {% endif %}
       </div>
+      <script>
+        (function () {
+          var cards = document.querySelectorAll('#sf-collection-grid .sf-icon-card');
+          if (!cards.length) return;
+          var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+              if (e.isIntersecting) {
+                e.target.classList.add('is-visible');
+                io.unobserve(e.target);
+              }
+            });
+          }, { threshold: 0.1 });
+          cards.forEach(function (c, i) {
+            c.style.transitionDelay = (i * 40) + 'ms';
+            io.observe(c);
+          });
+        })();
+      </script>
     </div>
   </div>
 </div>
