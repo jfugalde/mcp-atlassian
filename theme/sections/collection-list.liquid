@@ -1,5 +1,5 @@
-{{ 'sf-collection-icons.css' | asset_url | stylesheet_tag }}
 {{ 'collection-list.css' | asset_url | stylesheet_tag }}
+{% if section.settings.icon_mode %}{{ 'sf-collection-icons.css' | asset_url | stylesheet_tag }}{% endif %}
 
 {%- comment -%}
   This is a required section for the Shopify Theme Store.
