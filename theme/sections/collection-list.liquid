@@ -178,6 +178,13 @@
           {%- endfor -%}
         </div>
       {%- endif -%}
+      {% if section.settings.button_label != blank %}
+        <div class="sf-collection-list__cta text-{{ section.settings.header_alignment }}">
+          <a href="{{ section.settings.button_link | default: '/collections' }}" class="sf__btn sf__btn-primary">
+            {{ section.settings.button_label }}
+          </a>
+        </div>
+      {% endif %}
     {% else %}
     <div class="sf__ms{% if enable_slider == true %} sf-grid sf__ms--slider collection-list__inner--overflow{% endif %}{% unless use_scroll_mobile %} sf__ms--mb-grid{% endunless %}">
         <div class="sf__ms-wrapper {% if enable_slider == false %}sf-grid grid sf__ms-wrapper--max {% else %}flex flex-nowrap {% endif %} md:grid-cols-{{ items_per_row | divided_by: 2 | ceil }} xl:grid-cols-{{ items_per_row }}{% if enable_slider %} sf-slider-{{ section.id }} swiper-container swiper--equal-height{% endif %}">
@@ -304,6 +311,37 @@
       "label": "Description"
     },
     {
+      "type": "header",
+      "content": "Category icons"
+    },
+    {
+      "type": "checkbox",
+      "id": "icon_mode",
+      "label": "Show icon strip (replaces collection image tiles)",
+      "default": true,
+      "info": "Font Awesome per Collection block. Theme settings → Icons → Enable Font Awesome icons."
+    },
+    {
+      "type": "checkbox",
+      "id": "marquee_mode",
+      "label": "Auto-scroll marquee",
+      "default": true,
+      "info": "Horizontal scrolling strip for homepage."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Ver todas las categorías",
+      "info": "Shown below the icon strip when icon mode is on."
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link",
+      "default": "/collections"
+    },
+    {
       "type": "select",
       "id": "header_alignment",
       "label": "Text alignment",
@@ -318,27 +356,6 @@
           "label": "Center"
         }
       ]
-    },
-    {
-      "type": "header",
-      "content": "Icon strip mode"
-    },
-    {
-      "type": "paragraph",
-      "content": "Edit each collection block below: pick the collection, optional display title, and Font Awesome icon classes (e.g. fa-solid fa-heart-pulse). Reorder blocks by drag-and-drop. Enable Font Awesome under Theme settings → Icons."
-    },
-    {
-      "type": "checkbox",
-      "id": "icon_mode",
-      "label": "Icon strip mode (replaces image tiles)",
-      "default": false
-    },
-    {
-      "type": "checkbox",
-      "id": "marquee_mode",
-      "label": "Auto-scroll marquee (homepage use)",
-      "default": false,
-      "info": "Loops collection pills continuously. Works best with icon mode enabled."
     },
     {
       "type": "header",
@@ -668,6 +685,10 @@
     {
       "name": "Collection list",
       "category": "Collection",
+      "settings": {
+        "icon_mode": true,
+        "marquee_mode": true
+      },
       "blocks": [
         {
           "type": "collection_block",

@@ -165,7 +165,7 @@
           "type": "collection_block",
           "settings": {
             "collection": "medicamento-oncologicos-al-mejor-precio-alta-especialidad",
-            "title": "Oncología",
+            "title": "Oncológicos",
             "item_image": "",
             "fa_icon": "fa-solid fa-ribbon"
           }
@@ -183,7 +183,7 @@
           "type": "collection_block",
           "settings": {
             "collection": "reumatologia-y-traumatologia",
-            "title": "Reumatología y traumatología",
+            "title": "Reumatología y Traumatología",
             "item_image": "",
             "fa_icon": "fa-solid fa-bone"
           }
@@ -192,7 +192,7 @@
           "type": "collection_block",
           "settings": {
             "collection": "infecciosas-y-parasitarias",
-            "title": "Infecciosas y parasitarias",
+            "title": "Infecciosas y Parasitarias",
             "item_image": "",
             "fa_icon": "fa-solid fa-virus"
           }
@@ -201,7 +201,7 @@
           "type": "collection_block",
           "settings": {
             "collection": "medicamentos-para-el-sistema-inmunologico-1",
-            "title": "Sistema inmunológico",
+            "title": "Inmunológicos",
             "item_image": "",
             "fa_icon": "fa-solid fa-shield-halved"
           }
@@ -250,6 +250,10 @@
         "subheading": "",
         "description": "<p>Medicamentos de alta especialidad organizados por área terapéutica. Requieren receta médica.</p>",
         "header_alignment": "center",
+        "icon_mode": true,
+        "marquee_mode": true,
+        "button_label": "Ver todas las categorías",
+        "button_link": "/collections",
         "container": "container",
         "background_color": "",
         "layout": "grid",
@@ -272,9 +276,7 @@
         "hidden_slide_control_mobile": false,
         "padding_top": 32,
         "padding_bottom": 32,
-        "custom_class": "sf-home__collection-list",
-        "icon_mode": true,
-        "marquee_mode": true
+        "custom_class": "sf-home__collection-list"
       }
     },
     "featured-best": {
@@ -292,53 +294,14 @@
         "item_gap": 20,
         "show_vendor": false,
         "enable_slider": false,
-        "show_navigation": false,
         "show_pagination": false,
+        "show_navigation": false,
         "use_scroll_mobile": true,
         "item_gap_mobile": 16,
         "padding_top": 32,
         "padding_bottom": 32,
+        "button_text": "",
         "custom_class": "sf-home__featured-best"
-      }
-    },
-    "explora-cta": {
-      "type": "custom-content",
-      "blocks": {
-        "explora-text": {
-          "type": "text",
-          "settings": {
-            "title": "",
-            "subheading": "",
-            "text": "<p>Oncología, hematología, reumatología, cardiología, nefrología, inmunología, hormonales y más áreas terapéuticas.</p>",
-            "width": "100%",
-            "alignment": "center",
-            "align_text": "center",
-            "text_size": "large",
-            "text_color": "black",
-            "button_label": "Ver todas las categorías",
-            "button_link": "/collections",
-            "button_style": "sf__btn-primary",
-            "button_size": "",
-            "block_custom_class": "sf-home__explora-block"
-          }
-        }
-      },
-      "block_order": [
-        "explora-text"
-      ],
-      "settings": {
-        "heading": "",
-        "subheading": "",
-        "description": "",
-        "header_alignment": "center",
-        "container": "container",
-        "background_color": "",
-        "gap": 30,
-        "use_scroll_mobile": false,
-        "gap_mobile": 16,
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "custom_class": "sf-home__explora-cta"
       }
     },
     "wa-asesoria": {
@@ -382,8 +345,6 @@
             "contentIndex": "1",
             "themeId": "dark",
             "autoscroll": true,
-            "showRating": true,
-            "reviewPhotosType": "small",
             "writeReview": true,
             "fixedReviewsHeight": false
           }
@@ -504,7 +465,6 @@
     "trust-bar",
     "collection-list",
     "featured-best",
-    "explora-cta",
     "wa-asesoria",
     "1680553798df70faa0",
     "f53b0faf-c303-4932-b6b1-6704cc2be1b4",

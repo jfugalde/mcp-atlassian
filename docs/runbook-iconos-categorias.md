@@ -19,6 +19,8 @@ En la sección **Collection list** de la página de inicio: activar **Icon strip
 3. **Solo cuadros de color sin dibujo** — Font Awesome no cargó (red, bloqueador, CDN). Revisa en el navegador que cargue `cdnjs.cloudflare.com/.../font-awesome/6.5.2/css/all.min.css`.
 4. **Editor de tema** — el campo **Icon (Font Awesome classes)** está en cada **bloque** Collection dentro de **Collection list** o **Collections list page**, no en Configuración general sola.
 
+5. **No aparecen opciones de iconos en el editor** — confirma que personalizas el tema publicado **Macros_v2.1.1-Homepage** (no una copia antigua v2.0.1). Tras el push correcto, en **Collection list** debe aparecer el grupo **Category icons** (justo debajo de *Description*), con **Show icon strip** y **Auto-scroll marquee** activados por defecto. Cierra y vuelve a abrir el personalizador con enlace directo: `admin/themes/153580667047/editor`.
+
 Los iconos Font Awesome se muestran dentro de un **cuadrado redondeado tipo burbuja**, con colores suaves por especialidad (paleta Macross: azules, verdes, rosas, etc.). Las colecciones nuevas usan el tono azul gris por defecto hasta que desarrollo agregue su color en el tema (si hace falta un tono fijo).
 
 ---
@@ -49,7 +51,19 @@ Los enlaces, productos y conteos salen de **colecciones publicadas en Shopify**.
 - `python3 ryu-platform/tools/shopify-analysis/validate_macross_collections.py`
 - `python3 ryu-platform/tools/shopify-analysis/fix_macross_collections.py` (aplica reglas y tipos; requiere `shopify store auth`)
 
+**Tipografía y tamaños (unificados en `sf-collection-icons.css`):** títulos de tarjeta/pastilla 14px (13px móvil), texto secundario 12px (11px móvil), iconos en burbuja 48px (44px móvil), títulos de sección 24px (20px móvil). Trust bar, franja de especialidades, CTA y `/collections` comparten la misma escala.
+
+**`/collections` en móvil:** una sola columna (lista completa, sin recorte). Tablet (768px+): 2 columnas; escritorio (1024px+): 4 columnas. Espaciado compacto en pantallas pequeñas.
+
 **Menú:** el menú **encabezado** (Especialidades → Hematología) apunta a `/collections/hematologia-1` y a la colección `gid://shopify/Collection/361956049063`. Si se revierte en Admin, volver a asignar esa colección publicada (no `hematologia`).
+
+---
+
+## Botón «Ver todas las categorías»
+
+Va **debajo de la franja «Explora por especialidad»** (sección **Collection list** con modo iconos), no debajo de «Lo más vendido». En el editor: **Collection list** → **Button label** / **Button link**; **Auto-scroll marquee** activado para la franja horizontal. La sección duplicada **Collection CTA strip** ya no se usa en la página de inicio.
+
+**Lo más vendido:** el botón en inglés «Shop more» está desactivado (`button_text` vacío). Si reaparece, borrar el texto del botón en **Featured collection**.
 
 ---
 
