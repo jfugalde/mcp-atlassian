@@ -166,15 +166,17 @@
           "settings": {
             "collection": "medicamento-oncologicos-al-mejor-precio-alta-especialidad",
             "title": "Oncología",
-            "item_image": ""
+            "item_image": "",
+            "fa_icon": "fa-solid fa-ribbon"
           }
         },
         "cl-hema": {
           "type": "collection_block",
           "settings": {
-            "collection": "hematologia",
+            "collection": "hematologia-1",
             "title": "Hematología",
-            "item_image": ""
+            "item_image": "",
+            "fa_icon": "fa-solid fa-droplet"
           }
         },
         "cl-reuma": {
@@ -182,7 +184,8 @@
           "settings": {
             "collection": "reumatologia-y-traumatologia",
             "title": "Reumatología y traumatología",
-            "item_image": ""
+            "item_image": "",
+            "fa_icon": "fa-solid fa-bone"
           }
         },
         "cl-infec": {
@@ -190,7 +193,8 @@
           "settings": {
             "collection": "infecciosas-y-parasitarias",
             "title": "Infecciosas y parasitarias",
-            "item_image": ""
+            "item_image": "",
+            "fa_icon": "fa-solid fa-virus"
           }
         },
         "cl-immune": {
@@ -198,7 +202,8 @@
           "settings": {
             "collection": "medicamentos-para-el-sistema-inmunologico-1",
             "title": "Sistema inmunológico",
-            "item_image": ""
+            "item_image": "",
+            "fa_icon": "fa-solid fa-shield-halved"
           }
         },
         "cl-hormonal": {
@@ -206,7 +211,8 @@
           "settings": {
             "collection": "productos-hormonales-especializados",
             "title": "Hormonales",
-            "item_image": ""
+            "item_image": "",
+            "fa_icon": "fa-solid fa-flask"
           }
         },
         "cl-cardio": {
@@ -214,15 +220,17 @@
           "settings": {
             "collection": "cardiologia",
             "title": "Cardiología",
-            "item_image": ""
+            "item_image": "",
+            "fa_icon": "fa-solid fa-heart-pulse"
           }
         },
-        "cl-nefro": {
+        "cl-best": {
           "type": "collection_block",
           "settings": {
-            "collection": "nefrologia",
-            "title": "Nefrología",
-            "item_image": ""
+            "collection": "lo-mas-vendido",
+            "title": "Lo más vendido",
+            "item_image": "",
+            "fa_icon": "fa-solid fa-star"
           }
         }
       },
@@ -234,7 +242,7 @@
         "cl-immune",
         "cl-hormonal",
         "cl-cardio",
-        "cl-nefro"
+        "cl-best"
       ],
       "custom_css": [],
       "settings": {

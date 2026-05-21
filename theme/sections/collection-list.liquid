@@ -1,5 +1,5 @@
 {{ 'collection-list.css' | asset_url | stylesheet_tag }}
-{% if section.settings.icon_mode %}{{ 'sf-collection-icons.css' | asset_url | stylesheet_tag }}{% endif %}
+{{ 'sf-collection-icons.css' | asset_url | stylesheet_tag }}
 
 {%- comment -%}
   This is a required section for the Shopify Theme Store.
@@ -152,7 +152,7 @@
               {%- assign collection = collections[block.settings.collection] -%}
               {%- assign pill_title = block.settings.title | default: collection.title -%}
               <a href="{{ collection.url }}" class="sf-icon-pill" {{ block.shopify_attributes }}>
-                {%- render 'collection-icon', collection: collection, size: 'text-3xl' -%}
+                {%- render 'collection-icon', collection: collection, size: 'text-3xl', icon_override: block.settings.fa_icon -%}
                 <span class="sf-icon-pill__label">{{ pill_title }}</span>
               </a>
             {%- endfor -%}
@@ -160,7 +160,7 @@
               {%- assign collection = collections[block.settings.collection] -%}
               {%- assign pill_title = block.settings.title | default: collection.title -%}
               <a href="{{ collection.url }}" class="sf-icon-pill" aria-hidden="true" tabindex="-1">
-                {%- render 'collection-icon', collection: collection, size: 'text-3xl' -%}
+                {%- render 'collection-icon', collection: collection, size: 'text-3xl', icon_override: block.settings.fa_icon -%}
                 <span class="sf-icon-pill__label">{{ pill_title }}</span>
               </a>
             {%- endfor -%}
@@ -172,7 +172,7 @@
             {%- assign collection = collections[block.settings.collection] -%}
             {%- assign pill_title = block.settings.title | default: collection.title -%}
             <a href="{{ collection.url }}" class="sf-icon-pill" {{ block.shopify_attributes }}>
-              {%- render 'collection-icon', collection: collection, size: 'text-3xl' -%}
+              {%- render 'collection-icon', collection: collection, size: 'text-3xl', icon_override: block.settings.fa_icon -%}
               <span class="sf-icon-pill__label">{{ pill_title }}</span>
             </a>
           {%- endfor -%}
@@ -192,7 +192,7 @@
                           assign collection = collections[block.settings.collection]
                           assign default_label = 'homepage.onboarding.collection_title' | t
                         %}
-                        {% render 'collection-card', section: section, collection: collection, card_style: card_style, text_alignment: section.settings.text_alignment, image: block.settings.item_image, show_product_count: section.settings.show_product_count, enable_slider: enable_slider, image_rounded: section.settings.image_rounded, hover_effect: section.settings.hover_effect, title: block.settings.title %}
+                        {% render 'collection-card', section: section, collection: collection, card_style: card_style, text_alignment: section.settings.text_alignment, image: block.settings.item_image, show_product_count: section.settings.show_product_count, enable_slider: enable_slider, image_rounded: section.settings.image_rounded, hover_effect: section.settings.hover_effect, title: block.settings.title, fa_icon: block.settings.fa_icon %}
                     {% when 'banner' %}
                         {%- assign collection = collections[block.settings.collection] -%}
                         <div class="sf-column{% if enable_slider %} swiper-slide{% endif %}">
@@ -322,6 +322,10 @@
     {
       "type": "header",
       "content": "Icon strip mode"
+    },
+    {
+      "type": "paragraph",
+      "content": "Edit each collection block below: pick the collection, optional display title, and Font Awesome icon classes (e.g. fa-solid fa-heart-pulse). Reorder blocks by drag-and-drop. Enable Font Awesome under Theme settings → Icons."
     },
     {
       "type": "checkbox",
@@ -607,6 +611,12 @@
           "type": "image_picker",
           "id": "item_image",
           "label": "Featured image"
+        },
+        {
+          "type": "text",
+          "id": "fa_icon",
+          "label": "Icon (Font Awesome classes)",
+          "info": "Example: fa-solid fa-heart-pulse. Browse icons at fontawesome.com/icons. Leave blank to use the collection metafield custom.fa_icon, then the default SVG. Requires Theme settings → Icons → Enable Font Awesome."
         }
       ]
     },

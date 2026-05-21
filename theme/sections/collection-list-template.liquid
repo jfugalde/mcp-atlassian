@@ -28,7 +28,7 @@
             {%- assign collection = collections[block.settings.collection] -%}
             {% unless collection == blank %}
             <a href="{{ collection.url }}" class="sf-icon-card" {{ block.shopify_attributes }}>
-              {%- render 'collection-icon', collection: collection -%}
+              {%- render 'collection-icon', collection: collection, icon_override: block.settings.fa_icon -%}
               <div class="sf-icon-card__text">
                 <span class="sf-icon-card__title">{{ collection.title }}</span>
                 <span class="sf-icon-card__count">{{ collection.all_products_count }} productos</span>
@@ -38,24 +38,6 @@
           {% endfor %}
         {% endif %}
       </div>
-      <script>
-        (function () {
-          var cards = document.querySelectorAll('#sf-collection-grid .sf-icon-card');
-          if (!cards.length) return;
-          var io = new IntersectionObserver(function (entries) {
-            entries.forEach(function (e) {
-              if (e.isIntersecting) {
-                e.target.classList.add('is-visible');
-                io.unobserve(e.target);
-              }
-            });
-          }, { threshold: 0.1 });
-          cards.forEach(function (c, i) {
-            c.style.transitionDelay = (i * 40) + 'ms';
-            io.observe(c);
-          });
-        })();
-      </script>
     </div>
   </div>
 </div>
@@ -119,6 +101,10 @@
       "content": "Settings"
     },
     {
+      "type": "paragraph",
+      "content": "With Selected collections, edit each block’s icon field (Font Awesome classes). With All collections, set metafield custom.fa_icon on each collection in Admin. Theme settings → Icons must be enabled."
+    },
+    {
       "type": "select",
       "id": "display_type",
       "label": "Select collections to show",
@@ -160,6 +146,12 @@
           "type": "image_picker",
           "id": "image",
           "label": "Select image"
+        },
+        {
+          "type": "text",
+          "id": "fa_icon",
+          "label": "Icon (Font Awesome classes)",
+          "info": "Example: fa-solid fa-heart-pulse. Leave blank to use collection metafield custom.fa_icon, then default SVG. Theme settings → Icons must be enabled."
         }
       ]
     }

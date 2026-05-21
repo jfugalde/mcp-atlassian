@@ -1,11 +1,15 @@
 {%- liquid
-  assign fa_icon = collection.metafields.custom.fa_icon | strip
+  assign fa_icon = icon_override | default: '' | strip
+  if fa_icon == blank and collection != blank
+    assign fa_icon = collection.metafields.custom.fa_icon | strip
+  endif
   assign icon_size = size | default: 'text-4xl'
+  assign icon_handle = collection.handle | default: 'default' | handleize
 -%}
-<span class="collection-icon" aria-hidden="true">
-  {%- if fa_icon != blank -%}
+<span class="collection-icon collection-icon--bubble collection-icon--{{ icon_handle }}" aria-hidden="true">
+  {%- if fa_icon != blank and settings.enable_fa_icons -%}
     <i class="{{ fa_icon }} {{ icon_size }}"></i>
-  {%- else -%}
+  {%- elsif collection != blank -%}
     {%- render 'category-icon', collection: collection -%}
   {%- endif -%}
 </span>

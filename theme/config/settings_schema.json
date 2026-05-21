@@ -2659,7 +2659,7 @@
         "id": "enable_fa_icons",
         "label": "Enable Font Awesome icons",
         "default": true,
-        "info": "Loads Font Awesome Free 6 from CDN (~40 KB). Used for collection icon strips."
+        "info": "Loads Font Awesome Free 6 from CDN (~40 KB). Required for category icons. Merchants edit icons in the theme editor (Collection list blocks → Icon field) or on each collection (metafield custom.fa_icon)."
       }
     ]
   }

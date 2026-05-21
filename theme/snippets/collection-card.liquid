@@ -21,10 +21,15 @@
                             image_class: 'w-full',
                             aspect_ratio: aspect_ratio
                     %}
+                {% elsif collection.image != blank %}
+                    {% render 'responsive-image',
+                            image: collection.image,
+                            image_class: 'w-full',
+                            aspect_ratio: 1
+                    %}
                 {% else %}
                     <div style="--aspect-ratio: 1/1;">
-                        {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
-                        {{ 'collection-' | append: current | placeholder_svg_tag: 'sf__placeholder-svg w-full h-full w-full h-full object-cover' }}
+                        {% render 'collection-icon', collection: collection, icon_override: fa_icon %}
                     </div>
                 {% endif %}
             </a>

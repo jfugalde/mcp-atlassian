@@ -1,0 +1,141 @@
+{%- liquid
+  assign container = section.settings.container
+  assign bg = section.settings.background_color
+  assign show_bg = false
+  unless bg == 'rgba(0,0,0,0)' or bg == blank
+    assign show_bg = true
+  endunless
+-%}
+<section class="trust-bar{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
+  style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;{% if show_bg %} background-color: {{ bg }};{% endif %}">
+  <div class="{{ container }}">
+    <ul class="trust-bar__list" role="list">
+      {%- for block in section.blocks -%}
+        {%- assign icon = block.settings.icon -%}
+        <li class="trust-bar__item" {{ block.shopify_attributes }}>
+          {%- if block.settings.link != blank -%}
+            <a href="{{ block.settings.link }}" class="trust-bar__link">
+          {%- endif -%}
+          <span class="trust-bar__icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              {%- case icon -%}
+                {%- when 'shipping' -%}
+                  <path d="M3 8h22v22H3z"/><path d="M25 14h10l6 6v10H25"/><circle cx="11" cy="34" r="4"/><circle cx="33" cy="34" r="4"/>
+                {%- when 'prescription' -%}
+                  <path d="M14 6h12a6 6 0 0 1 0 12h-6"/><path d="M14 6v36"/><path d="M20 18l14 14"/><path d="M34 24l-8 8"/>
+                {%- when 'cold' -%}
+                  <path d="M24 4v40M8 14l32 20M8 34l32-20"/><path d="M24 4l-4 4 4 4 4-4z"/><path d="M24 44l-4-4 4-4 4 4z"/>
+                {%- when 'secure' -%}
+                  <path d="M24 4l16 6v12c0 12-8 20-16 22-8-2-16-10-16-22V10z"/><path d="M16 24l6 6 12-12"/>
+                {%- when 'whatsapp' -%}
+                  <path d="M6 42l3-10a18 18 0 1 1 7 7z"/><path d="M18 20c1 4 5 8 9 9l3-3 6 3-2 6c-12 0-22-10-22-22l6-2 3 6z" fill="currentColor" stroke="none"/>
+                {%- when 'support' -%}
+                  <path d="M8 24a16 16 0 0 1 32 0v8a4 4 0 0 1-4 4h-2v-12h6"/><path d="M40 24a16 16 0 0 0-32 0"/><path d="M8 24v8a4 4 0 0 0 4 4h2V24H8z"/>
+                {%- when 'quality' -%}
+                  <circle cx="24" cy="20" r="12"/><path d="M16 28l-4 16 12-6 12 6-4-16"/>
+                {%- else -%}
+                  <circle cx="24" cy="24" r="20"/><path d="M16 24l6 6 12-12"/>
+              {%- endcase -%}
+            </svg>
+          </span>
+          <span class="trust-bar__text">
+            <span class="trust-bar__title">{{ block.settings.title }}</span>
+            {%- if block.settings.description != blank -%}
+              <span class="trust-bar__desc">{{ block.settings.description }}</span>
+            {%- endif -%}
+          </span>
+          {%- if block.settings.link != blank -%}
+            </a>
+          {%- endif -%}
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+
+{% stylesheet %}
+  .trust-bar { width: 100%; }
+  .trust-bar__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 16px;
+    margin: 0; padding: 0; list-style: none;
+  }
+  @media (min-width: 768px) {
+    .trust-bar__list { grid-template-columns: repeat(4, minmax(0,1fr)); gap: 24px; }
+  }
+  .trust-bar__item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 14px 16px;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 12px;
+  }
+  .trust-bar__link { display: contents; color: inherit; text-decoration: none; }
+  .trust-bar__icon {
+    flex: 0 0 auto;
+    width: 40px; height: 40px;
+    display: inline-flex; align-items: center; justify-content: center;
+    color: var(--color-primary, #1f4e8c);
+    background: rgba(31,78,140,0.08);
+    border-radius: 50%;
+  }
+  .trust-bar__icon svg { width: 22px; height: 22px; }
+  .trust-bar__text { display: flex; flex-direction: column; line-height: 1.25; }
+  .trust-bar__title { font-weight: 600; font-size: 14px; color: #111; }
+  .trust-bar__desc { font-size: 12px; color: #555; margin-top: 2px; }
+  @media (min-width: 768px) {
+    .trust-bar__title { font-size: 15px; }
+    .trust-bar__desc { font-size: 13px; }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Trust bar",
+  "settings": [
+    { "type": "select", "id": "container", "label": "Container",
+      "options": [
+        { "value": "container", "label": "Container" },
+        { "value": "container-fluid", "label": "Container fluid" },
+        { "value": "w-full", "label": "Full width" }
+      ], "default": "container" },
+    { "type": "color", "id": "background_color", "label": "Background", "default": "rgba(0,0,0,0)" },
+    { "type": "range", "id": "padding_top", "label": "Padding top", "min": 0, "max": 100, "step": 2, "unit": "px", "default": 24 },
+    { "type": "range", "id": "padding_bottom", "label": "Padding bottom", "min": 0, "max": 100, "step": 2, "unit": "px", "default": 24 },
+    { "type": "text", "id": "custom_class", "label": "Custom class" }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Trust item",
+      "settings": [
+        { "type": "select", "id": "icon", "label": "Icon",
+          "options": [
+            { "value": "shipping", "label": "Shipping" },
+            { "value": "prescription", "label": "Prescription (Rx)" },
+            { "value": "cold", "label": "Cold chain" },
+            { "value": "secure", "label": "Secure payment" },
+            { "value": "whatsapp", "label": "WhatsApp" },
+            { "value": "support", "label": "Pharmaceutical support" },
+            { "value": "quality", "label": "Quality" }
+          ], "default": "shipping" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Beneficio" },
+        { "type": "text", "id": "description", "label": "Description" },
+        { "type": "url", "id": "link", "label": "Link" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trust bar",
+      "blocks": [
+        { "type": "item", "settings": { "icon": "support", "title": "Asesoría farmacéutica", "description": "Atención personalizada" } },
+        { "type": "item", "settings": { "icon": "cold", "title": "Cadena de frío", "description": "Envíos refrigerados" } },
+        { "type": "item", "settings": { "icon": "secure", "title": "Pago seguro", "description": "Transacciones protegidas" } },
+        { "type": "item", "settings": { "icon": "whatsapp", "title": "WhatsApp directo", "description": "Asistencia inmediata" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

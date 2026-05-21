@@ -30,8 +30,79 @@
   box-shadow: 0 4px 16px rgba(0,0,0,0.1);
   transform: translateY(-2px);
 }
-.sf-icon-pill .collection-icon { font-size: 28px; color: var(--color-primary, #1f4e8c); }
-.sf-icon-pill .collection-icon svg { width: 36px; height: 36px; }
+/* ── Bubbly icon tile (Macross palette per collection handle) ─── */
+.collection-icon--bubble {
+  --icon-bg: #e8eef7;
+  --icon-fg: #2a4a7f;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.collection-icon--bubble {
+  border-radius: 16px;
+  background: var(--icon-bg);
+  color: var(--icon-fg);
+  box-shadow:
+    0 2px 8px rgba(31, 78, 140, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+}
+.collection-icon--bubble i {
+  line-height: 1;
+  color: var(--icon-fg);
+}
+.collection-icon--medicamento-oncologicos-al-mejor-precio-alta-especialidad {
+  --icon-bg: #f4e0ec;
+  --icon-fg: #8e3868;
+}
+.collection-icon--hematologia,
+.collection-icon--hematologia-1 {
+  --icon-bg: #fadbd8;
+  --icon-fg: #a03a2c;
+}
+.collection-icon--reumatologia-y-traumatologia {
+  --icon-bg: #fcefd0;
+  --icon-fg: #8a6618;
+}
+.collection-icon--infecciosas-y-parasitarias {
+  --icon-bg: #d6eadf;
+  --icon-fg: #1f6b3a;
+}
+.collection-icon--medicamentos-para-el-sistema-inmunologico-1 {
+  --icon-bg: #dbeaf8;
+  --icon-fg: #1f4e8c;
+}
+.collection-icon--productos-hormonales-especializados {
+  --icon-bg: #e6e0f2;
+  --icon-fg: #5b3d8a;
+}
+.collection-icon--cardiologia {
+  --icon-bg: #f8d7da;
+  --icon-fg: #9c2a36;
+}
+.collection-icon--nefrologia {
+  --icon-bg: #d6e9f2;
+  --icon-fg: #1f5e7a;
+}
+.collection-icon--neurologia {
+  --icon-bg: #e4dff2;
+  --icon-fg: #3f2a7a;
+}
+.collection-icon--lo-mas-vendido {
+  --icon-bg: #fff1c2;
+  --icon-fg: #8a6618;
+}
+
+.sf-icon-pill .collection-icon--bubble {
+  width: 56px;
+  height: 56px;
+  font-size: 26px;
+}
+.sf-icon-pill .collection-icon--bubble svg {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+}
 .sf-icon-pill__label { font-size: 12px; font-weight: 700; text-align: center; line-height: 1.2; color: #111; }
 
 /* ── Marquee mode (homepage auto-scroll) ─────────────────────── */
@@ -73,17 +144,19 @@
   border: 1px solid rgba(0,0,0,0.07);
   text-decoration: none;
   color: inherit;
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.4s, transform 0.4s, box-shadow 0.2s;
-}
-.sf-icon-card.is-visible {
-  opacity: 1;
-  transform: translateY(0);
+  transition: box-shadow 0.2s;
 }
 .sf-icon-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
-.sf-icon-card .collection-icon { font-size: 24px; flex: 0 0 auto; color: var(--color-primary, #1f4e8c); }
-.sf-icon-card .collection-icon svg { width: 28px; height: 28px; }
+.sf-icon-card .collection-icon--bubble {
+  width: 48px;
+  height: 48px;
+  font-size: 22px;
+}
+.sf-icon-card .collection-icon--bubble svg {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+}
 .sf-icon-card__text { display: flex; flex-direction: column; }
 .sf-icon-card__title { font-size: 14px; font-weight: 700; color: #111; }
 .sf-icon-card__count { font-size: 12px; color: #777; }

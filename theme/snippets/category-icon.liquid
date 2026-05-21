@@ -1,0 +1,103 @@
+{%- liquid
+  assign h = collection.handle | default: handle
+  assign bg = '#E8EEF7'
+  assign fg = '#2A4A7F'
+  assign icon = 'pill'
+  case h
+    when 'medicamento-oncologicos-al-mejor-precio-alta-especialidad'
+      assign bg = '#F4E0EC'
+      assign fg = '#8E3868'
+      assign icon = 'ribbon'
+    when 'hematologia', 'hematologia-1'
+      assign bg = '#FADBD8'
+      assign fg = '#A03A2C'
+      assign icon = 'drop'
+    when 'reumatologia-y-traumatologia'
+      assign bg = '#FCEFD0'
+      assign fg = '#8A6618'
+      assign icon = 'bone'
+    when 'infecciosas-y-parasitarias'
+      assign bg = '#D6EADF'
+      assign fg = '#1F6B3A'
+      assign icon = 'microbe'
+    when 'medicamentos-para-el-sistema-inmunologico-1'
+      assign bg = '#DBEAF8'
+      assign fg = '#1F4E8C'
+      assign icon = 'shield'
+    when 'productos-hormonales-especializados'
+      assign bg = '#E6E0F2'
+      assign fg = '#5B3D8A'
+      assign icon = 'molecule'
+    when 'cardiologia'
+      assign bg = '#F8D7DA'
+      assign fg = '#9C2A36'
+      assign icon = 'heart'
+    when 'nefrologia'
+      assign bg = '#D6E9F2'
+      assign fg = '#1F5E7A'
+      assign icon = 'kidney'
+    when 'neurologia'
+      assign bg = '#E4DFF2'
+      assign fg = '#3F2A7A'
+      assign icon = 'brain'
+    when 'lo-mas-vendido'
+      assign bg = '#FFF1C2'
+      assign fg = '#8A6618'
+      assign icon = 'star'
+  endcase
+-%}
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto block" preserveAspectRatio="xMidYMid slice" role="img" aria-label="{{ collection.title | escape }}">
+  <rect width="400" height="400" fill="{{ bg }}"/>
+  <g transform="translate(200,200)" fill="{{ fg }}" stroke="{{ fg }}" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+    {%- case icon -%}
+      {%- when 'ribbon' -%}
+        <path d="M-55,-85 L0,15 L55,-85" fill="none"/>
+        <path d="M0,15 L0,85" fill="none"/>
+        <path d="M-32,40 L32,40" fill="none"/>
+        <circle cx="0" cy="95" r="20"/>
+      {%- when 'drop' -%}
+        <path d="M0,-95 C42,-32 75,12 75,45 A75,75 0 1,1 -75,45 C-75,12 -42,-32 0,-95 Z" stroke="none"/>
+      {%- when 'bone' -%}
+        <rect x="-55" y="-18" width="110" height="36" rx="12" stroke="none"/>
+        <circle cx="-60" cy="-18" r="22" stroke="none"/>
+        <circle cx="-60" cy="18" r="22" stroke="none"/>
+        <circle cx="60" cy="-18" r="22" stroke="none"/>
+        <circle cx="60" cy="18" r="22" stroke="none"/>
+      {%- when 'microbe' -%}
+        <circle cx="0" cy="0" r="55" fill="none"/>
+        <line x1="0" y1="-55" x2="0" y2="-90"/>
+        <line x1="0" y1="55" x2="0" y2="90"/>
+        <line x1="-55" y1="0" x2="-90" y2="0"/>
+        <line x1="55" y1="0" x2="90" y2="0"/>
+        <line x1="-39" y1="-39" x2="-64" y2="-64"/>
+        <line x1="39" y1="-39" x2="64" y2="-64"/>
+        <line x1="-39" y1="39" x2="-64" y2="64"/>
+        <line x1="39" y1="39" x2="64" y2="64"/>
+        <circle cx="-20" cy="-15" r="6" stroke="none"/>
+        <circle cx="20" cy="15" r="6" stroke="none"/>
+      {%- when 'shield' -%}
+        <path d="M0,-95 L80,-55 V20 C80,62 42,92 0,105 C-42,92 -80,62 -80,20 V-55 Z" stroke="none"/>
+        <path d="M-28,5 L-5,28 L30,-20" fill="none" stroke="#ffffff" stroke-width="14"/>
+      {%- when 'molecule' -%}
+        <line x1="-65" y1="-42" x2="65" y2="-42"/>
+        <line x1="-65" y1="-42" x2="0" y2="65"/>
+        <line x1="65" y1="-42" x2="0" y2="65"/>
+        <circle cx="-65" cy="-42" r="22" stroke="none"/>
+        <circle cx="65" cy="-42" r="22" stroke="none"/>
+        <circle cx="0" cy="65" r="22" stroke="none"/>
+      {%- when 'heart' -%}
+        <path d="M0,85 C-85,25 -95,-40 -52,-72 C-22,-92 0,-62 0,-42 C0,-62 22,-92 52,-72 C95,-40 85,25 0,85 Z" stroke="none"/>
+      {%- when 'kidney' -%}
+        <path d="M-30,-80 C30,-80 75,-40 75,10 C75,55 35,90 0,85 C-50,80 -78,40 -78,0 C-78,-40 -55,-80 -30,-80 Z M-10,-30 C-20,-15 -20,15 -10,30" stroke="none"/>
+        <path d="M-10,-30 C-20,-15 -20,15 -10,30" fill="none" stroke="#ffffff" stroke-width="10"/>
+      {%- when 'brain' -%}
+        <path d="M-10,-80 C-50,-80 -80,-50 -75,-15 C-90,5 -85,40 -55,55 C-50,80 -20,85 0,70 C20,85 50,80 55,55 C85,40 90,5 75,-15 C80,-50 50,-80 10,-80 C5,-90 -5,-90 -10,-80 Z" stroke="none"/>
+        <path d="M0,-70 L0,70 M-40,-30 C-20,-30 -20,30 -40,30 M40,-30 C20,-30 20,30 40,30" fill="none" stroke="#ffffff" stroke-width="8"/>
+      {%- when 'star' -%}
+        <path d="M0,-90 L25,-25 L92,-25 L40,15 L60,80 L0,40 L-60,80 L-40,15 L-92,-25 L-25,-25 Z" stroke="none"/>
+      {%- else -%}
+        <rect x="-85" y="-30" width="170" height="60" rx="30" stroke="none"/>
+        <line x1="0" y1="-30" x2="0" y2="30" stroke="#ffffff" stroke-width="8"/>
+    {%- endcase -%}
+  </g>
+</svg>

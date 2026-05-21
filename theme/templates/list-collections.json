@@ -16,56 +16,64 @@
           "type": "collection_item",
           "settings": {
             "collection": "medicamento-oncologicos-al-mejor-precio-alta-especialidad",
-            "image": "shopify://shop_images/imagen_2023-04-03_142546553.png"
+            "image": "",
+            "fa_icon": "fa-solid fa-ribbon"
           }
         },
         "cl-hema": {
           "type": "collection_item",
           "settings": {
-            "collection": "hematologia",
-            "image": "shopify://shop_images/imagen_2023-04-03_142546553.png"
+            "collection": "hematologia-1",
+            "image": "",
+            "fa_icon": "fa-solid fa-droplet"
           }
         },
         "cl-reuma": {
           "type": "collection_item",
           "settings": {
             "collection": "reumatologia-y-traumatologia",
-            "image": "shopify://shop_images/imagen_2023-04-03_145556394.png"
+            "image": "",
+            "fa_icon": "fa-solid fa-bone"
           }
         },
         "cl-infec": {
           "type": "collection_item",
           "settings": {
             "collection": "infecciosas-y-parasitarias",
-            "image": "shopify://shop_images/imagen_2023-04-03_142914263.png"
+            "image": "",
+            "fa_icon": "fa-solid fa-virus"
           }
         },
         "cl-immune": {
           "type": "collection_item",
           "settings": {
             "collection": "medicamentos-para-el-sistema-inmunologico-1",
-            "image": "shopify://shop_images/imagen_2023-04-03_142021791.png"
+            "image": "",
+            "fa_icon": "fa-solid fa-shield-halved"
           }
         },
         "cl-hormonal": {
           "type": "collection_item",
           "settings": {
             "collection": "productos-hormonales-especializados",
-            "image": "shopify://shop_images/imagen_2023-04-03_142914263.png"
+            "image": "",
+            "fa_icon": "fa-solid fa-flask"
           }
         },
         "cl-cardio": {
           "type": "collection_item",
           "settings": {
             "collection": "cardiologia",
-            "image": "shopify://shop_images/imagen_2023-04-03_143736464.png"
+            "image": "",
+            "fa_icon": "fa-solid fa-heart-pulse"
           }
         },
-        "cl-mas-vendido": {
+        "cl-best": {
           "type": "collection_item",
           "settings": {
             "collection": "lo-mas-vendido",
-            "image": "shopify://shop_images/imagen_2023-04-03_143736464.png"
+            "image": "",
+            "fa_icon": "fa-solid fa-star"
           }
         }
       },
@@ -77,13 +85,13 @@
         "cl-immune",
         "cl-hormonal",
         "cl-cardio",
-        "cl-mas-vendido"
+        "cl-best"
       ],
       "settings": {
         "container": "container",
         "display_type": "selected",
         "title": "Explora por especialidad",
-        "description": "<p>Medicamentos de alta especialidad organizados por área terapéutica. Selecciona una categoría para ver los tratamientos disponibles, precios y disponibilidad.</p>"
+        "description": "<p>Medicamentos de alta especialidad organizados por área terapéutica. Selecciona una categoría para conocer los productos disponibles. Todos los productos requieren receta médica vigente y son entregados con acompañamiento farmacéutico.</p>"
       }
     }
   },
