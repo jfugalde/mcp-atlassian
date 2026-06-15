@@ -1,7 +1,20 @@
 {{ 'slideshow.css' | asset_url | stylesheet_tag }}
 {% liquid
-assign st = section.settings
-assign first_block = section.blocks[0]
+  assign st = section.settings
+  assign first_block = section.blocks[0]
+  assign first_bg = first_block.settings.background
+%}
+{%- if first_bg != blank -%}
+  <link
+    rel="preload"
+    as="image"
+    href="{{ first_bg | image_url: width: 750 }}"
+    imagesrcset="{{ first_bg | image_url: width: 375 }} 375w, {{ first_bg | image_url: width: 550 }} 550w, {{ first_bg | image_url: width: 750 }} 750w, {{ first_bg | image_url: width: 1100 }} 1100w"
+    imagesizes="100vw"
+    fetchpriority="high"
+  >
+{%- endif -%}
+{% liquid
 assign aspect_ratio = first_block.settings.background.aspect_ratio | default: 2.333
 assign aspect_ratio_mobile = first_block.settings.mb_background.aspect_ratio | default: aspect_ratio
 

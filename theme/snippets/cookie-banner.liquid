@@ -138,8 +138,11 @@
         }
         try {
           localStorage.setItem(STORAGE_ACK, '1');
+          localStorage.setItem('macross_tracking_consent', '1');
           sessionStorage.removeItem(STORAGE_MIN);
+          sessionStorage.removeItem('macross_wa_branch');
         } catch (err) {}
+        window.dispatchEvent(new CustomEvent('macross:cookie-accept'));
       }
 
       function handleDecline() {
@@ -150,7 +153,9 @@
         }
         try {
           localStorage.setItem(STORAGE_ACK, '1');
+          localStorage.setItem('macross_tracking_consent', '0');
           sessionStorage.removeItem(STORAGE_MIN);
+          sessionStorage.removeItem('macross_wa_branch');
         } catch (err) {}
       }
 
@@ -199,6 +204,14 @@
         showBanner();
       }
 
+      function scheduleShowBanner() {
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(initCookieBanner, { timeout: 4000 });
+        } else {
+          window.addEventListener('load', initCookieBanner, { once: true });
+        }
+      }
+
       window.Shopify.loadFeatures(
         [
           {
@@ -211,7 +224,7 @@
             console.error(error);
             return;
           }
-          initCookieBanner();
+          scheduleShowBanner();
         }
       );
     })();
