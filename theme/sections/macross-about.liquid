@@ -175,11 +175,14 @@
                 </p>
               {%- endif -%}
               <div class="macross-about__branch-actions">
+                {%- assign utm_campaign = block.id | replace: 'branch-', 'branch_' -%}
                 {%- if block.settings.map_url != blank -%}
-                  <a class="macross-about__link" href="{{ block.settings.map_url }}" target="_blank" rel="noopener noreferrer">Cómo llegar</a>
+                  {%- capture map_href -%}{%- render 'macross-url-utm', url: block.settings.map_url, medium: 'about', campaign: utm_campaign, content: 'maps' -%}{%- endcapture -%}
+                  <a class="macross-about__link" href="{{ map_href | strip }}" target="_blank" rel="noopener noreferrer">Cómo llegar</a>
                 {%- endif -%}
                 {%- if block.settings.subdomain_url != blank -%}
-                  <a class="macross-about__link" href="{{ block.settings.subdomain_url }}">{{ block.settings.subdomain_label | default: 'Ver sucursal' }}</a>
+                  {%- capture subdomain_href -%}{%- render 'macross-url-utm', url: block.settings.subdomain_url, medium: 'about', campaign: utm_campaign, content: 'subdomain' -%}{%- endcapture -%}
+                  <a class="macross-about__link" href="{{ subdomain_href | strip }}">{{ block.settings.subdomain_label | default: 'Ver sucursal' }}</a>
                 {%- endif -%}
               </div>
             </article>

@@ -23,6 +23,11 @@
   var modalEl = null;
   var resolveInFlight = null;
   var activeMessage = '';
+  var activeBranchKey = '';
+  var activeUtmContent = 'launcher';
+  var UTM_SOURCE = 'farmaciasmacross';
+  var UTM_MEDIUM = 'whatsapp';
+  var STORE_URL = 'https://farmaciasmacross.com.mx';
 
   function readConfig() {
     if (config) return config;
@@ -49,6 +54,16 @@
       if (branches[i].key === key) return branches[i];
     }
     return null;
+  }
+
+  function waRouteKey(branchKey) {
+    if (branchKey === 'guadalajara') return 'cdmx';
+    return branchKey;
+  }
+
+  function waNumberForKey(branchKey) {
+    var branch = branchByKey(waRouteKey(branchKey));
+    return branch ? branch.number : '';
   }
 
   function branchKeyFromDevQuery() {
@@ -227,7 +242,7 @@
   function buildPayload(result) {
     return {
       branchKey: result.branch.key,
-      number: result.branch.number,
+      number: waNumberForKey(result.branch.key),
       confidence: result.confidence,
       source: result.source,
     };
@@ -308,9 +323,47 @@
     return 'general';
   }
 
-  function openDirectWhatsApp(number, message) {
+  function utmContentFromTrigger(trigger) {
+    if (!trigger) return 'launcher';
+    if (trigger.closest('.macross-wa-fab')) return 'fab';
+    if (trigger.closest('.sf-menu-mobile-whatsapp')) return 'mobile_menu';
+    if (trigger.closest('.sf-footer-whatsapp-launcher')) return 'sticky_bar';
+    if (trigger.closest('.macross-about__cta-btn')) return 'about_cta';
+    if (trigger.closest('.sticky-atc__whatsapp')) return 'pdp_sticky';
+    return 'launcher';
+  }
+
+  function appendUtmParams(url, branchKey, content) {
+    var campaign = waRouteKey(branchKey || 'cdmx');
+    var sep = url.indexOf('?') >= 0 ? '&' : '?';
+    return (
+      url +
+      sep +
+      'utm_source=' +
+      encodeURIComponent(UTM_SOURCE) +
+      '&utm_medium=' +
+      encodeURIComponent(UTM_MEDIUM) +
+      '&utm_campaign=' +
+      encodeURIComponent(campaign) +
+      '&utm_content=' +
+      encodeURIComponent(content || 'launcher')
+    );
+  }
+
+  function finalizeWhatsAppMessage(message, branchKey, content) {
+    var text = String(message || '');
+    var urlRe = /(https:\/\/farmaciasmacross\.com\.mx[^\s]*)/i;
+    var match = text.match(urlRe);
+    if (match) {
+      return text.replace(match[1], appendUtmParams(match[1], branchKey, content));
+    }
+    return text + '\n' + appendUtmParams(STORE_URL, branchKey, content);
+  }
+
+  function openDirectWhatsApp(number, message, branchKey, utmContent) {
     var url = 'https://wa.me/' + waDigits(number);
-    if (message) url += '?text=' + encodeURIComponent(message);
+    var finalMessage = finalizeWhatsAppMessage(message, branchKey, utmContent);
+    if (finalMessage) url += '?text=' + encodeURIComponent(finalMessage);
     window.open(url, '_blank', 'noopener,noreferrer');
   }
 
@@ -367,10 +420,10 @@
   }
 
   function openBranchByKey(key) {
-    var branch = branchByKey(key);
-    if (!branch) return;
+    var number = waNumberForKey(key);
+    if (!number) return;
     closeBranchPicker();
-    openDirectWhatsApp(branch.number, activeMessage);
+    openDirectWhatsApp(number, activeMessage, key, 'picker');
   }
 
   function closeMobileMenu() {
@@ -396,6 +449,7 @@
     readConfig();
     var context = launcherContext(trigger);
     activeMessage = buildMessage(context);
+    activeUtmContent = utmContentFromTrigger(trigger);
 
     if (trigger && trigger.closest('.sf-menu-mobile-whatsapp')) {
       closeMobileMenu();
@@ -404,7 +458,12 @@
     var cached = readCachedBranch();
 
     if (cached && cached.source === 'hostname') {
-      openDirectWhatsApp(cached.number, activeMessage);
+      openDirectWhatsApp(
+        waNumberForKey(cached.branchKey),
+        activeMessage,
+        cached.branchKey,
+        'hostname'
+      );
       return;
     }
 
@@ -416,7 +475,12 @@
     if (!cached) {
       resolveBranch({ skipBrowserGeo: false }).then(function (resolved) {
         if (resolved && resolved.confidence === 'high') {
-          openDirectWhatsApp(resolved.number, activeMessage);
+          openDirectWhatsApp(
+            waNumberForKey(resolved.branchKey),
+            activeMessage,
+            resolved.branchKey,
+            activeUtmContent
+          );
           return;
         }
         openBranchPicker(
@@ -428,7 +492,12 @@
     }
 
     if (cached.confidence === 'high') {
-      openDirectWhatsApp(cached.number, activeMessage);
+      openDirectWhatsApp(
+        waNumberForKey(cached.branchKey),
+        activeMessage,
+        cached.branchKey,
+        activeUtmContent
+      );
       return;
     }
 

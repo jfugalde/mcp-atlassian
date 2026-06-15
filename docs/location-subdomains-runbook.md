@@ -9,7 +9,7 @@ Serve the Macross Shopify store on three location subdomains and route WhatsApp 
 |-----------|--------|----------|
 | `cdmx.farmaciasmacross.com.mx` | Sucursal CDMX | +525540729473 |
 | `puebla.farmaciasmacross.com.mx` | Sucursal Puebla | +522224454192 |
-| `guadalajara.farmaciasmacross.com.mx` | Centro de distribución Guadalajara | +525540729473 |
+| `guadalajara.farmaciasmacross.com.mx` | Centro de distribución Guadalajara | CDMX (+525540729473) |
 
 Theme routing lives in `theme/assets/macross-whatsapp.js` (hostname > cookie-gated IP/GPS on apex). See also `docs/macross-whatsapp.md`.
 

@@ -1,0 +1,9 @@
+{%- liquid
+  assign utm_source = 'farmaciasmacross'
+  assign utm_content = content | default: 'link'
+  assign joiner = '?'
+  if url contains '?'
+    assign joiner = '&'
+  endif
+-%}
+{{- url -}}{{- joiner -}}utm_source={{ utm_source | url_param_escape }}&utm_medium={{ medium | url_param_escape }}&utm_campaign={{ campaign | url_param_escape }}&utm_content={{ utm_content | url_param_escape -}}

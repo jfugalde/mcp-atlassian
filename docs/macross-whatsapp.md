@@ -19,7 +19,8 @@ Layouts load config + widget before `</body>` and `macross-whatsapp.js` (defer).
 |---------|---------|
 | `macross_wa_cdmx_number` | CDMX WhatsApp (default `+525540729473`) |
 | `macross_wa_puebla_number` | Puebla WhatsApp |
-| `macross_wa_guadalajara_number` | Guadalajara distribution center WhatsApp (default CDMX number until local line is set) |
+
+Guadalajara routes to the CDMX WhatsApp number (no separate setting).
 | `macross_wa_show_desktop_fab` | Show/hide desktop floating button |
 | `macross_wa_fab_label` | FAB label (locale default: "WhatsApp") |
 | `macross_whatsapp_pdp_addons_integration` | On PDP, hide desktop FAB; sticky ATC still works |
@@ -40,6 +41,16 @@ All use `data-macross-whatsapp-launcher`:
 1. **Subdomain / `?macross_branch=`** → direct `wa.me` to that branch (high confidence).
 2. **Apex, cookies declined** → native picker (3 sucursales).
 3. **Apex, cookies accepted** → IP + optional GPS; high → direct; medium → picker + "Sucursal recomendada"; low → picker, reorder only.
+
+## UTM tracking
+
+| Surface | `utm_source` | `utm_medium` | `utm_campaign` | `utm_content` |
+|---------|--------------|--------------|----------------|---------------|
+| Acerca — subdomain link | `farmaciasmacross` | `about` | `branch_cdmx` / `branch_puebla` / `branch_guadalajara` | `subdomain` |
+| Acerca — Google Maps | `farmaciasmacross` | `about` | same | `maps` |
+| WhatsApp prefill URL | `farmaciasmacross` | `whatsapp` | branch key (`cdmx` for Guadalajara) | `fab`, `mobile_menu`, `sticky_bar`, `about_cta`, `pdp_sticky`, `picker`, `hostname` |
+
+WhatsApp appends a tracked `farmaciasmacross.com.mx?...` URL to the prefill message (or UTM-tags an existing product URL).
 
 Dev console: `MacrossWhatsApp.getActiveBranchKey()` (alias: `MacrossWhatsAppGeo`).
 
