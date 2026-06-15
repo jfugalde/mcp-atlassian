@@ -120,7 +120,7 @@
         "tab_descripcion_producto": {
           "type": "description",
           "settings": {
-            "header": "Description"
+            "header": "Descripción"
           }
         }
       },
