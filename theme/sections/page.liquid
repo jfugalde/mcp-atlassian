@@ -1,8 +1,31 @@
-{% render 'page-title', title: page.title, container: true %}
-{%- if page.content != blank -%}
-  <div class="container mx-auto xl:pb-16 sm:pb-10 pb-8">
-    <div class="prose">
-      {{ page.content }}
+{%- if template.suffix == 'acerca' -%}
+  {{ 'macross-about.css' | asset_url | stylesheet_tag }}
+  <div class="macross-about">
+    <div class="macross-about__hero">
+      <div class="container">
+        {% render 'page-title', title: page.title, container: false %}
+        <p class="macross-about__eyebrow">Atención farmacéutica especializada</p>
+        <p class="macross-about__lead">En Farmacias Macross ofrecemos asesoría profesional para pacientes que requieren medicamentos de alta especialidad bajo prescripción médica. Nuestro equipo farmacéutico brinda acompañamiento y orientación sobre disponibilidad, requisitos de receta y opciones de entrega en México.</p>
+      </div>
     </div>
+    {%- if page.content != blank -%}
+      <div class="macross-about__section macross-about__section--legacy">
+        <div class="container">
+          <div class="macross-about__legacy-content rte prose">{{ page.content }}</div>
+        </div>
+      </div>
+    {%- endif -%}
   </div>
+{%- elsif template.suffix == 'nuestras-licencias' or page.handle == 'nuestras-licencias' -%}
+  {{ 'macross-about.css' | asset_url | stylesheet_tag }}
+  {% render 'macross-licenses-content' %}
+{%- else -%}
+  {% render 'page-title', title: page.title, container: true %}
+  {%- if page.content != blank -%}
+    <div class="container mx-auto xl:pb-16 sm:pb-10 pb-8">
+      <div class="prose">
+        {{ page.content }}
+      </div>
+    </div>
+  {%- endif -%}
 {%- endif -%}

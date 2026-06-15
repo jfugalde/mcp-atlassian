@@ -2667,9 +2667,10 @@
       },
       {
         "type": "text",
-        "id": "macross_wa_interlomas_number",
-        "label": "Sucursal Interlomas — WhatsApp",
-        "default": "+525632497548"
+        "id": "macross_wa_guadalajara_number",
+        "label": "Centro de distribución Guadalajara — WhatsApp",
+        "default": "+525540729473",
+        "info": "Atención regional occidente. Por defecto usa el mismo WhatsApp de CDMX hasta asignar un número local."
       },
       {
         "type": "checkbox",

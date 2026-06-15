@@ -10,8 +10,121 @@
 {
   "sections": {
     "main": {
-      "type": "page",
-      "settings": {}
+      "type": "macross-about",
+      "blocks": {
+        "val-asesoria": {
+          "type": "value",
+          "settings": {
+            "icon": "support",
+            "title": "Asesoría farmacéutica",
+            "description": "Acompañamiento profesional"
+          }
+        },
+        "val-rx": {
+          "type": "value",
+          "settings": {
+            "icon": "prescription",
+            "title": "Alta especialidad",
+            "description": "Medicamentos bajo receta"
+          }
+        },
+        "val-cold": {
+          "type": "value",
+          "settings": {
+            "icon": "cold",
+            "title": "Cadena de frío",
+            "description": "Envíos refrigerados"
+          }
+        },
+        "val-secure": {
+          "type": "value",
+          "settings": {
+            "icon": "secure",
+            "title": "Pago seguro",
+            "description": "Transacciones protegidas"
+          }
+        },
+        "media-banner": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/imagen_2023-04-03_162521981.png",
+            "alt": "Farmacias Macross",
+            "caption": "",
+            "full_width": true
+          }
+        },
+        "branch-cdmx": {
+          "type": "branch",
+          "settings": {
+            "image": "shopify://shop_images/1_7cfd5c0e-938f-4625-a8b2-bd44d716bafe.jpg",
+            "name": "Sucursal CDMX",
+            "address": "Blvd. Adolfo Ruiz Cortínez 5270 Local 39, Pedregal de Carrasco, Coyoacán",
+            "license": "09 004 09 0206",
+            "phone": "55 5440 9049",
+            "map_url": "https://goo.gl/maps/as1c4s4reponFSDH6",
+            "subdomain_url": "https://cdmx.farmaciasmacross.com.mx"
+          }
+        },
+        "branch-puebla": {
+          "type": "branch",
+          "settings": {
+            "image": "shopify://shop_images/2_6152f838-ccca-4dc6-ac79-f1a95aaa6bfb.jpg",
+            "name": "Sucursal Puebla",
+            "address": "Calle 16 de Septiembre 6541 Planta Alta, Puebla Textil, Puebla",
+            "license": "1061160245",
+            "phone": "222 399 1076",
+            "map_url": "https://goo.gl/maps/djTxKQMQ2HAy6ywM6",
+            "subdomain_url": "https://puebla.farmaciasmacross.com.mx"
+          }
+        },
+        "branch-guadalajara": {
+          "type": "branch",
+          "settings": {
+            "name": "Centro de distribución Guadalajara",
+            "branch_note": "Logística y atención regional. No es sucursal de dispensación al público.",
+            "address": "Calle Coras 3515, Interior 4, Col. Santa Rita, Guadalajara, Jal. C.P. 44690",
+            "phone": "55 5440 9049",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Macross+Pharma+Coras+3515+4,+44690+Guadalajara,+Jalisco",
+            "subdomain_url": "https://guadalajara.farmaciasmacross.com.mx",
+            "subdomain_label": "Ver ubicación"
+          }
+        }
+      },
+      "block_order": [
+        "val-asesoria",
+        "val-rx",
+        "val-cold",
+        "val-secure",
+        "media-banner",
+        "branch-cdmx",
+        "branch-puebla",
+        "branch-guadalajara"
+      ],
+      "settings": {
+        "container": "container",
+        "eyebrow": "Atención farmacéutica especializada",
+        "lead": "En Farmacias Macross ofrecemos asesoría profesional para pacientes que requieren medicamentos de alta especialidad bajo prescripción médica. Nuestro equipo farmacéutico brinda acompañamiento y orientación sobre disponibilidad, requisitos de receta y opciones de entrega en México.",
+        "hero_image": "shopify://shop_images/banner.medicamento-9.jpg",
+        "hero_image_alt": "Farmacias Macross",
+        "mission_heading": "",
+        "mission_text": "",
+        "services_heading": "Cómo te acompañamos",
+        "services_intro": "Información y soporte para tu tratamiento, con canales de contacto en cada sucursal.",
+        "services_text": "<ul><li>Asesoría farmacéutica sobre productos del catálogo y requisitos de receta.</li><li>Envíos a nivel nacional, con cadena de frío cuando el producto lo requiere.</li><li>Atención por teléfono y WhatsApp en sucursales CDMX, Puebla y centro de distribución Guadalajara.</li><li>Compra en línea con métodos de pago seguros.</li></ul>",
+        "branches_heading": "Nuestras ubicaciones",
+        "branches_intro": "Sucursales con licencia sanitaria vigente y centro de distribución para la zona occidente.",
+        "compliance_heading": "Licencias y cumplimiento",
+        "compliance_text": "<p>MACROSS PHARMA S.A. DE C.V. opera con licencias sanitarias vigentes: Ciudad de México <strong>09 004 09 0206</strong> (Blvd. Adolfo Ruiz Cortínez 5270 Local 39, Pedregal de Carrasco, Coyoacán) y Puebla <strong>1061160245</strong> (Calle 16 de Septiembre 6541, Puebla Textil).</p><p>La información en este sitio es de carácter informativo y no sustituye la consulta con un profesional de la salud.</p>",
+        "licenses_url": "/pages/nuestras-licencias",
+        "licenses_label": "Ver nuestras licencias",
+        "show_cta": true,
+        "cta_heading": "¿Necesitas orientación?",
+        "cta_text": "Escríbenos por WhatsApp y te atenderá la sucursal que corresponda. Los tiempos de respuesta pueden variar según el horario de atención.",
+        "cta_button_label": "WhatsApp",
+        "show_page_content": true,
+        "legacy_content_heading": "",
+        "compliance_image": "shopify://shop_images/certificaciones.png"
+      }
     },
     "video": {
       "type": "video",
@@ -29,9 +142,9 @@
         "autoplay": false,
         "loop": false,
         "muted": false,
-        "padding_top": 30,
+        "padding_top": 0,
         "padding_bottom": 60,
-        "custom_class": "acerca__video"
+        "custom_class": "macross-about__video"
       }
     }
   },

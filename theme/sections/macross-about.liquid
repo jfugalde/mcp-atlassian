@@ -1,0 +1,507 @@
+{{ 'macross-about.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign container = section.settings.container
+  assign hero_image = section.settings.hero_image
+-%}
+
+<div class="macross-about">
+  <div class="macross-about__hero">
+    <div class="{{ container }}">
+      {% render 'page-title', title: page.title, container: false %}
+      <div class="macross-about__hero-inner{% if hero_image != blank %} macross-about__hero-inner--image{% endif %}">
+        <div class="macross-about__hero-copy">
+          {%- if section.settings.eyebrow != blank -%}
+            <p class="macross-about__eyebrow">{{ section.settings.eyebrow }}</p>
+          {%- endif -%}
+          {%- if section.settings.lead != blank -%}
+            <p class="macross-about__lead">{{ section.settings.lead }}</p>
+          {%- endif -%}
+        </div>
+        {%- if hero_image != blank -%}
+          <div class="macross-about__hero-media">
+            {{ hero_image | image_url: width: 1200 | image_tag: width: hero_image.width, height: hero_image.height, loading: 'lazy', widths: '600,900,1200', sizes: '(min-width: 992px) 50vw, 100vw', alt: section.settings.hero_image_alt | default: page.title }}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+
+  {%- if page.content != blank and section.settings.show_page_content -%}
+    <div class="macross-about__section macross-about__section--legacy">
+      <div class="{{ container }}">
+        {%- if section.settings.legacy_content_heading != blank -%}
+          <h2 class="macross-about__section-title macross-about__section-title--center">{{ section.settings.legacy_content_heading }}</h2>
+        {%- endif -%}
+        <div class="macross-about__legacy-content rte prose">{{ page.content }}</div>
+      </div>
+    </div>
+  {%- endif -%}
+
+  {%- if section.blocks.size > 0 -%}
+    <div class="macross-about__section">
+      <div class="{{ container }}">
+        <ul class="macross-about__values" role="list">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'value' -%}
+              {%- assign icon = block.settings.icon -%}
+              <li class="macross-about__value" {{ block.shopify_attributes }}>
+                <span class="macross-about__value-icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    {%- case icon -%}
+                      {%- when 'prescription' -%}
+                        <path d="M14 6h12a6 6 0 0 1 0 12h-6"/><path d="M14 6v36"/><path d="M20 18l14 14"/><path d="M34 24l-8 8"/>
+                      {%- when 'cold' -%}
+                        <path d="M24 4v40M8 14l32 20M8 34l32-20"/><path d="M24 4l-4 4 4 4 4-4z"/><path d="M24 44l-4-4 4-4 4 4z"/>
+                      {%- when 'secure' -%}
+                        <path d="M24 4l16 6v12c0 12-8 20-16 22-8-2-16-10-16-22V10z"/><path d="M16 24l6 6 12-12"/>
+                      {%- when 'whatsapp' -%}
+                        <path d="M6 42l3-10a18 18 0 1 1 7 7z"/><path d="M18 20c1 4 5 8 9 9l3-3 6 3-2 6c-12 0-22-10-22-22l6-2 3 6z" fill="currentColor" stroke="none"/>
+                      {%- when 'support' -%}
+                        <path d="M8 24a16 16 0 0 1 32 0v8a4 4 0 0 1-4 4h-2v-12h6"/><path d="M40 24a16 16 0 0 0-32 0"/><path d="M8 24v8a4 4 0 0 0 4 4h2V24H8z"/>
+                      {%- when 'quality' -%}
+                        <circle cx="24" cy="20" r="12"/><path d="M16 28l-4 16 12-6 12 6-4-16"/>
+                      {%- when 'shipping' -%}
+                        <path d="M3 8h22v22H3z"/><path d="M25 14h10l6 6v10H25"/><circle cx="11" cy="34" r="4"/><circle cx="33" cy="34" r="4"/>
+                      {%- else -%}
+                        <circle cx="24" cy="24" r="20"/><path d="M16 24l6 6 12-12"/>
+                    {%- endcase -%}
+                  </svg>
+                </span>
+                <span class="macross-about__value-title">{{ block.settings.title }}</span>
+                {%- if block.settings.description != blank -%}
+                  <span class="macross-about__value-desc">{{ block.settings.description }}</span>
+                {%- endif -%}
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  {%- endif -%}
+
+  {%- if section.settings.mission_heading != blank or section.settings.mission_text != blank -%}
+    <div class="macross-about__section macross-about__section--alt">
+      <div class="{{ container }}">
+        <div class="macross-about__split">
+          <div>
+            {%- if section.settings.mission_heading != blank -%}
+              <h2 class="macross-about__section-title">{{ section.settings.mission_heading }}</h2>
+            {%- endif -%}
+            {%- if section.settings.mission_text != blank -%}
+              <div class="macross-about__copy rte">{{ section.settings.mission_text }}</div>
+            {%- endif -%}
+          </div>
+          {%- if section.settings.mission_image != blank -%}
+            <div class="macross-about__hero-media">
+              {{ section.settings.mission_image | image_url: width: 900 | image_tag: width: section.settings.mission_image.width, height: section.settings.mission_image.height, loading: 'lazy', widths: '450,600,900', sizes: '(min-width: 992px) 45vw, 100vw', alt: section.settings.mission_heading }}
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+
+  {%- if section.settings.services_heading != blank or section.settings.services_text != blank -%}
+    <div class="macross-about__section">
+      <div class="{{ container }}">
+        <div class="macross-about__section-head">
+          {%- if section.settings.services_heading != blank -%}
+            <h2 class="macross-about__section-title">{{ section.settings.services_heading }}</h2>
+          {%- endif -%}
+          {%- if section.settings.services_intro != blank -%}
+            <p class="macross-about__section-text">{{ section.settings.services_intro }}</p>
+          {%- endif -%}
+        </div>
+        {%- if section.settings.services_text != blank -%}
+          <div class="macross-about__copy rte">{{ section.settings.services_text }}</div>
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endif -%}
+
+  {%- assign media_blocks = section.blocks | where: 'type', 'media' -%}
+  {%- if media_blocks.size > 0 -%}
+    <div class="macross-about__media-stack macross-about__section">
+      {%- for block in media_blocks -%}
+        {%- if block.settings.image != blank -%}
+          <figure class="macross-about__media{% if block.settings.full_width %} macross-about__media--full{% endif %}" {{ block.shopify_attributes }}>
+            <div class="{% if block.settings.full_width %}macross-about__media-inner{% else %}{{ container }}{% endif %}">
+              {%- capture media_sizes -%}{% if block.settings.full_width %}100vw{% else %}(min-width: 992px) 960px, 100vw{% endif %}{%- endcapture -%}
+              {{ block.settings.image | image_url: width: 1600 | image_tag: width: block.settings.image.width, height: block.settings.image.height, loading: 'lazy', widths: '600,900,1200,1600', sizes: media_sizes, alt: block.settings.alt | default: block.settings.caption }}
+              {%- if block.settings.caption != blank -%}
+                <figcaption class="macross-about__media-caption">{{ block.settings.caption }}</figcaption>
+              {%- endif -%}
+            </div>
+          </figure>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+
+  {%- assign branch_blocks = section.blocks | where: 'type', 'branch' -%}
+  {%- if branch_blocks.size > 0 -%}
+    <div class="macross-about__section macross-about__section--alt">
+      <div class="{{ container }}">
+        <div class="macross-about__section-head macross-about__section-head--center">
+          <h2 class="macross-about__section-title">{{ section.settings.branches_heading }}</h2>
+          {%- if section.settings.branches_intro != blank -%}
+            <p class="macross-about__section-text">{{ section.settings.branches_intro }}</p>
+          {%- endif -%}
+        </div>
+        <div class="macross-about__branches">
+          {%- for block in branch_blocks -%}
+            <article class="macross-about__branch" {{ block.shopify_attributes }}>
+              {%- if block.settings.image != blank -%}
+                <div class="macross-about__branch-photo">
+                  {{ block.settings.image | image_url: width: 600 | image_tag: width: block.settings.image.width, height: block.settings.image.height, loading: 'lazy', widths: '300,450,600', sizes: '(min-width: 768px) 280px, 100vw', alt: block.settings.name }}
+                </div>
+              {%- endif -%}
+              <h3 class="macross-about__branch-name">{{ block.settings.name }}</h3>
+              {%- if block.settings.branch_note != blank -%}
+                <p class="macross-about__branch-meta macross-about__branch-note">{{ block.settings.branch_note }}</p>
+              {%- endif -%}
+              {%- if block.settings.address != blank -%}
+                <p class="macross-about__branch-meta">{{ block.settings.address }}</p>
+              {%- endif -%}
+              {%- if block.settings.license != blank -%}
+                <p class="macross-about__branch-meta macross-about__branch-license">
+                  Licencia sanitaria: {{ block.settings.license }}
+                </p>
+              {%- endif -%}
+              {%- if block.settings.phone != blank -%}
+                <p class="macross-about__branch-meta">
+                  <a href="tel:{{ block.settings.phone | replace: ' ', '' }}">{{ block.settings.phone }}</a>
+                </p>
+              {%- endif -%}
+              <div class="macross-about__branch-actions">
+                {%- if block.settings.map_url != blank -%}
+                  <a class="macross-about__link" href="{{ block.settings.map_url }}" target="_blank" rel="noopener noreferrer">Cómo llegar</a>
+                {%- endif -%}
+                {%- if block.settings.subdomain_url != blank -%}
+                  <a class="macross-about__link" href="{{ block.settings.subdomain_url }}">{{ block.settings.subdomain_label | default: 'Ver sucursal' }}</a>
+                {%- endif -%}
+              </div>
+            </article>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+
+  {%- if section.settings.compliance_text != blank -%}
+    <div class="macross-about__section">
+      <div class="{{ container }}">
+        <div class="macross-about__compliance">
+          <div class="macross-about__compliance-grid">
+            <div>
+              <h2 class="macross-about__section-title">{{ section.settings.compliance_heading }}</h2>
+              <div class="rte">{{ section.settings.compliance_text }}</div>
+              {%- if section.settings.licenses_url != blank -%}
+                <p><a class="macross-about__link" href="{{ section.settings.licenses_url }}">{{ section.settings.licenses_label }}</a></p>
+              {%- endif -%}
+            </div>
+            {%- if section.settings.compliance_image != blank -%}
+              <div class="macross-about__compliance-media">
+                {{ section.settings.compliance_image | image_url: width: 500 | image_tag: width: section.settings.compliance_image.width, height: section.settings.compliance_image.height, loading: 'lazy', widths: '250,360,500', sizes: '(min-width: 768px) 240px, 200px', alt: 'Licencias y certificaciones Farmacias Macross' }}
+              </div>
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+
+  {%- if section.settings.show_cta -%}
+    <div class="macross-about__section">
+      <div class="{{ container }}">
+        <div class="macross-about__cta">
+          <div>
+            <h2 class="macross-about__cta-title">{{ section.settings.cta_heading }}</h2>
+            <p class="macross-about__cta-text">{{ section.settings.cta_text }}</p>
+          </div>
+          <button type="button" class="macross-about__cta-btn" data-macross-whatsapp-launcher>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m0 17.96h-.01a8.1 8.1 0 0 1-4.13-1.13l-.3-.18-3.12.82.83-3.04-.2-.31a8.1 8.1 0 0 1-1.25-4.34c0-4.46 3.63-8.09 8.1-8.09 2.16 0 4.2.84 5.73 2.37a8.04 8.04 0 0 1 2.36 5.72c0 4.46-3.63 8.1-8.09 8.1m4.43-6.05c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18-.71-.63-1.19-1.41-1.33-1.65-.14-.24-.02-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.48-.4-.42-.54-.43h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.09 3.62.57.25 1.02.4 1.37.51.57.18 1.09.15 1.5.09.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28"/></svg>
+            {{ section.settings.cta_button_label }}
+          </button>
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+
+</div>
+
+{% schema %}
+{
+  "name": "Macross — Acerca de",
+  "tag": "section",
+  "class": "macross-about-section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "container",
+      "label": "Container",
+      "options": [
+        { "value": "container", "label": "Container" },
+        { "value": "container-fluid", "label": "Container fluid" }
+      ],
+      "default": "container"
+    },
+    {
+      "type": "header",
+      "content": "Hero"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Atención farmacéutica especializada"
+    },
+    {
+      "type": "textarea",
+      "id": "lead",
+      "label": "Lead text",
+      "default": "En Farmacias Macross ofrecemos asesoría profesional para pacientes que requieren medicamentos de alta especialidad bajo prescripción médica. Nuestro equipo farmacéutico brinda acompañamiento y orientación sobre disponibilidad, requisitos de receta y opciones de entrega en México."
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero image"
+    },
+    {
+      "type": "text",
+      "id": "hero_image_alt",
+      "label": "Hero image alt text"
+    },
+    {
+      "type": "header",
+      "content": "Quiénes somos"
+    },
+    {
+      "type": "text",
+      "id": "mission_heading",
+      "label": "Heading",
+      "default": "Quiénes somos"
+    },
+    {
+      "type": "richtext",
+      "id": "mission_text",
+      "label": "Body",
+      "default": "<p>Somos una cadena farmacéutica mexicana enfocada en medicamentos de alta especialidad. Operamos con licencias sanitarias vigentes y un equipo capacitado para orientar sobre disponibilidad, requisitos de receta y logística de entrega.</p><p>Nuestro objetivo es facilitar un proceso de compra claro y responsable, sin sustituir la indicación de su médico tratante.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "mission_image",
+      "label": "Supporting image"
+    },
+    {
+      "type": "header",
+      "content": "Servicios"
+    },
+    {
+      "type": "text",
+      "id": "services_heading",
+      "label": "Heading",
+      "default": "Cómo te acompañamos"
+    },
+    {
+      "type": "textarea",
+      "id": "services_intro",
+      "label": "Intro",
+      "default": "Información y soporte para tu tratamiento, con canales de contacto en cada sucursal."
+    },
+    {
+      "type": "richtext",
+      "id": "services_text",
+      "label": "Services list",
+      "default": "<ul><li>Asesoría farmacéutica sobre productos del catálogo y requisitos de receta.</li><li>Envíos a nivel nacional, con cadena de frío cuando el producto lo requiere.</li><li>Atención por teléfono y WhatsApp en sucursales CDMX, Puebla y centro de distribución Guadalajara.</li><li>Compra en línea con métodos de pago seguros.</li></ul>"
+    },
+    {
+      "type": "header",
+      "content": "Sucursales"
+    },
+    {
+      "type": "text",
+      "id": "branches_heading",
+      "label": "Heading",
+      "default": "Nuestras sucursales"
+    },
+    {
+      "type": "textarea",
+      "id": "branches_intro",
+      "label": "Intro",
+      "default": "Visítanos o contáctanos por la sucursal más cercana."
+    },
+    {
+      "type": "header",
+      "content": "Cumplimiento"
+    },
+    {
+      "type": "text",
+      "id": "compliance_heading",
+      "label": "Heading",
+      "default": "Licencias y cumplimiento"
+    },
+    {
+      "type": "richtext",
+      "id": "compliance_text",
+      "label": "Text",
+      "default": "<p>MACROSS PHARMA S.A. DE C.V. opera con licencias sanitarias vigentes: Ciudad de México <strong>09 004 09 0206</strong> (Blvd. Adolfo Ruiz Cortínez 5270 Local 39, Pedregal de Carrasco, Coyoacán) y Puebla <strong>1061160245</strong> (Calle 16 de Septiembre 6541, Puebla Textil).</p><p>La información en este sitio es de carácter informativo y no sustituye la consulta con un profesional de la salud.</p>"
+    },
+    {
+      "type": "url",
+      "id": "licenses_url",
+      "label": "Licenses page URL"
+    },
+    {
+      "type": "text",
+      "id": "licenses_label",
+      "label": "Licenses link label",
+      "default": "Ver nuestras licencias"
+    },
+    {
+      "type": "header",
+      "content": "WhatsApp CTA"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cta",
+      "label": "Show WhatsApp CTA",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "cta_heading",
+      "label": "CTA heading",
+      "default": "¿Necesitas orientación?"
+    },
+    {
+      "type": "textarea",
+      "id": "cta_text",
+      "label": "CTA text",
+      "default": "Escríbenos por WhatsApp y te atenderá la sucursal que corresponda. Los tiempos de respuesta pueden variar según el horario de atención."
+    },
+    {
+      "type": "text",
+      "id": "cta_button_label",
+      "label": "CTA button label",
+      "default": "WhatsApp"
+    },
+    {
+      "type": "header",
+      "content": "Contenido de página (imágenes Admin)"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_page_content",
+      "label": "Show Shopify page body (misión, visión, gráficos)",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "legacy_content_heading",
+      "label": "Heading above page body"
+    },
+    {
+      "type": "image_picker",
+      "id": "compliance_image",
+      "label": "Certifications image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "value",
+      "name": "Value pillar",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "support", "label": "Pharmaceutical support" },
+            { "value": "prescription", "label": "Prescription (Rx)" },
+            { "value": "cold", "label": "Cold chain" },
+            { "value": "secure", "label": "Secure payment" },
+            { "value": "whatsapp", "label": "WhatsApp" },
+            { "value": "quality", "label": "Quality" },
+            { "value": "shipping", "label": "Shipping" }
+          ],
+          "default": "support"
+        },
+        { "type": "text", "id": "title", "label": "Title", "default": "Asesoría farmacéutica" },
+        { "type": "text", "id": "description", "label": "Description", "default": "Acompañamiento profesional" }
+      ]
+    },
+    {
+      "type": "branch",
+      "name": "Branch",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Branch photo" },
+        { "type": "text", "id": "name", "label": "Name", "default": "Sucursal CDMX" },
+        { "type": "textarea", "id": "branch_note", "label": "Role or note (e.g. distribution center)" },
+        { "type": "textarea", "id": "address", "label": "Address or note" },
+        { "type": "text", "id": "license", "label": "Sanitary license number" },
+        { "type": "text", "id": "phone", "label": "Phone display", "default": "55 5440 9049" },
+        { "type": "url", "id": "map_url", "label": "Map URL" },
+        { "type": "url", "id": "subdomain_url", "label": "Branch subdomain URL" },
+        { "type": "text", "id": "subdomain_label", "label": "Subdomain link label", "default": "Ver sucursal" }
+      ]
+    },
+    {
+      "type": "media",
+      "name": "Image band",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "alt", "label": "Alt text" },
+        { "type": "text", "id": "caption", "label": "Caption" },
+        { "type": "checkbox", "id": "full_width", "label": "Full width", "default": true }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Macross — Acerca de",
+      "blocks": [
+        { "type": "value", "settings": { "icon": "support", "title": "Asesoría farmacéutica", "description": "Acompañamiento profesional" } },
+        { "type": "value", "settings": { "icon": "prescription", "title": "Alta especialidad", "description": "Medicamentos bajo receta" } },
+        { "type": "value", "settings": { "icon": "cold", "title": "Cadena de frío", "description": "Envíos refrigerados" } },
+        { "type": "value", "settings": { "icon": "secure", "title": "Pago seguro", "description": "Transacciones protegidas" } },
+        {
+          "type": "branch",
+          "settings": {
+            "name": "Sucursal CDMX",
+            "address": "Blvd. Adolfo Ruiz Cortínez 5270 Local 39, Pedregal de Carrasco, Coyoacán",
+            "license": "09 004 09 0206",
+            "phone": "55 5440 9049",
+            "map_url": "https://goo.gl/maps/as1c4s4reponFSDH6",
+            "subdomain_url": "https://cdmx.farmaciasmacross.com.mx"
+          }
+        },
+        {
+          "type": "branch",
+          "settings": {
+            "name": "Sucursal Puebla",
+            "address": "Calle 16 de Septiembre 6541 Planta Alta, Puebla Textil, Puebla",
+            "license": "1061160245",
+            "phone": "222 399 1076",
+            "map_url": "https://goo.gl/maps/djTxKQMQ2HAy6ywM6",
+            "subdomain_url": "https://puebla.farmaciasmacross.com.mx"
+          }
+        },
+        {
+          "type": "branch",
+          "settings": {
+            "name": "Centro de distribución Guadalajara",
+            "branch_note": "Logística y atención regional. No es sucursal de dispensación al público.",
+            "address": "Calle Coras 3515, Interior 4, Col. Santa Rita, Guadalajara, Jal. C.P. 44690",
+            "phone": "55 5440 9049",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Macross+Pharma+Coras+3515+4,+44690+Guadalajara,+Jalisco",
+            "subdomain_url": "https://guadalajara.farmaciasmacross.com.mx",
+            "subdomain_label": "Ver ubicación"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

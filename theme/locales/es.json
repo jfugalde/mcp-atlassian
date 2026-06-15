@@ -514,7 +514,7 @@
       "recommended_badge": "Sucursal recomendada",
       "branch_cdmx": "Sucursal CDMX",
       "branch_puebla": "Sucursal Puebla",
-      "branch_interlomas": "Sucursal Interlomas",
+      "branch_guadalajara": "Centro de distribución Guadalajara",
       "message_general": "Hola, escribo desde farmaciasmacross.com.mx. Tengo una consulta sobre un medicamento.",
       "message_product": "Hola, me interesa {{ product }}. ¿Me pueden orientar? {{ url }}"
     }

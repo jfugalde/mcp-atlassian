@@ -1,0 +1,53 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "macross-licenses",
+      "blocks": {
+        "license-cdmx": {
+          "type": "license",
+          "settings": {
+            "name": "Sucursal Ciudad de México",
+            "license": "09 004 09 0206",
+            "address": "Blvd. Adolfo Ruiz Cortínez 5270 Local 39, Pedregal de Carrasco, Coyoacán, Ciudad de México, C.P. 04700",
+            "phone": "55 5440 9049",
+            "pdf_url": "http://sipot.cofepris.gob.mx/archivos/cas/SELS/GFM/2023/09004090206.pdf",
+            "pdf_label": "Ver licencia COFEPRIS (PDF)"
+          }
+        },
+        "license-puebla": {
+          "type": "license",
+          "settings": {
+            "name": "Sucursal Puebla",
+            "license": "1061160245",
+            "address": "Calle 16 de Septiembre 6541 Planta Alta, Puebla Textil, Puebla, Puebla, C.P. 72470",
+            "phone": "222 399 1076",
+            "pdf_url": "https://transparencia.puebla.gob.mx/docs/adjuntos/1075_1654280167_256a82e3f9fd78a44c035dd3e6ab45a6.pdf",
+            "pdf_label": "Ver licencia DPRIS Puebla (PDF)"
+          }
+        }
+      },
+      "block_order": [
+        "license-cdmx",
+        "license-puebla"
+      ],
+      "settings": {
+        "container": "container",
+        "heading": "Nuestras licencias sanitarias",
+        "intro": "<p>Farmacias Macross opera bajo licencias sanitarias vigentes para el manejo y dispensación de medicamentos de alta especialidad, conforme a la Ley General de Salud y normativa COFEPRIS aplicable.</p>",
+        "footer_text": "<p>Para consultas regulatorias puede contactarnos en cualquiera de nuestras sucursales con licencia vigente. La información en este sitio es de carácter informativo y no sustituye la consulta con un profesional de la salud.</p>"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

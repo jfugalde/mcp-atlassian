@@ -6,17 +6,16 @@
   var STORAGE_BRANCH = 'macross_wa_branch';
   var CACHE_MS = 30 * 60 * 1000;
   var GEO_TIMEOUT_MS = 8000;
-  var HOST_BRANCH_KEYS = ['cdmx', 'puebla', 'interlomas'];
+  var HOST_BRANCH_KEYS = ['cdmx', 'puebla', 'guadalajara'];
   var MENU_CLOSE_MS = 300;
 
-  var INTERLOMAS_CITY_HINTS = [
-    'huixquilucan',
-    'naucalpan',
-    'interlomas',
-    'lomas',
-    'atizapan',
-    'tlalnepantla',
-    'bosques',
+  var JALISCO_CITY_HINTS = [
+    'guadalajara',
+    'zapopan',
+    'tlaquepaque',
+    'tonala',
+    'tlajomulco',
+    'santa rita',
   ];
 
   var config = null;
@@ -163,6 +162,18 @@
     }
 
     if (
+      region.indexOf('jalisco') !== -1 ||
+      data.region_code === 'JAL'
+    ) {
+      for (var j = 0; j < JALISCO_CITY_HINTS.length; j++) {
+        if (city.indexOf(normalizeText(JALISCO_CITY_HINTS[j])) !== -1) {
+          return { branch: branchByKey('guadalajara'), confidence: 'high', source: 'ip' };
+        }
+      }
+      return { branch: branchByKey('guadalajara'), confidence: 'medium', source: 'ip' };
+    }
+
+    if (
       region.indexOf('mexico city') !== -1 ||
       region.indexOf('ciudad de mexico') !== -1 ||
       city.indexOf('mexico city') !== -1 ||
@@ -178,11 +189,6 @@
       data.region_code === 'MEX';
 
     if (isEdomex) {
-      for (var i = 0; i < INTERLOMAS_CITY_HINTS.length; i++) {
-        if (city.indexOf(normalizeText(INTERLOMAS_CITY_HINTS[i])) !== -1) {
-          return { branch: branchByKey('interlomas'), confidence: 'high', source: 'ip' };
-        }
-      }
       return { branch: branchByKey('cdmx'), confidence: 'medium', source: 'ip' };
     }
 

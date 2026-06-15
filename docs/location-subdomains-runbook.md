@@ -9,7 +9,7 @@ Serve the Macross Shopify store on three location subdomains and route WhatsApp 
 |-----------|--------|----------|
 | `cdmx.farmaciasmacross.com.mx` | Sucursal CDMX | +525540729473 |
 | `puebla.farmaciasmacross.com.mx` | Sucursal Puebla | +522224454192 |
-| `interlomas.farmaciasmacross.com.mx` | Sucursal Interlomas | +525632497548 |
+| `guadalajara.farmaciasmacross.com.mx` | Centro de distribución Guadalajara | +525540729473 |
 
 Theme routing lives in `theme/assets/macross-whatsapp.js` (hostname > cookie-gated IP/GPS on apex). See also `docs/macross-whatsapp.md`.
 
@@ -28,7 +28,7 @@ Theme routing lives in `theme/assets/macross-whatsapp.js` (hostname > cookie-gat
 |------|------|--------|-------|
 | CNAME | `cdmx` | *(from Shopify)* | DNS only |
 | CNAME | `puebla` | *(from Shopify)* | DNS only |
-| CNAME | `interlomas` | *(from Shopify)* | DNS only |
+| CNAME | `guadalajara` | *(from Shopify)* | DNS only |
 
 5. Wait for DNS propagation (minutes to hours).
 
@@ -37,7 +37,7 @@ Theme routing lives in `theme/assets/macross-whatsapp.js` (hostname > cookie-gat
 ```bash
 curl -sI "https://cdmx.farmaciasmacross.com.mx" | head -5
 curl -sI "https://puebla.farmaciasmacross.com.mx" | head -5
-curl -sI "https://interlomas.farmaciasmacross.com.mx" | head -5
+curl -sI "https://guadalajara.farmaciasmacross.com.mx" | head -5
 ```
 
 Expect `HTTP/2 200` (or 301 to HTTPS then 200) and valid TLS.
@@ -48,7 +48,7 @@ Expect `HTTP/2 200` (or 301 to HTTPS then 200) and valid TLS.
 
 1. **Settings → Domains → Connect existing domain**.
 2. Enter `cdmx.farmaciasmacross.com.mx` → follow DNS instructions → verify.
-3. Repeat for `puebla.farmaciasmacross.com.mx` and `interlomas.farmaciasmacross.com.mx`.
+3. Repeat for `puebla.farmaciasmacross.com.mx` and `guadalajara.farmaciasmacross.com.mx`.
 4. Confirm **primary domain** remains `farmaciasmacross.com.mx`.
 5. For each location subdomain, set domain type to **Alias** (not Redirect):
    - **Alias** — serves the Online Store on that hostname; **address bar stays** `cdmx.farmaciasmacross.com.mx` (required for theme hostname WhatsApp routing).
@@ -85,7 +85,7 @@ With `shopify theme dev` at `http://127.0.0.1:9292`:
 ```text
 http://127.0.0.1:9292/?macross_branch=puebla
 http://127.0.0.1:9292/?macross_branch=cdmx
-http://127.0.0.1:9292/?macross_branch=interlomas
+http://127.0.0.1:9292/?macross_branch=guadalajara
 ```
 
 **Console checks:**
@@ -118,7 +118,7 @@ window.MacrossWhatsAppGeo.getActiveBranchKey();
 |---|-------------|--------|--------|----------|
 | 1 | `puebla.farmaciasmacross.com.mx` | any | Tap WhatsApp (menu / sticky / PDP) | Direct `wa.me` Puebla |
 | 2 | `cdmx.farmaciasmacross.com.mx` | any | Tap WhatsApp | Direct `wa.me` CDMX |
-| 3 | `interlomas.farmaciasmacross.com.mx` | any | Tap WhatsApp | Direct `wa.me` Interlomas |
+| 3 | `guadalajara.farmaciasmacross.com.mx` | any | Tap WhatsApp | Direct `wa.me` Guadalajara |
 | 4 | `farmaciasmacross.com.mx` | Decline | Tap WhatsApp | Plain branch picker, no badge |
 | 5 | `farmaciasmacross.com.mx` | Accept | Tap WhatsApp | IP/GPS routing (direct or picker per confidence) |
 | 6 | Apex | Accept, unknown region | Tap WhatsApp | Picker, reorder only (no badge if low confidence) |
@@ -140,7 +140,7 @@ Use location URLs so WhatsApp skips geo guessing:
 
 - CDMX: `https://cdmx.farmaciasmacross.com.mx`
 - Puebla: `https://puebla.farmaciasmacross.com.mx`
-- Interlomas: `https://interlomas.farmaciasmacross.com.mx`
+- Guadalajara: `https://guadalajara.farmaciasmacross.com.mx`
 
 ---
 

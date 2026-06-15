@@ -1,0 +1,463 @@
+.macross-about {
+  --macross-about-green: #2db742;
+  --macross-about-blue: var(--color-primary, #1f4e8c);
+  --macross-about-muted: #5f6b7a;
+  --macross-about-border: #e8edf2;
+  --macross-about-surface: #f7faf9;
+  color: var(--color-body-text, #1a1a1a);
+}
+
+.macross-about__hero {
+  background: linear-gradient(180deg, var(--macross-about-surface) 0%, #fff 100%);
+  padding-bottom: 2.5rem;
+}
+
+.macross-about__hero-inner {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .macross-about__hero-inner--image {
+    grid-template-columns: 1.05fr 0.95fr;
+  }
+}
+
+.macross-about__eyebrow {
+  color: var(--macross-about-green);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  margin: 0 0 0.75rem;
+  text-transform: uppercase;
+}
+
+.macross-about__lead {
+  color: var(--macross-about-muted);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  margin: 0;
+  max-width: 42rem;
+}
+
+.macross-about__hero-media {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.macross-about__hero-media img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.macross-about__section {
+  padding: 2.5rem 0;
+}
+
+.macross-about__section--alt {
+  background: var(--macross-about-surface);
+}
+
+.macross-about__section-head {
+  margin-bottom: 1.75rem;
+  max-width: 44rem;
+}
+
+.macross-about__section-head--center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.macross-about__section-title {
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0 0 0.75rem;
+}
+
+.macross-about__section-text {
+  color: var(--macross-about-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.macross-about__values {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+  .macross-about__values {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.macross-about__value {
+  background: #fff;
+  border: 1px solid var(--macross-about-border);
+  border-radius: 0.875rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-height: 100%;
+  padding: 1.25rem;
+}
+
+.macross-about__value-icon {
+  align-items: center;
+  color: var(--macross-about-blue);
+  display: flex;
+  height: 2.5rem;
+  justify-content: center;
+  width: 2.5rem;
+}
+
+.macross-about__value-icon svg {
+  height: 100%;
+  width: 100%;
+}
+
+.macross-about__value-title {
+  display: block;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.macross-about__value-desc {
+  color: var(--macross-about-muted);
+  display: block;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.macross-about__split {
+  align-items: center;
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 992px) {
+  .macross-about__split {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.macross-about__copy {
+  line-height: 1.75;
+}
+
+.macross-about__copy p {
+  margin: 0 0 1rem;
+}
+
+.macross-about__copy p:last-child {
+  margin-bottom: 0;
+}
+
+.macross-about__copy ul {
+  display: grid;
+  gap: 0.875rem;
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+}
+
+.macross-about__copy ul li {
+  align-items: flex-start;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.macross-about__copy ul li::before {
+  background: var(--macross-about-green);
+  border-radius: 50%;
+  content: "";
+  flex: 0 0 0.5rem;
+  height: 0.5rem;
+  margin-top: 0.55rem;
+}
+
+.macross-about__branches {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .macross-about__branches {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.macross-about__branch {
+  background: #fff;
+  border: 1px solid var(--macross-about-border);
+  border-radius: 0.875rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem;
+}
+
+.macross-about__branch-name {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.macross-about__branch-meta {
+  color: var(--macross-about-muted);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.macross-about__branch-meta a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.macross-about__branch-license {
+  font-weight: 500;
+}
+
+.macross-about__branch-note {
+  font-style: italic;
+}
+
+.macross-about__branch-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+
+.macross-about__link {
+  color: var(--macross-about-blue);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.macross-about__link:hover {
+  text-decoration: underline;
+}
+
+.macross-about__compliance {
+  background: #fff;
+  border: 1px solid var(--macross-about-border);
+  border-radius: 0.875rem;
+  padding: 1.5rem;
+}
+
+.macross-about__compliance p {
+  color: var(--macross-about-muted);
+  line-height: 1.7;
+  margin: 0 0 0.75rem;
+}
+
+.macross-about__compliance p:last-child {
+  margin-bottom: 0;
+}
+
+.macross-about__cta {
+  align-items: center;
+  background: linear-gradient(135deg, #eaf8ee 0%, #f4faf6 100%);
+  border: 1px solid #cfe9d6;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .macross-about__cta {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+.macross-about__cta-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.macross-about__cta-text {
+  color: var(--macross-about-muted);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 36rem;
+}
+
+.macross-about__cta-btn {
+  align-items: center;
+  background: var(--macross-about-green);
+  border: 0;
+  border-radius: 999px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  gap: 0.5rem;
+  padding: 0.875rem 1.5rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.macross-about__cta-btn:hover {
+  background: #26a238;
+  color: #fff;
+}
+
+.macross-about__cta-btn svg {
+  height: 1.125rem;
+  width: 1.125rem;
+}
+
+.macross-licenses__grid {
+  display: grid;
+  gap: 1.25rem;
+  margin: 0 auto 2rem;
+  max-width: 920px;
+}
+
+@media (min-width: 768px) {
+  .macross-licenses__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.macross-licenses__card {
+  background: var(--macross-about-surface);
+  border: 1px solid var(--macross-about-border);
+  border-radius: 0.875rem;
+  padding: 1.25rem 1.35rem;
+}
+
+.macross-licenses__name {
+  font-size: 1.125rem;
+  margin: 0 0 0.75rem;
+}
+
+.macross-licenses__license {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.macross-licenses__label {
+  color: var(--macross-about-muted);
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  margin-bottom: 0.15rem;
+}
+
+.macross-licenses__footer {
+  color: var(--macross-about-muted);
+  font-size: 0.9375rem;
+  margin: 0 auto;
+  max-width: 720px;
+  text-align: center;
+}
+
+.macross-about__section--legacy {
+  padding-top: 1rem;
+}
+
+.macross-about__section-title--center {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.macross-about__legacy-content {
+  margin: 0 auto;
+  max-width: 920px;
+}
+
+.macross-about__legacy-content img {
+  display: block;
+  height: auto;
+  margin: 0.75rem auto 1.25rem;
+  max-width: min(100%, 720px);
+  width: auto;
+}
+
+.macross-about__legacy-content div[style*="text-align: center"] {
+  margin: 0.5rem 0;
+}
+
+.macross-about__media-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.macross-about__media {
+  margin: 0;
+}
+
+.macross-about__media img {
+  border-radius: 0.875rem;
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.macross-about__media--full .macross-about__media-inner {
+  max-width: 100%;
+  padding: 0;
+}
+
+.macross-about__media-caption {
+  color: var(--macross-about-muted);
+  font-size: 0.875rem;
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
+.macross-about__branch-photo {
+  border-radius: 0.625rem;
+  margin: -0.25rem -0.25rem 0.25rem;
+  overflow: hidden;
+}
+
+.macross-about__branch-photo img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.macross-about__compliance-grid {
+  align-items: center;
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .macross-about__compliance-grid {
+    grid-template-columns: 1fr auto;
+  }
+}
+
+.macross-about__compliance-media img {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  max-width: 240px;
+  width: 100%;
+}

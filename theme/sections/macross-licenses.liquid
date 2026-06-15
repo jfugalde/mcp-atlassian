@@ -1,0 +1,135 @@
+{{ 'macross-about.css' | asset_url | stylesheet_tag }}
+{%- liquid
+  assign container = section.settings.container
+  if container == blank
+    assign container = 'container'
+  endif
+-%}
+<div class="macross-about macross-licenses">
+  <div class="macross-about__section">
+    <div class="{{ container }}">
+      <div class="macross-about__section-head macross-about__section-head--center">
+        {%- if section.settings.heading != blank -%}
+          <h1 class="macross-about__section-title">{{ section.settings.heading }}</h1>
+        {%- endif -%}
+        {%- if section.settings.intro != blank -%}
+          <div class="macross-about__section-text rte">{{ section.settings.intro }}</div>
+        {%- endif -%}
+      </div>
+
+      <div class="macross-licenses__grid">
+        {%- for block in section.blocks -%}
+          <article class="macross-licenses__card" {{ block.shopify_attributes }}>
+            <h2 class="macross-licenses__name">{{ block.settings.name }}</h2>
+            {%- if block.settings.license != blank -%}
+              <p class="macross-licenses__license">
+                <span class="macross-licenses__label">Licencia sanitaria:</span>
+                {{ block.settings.license }}
+              </p>
+            {%- endif -%}
+            {%- if block.settings.address != blank -%}
+              <p class="macross-about__branch-meta">{{ block.settings.address }}</p>
+            {%- endif -%}
+            {%- if block.settings.phone != blank -%}
+              <p class="macross-about__branch-meta">
+                <a href="tel:{{ block.settings.phone | replace: ' ', '' }}">{{ block.settings.phone }}</a>
+              </p>
+            {%- endif -%}
+            {%- if block.settings.pdf_url != blank -%}
+              <p>
+                <a class="macross-about__link" href="{{ block.settings.pdf_url }}" target="_blank" rel="noopener noreferrer">
+                  {{ block.settings.pdf_label | default: 'Ver licencia (PDF)' }}
+                </a>
+              </p>
+            {%- endif -%}
+          </article>
+        {%- endfor -%}
+      </div>
+
+      {%- if section.settings.footer_text != blank -%}
+        <div class="macross-licenses__footer rte">{{ section.settings.footer_text }}</div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Macross — Licencias",
+  "tag": "section",
+  "class": "macross-licenses-section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "container",
+      "label": "Container",
+      "options": [
+        { "value": "container", "label": "Container" },
+        { "value": "container-fluid", "label": "Container fluid" }
+      ],
+      "default": "container"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Nuestras licencias sanitarias"
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Introduction",
+      "default": "<p>Farmacias Macross opera bajo licencias sanitarias vigentes para el manejo y dispensación de medicamentos de alta especialidad, conforme a la Ley General de Salud y normativa COFEPRIS aplicable.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "footer_text",
+      "label": "Footer note",
+      "default": "<p>Para consultas regulatorias puede contactarnos en cualquiera de nuestras sucursales con licencia vigente. La información en este sitio es de carácter informativo y no sustituye la consulta con un profesional de la salud.</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "license",
+      "name": "Licensed branch",
+      "settings": [
+        { "type": "text", "id": "name", "label": "Branch name", "default": "Sucursal CDMX" },
+        { "type": "text", "id": "license", "label": "License number", "default": "09 004 09 0206" },
+        { "type": "textarea", "id": "address", "label": "Address" },
+        { "type": "text", "id": "phone", "label": "Phone" },
+        { "type": "url", "id": "pdf_url", "label": "License PDF URL" },
+        { "type": "text", "id": "pdf_label", "label": "PDF link label", "default": "Ver licencia (PDF)" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Macross — Licencias",
+      "blocks": [
+        {
+          "type": "license",
+          "settings": {
+            "name": "Sucursal Ciudad de México",
+            "license": "09 004 09 0206",
+            "address": "Blvd. Adolfo Ruiz Cortínez 5270 Local 39, Pedregal de Carrasco, Coyoacán, Ciudad de México, C.P. 04700",
+            "phone": "55 5440 9049",
+            "pdf_url": "http://sipot.cofepris.gob.mx/archivos/cas/SELS/GFM/2023/09004090206.pdf",
+            "pdf_label": "Ver licencia COFEPRIS (PDF)"
+          }
+        },
+        {
+          "type": "license",
+          "settings": {
+            "name": "Sucursal Puebla",
+            "license": "1061160245",
+            "address": "Calle 16 de Septiembre 6541 Planta Alta, Puebla Textil, Puebla, Puebla, C.P. 72470",
+            "phone": "222 399 1076",
+            "pdf_url": "https://transparencia.puebla.gob.mx/docs/adjuntos/1075_1654280167_256a82e3f9fd78a44c035dd3e6ab45a6.pdf",
+            "pdf_label": "Ver licencia DPRIS Puebla (PDF)"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

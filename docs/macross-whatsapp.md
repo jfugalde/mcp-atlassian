@@ -19,7 +19,7 @@ Layouts load config + widget before `</body>` and `macross-whatsapp.js` (defer).
 |---------|---------|
 | `macross_wa_cdmx_number` | CDMX WhatsApp (default `+525540729473`) |
 | `macross_wa_puebla_number` | Puebla WhatsApp |
-| `macross_wa_interlomas_number` | Interlomas WhatsApp |
+| `macross_wa_guadalajara_number` | Guadalajara distribution center WhatsApp (default CDMX number until local line is set) |
 | `macross_wa_show_desktop_fab` | Show/hide desktop floating button |
 | `macross_wa_fab_label` | FAB label (locale default: "WhatsApp") |
 | `macross_whatsapp_pdp_addons_integration` | On PDP, hide desktop FAB; sticky ATC still works |
