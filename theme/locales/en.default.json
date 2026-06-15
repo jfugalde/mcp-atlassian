@@ -357,7 +357,7 @@
       "log_in": "Log in"
     },
     "mobile_menu": {
-      "whatsapp": "WhatsApp — choose a branch"
+      "whatsapp": "WhatsApp"
     }
   },
   "pages": {
@@ -508,6 +508,16 @@
     "pdp_sale_tier_1": "On Sale",
     "pdp_sale_tier_2": "Great Deal",
     "pdp_sale_tier_3": "Best Price",
-    "pdp_sale_region_aria": "{{ pct }}% off. Was {{ compare }}, now {{ sale }}. {{ tier }}."
+    "pdp_sale_region_aria": "{{ pct }}% off. Was {{ compare }}, now {{ sale }}. {{ tier }}.",
+    "whatsapp": {
+      "fab_label": "WhatsApp",
+      "picker_title": "Which branch would you like to message?",
+      "recommended_badge": "Recommended branch",
+      "branch_cdmx": "Sucursal CDMX",
+      "branch_puebla": "Sucursal Puebla",
+      "branch_interlomas": "Sucursal Interlomas",
+      "message_general": "Hello, I'm writing from farmaciasmacross.com.mx. I have a question about a medication.",
+      "message_product": "Hello, I'm interested in {{ product }}. Could you help me? {{ url }}"
+    }
   }
 }

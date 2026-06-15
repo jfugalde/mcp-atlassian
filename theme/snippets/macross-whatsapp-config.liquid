@@ -1,0 +1,54 @@
+{%- liquid
+  assign fab_label = settings.macross_wa_fab_label | strip
+  if fab_label == blank
+    assign fab_label = 'macross.whatsapp.fab_label' | t
+  endif
+
+  assign product_title = ''
+  assign product_url = ''
+  if template.name == 'product' and product != blank
+    assign product_title = product.title | escape
+    assign product_url = request.origin | append: product.url
+  endif
+-%}
+<script type="application/json" id="macross-whatsapp-config">
+{
+  "branches": [
+    {
+      "key": "cdmx",
+      "label": {{ 'macross.whatsapp.branch_cdmx' | t | json }},
+      "number": {{ settings.macross_wa_cdmx_number | default: '+525540729473' | json }},
+      "lat": 19.4326,
+      "lng": -99.1332
+    },
+    {
+      "key": "puebla",
+      "label": {{ 'macross.whatsapp.branch_puebla' | t | json }},
+      "number": {{ settings.macross_wa_puebla_number | default: '+522224454192' | json }},
+      "lat": 19.0414,
+      "lng": -98.2063
+    },
+    {
+      "key": "interlomas",
+      "label": {{ 'macross.whatsapp.branch_interlomas' | t | json }},
+      "number": {{ settings.macross_wa_interlomas_number | default: '+525632497548' | json }},
+      "lat": 19.3986,
+      "lng": -99.3617
+    }
+  ],
+  "messages": {
+    "general": {{ 'macross.whatsapp.message_general' | t | json }},
+    "product": {{ 'macross.whatsapp.message_product' | t | json }},
+    "pickerTitle": {{ 'macross.whatsapp.picker_title' | t | json }},
+    "recommendedBadge": {{ 'macross.whatsapp.recommended_badge' | t | json }}
+  },
+  "ui": {
+    "fabLabel": {{ fab_label | json }},
+    "showDesktopFab": {{ settings.macross_wa_show_desktop_fab | json }}
+  },
+  "product": {
+    "title": {{ product_title | json }},
+    "url": {{ product_url | json }}
+  }
+}
+</script>

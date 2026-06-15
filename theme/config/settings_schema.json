@@ -2645,9 +2645,44 @@
       {
         "type": "checkbox",
         "id": "macross_whatsapp_pdp_addons_integration",
-        "label": "PDP: WhatsApp in addon row (hide floating bubble)",
+        "label": "PDP: hide desktop WhatsApp bubble on product pages",
         "default": true,
-        "info": "On product pages, adds a WhatsApp row under Compare / Question / Share in the Addon buttons block and hides the floating widget until opened. Uses the same Seedgrow multi-agent chat."
+        "info": "On product pages, hides the floating desktop WhatsApp button. Mobile menu, sticky bar, and PDP sticky ATC still open WhatsApp."
+      },
+      {
+        "type": "header",
+        "content": "WhatsApp — sucursales"
+      },
+      {
+        "type": "text",
+        "id": "macross_wa_cdmx_number",
+        "label": "Sucursal CDMX — WhatsApp",
+        "default": "+525540729473"
+      },
+      {
+        "type": "text",
+        "id": "macross_wa_puebla_number",
+        "label": "Sucursal Puebla — WhatsApp",
+        "default": "+522224454192"
+      },
+      {
+        "type": "text",
+        "id": "macross_wa_interlomas_number",
+        "label": "Sucursal Interlomas — WhatsApp",
+        "default": "+525632497548"
+      },
+      {
+        "type": "checkbox",
+        "id": "macross_wa_show_desktop_fab",
+        "label": "Show desktop WhatsApp button",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "macross_wa_fab_label",
+        "label": "Desktop button label",
+        "default": "WhatsApp",
+        "info": "Leave blank to use theme locale default."
       }
     ]
   },

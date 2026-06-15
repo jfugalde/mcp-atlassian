@@ -50,18 +50,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     {{ 'theme.css' | asset_url | stylesheet_tag }}
     {{ 'chunk.css' | asset_url | stylesheet_tag }}
-    {{ 'whatsapp-widget-mobile.css' | asset_url | stylesheet_tag }}
+    {{ 'macross-whatsapp.css' | asset_url | stylesheet_tag }}
     {%- if template.name == 'product'
       or template.name == 'collection'
-      or template.name == 'index'
       or template.name == 'search'
       or template.name == 'cart'
       or template.name == 'list-collections'
     -%}
       {{ 'macross-product-card.css' | asset_url | stylesheet_tag }}
-    {%- endif -%}
-    {%- if template.name == 'product' and settings.macross_whatsapp_pdp_addons_integration -%}
-      {{ 'pdp-whatsapp-addons.css' | asset_url | stylesheet_tag }}
     {%- endif -%}
 
     {% render 'style-tags' %}
@@ -106,6 +102,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     {% render 'foxkit-messenger' %}
     {% render 'script-tags' %}
     {% render 'cookie-banner' %}
+    {% render 'macross-whatsapp-config' %}
+    {% render 'macross-whatsapp-widget' %}
      
     <script src="{{ 'foxkit-app.min.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'quick-view.min.js' | asset_url }}" defer="defer"></script>
@@ -113,10 +111,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     {%- if settings.enable_predictive_search -%}
       <script src="{{ 'predictive-search.min.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-  <script src="{{ 'seedgrow-whatsapp-init.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'seedgrow-whatsapp-lib.js' | asset_url }}" defer="defer"></script>
-  {%- if template.name == 'product' and settings.macross_whatsapp_pdp_addons_integration -%}
-    <script src="{{ 'pdp-whatsapp-addons.js' | asset_url }}" defer="defer"></script>
-  {%- endif -%}
+  <script src="{{ 'macross-whatsapp.js' | asset_url }}" defer="defer"></script>
 </body>
 </html>

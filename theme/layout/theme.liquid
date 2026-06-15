@@ -78,13 +78,9 @@ template-{{ template.name | handle }} {{ template.name }}-{{ template.suffix }} 
 
     {{ 'theme.css' | asset_url | stylesheet_tag }}
     {{ 'chunk.css' | asset_url | stylesheet_tag }}
-    {{ 'whatsapp-widget-mobile.css' | asset_url | stylesheet_tag }}
-    {%- if template.name == 'product' and settings.macross_whatsapp_pdp_addons_integration -%}
-      {{ 'pdp-whatsapp-addons.css' | asset_url | stylesheet_tag }}
-    {%- endif -%}
+    {{ 'macross-whatsapp.css' | asset_url | stylesheet_tag }}
     {%- if template.name == 'product'
       or template.name == 'collection'
-      or template.name == 'index'
       or template.name == 'search'
       or template.name == 'cart'
       or template.name == 'list-collections'
@@ -111,7 +107,10 @@ template-{{ template.name | handle }} {{ template.name }}-{{ template.suffix }} 
     </script>
 
   {% if settings.enable_fa_icons %}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous">
+    {% if template.name == 'collection' or template.name == 'list-collections' or template.name == 'index' %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous"></noscript>
+    {% endif %}
   {% endif %}
   </head>
 
@@ -145,6 +144,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     {% render 'foxkit-messenger' %}
     {% render 'script-tags' %}
     {% render 'cookie-banner' %}
+    {% render 'macross-whatsapp-config' %}
+    {% render 'macross-whatsapp-widget' %}
      
     <script src="{{ 'foxkit-app.min.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'quick-view.min.js' | asset_url }}" defer="defer"></script>
@@ -152,11 +153,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     {%- if settings.enable_predictive_search -%}
       <script src="{{ 'predictive-search.min.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-  <script src="{{ 'seedgrow-whatsapp-init.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'seedgrow-whatsapp-lib.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'macross-mobile-whatsapp.js' | asset_url }}" defer="defer"></script>
-  {%- if template.name == 'product' and settings.macross_whatsapp_pdp_addons_integration -%}
-    <script src="{{ 'pdp-whatsapp-addons.js' | asset_url }}" defer="defer"></script>
-  {%- endif -%}
+  <script src="{{ 'macross-whatsapp.js' | asset_url }}" defer="defer"></script>
 </body>
 </html>
