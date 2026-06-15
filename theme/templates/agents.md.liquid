@@ -1,0 +1,67 @@
+# Instrucciones para agentes — {{ agents.store_name }}
+
+Documento canónico de descubrimiento para asistentes de compra, crawlers e integraciones con IA.
+Tienda en línea: {{ agents.store_url }} · Moneda: {{ agents.currency }} · Mercado: México (español).
+
+Referencia ampliada (catálogo, metacampos PDP, sucursales): {{ agents.store_url }}/llms-full.txt
+
+## Qué es esta tienda
+
+Farmacia de alta especialidad en México. Vende medicamentos y productos farmacéuticos organizados por área terapéutica (oncología, cardiología, reumatología, inmunología, entre otras). Muchos productos pueden requerir receta médica vigente; no sustituye la consulta con un profesional de la salud.
+
+## Idioma y contenido
+
+- Idioma principal del sitio: **español (México)**.
+- En páginas de producto, las fichas usan pestañas: Descripción, ¿Qué es?, Usos reconocidos, Advertencias y conservación, Preguntas frecuentes (cuando hay datos).
+- No inventar indicaciones, dosis ni promesas terapéuticas. Respeta tono informativo y cumplimiento COFEPRIS / PROFECO.
+
+## Sucursales (URLs de entrada)
+
+Misma tienda; la sucursal preferida se infiere por subdominio (cuando estén activos como dominio alias en Shopify):
+
+- CDMX: `https://cdmx.farmaciasmacross.com.mx`
+- Puebla: `https://puebla.farmaciasmacross.com.mx`
+- Interlomas: `https://interlomas.farmaciasmacross.com.mx`
+- Sitio principal: {{ agents.store_url }}
+
+## Comercio con agentes (UCP)
+
+Esta tienda implementa el [Universal Commerce Protocol](https://ucp.dev).
+
+- **Discovery:** `GET {{ agents.ucp_discovery_url }}`
+- **MCP:** `POST {{ agents.mcp_endpoint_url }}` (`Content-Type: application/json`; usar `tools/list` para esquemas)
+
+### Versiones UCP soportadas
+{% for version in agents.ucp_versions %}
+- `{{ version }}`{% if forloop.first %} (estable más reciente){% endif %}
+{% endfor %}
+
+### Reglas
+
+- El checkout requiere **aprobación explícita del comprador**; no completar pagos sin consentimiento.
+- Respetar límites de tasa (HTTP 429 → backoff).
+- Para agentes personales en navegador, Shopify recomienda [Shop skill](https://shop.app/SKILL.md) cuando el usuario lo permita.
+
+## Navegación de solo lectura (sin autenticación)
+
+- Todos los productos: `GET /collections/all`
+- Producto: `GET /products/{handle}` · JSON: `GET /products/{handle}.json`
+- Colección: `GET /collections/{handle}` · JSON: `GET /collections/{handle}/products.json`
+- Búsqueda: `GET /search?q={query}&type=product`
+- Mapa del sitio: {{ agents.sitemap_url }}
+
+Precios y disponibilidad en {{ agents.currency }}.
+
+## Políticas
+
+{% if shop.policies.size > 0 %}
+{% for policy in shop.policies %}
+- **{{ policy.title }}**: {{ agents.store_url }}{{ policy.url }}
+{% endfor %}
+{% else %}
+- Políticas en {{ agents.store_url }}/policies/
+{% endif %}
+
+## Plataforma
+
+Tienda en [Shopify](https://www.shopify.com) con UCP nativo. Especificación UCP: https://ucp.dev · Documentación Shopify: https://shopify.dev/docs/storefronts/themes/architecture/templates/agents-md-liquid

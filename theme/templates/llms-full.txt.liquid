@@ -1,0 +1,109 @@
+# {{ agents.store_name }} — Referencia completa para LLM / crawlers
+
+> Resumen canónico: {{ agents.store_url }}/agents.md
+> Este archivo amplía contexto de catálogo, estructura de PDP y cumplimiento regulatorio.
+
+## Identidad
+
+| Campo | Valor |
+|-------|-------|
+| Nombre | {{ shop.name }} |
+| URL principal | {{ agents.store_url }} |
+| Moneda | {{ agents.currency }} |
+| País / idioma | México · español |
+| Plataforma | Shopify (UCP habilitado) |
+
+## Cumplimiento y límites para modelos
+
+- **No es consejo médico.** Información comercial e informativa únicamente.
+- Muchos artículos son medicamentos de **alta especialidad**; pueden requerir **receta médica** y despacho bajo normativa sanitaria mexicana.
+- No prometer curas, resultados garantizados ni comparaciones prohibidas (Google Ads, PROFECO, COFEPRIS).
+- Licencia sanitaria (referencia pública en sitio): COFEPRIS 085M2019 SSA IV; permisos CDMX y Puebla en pie de página.
+- No extraer ni republicar datos personales de clientes.
+
+## Estructura de página de producto (PDP)
+
+Contenido en pestañas (`product-details-tabs`). Pestañas vacías se ocultan; si todo está vacío, se usa `product.description`.
+
+| Pestaña (UI) | Fuente |
+|--------------|--------|
+| Descripción | `product.description` (HTML, Merchant Center) |
+| ¿Qué es? | Metacampo `custom.macross_que_es` |
+| Usos reconocidos | Metacampo `custom.macross_usos_reconocidos` |
+| Advertencias y conservación | `custom.macross_advertencias` + `custom.macross_conservacion` |
+| Preguntas frecuentes | Metacampo `custom.macross_faq` |
+
+Plantillas de producto en tema: `product.json` (default), `product.discount.json`, `product.pharmacy-promo.json`.
+
+### API de solo lectura por producto
+
+```
+GET /products/{handle}.json
+```
+
+Campos útiles: `title`, `body_html`, `vendor`, `product_type`, `tags`, `variants[]` (precio, SKU, disponibilidad), `images[]`.
+
+Metacampos no siempre aparecen en `.json` público; para consumo profundo usar Admin API o la HTML renderizada de la PDP.
+
+## Colecciones terapéuticas (handles principales)
+
+Navegación y homepage usan colecciones live de Shopify (no listas fijas en código). Handles frecuentes:
+
+| Handle | Área |
+|--------|------|
+| `medicamento-oncologicos-al-mejor-precio-alta-especialidad` | Oncología |
+| `hematologia-1` | Hematología |
+| `reumatologia-y-traumatologia` | Reumatología y traumatología |
+| `infecciosas-y-parasitarias` | Infecciosas y parasitarias |
+| `medicamentos-para-el-sistema-inmunologico-1` | Sistema inmunológico |
+| `productos-hormonales-especializados` | Hormonales especializados |
+| `cardiologia` | Cardiología |
+| `lo-mas-vendido` | Lo más vendido |
+
+Listar todas: `GET /collections` o {{ agents.sitemap_url }}
+
+## URLs de sucursal (WhatsApp por ubicación)
+
+Subdominios alias de la misma tienda; el tema enruta WhatsApp a la sucursal correspondiente:
+
+- `https://cdmx.farmaciasmacross.com.mx`
+- `https://puebla.farmaciasmacross.com.mx`
+- `https://interlomas.farmaciasmacross.com.mx`
+
+En sitio principal (`{{ agents.store_url }}`), el enrutamiento por ubicación usa consentimiento de cookies + IP/geolocalización del navegador.
+
+## Páginas institucionales útiles
+
+- Licencias: `/pages/nuestras-licencias`
+- Alta especialidad: `/pages/medicamentos-de-alta-especialidad-y-atencion-personalizada-farmacias-macross`
+
+## Comercio programático (UCP)
+
+| Recurso | URL |
+|---------|-----|
+| UCP discovery | {{ agents.ucp_discovery_url }} |
+| MCP endpoint | {{ agents.mcp_endpoint_url }} |
+| Sitemap | {{ agents.sitemap_url }} |
+
+Versiones UCP:
+{% for version in agents.ucp_versions %}
+- `{{ version }}`
+{% endfor %}
+
+Flujo típico: discover → `search_catalog` → `create_cart` → `create_checkout` → `update_checkout` → `complete_checkout` (con aprobación del comprador).
+
+## Políticas de la tienda
+
+{% for policy in shop.policies %}
+- {{ policy.title }}: {{ agents.store_url }}{{ policy.url }}
+{% endfor %}
+
+## Endpoints de descubrimiento Shopify
+
+| Ruta | Contenido |
+|------|-----------|
+| `/agents.md` | Este documento (canónico, vía `agents.md.liquid`) |
+| `/llms.txt` | Alias; cae a `agents.md.liquid` si no hay plantilla dedicada |
+| `/llms-full.txt` | Este archivo (`llms-full.txt.liquid`) |
+
+Documentación: https://shopify.dev/docs/storefronts/themes/architecture/templates/agents-md-liquid
